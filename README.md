@@ -8,9 +8,10 @@ elicit, simulates the output, runs binary mechanical checks, and adds a
 holistic editor's verdict. Both scores are shown side-by-side on a class
 leaderboard.
 
-Built for BFH / HSG. Same shape as Litmus: static frontend on GitHub Pages,
-Cloudflare Worker as a stateless API proxy, no student data collected beyond
-a self-chosen display name.
+Built at the QAME Lab, Institute of Applied Data Science & Finance, BFH-W.
+Same shape as Litmus: static frontend on GitHub Pages, Cloudflare Worker as
+a stateless API proxy, no student data collected beyond a self-chosen
+display name.
 
 ## Architecture
 
@@ -448,7 +449,7 @@ Switch at runtime with `?scenario=<slug>` (default is `swiss-cantons`).
 
 ## Internationalisation (DE / EN)
 
-The whole app is bilingual. German is the default for the BFH/HSG
+The whole app is bilingual. German is the default for the BFH-W
 audience; English is one toggle click away (top-right of the masthead
 or on the landing page).
 

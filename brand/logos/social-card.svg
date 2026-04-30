@@ -15,6 +15,6 @@
   <text x="340" y="290" font-family="'DM Serif Display', Georgia, serif" font-size="108" font-weight="400" fill="#0A0A0A" letter-spacing="-0.01em">Prompt Arena</text>
   <text x="340" y="350" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="28" font-weight="400" fill="#404040">Score the prompt, not the student.</text>
   <line x1="96" y1="500" x2="1104" y2="500" stroke="#E5E3DC" stroke-width="1"/>
-  <text x="96" y="544" font-family="'IBM Plex Mono', monospace" font-size="18" font-weight="500" fill="#707070" letter-spacing="0.08em">QAME · BFH / HSG</text>
+  <text x="96" y="544" font-family="'IBM Plex Mono', monospace" font-size="18" font-weight="500" fill="#707070" letter-spacing="0.08em">QAME Lab · BFH-W</text>
   <text x="1104" y="544" text-anchor="end" font-family="'IBM Plex Mono', monospace" font-size="18" font-weight="400" fill="#707070" letter-spacing="0.04em">single shot · final submission</text>
 </svg>

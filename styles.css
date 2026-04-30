@@ -150,9 +150,13 @@ html, body {
   margin-top: 28px;
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-3);
+  line-height: 1.55;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (max-width: 540px) {
   .gate-card { padding: 40px 28px 32px; }

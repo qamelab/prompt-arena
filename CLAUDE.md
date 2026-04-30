@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Prompt Arena is a classroom prompt-engineering exercise (BFH / HSG). Students submit one final prompt for a data-analytics scenario; an LLM judge (OpenRouter) generates the R code that prompt would elicit, simulates the output, runs binary mechanical checks, and adds a holistic editor-style verdict. The two scores are written to a Cloudflare KV namespace and shown side-by-side on a shared class leaderboard. The only piece of student data collected is a self-chosen display name.
+Prompt Arena is a classroom prompt-engineering exercise (QAME Lab, Institute of Applied Data Science & Finance, BFH-W). Students submit one final prompt for a data-analytics scenario; an LLM judge (OpenRouter) generates the R code that prompt would elicit, simulates the output, runs binary mechanical checks, and adds a holistic editor-style verdict. The two scores are written to a Cloudflare KV namespace and shown side-by-side on a shared class leaderboard. The only piece of student data collected is a self-chosen display name.
 
 ## Repository layout
 
@@ -84,7 +84,7 @@ Each scenario ships its dataset CSV in `scenarios/` with the filename declared i
 
 ## Internationalisation (DE / EN)
 
-The app is fully bilingual — German is the default for the BFH/HSG audience; English is one toggle click away.
+The app is fully bilingual — German is the default for the BFH-W audience; English is one toggle click away.
 
 - **Static UI strings** live in the `STRINGS` object in `app.js` (one block per language). DOM elements with `data-i18n="key"` get their `textContent` set from `STRINGS[state.lang][key]`; `data-i18n-placeholder="key"` does the same for input placeholders. `applyLang(lang)` walks both selectors on every language change.
 - **Scenarios** are split into `<slug>.en.yaml` / `<slug>.de.yaml` pairs. The frontend fetches `scenarios/<slug>.<lang>.yaml`. Each language's YAML is a self-contained translation — title, briefing, task, schema_preview, dataset.description, mechanical_checks (label + description), and holistic (audience, voice, lens, anchors). Both languages target the same `id`, so a scenario's leaderboard is shared regardless of which language students used to write their prompt.
