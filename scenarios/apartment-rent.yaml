@@ -1,0 +1,74 @@
+id: apartment-rent
+title: Apartment rent vs. building age
+round: 3
+
+# ─── Public parts (shown to students) ───
+briefing: |
+  You are a junior data scientist at a Swiss real-estate listings site. The product
+  team wants a chart for the homepage that says something honest about how building
+  age affects rent.
+
+task: |
+  For Zürich and Geneva listings, show how rent per square meter relates to the year
+  the building was built, and call out any visible difference between the two cities.
+
+dataset:
+  filename: ch_apartments.csv
+  rows: 480
+  schema_preview: |
+    city      district          size_m2  rooms  year_built  rent_chf
+    Zürich    Kreis 4               68      3        1962       2890
+    Geneva    Plainpalais          82      3.5      1985       3120
+    Bern      Länggasse            55      2        2014       1840
+    ... (480 listings across six Swiss cities)
+  description: |
+    Synthetic rental listings. Columns: city (chr, one of Zürich, Geneva, Basel,
+    Bern, Lausanne, Lugano), district (chr), size_m2 (num), rooms (num — half
+    rooms allowed, e.g. 3.5), year_built (int 1900-2024), rent_chf (num, monthly).
+    480 rows.
+
+# ─── Hidden parts (used by the judge, not shown in UI) ───
+mechanical_checks:
+  - key: computes_rent_per_m2
+    label: Computes rent per m²
+    description: rent_chf / size_m2 is computed as the y-axis variable
+  - key: filters_zurich_geneva
+    label: Filters to Zürich and Geneva
+    description: filters to city %in% c("Zürich", "Geneva") before plotting
+  - key: year_built_on_x
+    label: year_built on x-axis
+    description: year_built is the x-axis variable (continuous, not bucketed into a single category)
+  - key: distinguishes_cities
+    label: Cities distinguishable
+    description: the two cities are shown separately — color, shape, or facet
+  - key: appropriate_geom
+    label: Appropriate geom for relationship
+    description: uses a geom that shows a relationship between two continuous variables (point, smooth, line) — not a single bar/box
+  - key: has_labels_legend
+    label: Axis labels & legend
+    description: axis labels present AND legend (or facet labels) identifies which series is which city
+  - key: tidyverse_idiomatic
+    label: Tidyverse idiomatic
+    description: clean dplyr/ggplot2 usage, no base-R hacks or copy-paste loops
+
+holistic:
+  audience: product team picking a homepage chart
+  voice: pragmatic product manager who wants a chart users can read in two seconds
+  evaluation_lens:
+    - Can a homepage visitor read the comparison at a glance?
+    - Is the relationship shown honestly (not over-smoothed, not cherry-picked)?
+    - Is the prompt scoped well — does it ask for the relationship without micromanaging the geom?
+    - Does the framing match the audience (homepage chart, not a regression report)?
+  anchors:
+    "0-9": misleading, unreadable, or answers a different question
+    "10-19": readable but the product team would push back before shipping
+    "20-26": good — would ship with minor copy edits
+    "27-30": exceptional — homepage-ready as-is
+
+# ─── Seeded leaderboard ───
+leaderboard_seed:
+  - {name: "Robin M.",  mech: 70, hol: 24}
+  - {name: "Sara D.",   mech: 60, hol: 19}
+  - {name: "Felix T.",  mech: 50, hol: 22}
+  - {name: "Ines C.",   mech: 40, hol: 21}
+  - {name: "Jonas R.",  mech: 30, hol: 18}
