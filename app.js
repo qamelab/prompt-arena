@@ -79,7 +79,7 @@ async function fetchLeaderboard() {
     state.liveLeaderboard = Array.isArray(data.leaderboard) ? data.leaderboard : [];
     renderLeaderboard();
   } catch {
-    // Silent — leaderboard is best-effort. Seeded entries still render.
+    // Silent — leaderboard is best-effort. Seeded fallback still renders.
   }
 }
 
@@ -203,8 +203,12 @@ function renderResult(result) {
 // ─── Leaderboard ───
 function renderLeaderboard() {
   if (!state.scenario) return;
-  const seed = (state.scenario.leaderboard_seed || []).map((r) => ({ ...r, seed: true }));
   const live = (state.liveLeaderboard || []).map((r) => ({ ...r }));
+  // Seed entries are only a fallback for an empty class — once any real
+  // submission lands, the placeholder names disappear.
+  const seed = live.length === 0
+    ? (state.scenario.leaderboard_seed || []).map((r) => ({ ...r, seed: true }))
+    : [];
   const rows = [...seed, ...live].map((r) => ({
     ...r,
     total: Math.min(100, (r.mech || 0) + (r.hol || 0)),
