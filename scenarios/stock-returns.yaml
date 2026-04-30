@@ -9,14 +9,16 @@ briefing: |
   the obvious raw winners, but the names that delivered return per unit of risk.
 
 task: |
-  For each ticker, compute daily simple returns (close_t / close_{t-1} − 1).
+  For each ticker, compute daily simple returns: today's close divided by the
+  previous trading day's close, minus 1 (in R: close / lag(close) - 1).
   Restricted to 2024 trading days, compute (a) the total return, and (b) the
-  annualized return standard deviation (daily SD × √252). Pick the five tickers
-  with the highest risk-adjusted return defined as 2024 total return ÷ annualized
-  SD. For those five, plot the cumulative price path indexed to 100 starting on
-  the first trading day of 2020 through the end of 2024. Color the lines by sector
-  (one consistent colour per sector, IBCS-style) and place each ticker label
-  directly at the end of its line — not in a side legend.
+  annualized return standard deviation (daily SD multiplied by sqrt(252)).
+  Pick the five tickers with the highest risk-adjusted return, defined as
+  2024 total return divided by 2024 annualized SD. For those five, plot the
+  cumulative price path indexed to 100 starting on the first trading day of
+  2020 through the end of 2024. Color the lines by sector (one consistent
+  colour per sector, IBCS-style) and place each ticker label directly at the
+  end of its line — not in a side legend.
 
 dataset:
   filename: tech_stocks_daily.csv
@@ -43,16 +45,16 @@ mechanical_checks:
     description: the date column is parsed as a Date / POSIXct (e.g. lubridate::ymd or as.Date) and used on the x-axis as a date scale, not as a character/factor
   - key: computes_daily_returns
     label: Computes daily returns
-    description: per-ticker daily simple returns are computed from consecutive closes (close_t / close_{t-1} − 1) — not just a single total-period return
+    description: per-ticker daily simple returns are computed from consecutive closes (close / lag(close) - 1, sorted by date within ticker) — not just a single total-period return
   - key: computes_annualized_sd
     label: Annualized SD computed correctly
-    description: annualized return SD is daily SD × √252 (or equivalent), per ticker, restricted to 2024 trading days
+    description: annualized return SD is daily SD multiplied by sqrt(252) (or equivalent), per ticker, restricted to 2024 trading days
   - key: picks_top5_risk_adjusted
     label: Picks top 5 by risk-adjusted return
-    description: top 5 tickers are picked by 2024 total return ÷ 2024 annualized SD — not by raw total return, not by lowest SD alone
+    description: top 5 tickers are picked by 2024 total return divided by 2024 annualized SD — not by raw total return, not by lowest SD alone
   - key: indexes_path_to_100_from_2020
     label: Indexes path to 100 from 2020
-    description: each of the five paths starts at 100 on the first trading day of 2020 (close_t / close_{first_2020} × 100) — not from 2024, not from each ticker's series start independently
+    description: each of the five paths starts at 100 on the first trading day of 2020 (close divided by the first 2020 close, times 100) — not from 2024, not from each ticker's series start independently
   - key: color_by_sector
     label: Lines coloured by sector
     description: the colour aesthetic is mapped to sector (one fixed colour per sector across all selected tickers) — not to ticker, not to year
