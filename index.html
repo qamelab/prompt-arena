@@ -6,6 +6,20 @@
   <title>Prompt Arena</title>
   <meta name="description" content="A classroom prompt-engineering exercise: write the best prompt for a data analytics task, get scored on the result." />
 
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="Prompt Arena" />
+  <meta property="og:description" content="Score the prompt, not the student." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="brand/logos/social-card.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="brand/logos/social-card.svg" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="brand/logos/favicon.svg" />
+  <link rel="apple-touch-icon" href="brand/logos/app-icon.svg" />
+  <link rel="mask-icon" href="brand/logos/mark-ink.svg" color="#0A0A0A" />
+  <meta name="theme-color" content="#FAFAF7" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -16,7 +30,16 @@
   <header class="masthead">
     <div class="masthead-inner">
       <div class="brand">
-        <span class="brand-mark"></span>
+        <svg class="brand-mark" viewBox="0 0 200 200" role="img" aria-label="Prompt Arena">
+          <defs>
+            <linearGradient id="pa-mast" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F97316" />
+              <stop offset="100%" stop-color="#0891B2" />
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="88" stroke="#0A0A0A" stroke-width="8" fill="none" />
+          <path d="M 64 56 L 134 100 L 64 144" stroke="url(#pa-mast)" stroke-width="14" fill="none" stroke-linejoin="round" />
+        </svg>
         <span class="brand-name">Prompt Arena</span>
       </div>
       <div class="masthead-meta">

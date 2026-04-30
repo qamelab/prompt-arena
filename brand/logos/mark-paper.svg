@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Prompt Arena mark, paper">
+  <title>Prompt Arena</title>
+  <circle cx="100" cy="100" r="88" stroke="#FAFAF7" stroke-width="8" fill="none"/>
+  <path d="M 64 56 L 134 100 L 64 144" stroke="#FAFAF7" stroke-width="14" fill="none" stroke-linecap="butt" stroke-linejoin="round"/>
+</svg>

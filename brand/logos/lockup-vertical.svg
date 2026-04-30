@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Prompt Arena vertical lockup">
+  <title>Prompt Arena</title>
+  <defs>
+    <linearGradient id="pa-grad-v" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#0891B2"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(140, 20)">
+    <circle cx="100" cy="100" r="88" stroke="#0A0A0A" stroke-width="8" fill="none"/>
+    <path d="M 64 56 L 134 100 L 64 144" stroke="url(#pa-grad-v)" stroke-width="14" fill="none" stroke-linecap="butt" stroke-linejoin="round"/>
+  </g>
+  <text x="240" y="320" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="64" font-weight="400" fill="#0A0A0A" letter-spacing="-0.01em">Prompt Arena</text>
+</svg>
