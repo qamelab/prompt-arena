@@ -49,13 +49,20 @@ for the worker.
 **Worker** — from `worker/`:
 ```bash
 npm install
-echo "OPENROUTER_API_KEY=sk-or-..." > .dev.vars   # gitignored
+cat > .dev.vars <<EOF                             # gitignored
+OPENROUTER_API_KEY=sk-or-...
+ACCESS_PASSWORD=your-classroom-password
+EOF
 npm run dev                                       # http://localhost:8787
 ```
 For local dev, wrangler emulates KV in-process — the placeholder ids in
 `wrangler.toml` are fine. The local KV state is written to
 `worker/.wrangler/state/v3/kv/`; delete that directory if you want to reset
 all leaderboards between sessions.
+
+The frontend opens a landing page that asks for the password before any
+prompt can be submitted. The first valid entry is cached in localStorage
+so returning students go straight through.
 
 ## Deploying to production
 
@@ -80,13 +87,16 @@ id         = "<production id>"
 preview_id = "<preview id>"
 ```
 
-### 2. Set the OpenRouter secret in production
+### 2. Set the secrets in production
 
 ```bash
 npx wrangler secret put OPENROUTER_API_KEY    # paste your sk-or-... key
+npx wrangler secret put ACCESS_PASSWORD       # the password students will type
 ```
 The local `.dev.vars` file is for `wrangler dev` only — production reads
-secrets from the deploy environment.
+secrets from the deploy environment. The classroom password is the only
+gate between random internet visitors and your OpenRouter bill, so pick
+something the room will know but a casual scraper won't guess.
 
 ### 3. Deploy the worker
 
@@ -254,6 +264,11 @@ without checking those notes — the proportions are calibrated.
 - **Server-authoritative scoring.** The worker recomputes mechanical and
   holistic totals before writing to KV, so a tampered client cannot inflate
   its row.
+- **Shared classroom password.** The worker rejects judge submissions
+  without a valid `ACCESS_PASSWORD`. The frontend opens with a landing
+  page that captures the password and caches it in localStorage on
+  success. The leaderboard GET is unauthenticated so spectators (and
+  the gated landing page itself) can see scores without unlocking.
 
 ## License
 

@@ -53,6 +53,114 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Landing gate ─── */
+.gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: var(--bg);
+}
+.gate-card {
+  width: 100%;
+  max-width: 540px;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 56px 48px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.gate-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--grad);
+}
+.gate-mark {
+  width: 110px;
+  height: 110px;
+  display: block;
+  margin: 8px auto 24px;
+}
+.gate-wordmark {
+  font-family: var(--font-serif);
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+.gate-tag {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--ink-2);
+  margin: 0 0 28px 0;
+}
+.gate-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  text-align: left;
+  margin: 0 0 28px 0;
+}
+.gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+.gate-form input[type="password"] {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 14px 16px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--ink);
+  margin-bottom: 0;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.gate-form input[type="password"]:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-soft);
+}
+.gate-form .primary {
+  padding: 12px 22px;
+  font-size: 14px;
+}
+.gate-error {
+  color: var(--danger);
+  font-size: 13px;
+  margin: 4px 0 0 0;
+  text-align: center;
+}
+.gate-foot {
+  margin-top: 28px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+@media (max-width: 540px) {
+  .gate-card { padding: 40px 28px 32px; }
+  .gate-wordmark { font-size: 44px; }
+  .gate-tag { font-size: 17px; }
+  .gate-mark { width: 92px; height: 92px; }
+}
+
 /* ─── Layout ─── */
 .page {
   max-width: var(--page-max);

@@ -41,6 +41,23 @@ function jsonResponse(body, status, origin) {
   });
 }
 
+// Constant-time string comparison so a wrong password can't be probed
+// character-by-character via timing differences.
+function constantTimeEqual(a, b) {
+  if (typeof a !== "string" || typeof b !== "string") return false;
+  if (a.length !== b.length) return false;
+  let mismatch = 0;
+  for (let i = 0; i < a.length; i++) {
+    mismatch |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  }
+  return mismatch === 0;
+}
+
+function checkPassword(input, env) {
+  if (!env.ACCESS_PASSWORD) return false;
+  return constantTimeEqual(input, env.ACCESS_PASSWORD);
+}
+
 function sanitizeName(s) {
   if (typeof s !== "string") return null;
   // strip control chars, collapse whitespace, cap length
@@ -191,9 +208,12 @@ export default {
       return new Response(null, { status: 204, headers: corsHeaders(origin) });
     }
 
-    // GET ?scenario=<id> — read current leaderboard for a scenario
+    const url = new URL(request.url);
+
+    // GET ?scenario=<id> — read current leaderboard for a scenario.
+    // Reading is unauthenticated so a returning student sees scores
+    // before the gate completes verification.
     if (request.method === "GET") {
-      const url = new URL(request.url);
       const scenarioId = url.searchParams.get("scenario");
       if (!scenarioId) {
         return jsonResponse({ error: "Missing ?scenario=<id>" }, 400, origin);
@@ -211,6 +231,18 @@ export default {
       body = await request.json();
     } catch {
       return jsonResponse({ error: "Invalid JSON" }, 400, origin);
+    }
+
+    // POST /verify — landing-page password check. Returns 200 {ok:true}
+    // on a valid password and 401 otherwise.
+    if (url.pathname === "/verify") {
+      const ok = checkPassword(body?.password, env);
+      return jsonResponse({ ok }, ok ? 200 : 401, origin);
+    }
+
+    // POST / — judge submission. Requires a valid password.
+    if (!checkPassword(body?.password, env)) {
+      return jsonResponse({ error: "Unauthorized" }, 401, origin);
     }
 
     const { scenario, prompt, name } = body;

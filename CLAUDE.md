@@ -16,7 +16,7 @@ worker/                           # Cloudflare Worker (the judge proxy)
   src/index.js                    # worker entry — buildJudgePrompt + OpenRouter call + KV writes
   package.json                    # wrangler dev/deploy scripts only
   wrangler.toml                   # worker config + KV namespace binding
-  .dev.vars                       # gitignored — local OPENROUTER_API_KEY for `wrangler dev`
+  .dev.vars                       # gitignored — local OPENROUTER_API_KEY + ACCESS_PASSWORD for `wrangler dev`
 .github/workflows/deploy.yml      # builds _site/ from frontend + scenarios/ + brand/, publishes to Pages
 LICENSE, .gitignore
 ```
@@ -48,9 +48,14 @@ There are no tests, no linter config, and no CI checks beyond the Pages deploy w
 
 Two halves communicate over a single worker endpoint:
 
-- **Frontend** (`index.html` + `app.js` + `styles.css`) loads the scenario YAML via `js-yaml`, renders the briefing/task/schema and a CSV download link, accepts a name + final prompt, posts the *full scenario object* + prompt + name to the worker, and renders the returned code, simulated output, mechanical checks, holistic verdict, and the updated leaderboard. State is in-memory; reflections persist to localStorage; nothing else is stored client-side.
+- **Frontend** (`index.html` + `app.js` + `styles.css`) opens with a landing-page password gate (`#gate`) that hides the rest of the app (`#app`) until the user enters a password that the worker accepts. On success the password is cached in localStorage and the gate is replaced by the main UI: scenario card with CSV download link, name input, prompt textarea, and the leaderboard. Submission posts the *full scenario object* + prompt + name + cached password to the worker and renders the returned code, simulated output, mechanical checks, holistic verdict, and updated leaderboard. State is in-memory; reflections + name + password persist to localStorage; nothing else is stored client-side.
 
-- **Worker** (`worker/src/index.js`, deploys as a Cloudflare Worker) is the judge proxy. POST: receives `{scenario, prompt, name}`, validates the scenario shape and the name, calls `buildJudgePrompt` to assemble a four-part instruction (generate code → simulate output → score mechanical+holistic → write feedback), forwards to OpenRouter's chat-completions API with the key from `env.OPENROUTER_API_KEY`, strips any code fences, parses JSON, computes mech/holistic totals server-side, appends an entry to KV via `appendLeaderboard`, and returns the result with the updated leaderboard. GET `/?scenario=<id>` reads the leaderboard for initial-load rendering. CORS is restricted via the `ALLOWED_ORIGINS` allowlist.
+- **Worker** (`worker/src/index.js`, deploys as a Cloudflare Worker) is the judge proxy. Three routes:
+  - **POST `/verify`** — accepts `{password}`, returns `{ok}` and either 200 or 401 (constant-time comparison). Used by the landing page.
+  - **POST `/`** — receives `{scenario, prompt, name, password}`. Rejects with 401 if the password doesn't match `env.ACCESS_PASSWORD`. Otherwise validates the scenario shape and name, calls `buildJudgePrompt`, forwards to OpenRouter's chat-completions API with the key from `env.OPENROUTER_API_KEY`, strips any code fences, parses JSON, computes mech/holistic totals server-side, appends an entry to KV via `appendLeaderboard`, and returns the result with the updated leaderboard.
+  - **GET `/?scenario=<id>`** — reads the leaderboard for initial-load rendering. **Unauthenticated by design** so spectators and the gated landing page can show scores without unlocking.
+
+  CORS is restricted via the `ALLOWED_ORIGINS` allowlist.
 
 Key seams when changing behavior:
 
@@ -91,6 +96,7 @@ These are the production-only steps that local dev does not need. The deploy sec
 
 - [ ] **`worker/wrangler.toml`** still has placeholder KV ids (`0000…`). Replace with the real ids returned by `wrangler kv:namespace create LEADERBOARD` and the matching `--preview` command.
 - [ ] **OpenRouter secret** has not been set in the production worker. `cd worker && wrangler secret put OPENROUTER_API_KEY`.
+- [ ] **ACCESS_PASSWORD secret** has not been set in the production worker. Without it, every judge POST and `/verify` returns 401 — the landing gate will refuse all passwords. `cd worker && wrangler secret put ACCESS_PASSWORD`.
 - [ ] **Worker has not been deployed.** `cd worker && npm run deploy`. Note the assigned URL.
 - [ ] **`PROD_JUDGE_ENDPOINT`** in `app.js` still points at `https://prompt-arena-judge.<your-subdomain>.workers.dev` (literal placeholder). Replace with the URL Wrangler returned.
 - [ ] **GitHub Pages origin** is not yet in `ALLOWED_ORIGINS` in `worker/src/index.js`. Add it and redeploy the worker.
@@ -100,4 +106,5 @@ These are the production-only steps that local dev does not need. The deploy sec
 
 - Single shot per page load — refreshing resets the lock. Discipline is social, not enforced.
 - Reflection textarea persists to `localStorage` only; never POSTed.
-- Worker enforces `prompt` ≤ 4000 chars, validates the scenario object shape, and requires a non-empty display name. Beyond that it trusts the client-supplied scenario (the worker doesn't load the YAML itself), so a curious student could submit a custom scenario object with an easier rubric. Acceptable for classroom use.
+- Worker enforces `prompt` ≤ 4000 chars, validates the scenario object shape, requires a non-empty display name, and requires a valid password. Beyond that it trusts the client-supplied scenario (the worker doesn't load the YAML itself), so a curious student could submit a custom scenario object with an easier rubric. Acceptable for classroom use.
+- The password gate is one shared classroom secret, not per-student auth. Its job is keeping random internet visitors off the OpenRouter bill, not preventing students from sharing the password with each other.

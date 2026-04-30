@@ -28,6 +28,7 @@ const state = {
 };
 
 const NAME_KEY = "prompt-arena:name";
+const PASSWORD_KEY = "prompt-arena:password";
 
 // ─── DOM helpers ───
 const $ = (id) => document.getElementById(id);
@@ -115,8 +116,24 @@ async function submitPrompt() {
     const res = await fetch(CONFIG.judgeEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ scenario: state.scenario, prompt, name: $("name-input").value.trim() }),
+      body: JSON.stringify({
+        scenario: state.scenario,
+        prompt,
+        name: $("name-input").value.trim(),
+        password: localStorage.getItem(PASSWORD_KEY) || "",
+      }),
     });
+
+    // If the stored password no longer works (server-side change),
+    // drop it and bounce the user back to the gate.
+    if (res.status === 401) {
+      try { localStorage.removeItem(PASSWORD_KEY); } catch {}
+      $("submit-status").textContent = "Access expired — refresh and re-enter the password.";
+      btn.disabled = false;
+      btn.textContent = "Lock in & submit";
+      $("prompt-input").disabled = false;
+      return;
+    }
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
@@ -269,8 +286,53 @@ function clamp(n, lo, hi) {
   return Math.max(lo, Math.min(hi, n));
 }
 
-// ─── Bootstrap ───
-document.addEventListener("DOMContentLoaded", () => {
+// ─── Landing-page password gate ───
+function showGate() {
+  $("gate").classList.remove("hidden");
+  $("app").classList.add("hidden");
+}
+function hideGate() {
+  $("gate").classList.add("hidden");
+  $("app").classList.remove("hidden");
+}
+
+async function verifyPassword(pw) {
+  if (!pw) return false;
+  try {
+    const res = await fetch(`${CONFIG.judgeEndpoint}/verify`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: pw }),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+async function gateSubmit(e) {
+  e.preventDefault();
+  const pw = $("gate-password").value;
+  if (!pw) return;
+  const btn = $("gate-submit");
+  btn.disabled = true;
+  btn.textContent = "Checking…";
+  $("gate-error").classList.add("hidden");
+  const ok = await verifyPassword(pw);
+  if (ok) {
+    try { localStorage.setItem(PASSWORD_KEY, pw); } catch {}
+    hideGate();
+    initApp();
+  } else {
+    $("gate-error").classList.remove("hidden");
+    $("gate-password").value = "";
+    btn.disabled = false;
+    btn.textContent = "Enter";
+    $("gate-password").focus();
+  }
+}
+
+function initApp() {
   loadScenario();
   try {
     const stored = localStorage.getItem(NAME_KEY);
@@ -278,4 +340,18 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch {}
   $("submit-btn").addEventListener("click", submitPrompt);
   $("reflection-save").addEventListener("click", saveReflection);
+}
+
+// ─── Bootstrap ───
+document.addEventListener("DOMContentLoaded", async () => {
+  $("gate-form").addEventListener("submit", gateSubmit);
+  const stored = (() => { try { return localStorage.getItem(PASSWORD_KEY); } catch { return null; } })();
+  if (stored && await verifyPassword(stored)) {
+    hideGate();
+    initApp();
+  } else {
+    if (stored) { try { localStorage.removeItem(PASSWORD_KEY); } catch {} }
+    showGate();
+    $("gate-password").focus();
+  }
 });

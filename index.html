@@ -27,6 +27,41 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- ─── Landing gate (shown until a valid password is entered) ─── -->
+  <div id="gate" class="gate hidden">
+    <article class="gate-card">
+      <svg class="gate-mark" viewBox="0 0 200 200" role="img" aria-label="Prompt Arena">
+        <defs>
+          <linearGradient id="pa-gate" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#F97316" />
+            <stop offset="100%" stop-color="#0891B2" />
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="88" stroke="#0A0A0A" stroke-width="8" fill="none" />
+        <path d="M 64 56 L 134 100 L 64 144" stroke="url(#pa-gate)" stroke-width="14" fill="none" stroke-linejoin="round" />
+      </svg>
+      <h1 class="gate-wordmark">Prompt Arena</h1>
+      <p class="gate-tag">Score the prompt, not the student.</p>
+      <p class="gate-desc">
+        A classroom prompt-engineering exercise. You'll get one data-analytics
+        scenario and one dataset; iterate on your prompt locally in RStudio with
+        Microsoft Copilot, then submit your final, polished version here once.
+        Two scores come back: seven binary mechanical checks and one editor's
+        verdict in the voice of the scenario's audience. Both land on the class
+        leaderboard.
+      </p>
+      <form id="gate-form" class="gate-form">
+        <input id="gate-password" type="password" placeholder="Access password" autocomplete="current-password" autofocus />
+        <button id="gate-submit" type="submit" class="primary">Enter</button>
+        <p id="gate-error" class="gate-error hidden">That password isn't right — try again.</p>
+      </form>
+      <p class="gate-foot muted">QAME · BFH / HSG</p>
+    </article>
+  </div>
+
+  <!-- ─── Main app (shown after the gate is unlocked) ─── -->
+  <div id="app" class="hidden">
   <header class="masthead">
     <div class="masthead-inner">
       <div class="brand">
@@ -152,6 +187,7 @@
     <span>Prompt Arena · QAME · BFH / HSG</span>
     <span class="muted">No student data is collected.</span>
   </footer>
+  </div><!-- /#app -->
 
   <!-- js-yaml for parsing scenario YAML files (small, MIT) -->
   <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
