@@ -60,12 +60,13 @@ Key seams when changing behavior:
 
 ## Scenarios
 
-Four are shipped, each anchored to specific concepts from the BSAN courses (`~/teaching/BSAN/datenanalyse-mit-generativer-ki` and `…datenvisualisierung-mit-generativer-ki`):
+Five are shipped, each anchored to specific concepts from the BSAN courses (`~/teaching/BSAN/datenanalyse-mit-generativer-ki` and `…datenvisualisierung-mit-generativer-ki`):
 
 - `swiss-cantons` (round 1) — per-capita normalization, **median + IQR**, outliers above Q3 + 1.5·IQR. 26 cantons × 10 years (260 rows, 6 cols).
 - `sbb-delays` (round 2) — categorical top-N by sum, hour-of-day, weekday/weekend split, **semantic colour per cause** (IBCS). 1800 incidents × 9 cols across 2022-2024.
 - `apartment-rent` (round 3) — scatter + smoother, **Pearson correlation per facet**, IBCS-style **direct in-panel annotations** (no side legend). 800 listings × 9 cols across 8 cities.
 - `stock-returns` (round 4) — daily simple returns, **annualized SD (× √252)**, **risk-adjusted return**, cumulative indexing-to-100, sector-coded color. 25 tickers × 1304 trading days (32600 rows × 7 cols, 2020-2024).
+- `saas-product-lines` (round 5) — **smart ggplot2 layering** + matching the geom to the relationship. Tests Q4 aggregation, YoY growth, ranked categorical comparison, ordered factors, direct value labels, and currency / percent scales. 6 products × 3 regions × 24 months (432 rows, 7 cols).
 
 Each scenario tests 7 mechanical checks (10 points each) plus a 0-30 holistic. Datasets are synthetic but tuned so the headline answer is unambiguous (clean separation between top-N and the rest).
 

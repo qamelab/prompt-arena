@@ -9,7 +9,7 @@
 // Common alternatives: "anthropic/claude-opus-4" (higher quality, pricier),
 // "anthropic/claude-haiku-4.5" (cheaper/faster), "openai/gpt-4o", etc.
 const MODEL = "anthropic/claude-sonnet-4.5";
-const MAX_TOKENS = 4000;
+const MAX_TOKENS = 10000;
 
 const ALLOWED_ORIGINS = [
   "http://localhost:8000",

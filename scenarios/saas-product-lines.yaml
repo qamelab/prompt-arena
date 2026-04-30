@@ -1,0 +1,84 @@
+id: saas-product-lines
+title: Q4 product-line board chart
+round: 5
+
+# ─── Public parts (shown to students) ───
+briefing: |
+  You are an analyst on the controlling team of a Swiss B2B software company.
+  The CFO wants ONE chart for the Q4 board pack — a single figure that lets the
+  board see, at a glance, which of the six product lines are pulling weight in
+  Q4 2024 and which are slipping year-over-year.
+
+task: |
+  Build a single chart that ranks the six product lines by Q4 2024 revenue and
+  also communicates each line's year-over-year change versus Q4 2023.
+  The chart must be the right *kind* of chart for this comparison — one that an
+  executive can scan in five seconds — and it must use ggplot2 layers smartly:
+  pick a geom that fits a ranked categorical comparison, sort the categories by
+  the ranking metric, label values directly on the geoms, format revenue with
+  currency / abbreviated units, and apply a clean minimal theme.
+
+dataset:
+  filename: saas_product_lines.csv
+  rows: 432
+  schema_preview: |
+    month     product   region     revenue_chf   new_customers  churned_customers  active_customers
+    2023-01   Edge      Europe        1382000               48                 12               412
+    2023-01   Edge      Americas      1195000               41                 11               356
+    2023-01   Edge      APAC           622000               23                  6               186
+    2023-01   Vault     Europe         985000               32                 18               498
+    ... (6 products × 3 regions × 24 months, 2023-01 through 2024-12; 432 rows)
+  description: |
+    Synthetic monthly performance data for a B2B SaaS company. Columns: month
+    (chr "YYYY-MM"), product (chr — Edge / Vault / Atlas / Beacon / Forge /
+    Pulse), region (chr — Europe / Americas / APAC), revenue_chf (num — monthly
+    booked revenue), new_customers (int — net additions in the month),
+    churned_customers (int — losses in the month), active_customers (int —
+    end-of-month total). 6 × 3 × 24 = 432 rows. Quarter is implicit in the month
+    column.
+
+# ─── Hidden parts (used by the judge, not shown in UI) ───
+mechanical_checks:
+  - key: aggregates_q4_revenue_per_product
+    label: Aggregates Q4 revenue per product
+    description: revenue is summed across Q4 months (Oct / Nov / Dec) and across regions, restricted to 2024, to produce one revenue figure per product
+  - key: computes_yoy_growth
+    label: Computes YoY growth Q4 2024 vs Q4 2023
+    description: per product, computes (Q4_2024_revenue / Q4_2023_revenue) − 1 — not just the raw 2024 number, not month-over-month
+  - key: appropriate_geom_for_ranking
+    label: Geom fits ranked categorical comparison
+    description: chart uses geom_col / geom_bar with coord_flip, a dumbbell, a paired-bar, or another geom that suits a ranked categorical comparison — NOT a line chart over an unordered category, NOT a pie / donut, NOT a 3D bar
+  - key: products_ordered_by_metric
+    label: Products sorted by metric
+    description: products are reordered (e.g. forcats::fct_reorder, factor() with ordered levels, or arrange()) so the geoms sort by Q4 2024 revenue or by YoY growth — NOT alphabetical, NOT input order
+  - key: yoy_visualised_alongside_revenue
+    label: YoY shown alongside revenue
+    description: YoY growth is encoded somewhere visible — colour scale on bars, paired bars, dumbbell delta, secondary axis, or a direct text label on each bar — not just printed in the console
+  - key: direct_value_labels
+    label: Direct value labels on geoms
+    description: revenue values OR YoY percentages appear directly on the bars (geom_text or geom_label with appropriate nudge/hjust), in IBCS / Tufte direct-labelling style — not pushed exclusively to a legend or axis ticks
+  - key: scales_format_currency_or_percent
+    label: Scales format currency / percent
+    description: at least one axis or label uses scales::label_currency, label_comma, label_number with K/M suffix, or label_percent — raw 7-digit numbers or unrounded decimals are not acceptable
+
+holistic:
+  audience: CFO and board reading a one-page Q4 deck
+  voice: chief of staff who has thirty seconds to brief the board on this slide
+  evaluation_lens:
+    - Can the board read the ranking and the year-over-year story without consulting any other slide?
+    - Is the geom honestly fit to the data — categorical-comparison geom for categorical data, no decorative excess (Tufte data-ink ratio, IBCS colour-as-information)?
+    - Are ggplot2 layers used purposefully — aesthetic, geom, scale, theme each carrying its weight, no redundant or contradictory layers?
+    - Is the prompt scoped well — does it guide the student toward the right kind of chart without over-specifying every aesthetic?
+  anchors:
+    "0-9": misleading or unreadable, or a chart type that fights the data (pie, 3D, line over unordered categories)
+    "10-19": readable but the board would not approve it without rework
+    "20-26": good — would land in the deck with minor copy edits
+    "27-30": exceptional — board-ready as-is, every layer earning its place
+
+# ─── Seeded leaderboard ───
+leaderboard_seed:
+  - {name: "Selina F.", mech: 70, hol: 26}
+  - {name: "Andrea B.", mech: 60, hol: 19}
+  - {name: "Niklas P.", mech: 50, hol: 23}
+  - {name: "Hanna E.",  mech: 40, hol: 21}
+  - {name: "Cyril W.",  mech: 30, hol: 18}
