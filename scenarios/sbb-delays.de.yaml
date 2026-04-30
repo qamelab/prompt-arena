@@ -93,9 +93,4 @@ holistic:
     "20-26": gut — würde mit kleineren Korrekturen ins Briefing-Pack aufgenommen
     "27-30": ausgezeichnet — pressereif
 
-leaderboard_seed:
-  - {name: "Nina V.",    mech: 60, hol: 23}
-  - {name: "Patrick L.", mech: 70, hol: 14}
-  - {name: "Mia K.",     mech: 50, hol: 22}
-  - {name: "Joel B.",    mech: 40, hol: 18}
-  - {name: "Aylin S.",   mech: 30, hol: 20}
+leaderboard_seed: []

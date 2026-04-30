@@ -87,9 +87,4 @@ holistic:
     "27-30": exceptional — homepage-ready as-is
 
 # ─── Seeded leaderboard ───
-leaderboard_seed:
-  - {name: "Robin M.", mech: 70, hol: 24}
-  - {name: "Sara D.",  mech: 60, hol: 19}
-  - {name: "Felix T.", mech: 50, hol: 22}
-  - {name: "Ines C.",  mech: 40, hol: 21}
-  - {name: "Jonas R.", mech: 30, hol: 18}
+leaderboard_seed: []

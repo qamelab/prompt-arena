@@ -85,11 +85,4 @@ holistic:
     "27-30": exceptional — sharp, publication-ready as-is
 
 # ─── Seeded leaderboard ───
-leaderboard_seed:
-  - {name: "Anna K.",  mech: 60, hol: 27}
-  - {name: "Marco P.", mech: 70, hol: 12}
-  - {name: "Lukas B.", mech: 50, hol: 24}
-  - {name: "Sarah W.", mech: 50, hol: 19}
-  - {name: "Tim H.",   mech: 40, hol: 21}
-  - {name: "Elena R.", mech: 30, hol: 22}
-  - {name: "David M.", mech: 30, hol: 17}
+leaderboard_seed: []

@@ -98,9 +98,4 @@ holistic:
     "20-26": gut — würde mit kleineren Korrekturen veröffentlicht
     "27-30": ausgezeichnet — feature-reif
 
-leaderboard_seed:
-  - {name: "Mara V.",   mech: 70, hol: 25}
-  - {name: "Yannik R.", mech: 60, hol: 18}
-  - {name: "Aisha O.",  mech: 50, hol: 23}
-  - {name: "Tobias H.", mech: 50, hol: 14}
-  - {name: "Léa B.",    mech: 30, hol: 22}
+leaderboard_seed: []

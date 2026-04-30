@@ -92,9 +92,4 @@ holistic:
     "27-30": exceptional — board-ready as-is, every layer earning its place
 
 # ─── Seeded leaderboard ───
-leaderboard_seed:
-  - {name: "Selina F.", mech: 70, hol: 26}
-  - {name: "Andrea B.", mech: 60, hol: 19}
-  - {name: "Niklas P.", mech: 50, hol: 23}
-  - {name: "Hanna E.",  mech: 40, hol: 21}
-  - {name: "Cyril W.",  mech: 30, hol: 18}
+leaderboard_seed: []
