@@ -14,7 +14,9 @@ const MAX_TOKENS = 10000;
 const ALLOWED_ORIGINS = [
   "http://localhost:8000",
   "http://localhost:5173",
-  "https://qamelab.github.io",
+  "https://qamelab.github.io",     // GitHub Pages default URL
+  "https://qamelab.org",            // custom domain
+  "https://www.qamelab.org",        // www variant of custom domain
 ];
 
 const MAX_NAME_LEN = 30;
