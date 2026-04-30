@@ -21,7 +21,7 @@ Cloudflare Worker as a stateless API proxy, no student data collected.
 │  scenarios/*   │                               └────────┬─────────┘
 │ (GitHub Pages) │                                        │
 └────────────────┘                              ┌─────────▼────────┐
-                                                │  Anthropic API   │
+                                                │  OpenRouter API  │
                                                 └──────────────────┘
 ```
 
@@ -37,7 +37,7 @@ and builds the judge prompt server-side from the scenario the client sends.
 cd worker
 npm install
 npx wrangler login
-npx wrangler secret put ANTHROPIC_API_KEY    # paste your sk-ant-... key
+npx wrangler secret put OPENROUTER_API_KEY   # paste your sk-or-... key
 npm run dev                                   # local: http://localhost:8787
 # or
 npm run deploy                                # production

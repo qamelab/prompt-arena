@@ -24,7 +24,10 @@ const state = {
   locked: false,
   yourMech: null,
   yourHol: null,
+  liveLeaderboard: [], // entries from worker KV (real submissions)
 };
+
+const NAME_KEY = "prompt-arena:name";
 
 // ─── DOM helpers ───
 const $ = (id) => document.getElementById(id);
@@ -44,6 +47,7 @@ async function loadScenario() {
     state.scenario = jsyaml.load(text);
     renderScenario();
     renderLeaderboard();
+    fetchLeaderboard();
   } catch (e) {
     $("scenario-title").textContent = "Could not load scenario";
     $("scenario-task").textContent = `Failed to fetch ${url} — ${e.message}`;
@@ -58,18 +62,42 @@ function renderScenario() {
   $("scenario-briefing").textContent = s.briefing.trim();
   $("scenario-task").textContent = s.task.trim();
   $("scenario-schema").textContent = s.dataset.schema_preview.trim();
-  $("meta-filename").textContent = s.dataset.filename;
+  const fileLink = $("meta-filename");
+  fileLink.textContent = s.dataset.filename;
+  fileLink.href = `${CONFIG.scenariosDir}/${s.dataset.filename}`;
   $("meta-rows").textContent = s.dataset.rows;
+}
+
+// ─── Leaderboard fetch ───
+async function fetchLeaderboard() {
+  if (!state.scenario?.id) return;
+  try {
+    const url = `${CONFIG.judgeEndpoint}?scenario=${encodeURIComponent(state.scenario.id)}`;
+    const res = await fetch(url);
+    if (!res.ok) return;
+    const data = await res.json();
+    state.liveLeaderboard = Array.isArray(data.leaderboard) ? data.leaderboard : [];
+    renderLeaderboard();
+  } catch {
+    // Silent — leaderboard is best-effort. Seeded entries still render.
+  }
 }
 
 // ─── Submission ───
 async function submitPrompt() {
   if (state.locked) return;
+  const name = $("name-input").value.trim();
+  if (!name) {
+    $("submit-status").textContent = "Enter a display name first.";
+    $("name-input").focus();
+    return;
+  }
   const prompt = $("prompt-input").value.trim();
   if (!prompt) {
     $("submit-status").textContent = "Empty prompt — type something first.";
     return;
   }
+  try { localStorage.setItem(NAME_KEY, name); } catch {}
 
   const btn = $("submit-btn");
   btn.disabled = true;
@@ -87,7 +115,7 @@ async function submitPrompt() {
     const res = await fetch(CONFIG.judgeEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ scenario: state.scenario, prompt }),
+      body: JSON.stringify({ scenario: state.scenario, prompt, name: $("name-input").value.trim() }),
     });
 
     if (!res.ok) {
@@ -163,17 +191,24 @@ function renderResult(result) {
   // Reflection card
   $("reflection-card").classList.remove("hidden");
 
-  // Leaderboard
+  // Leaderboard — prefer KV-backed list returned with the result
   state.yourMech = mechScore;
   state.yourHol = holistic;
+  if (Array.isArray(result.leaderboard)) {
+    state.liveLeaderboard = result.leaderboard;
+  }
   renderLeaderboard();
 }
 
 // ─── Leaderboard ───
 function renderLeaderboard() {
   if (!state.scenario) return;
-  const seed = state.scenario.leaderboard_seed || [];
-  const rows = seed.map((r) => ({ ...r, total: Math.min(100, r.mech + r.hol) }));
+  const seed = (state.scenario.leaderboard_seed || []).map((r) => ({ ...r, seed: true }));
+  const live = (state.liveLeaderboard || []).map((r) => ({ ...r }));
+  const rows = [...seed, ...live].map((r) => ({
+    ...r,
+    total: Math.min(100, (r.mech || 0) + (r.hol || 0)),
+  }));
 
   if (state.yourMech !== null && state.yourHol !== null) {
     rows.push({
@@ -233,6 +268,10 @@ function clamp(n, lo, hi) {
 // ─── Bootstrap ───
 document.addEventListener("DOMContentLoaded", () => {
   loadScenario();
+  try {
+    const stored = localStorage.getItem(NAME_KEY);
+    if (stored) $("name-input").value = stored;
+  } catch {}
   $("submit-btn").addEventListener("click", submitPrompt);
   $("reflection-save").addEventListener("click", saveReflection);
 });

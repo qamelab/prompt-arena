@@ -205,7 +205,8 @@ html, body {
 }
 
 /* ─── Form ─── */
-textarea {
+textarea,
+input[type="text"] {
   width: 100%;
   font-family: var(--font-sans);
   font-size: 14px;
@@ -215,14 +216,21 @@ textarea {
   border-radius: var(--radius);
   background: var(--bg-card);
   color: var(--ink);
+}
+textarea {
   resize: vertical;
 }
-textarea:focus {
+input[type="text"] {
+  margin-bottom: 16px;
+}
+textarea:focus,
+input[type="text"]:focus {
   outline: none;
   border-color: var(--orange);
   box-shadow: 0 0 0 3px var(--orange-soft);
 }
-textarea:disabled {
+textarea:disabled,
+input[type="text"]:disabled {
   background: var(--bg-soft);
   color: var(--ink-3);
   cursor: not-allowed;

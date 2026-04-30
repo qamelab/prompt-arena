@@ -37,7 +37,7 @@
         <div id="scenario-task" class="scenario-task"></div>
         <pre id="scenario-schema" class="scenario-schema"></pre>
         <div class="scenario-meta">
-          <span><span class="meta-key">File</span> <span id="meta-filename">—</span></span>
+          <span><span class="meta-key">File</span> <a id="meta-filename" href="#" download>—</a></span>
           <span><span class="meta-key">Rows</span> <span id="meta-rows">—</span></span>
         </div>
       </article>
@@ -48,6 +48,9 @@
       <div class="callout">
         Iterate freely in RStudio with Microsoft Copilot. When you're sure, paste your final prompt below — submission locks it in.
       </div>
+      <div class="block-label">Display name</div>
+      <input id="name-input" type="text" maxlength="30" placeholder="Shown on the class leaderboard" autocomplete="off" />
+
       <div class="block-label">Your final prompt</div>
       <textarea id="prompt-input" rows="6" placeholder="Paste your final, polished prompt…"></textarea>
       <div class="submit-row">

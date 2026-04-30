@@ -27,6 +27,8 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html styles.css app.js _site/
+          # scenarios/ contains both the YAML configs and the dataset CSVs
+          # students download from the UI — copy the whole directory
           cp -r scenarios _site/
       - uses: actions/upload-pages-artifact@v3
         with:

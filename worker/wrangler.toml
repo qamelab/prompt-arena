@@ -3,7 +3,18 @@ main = "src/index.js"
 compatibility_date = "2025-04-01"
 
 # After deploying, set the API key with:
-#   wrangler secret put ANTHROPIC_API_KEY
+#   wrangler secret put OPENROUTER_API_KEY
 #
 # To run locally:
 #   wrangler dev --local
+#
+# Before deploying for the first time, create a KV namespace and put its
+# id below (replacing the placeholder). For local dev the placeholder is
+# fine — wrangler emulates KV in-process when run with --local.
+#   wrangler kv:namespace create LEADERBOARD
+#   wrangler kv:namespace create LEADERBOARD --preview
+
+[[kv_namespaces]]
+binding = "LEADERBOARD"
+id = "0000000000000000000000000000000000"
+preview_id = "0000000000000000000000000000000000"

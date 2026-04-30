@@ -1,11 +1,14 @@
 // Prompt Arena — judge worker
 // Stateless Cloudflare Worker that builds the judge prompt server-side and
-// calls the Anthropic API. The API key never touches the client.
+// calls the OpenRouter chat-completions API. The API key never touches the client.
 //
 // Deploy with: wrangler deploy
-// Set the secret with: wrangler secret put ANTHROPIC_API_KEY
+// Set the secret with: wrangler secret put OPENROUTER_API_KEY
 
-const MODEL = "claude-sonnet-4-6";  // adjust to claude-opus-4-7 for higher quality, or claude-haiku-4-5-20251001 for cheaper/faster
+// OpenRouter model id. Override per environment by editing this constant.
+// Common alternatives: "anthropic/claude-opus-4" (higher quality, pricier),
+// "anthropic/claude-haiku-4.5" (cheaper/faster), "openai/gpt-4o", etc.
+const MODEL = "anthropic/claude-sonnet-4.5";
 const MAX_TOKENS = 4000;
 
 const ALLOWED_ORIGINS = [
@@ -15,11 +18,14 @@ const ALLOWED_ORIGINS = [
   // "https://umatter.github.io",
 ];
 
+const MAX_NAME_LEN = 30;
+const MAX_LEADERBOARD = 20;
+
 function corsHeaders(origin) {
   const allow = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
   return {
     "Access-Control-Allow-Origin": allow,
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Max-Age": "86400",
   };
@@ -33,6 +39,43 @@ function jsonResponse(body, status, origin) {
       ...corsHeaders(origin),
     },
   });
+}
+
+function sanitizeName(s) {
+  if (typeof s !== "string") return null;
+  // strip control chars, collapse whitespace, cap length
+  const cleaned = s.replace(/[\u0000-\u001f\u007f]/g, "").replace(/\s+/g, " ").trim().slice(0, MAX_NAME_LEN);
+  return cleaned || null;
+}
+
+function lbKey(scenarioId) {
+  return `lb:${scenarioId}`;
+}
+
+async function readLeaderboard(env, scenarioId) {
+  if (!env.LEADERBOARD || typeof scenarioId !== "string" || !scenarioId) return [];
+  const raw = await env.LEADERBOARD.get(lbKey(scenarioId));
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+// Best-effort append. KV is eventually consistent and there is no CAS, so
+// concurrent writers can lose entries — acceptable for a classroom-scale
+// leaderboard. The trim happens on read AND write so a runaway list still
+// stays bounded.
+async function appendLeaderboard(env, scenarioId, entry) {
+  if (!env.LEADERBOARD || !scenarioId) return [];
+  const current = await readLeaderboard(env, scenarioId);
+  current.push(entry);
+  current.sort((a, b) => (b.mech + b.hol) - (a.mech + a.hol));
+  const trimmed = current.slice(0, MAX_LEADERBOARD);
+  await env.LEADERBOARD.put(lbKey(scenarioId), JSON.stringify(trimmed));
+  return trimmed;
 }
 
 function validateScenario(s) {
@@ -106,13 +149,15 @@ Return ONLY valid JSON, no markdown fences, in EXACTLY this shape:
 {"code": "string", "output_description": "string", "checks": {${scenario.mechanical_checks.map((c) => `"${c.key}": false`).join(", ")}}, "holistic_score": 0, "mech_feedback": "string", "holistic_feedback": "string"}`;
 }
 
-async function callAnthropic(judgePrompt, apiKey) {
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
+async function callJudge(judgePrompt, apiKey) {
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
+      Authorization: `Bearer ${apiKey}`,
+      // Optional but recommended by OpenRouter for analytics/attribution.
+      "HTTP-Referer": "https://github.com/umatter/prompt-arena",
+      "X-Title": "Prompt Arena",
     },
     body: JSON.stringify({
       model: MODEL,
@@ -123,14 +168,11 @@ async function callAnthropic(judgePrompt, apiKey) {
 
   if (!response.ok) {
     const errText = await response.text();
-    throw new Error(`Anthropic API error ${response.status}: ${errText}`);
+    throw new Error(`OpenRouter error ${response.status}: ${errText}`);
   }
 
   const data = await response.json();
-  const text = data.content
-    .map((b) => (b.type === "text" ? b.text : ""))
-    .join("")
-    .trim();
+  const text = (data.choices?.[0]?.message?.content || "").trim();
 
   // Strip any accidental code fences
   const cleaned = text
@@ -149,6 +191,17 @@ export default {
       return new Response(null, { status: 204, headers: corsHeaders(origin) });
     }
 
+    // GET ?scenario=<id> — read current leaderboard for a scenario
+    if (request.method === "GET") {
+      const url = new URL(request.url);
+      const scenarioId = url.searchParams.get("scenario");
+      if (!scenarioId) {
+        return jsonResponse({ error: "Missing ?scenario=<id>" }, 400, origin);
+      }
+      const rows = await readLeaderboard(env, scenarioId);
+      return jsonResponse({ leaderboard: rows }, 200, origin);
+    }
+
     if (request.method !== "POST") {
       return jsonResponse({ error: "Method not allowed" }, 405, origin);
     }
@@ -160,7 +213,7 @@ export default {
       return jsonResponse({ error: "Invalid JSON" }, 400, origin);
     }
 
-    const { scenario, prompt } = body;
+    const { scenario, prompt, name } = body;
     if (!scenario || !prompt) {
       return jsonResponse({ error: "Missing scenario or prompt" }, 400, origin);
     }
@@ -174,14 +227,38 @@ export default {
       return jsonResponse({ error: `Invalid scenario: ${scenarioErr}` }, 400, origin);
     }
 
-    if (!env.ANTHROPIC_API_KEY) {
+    const cleanName = sanitizeName(name);
+    if (!cleanName) {
+      return jsonResponse({ error: "Display name is required" }, 400, origin);
+    }
+
+    if (!env.OPENROUTER_API_KEY) {
       return jsonResponse({ error: "Server not configured" }, 500, origin);
     }
 
     try {
       const judgePrompt = buildJudgePrompt(scenario, prompt);
-      const result = await callAnthropic(judgePrompt, env.ANTHROPIC_API_KEY);
-      return jsonResponse(result, 200, origin);
+      const result = await callJudge(judgePrompt, env.OPENROUTER_API_KEY);
+
+      // Compute mech/hol totals identically to the frontend so KV is
+      // authoritative even if the client tampers with the rendered display.
+      const checks = result.checks || {};
+      let passed = 0;
+      for (const c of scenario.mechanical_checks) if (checks[c.key]) passed++;
+      const mech = passed * 10;
+      const hol = Math.max(0, Math.min(30, Math.round(Number(result.holistic_score) || 0)));
+
+      let leaderboard = [];
+      if (typeof scenario.id === "string" && scenario.id) {
+        leaderboard = await appendLeaderboard(env, scenario.id, {
+          name: cleanName,
+          mech,
+          hol,
+          ts: Date.now(),
+        });
+      }
+
+      return jsonResponse({ ...result, leaderboard }, 200, origin);
     } catch (e) {
       return jsonResponse({ error: e.message }, 500, origin);
     }
