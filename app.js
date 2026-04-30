@@ -218,7 +218,7 @@ async function loadScenario() {
   const url = `${CONFIG.scenariosDir}/${slug}.${state.lang}.yaml`;
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = await res.text();
     state.scenario = jsyaml.load(text);
@@ -250,7 +250,7 @@ async function fetchLeaderboard() {
   if (!state.scenario?.id) return;
   try {
     const url = `${CONFIG.judgeEndpoint}?scenario=${encodeURIComponent(state.scenario.id)}`;
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: "no-cache" });
     if (!res.ok) return;
     const data = await res.json();
     state.liveLeaderboard = Array.isArray(data.leaderboard) ? data.leaderboard : [];
