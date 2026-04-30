@@ -1,721 +1,1801 @@
-route,service_type,cause,start_time,delay_min,year
-St. Gallen-Zürich,IR,Boarding,2023-01-01 06:59:00,12,2023
-Genève-Lausanne,IC,External,2023-01-01 14:18:00,17,2023
-St. Gallen-Zürich,IR,External,2023-01-01 19:33:00,4,2023
-St. Gallen-Zürich,IR,Boarding,2023-01-02 19:51:00,2,2023
-Lugano-Locarno,RE,Operations,2023-01-04 06:38:00,12,2023
-Genève-Lausanne,IC,Rolling stock,2023-01-06 03:16:00,7,2023
-Zürich-Bern,IC,Infrastructure,2023-01-06 14:29:00,5,2023
-S5 Bern,S,External,2023-01-07 21:18:00,4,2023
-S2 Zürich,S,Connection wait,2023-01-08 02:32:00,6,2023
-S2 Zürich,S,Operations,2023-01-08 12:48:00,6,2023
-Olten-Zofingen,RE,Rolling stock,2023-01-10 06:44:00,12,2023
-Zürich-Schaffhausen,IR,Operations,2023-01-11 16:43:00,13,2023
-Zürich-Chur,IC,Rolling stock,2023-01-11 19:26:00,4,2023
-Bern-Brig,IC,Operations,2023-01-12 06:27:00,12,2023
-St. Gallen-Zürich,IR,External,2023-01-12 07:38:00,16,2023
-Zürich-Schaffhausen,IR,Boarding,2023-01-13 19:06:00,3,2023
-S5 Bern,S,Rolling stock,2023-01-14 21:39:00,12,2023
-Basel-Lausanne,IC,Operations,2023-01-15 07:57:00,6,2023
-Olten-Zofingen,RE,Connection wait,2023-01-15 08:18:00,5,2023
-Zürich-Schaffhausen,IR,Boarding,2023-01-16 05:40:00,2,2023
-S2 Zürich,S,Operations,2023-01-17 01:00:00,21,2023
-Zürich-Bern,IC,Operations,2023-01-18 08:18:00,10,2023
-Zürich-Chur,IC,Operations,2023-01-19 07:53:00,2,2023
-Genève-Lausanne,IC,Operations,2023-01-21 11:29:00,2,2023
-Zürich-Genève,IC,Operations,2023-01-24 05:37:00,14,2023
-S5 Bern,S,Infrastructure,2023-01-24 09:29:00,10,2023
-Zürich-Chur,IC,External,2023-01-24 15:08:00,4,2023
-S6 Basel,S,Boarding,2023-01-26 08:59:00,2,2023
-Lugano-Locarno,RE,Infrastructure,2023-01-26 16:40:00,11,2023
-St. Gallen-Zürich,IR,Boarding,2023-01-27 09:36:00,10,2023
-Lugano-Locarno,RE,Boarding,2023-01-28 09:09:00,14,2023
-Bern-Belp,RE,Boarding,2023-01-29 04:31:00,10,2023
-Zürich-Chur,IC,Operations,2023-01-30 07:28:00,8,2023
-S6 Basel,S,Rolling stock,2023-01-30 19:10:00,7,2023
-Zürich-Schaffhausen,IR,Connection wait,2023-02-02 12:39:00,25,2023
-Bern-Belp,RE,Rolling stock,2023-02-02 21:40:00,5,2023
-Olten-Zofingen,RE,Operations,2023-02-03 20:39:00,14,2023
-Bern-Biel,IR,Rolling stock,2023-02-04 09:07:00,5,2023
-St. Gallen-Zürich,IR,Rolling stock,2023-02-04 09:24:00,10,2023
-Basel-Olten,IC,Rolling stock,2023-02-05 19:32:00,21,2023
-Zürich-Bern,IC,Rolling stock,2023-02-07 20:06:00,4,2023
-Bern-Biel,IR,Infrastructure,2023-02-08 11:55:00,3,2023
-S5 Bern,S,External,2023-02-11 05:46:00,6,2023
-S2 Zürich,S,Connection wait,2023-02-13 08:02:00,17,2023
-Lausanne-Brig,IR,Boarding,2023-02-13 13:34:00,12,2023
-St. Gallen-Zürich,IR,External,2023-02-13 15:02:00,2,2023
-Zürich-Schaffhausen,IR,Infrastructure,2023-02-14 12:04:00,4,2023
-Zürich-Chur,IC,Boarding,2023-02-17 08:15:00,2,2023
-Basel-Olten,IC,Boarding,2023-02-18 13:50:00,8,2023
-Zürich-Chur,IC,Rolling stock,2023-02-19 11:26:00,20,2023
-Zürich-Genève,IC,External,2023-02-20 05:33:00,34,2023
-Zürich-Luzern,IC,Boarding,2023-02-21 19:29:00,4,2023
-S6 Basel,S,Infrastructure,2023-02-24 11:29:00,22,2023
-St. Gallen-Zürich,IR,Infrastructure,2023-02-24 17:41:00,8,2023
-Zürich-Chur,IC,Operations,2023-02-25 16:06:00,3,2023
-Basel-Lausanne,IC,Boarding,2023-02-26 22:49:00,2,2023
-St. Gallen-Zürich,IR,External,2023-03-02 23:35:00,3,2023
-Zürich-Genève,IC,External,2023-03-04 12:08:00,9,2023
-Lausanne-Brig,IR,Boarding,2023-03-04 14:27:00,2,2023
-Lugano-Locarno,RE,Operations,2023-03-04 19:18:00,3,2023
-Lugano-Locarno,RE,Infrastructure,2023-03-06 10:55:00,15,2023
-Bern-Biel,IR,Boarding,2023-03-08 03:35:00,2,2023
-Genève-Lausanne,IC,Connection wait,2023-03-09 05:47:00,3,2023
-Zürich-Schaffhausen,IR,External,2023-03-09 14:39:00,13,2023
-Zürich-Luzern,IC,Rolling stock,2023-03-14 05:16:00,2,2023
-Lausanne-Brig,IR,Operations,2023-03-15 18:22:00,3,2023
-Bern-Belp,RE,Infrastructure,2023-03-15 23:01:00,8,2023
-Basel-Lausanne,IC,Operations,2023-03-16 04:07:00,2,2023
-Zürich-Genève,IC,External,2023-03-16 07:48:00,9,2023
-Zürich-Schaffhausen,IR,Connection wait,2023-03-16 09:00:00,20,2023
-Zürich-Genève,IC,External,2023-03-18 09:46:00,20,2023
-Basel-Olten,IC,External,2023-03-18 10:39:00,12,2023
-Lugano-Locarno,RE,Rolling stock,2023-03-21 18:15:00,12,2023
-Zürich-Genève,IC,Infrastructure,2023-03-21 22:41:00,15,2023
-S5 Bern,S,External,2023-03-24 18:32:00,6,2023
-Zürich-Luzern,IC,Operations,2023-03-27 11:14:00,8,2023
-S2 Zürich,S,Infrastructure,2023-03-28 09:15:00,26,2023
-Lausanne-Brig,IR,Connection wait,2023-03-28 13:44:00,10,2023
-Genève-Lausanne,IC,External,2023-03-28 13:51:00,2,2023
-Lugano-Locarno,RE,Infrastructure,2023-03-31 08:05:00,25,2023
-Basel-Olten,IC,Boarding,2023-03-31 08:06:00,2,2023
-Bern-Belp,RE,Boarding,2023-03-31 08:39:00,5,2023
-Basel-Olten,IC,External,2023-04-02 03:39:00,51,2023
-Basel-Olten,IC,External,2023-04-02 20:25:00,2,2023
-S1 Lausanne,S,Infrastructure,2023-04-04 05:36:00,13,2023
-Basel-Olten,IC,Operations,2023-04-04 15:02:00,5,2023
-Bern-Brig,IC,Boarding,2023-04-05 15:51:00,2,2023
-St. Gallen-Zürich,IR,Rolling stock,2023-04-06 22:23:00,13,2023
-Bern-Biel,IR,External,2023-04-07 09:05:00,2,2023
-Zürich-Chur,IC,Rolling stock,2023-04-07 14:24:00,31,2023
-Bern-Biel,IR,External,2023-04-07 23:31:00,6,2023
-Lugano-Locarno,RE,Connection wait,2023-04-09 13:35:00,9,2023
-Zürich-Luzern,IC,Infrastructure,2023-04-09 21:21:00,13,2023
-Zürich-Genève,IC,Operations,2023-04-11 11:09:00,16,2023
-Bern-Brig,IC,External,2023-04-12 13:11:00,3,2023
-Bern-Brig,IC,Operations,2023-04-14 01:44:00,13,2023
-Basel-Lausanne,IC,External,2023-04-15 12:53:00,8,2023
-Lausanne-Brig,IR,Infrastructure,2023-04-15 13:57:00,13,2023
-S6 Basel,S,Boarding,2023-04-15 17:50:00,2,2023
-Olten-Zofingen,RE,Rolling stock,2023-04-16 14:12:00,3,2023
-Bern-Biel,IR,Infrastructure,2023-04-17 22:50:00,11,2023
-Lugano-Locarno,RE,Rolling stock,2023-04-18 09:21:00,5,2023
-S1 Lausanne,S,Boarding,2023-04-18 21:59:00,2,2023
-S2 Zürich,S,Operations,2023-04-20 03:38:00,2,2023
-Genève-Lausanne,IC,Rolling stock,2023-04-22 09:11:00,2,2023
-Bern-Brig,IC,External,2023-04-22 12:00:00,5,2023
-S2 Zürich,S,Operations,2023-04-22 21:08:00,6,2023
-S1 Lausanne,S,Infrastructure,2023-04-23 18:06:00,7,2023
-Zürich-Genève,IC,External,2023-04-25 17:10:00,2,2023
-Zürich-Genève,IC,External,2023-04-25 17:37:00,35,2023
-Lugano-Locarno,RE,Connection wait,2023-04-27 07:31:00,3,2023
-Bern-Belp,RE,Rolling stock,2023-04-28 07:47:00,29,2023
-Bern-Belp,RE,Infrastructure,2023-04-28 09:24:00,16,2023
-St. Gallen-Zürich,IR,Boarding,2023-04-29 07:11:00,2,2023
-Zürich-Luzern,IC,Rolling stock,2023-04-29 14:56:00,6,2023
-S5 Bern,S,Boarding,2023-04-30 07:29:00,4,2023
-S5 Bern,S,External,2023-05-03 11:20:00,8,2023
-Lugano-Locarno,RE,Rolling stock,2023-05-05 05:19:00,7,2023
-Zürich-Chur,IC,Connection wait,2023-05-05 06:21:00,6,2023
-Genève-Lausanne,IC,Operations,2023-05-07 11:43:00,5,2023
-Zürich-Chur,IC,Infrastructure,2023-05-08 14:00:00,2,2023
-S1 Lausanne,S,Connection wait,2023-05-08 18:14:00,2,2023
-S2 Zürich,S,External,2023-05-09 15:10:00,15,2023
-S1 Lausanne,S,Boarding,2023-05-09 21:52:00,3,2023
-St. Gallen-Zürich,IR,Infrastructure,2023-05-10 20:54:00,4,2023
-Olten-Zofingen,RE,External,2023-05-12 19:23:00,7,2023
-Zürich-Bern,IC,Boarding,2023-05-12 22:03:00,10,2023
-Olten-Zofingen,RE,Boarding,2023-05-13 19:45:00,6,2023
-Basel-Lausanne,IC,External,2023-05-14 14:20:00,7,2023
-Basel-Lausanne,IC,Operations,2023-05-15 09:09:00,5,2023
-Zürich-Bern,IC,Infrastructure,2023-05-15 11:21:00,50,2023
-Lugano-Locarno,RE,External,2023-05-16 11:59:00,40,2023
-Zürich-Chur,IC,Connection wait,2023-05-16 18:18:00,2,2023
-Zürich-Genève,IC,Operations,2023-05-18 22:40:00,2,2023
-Zürich-Genève,IC,Connection wait,2023-05-19 13:42:00,2,2023
-Basel-Olten,IC,External,2023-05-20 19:36:00,5,2023
-Lausanne-Brig,IR,Operations,2023-05-21 11:03:00,2,2023
-Zürich-Luzern,IC,Boarding,2023-05-22 09:46:00,6,2023
-Lausanne-Brig,IR,Infrastructure,2023-05-24 14:01:00,2,2023
-Basel-Olten,IC,Connection wait,2023-05-26 17:20:00,2,2023
-Basel-Olten,IC,Operations,2023-05-26 18:56:00,11,2023
-Zürich-Schaffhausen,IR,External,2023-05-28 20:51:00,27,2023
-Basel-Olten,IC,Connection wait,2023-05-28 22:58:00,11,2023
-S2 Zürich,S,Boarding,2023-05-29 12:52:00,3,2023
-Olten-Zofingen,RE,Infrastructure,2023-05-31 10:27:00,4,2023
-S2 Zürich,S,Operations,2023-05-31 16:45:00,7,2023
-Bern-Brig,IC,Infrastructure,2023-06-02 09:47:00,52,2023
-Lausanne-Brig,IR,Connection wait,2023-06-04 07:02:00,3,2023
-Zürich-Luzern,IC,Infrastructure,2023-06-05 06:22:00,11,2023
-Zürich-Chur,IC,Connection wait,2023-06-08 16:43:00,4,2023
-St. Gallen-Zürich,IR,Operations,2023-06-09 10:38:00,2,2023
-Zürich-Genève,IC,Rolling stock,2023-06-09 14:07:00,10,2023
-St. Gallen-Zürich,IR,Infrastructure,2023-06-10 13:59:00,8,2023
-S5 Bern,S,Infrastructure,2023-06-11 00:55:00,24,2023
-Basel-Olten,IC,Infrastructure,2023-06-11 05:15:00,8,2023
-Zürich-Schaffhausen,IR,Connection wait,2023-06-11 10:36:00,9,2023
-Bern-Biel,IR,External,2023-06-13 12:12:00,2,2023
-S6 Basel,S,Infrastructure,2023-06-13 15:41:00,2,2023
-Olten-Zofingen,RE,Operations,2023-06-14 13:36:00,7,2023
-Zürich-Chur,IC,Infrastructure,2023-06-14 19:55:00,7,2023
-S5 Bern,S,Rolling stock,2023-06-15 11:57:00,6,2023
-S5 Bern,S,Infrastructure,2023-06-17 05:16:00,68,2023
-S2 Zürich,S,Operations,2023-06-17 12:23:00,2,2023
-Zürich-Chur,IC,Operations,2023-06-17 23:16:00,37,2023
-Basel-Lausanne,IC,Infrastructure,2023-06-18 08:41:00,38,2023
-Zürich-Genève,IC,External,2023-06-19 00:48:00,5,2023
-Zürich-Schaffhausen,IR,External,2023-06-19 11:53:00,11,2023
-St. Gallen-Zürich,IR,Connection wait,2023-06-23 09:14:00,5,2023
-Bern-Brig,IC,Connection wait,2023-06-23 18:31:00,2,2023
-Bern-Belp,RE,External,2023-06-24 18:38:00,8,2023
-Basel-Olten,IC,Boarding,2023-06-27 15:34:00,4,2023
-Bern-Brig,IC,Operations,2023-06-27 16:30:00,2,2023
-Zürich-Schaffhausen,IR,Infrastructure,2023-06-28 08:39:00,7,2023
-Zürich-Schaffhausen,IR,External,2023-06-28 16:33:00,2,2023
-Lugano-Locarno,RE,Rolling stock,2023-06-28 23:23:00,2,2023
-Bern-Belp,RE,External,2023-07-01 20:25:00,5,2023
-Zürich-Schaffhausen,IR,Operations,2023-07-02 14:28:00,35,2023
-Bern-Brig,IC,Operations,2023-07-04 06:52:00,10,2023
-Zürich-Genève,IC,Infrastructure,2023-07-04 22:48:00,5,2023
-Genève-Lausanne,IC,Infrastructure,2023-07-05 17:12:00,2,2023
-Zürich-Genève,IC,External,2023-07-05 22:10:00,12,2023
-Zürich-Schaffhausen,IR,Infrastructure,2023-07-06 16:04:00,29,2023
-Zürich-Genève,IC,External,2023-07-07 03:35:00,7,2023
-S2 Zürich,S,Rolling stock,2023-07-08 22:49:00,30,2023
-Genève-Lausanne,IC,Boarding,2023-07-10 08:23:00,4,2023
-Bern-Belp,RE,External,2023-07-11 05:18:00,3,2023
-Genève-Lausanne,IC,Connection wait,2023-07-11 23:28:00,2,2023
-S6 Basel,S,Infrastructure,2023-07-12 07:50:00,4,2023
-Basel-Lausanne,IC,Infrastructure,2023-07-13 05:03:00,2,2023
-Basel-Lausanne,IC,Rolling stock,2023-07-14 23:40:00,2,2023
-S2 Zürich,S,External,2023-07-16 14:51:00,19,2023
-Bern-Brig,IC,Boarding,2023-07-17 06:52:00,4,2023
-S2 Zürich,S,Operations,2023-07-17 13:05:00,8,2023
-S5 Bern,S,External,2023-07-20 13:10:00,2,2023
-Bern-Belp,RE,Rolling stock,2023-07-20 22:31:00,2,2023
-Zürich-Bern,IC,Connection wait,2023-07-21 03:19:00,7,2023
-Lugano-Locarno,RE,Rolling stock,2023-07-22 13:47:00,26,2023
-Zürich-Schaffhausen,IR,Operations,2023-07-22 23:03:00,15,2023
-Basel-Olten,IC,Rolling stock,2023-07-23 07:52:00,2,2023
-St. Gallen-Zürich,IR,Operations,2023-07-23 12:06:00,7,2023
-Lausanne-Brig,IR,Operations,2023-07-23 20:37:00,2,2023
-Zürich-Schaffhausen,IR,Boarding,2023-07-24 19:27:00,5,2023
-Lausanne-Brig,IR,Infrastructure,2023-07-25 20:00:00,2,2023
-Zürich-Luzern,IC,Operations,2023-07-26 19:54:00,2,2023
-Lausanne-Brig,IR,External,2023-07-28 16:17:00,3,2023
-S2 Zürich,S,External,2023-07-31 04:33:00,18,2023
-Bern-Biel,IR,Connection wait,2023-07-31 20:00:00,4,2023
-Bern-Biel,IR,Connection wait,2023-08-02 10:22:00,2,2023
-Lausanne-Brig,IR,Boarding,2023-08-03 08:08:00,3,2023
-Zürich-Schaffhausen,IR,Rolling stock,2023-08-03 09:25:00,11,2023
-S6 Basel,S,Infrastructure,2023-08-03 12:09:00,2,2023
-St. Gallen-Zürich,IR,Rolling stock,2023-08-03 23:43:00,2,2023
-Basel-Olten,IC,Infrastructure,2023-08-04 05:42:00,2,2023
-Zürich-Luzern,IC,Infrastructure,2023-08-04 23:07:00,12,2023
-Basel-Lausanne,IC,Boarding,2023-08-05 07:05:00,2,2023
-S2 Zürich,S,External,2023-08-05 21:01:00,6,2023
-Zürich-Luzern,IC,External,2023-08-08 21:51:00,17,2023
-Bern-Brig,IC,Connection wait,2023-08-09 07:05:00,8,2023
-Bern-Biel,IR,External,2023-08-09 20:17:00,15,2023
-Bern-Brig,IC,Connection wait,2023-08-10 06:45:00,4,2023
-Zürich-Luzern,IC,Rolling stock,2023-08-12 20:36:00,15,2023
-S2 Zürich,S,Infrastructure,2023-08-14 05:15:00,4,2023
-Zürich-Chur,IC,External,2023-08-14 08:21:00,11,2023
-Zürich-Genève,IC,Infrastructure,2023-08-15 14:42:00,2,2023
-Genève-Lausanne,IC,Connection wait,2023-08-17 05:43:00,3,2023
-Bern-Belp,RE,Rolling stock,2023-08-17 14:11:00,3,2023
-S5 Bern,S,Boarding,2023-08-17 22:59:00,12,2023
-Bern-Biel,IR,Boarding,2023-08-18 19:23:00,15,2023
-Genève-Lausanne,IC,Infrastructure,2023-08-19 21:56:00,5,2023
-Bern-Brig,IC,Operations,2023-08-20 14:51:00,7,2023
-Zürich-Luzern,IC,Connection wait,2023-08-20 15:37:00,8,2023
-St. Gallen-Zürich,IR,Connection wait,2023-08-20 17:18:00,9,2023
-S6 Basel,S,Infrastructure,2023-08-22 07:32:00,47,2023
-St. Gallen-Zürich,IR,External,2023-08-26 12:38:00,14,2023
-Basel-Olten,IC,Infrastructure,2023-08-28 16:51:00,23,2023
-Genève-Lausanne,IC,Connection wait,2023-08-28 23:48:00,6,2023
-Bern-Brig,IC,Infrastructure,2023-08-30 09:44:00,13,2023
-S1 Lausanne,S,Rolling stock,2023-08-30 20:44:00,2,2023
-Olten-Zofingen,RE,Rolling stock,2023-09-01 14:35:00,3,2023
-S5 Bern,S,Operations,2023-09-01 18:35:00,2,2023
-Olten-Zofingen,RE,External,2023-09-02 21:27:00,19,2023
-S1 Lausanne,S,Connection wait,2023-09-03 13:05:00,2,2023
-Zürich-Bern,IC,Connection wait,2023-09-05 09:38:00,18,2023
-Genève-Lausanne,IC,Operations,2023-09-05 13:39:00,20,2023
-Lausanne-Brig,IR,Rolling stock,2023-09-05 15:25:00,2,2023
-Bern-Brig,IC,Operations,2023-09-06 05:59:00,8,2023
-Basel-Olten,IC,Rolling stock,2023-09-06 12:40:00,2,2023
-Bern-Biel,IR,Operations,2023-09-06 12:42:00,2,2023
-Basel-Olten,IC,Operations,2023-09-10 20:04:00,7,2023
-Zürich-Genève,IC,Connection wait,2023-09-11 12:01:00,5,2023
-Zürich-Schaffhausen,IR,External,2023-09-12 15:02:00,21,2023
-St. Gallen-Zürich,IR,External,2023-09-14 07:09:00,9,2023
-Zürich-Luzern,IC,Connection wait,2023-09-16 07:22:00,2,2023
-Zürich-Chur,IC,Infrastructure,2023-09-16 17:14:00,2,2023
-Bern-Belp,RE,External,2023-09-17 11:13:00,49,2023
-Zürich-Luzern,IC,Operations,2023-09-19 06:48:00,7,2023
-Olten-Zofingen,RE,Boarding,2023-09-19 13:48:00,10,2023
-Zürich-Schaffhausen,IR,Connection wait,2023-09-20 07:48:00,2,2023
-Bern-Brig,IC,Operations,2023-09-20 23:07:00,42,2023
-St. Gallen-Zürich,IR,Infrastructure,2023-09-21 19:07:00,18,2023
-Zürich-Bern,IC,Operations,2023-09-22 11:28:00,4,2023
-Lausanne-Brig,IR,Infrastructure,2023-09-23 06:54:00,19,2023
-Olten-Zofingen,RE,External,2023-09-23 20:21:00,4,2023
-Lausanne-Brig,IR,Operations,2023-09-25 10:47:00,30,2023
-Zürich-Genève,IC,External,2023-09-26 09:26:00,6,2023
-Zürich-Genève,IC,Infrastructure,2023-09-27 19:08:00,8,2023
-Zürich-Bern,IC,Boarding,2023-09-28 09:41:00,9,2023
-Zürich-Chur,IC,Connection wait,2023-09-29 06:53:00,4,2023
-Zürich-Bern,IC,Infrastructure,2023-09-30 03:11:00,4,2023
-S1 Lausanne,S,Operations,2023-10-03 00:54:00,6,2023
-S6 Basel,S,External,2023-10-03 17:27:00,9,2023
-Bern-Belp,RE,Infrastructure,2023-10-07 15:25:00,5,2023
-Bern-Belp,RE,Infrastructure,2023-10-08 10:30:00,9,2023
-Basel-Olten,IC,Rolling stock,2023-10-08 13:26:00,2,2023
-Zürich-Genève,IC,External,2023-10-08 18:36:00,2,2023
-Basel-Olten,IC,Operations,2023-10-09 08:58:00,4,2023
-St. Gallen-Zürich,IR,External,2023-10-10 15:10:00,47,2023
-Zürich-Schaffhausen,IR,Infrastructure,2023-10-12 05:43:00,10,2023
-Olten-Zofingen,RE,External,2023-10-14 05:12:00,4,2023
-Bern-Brig,IC,Infrastructure,2023-10-14 20:11:00,2,2023
-Lausanne-Brig,IR,Boarding,2023-10-14 20:12:00,8,2023
-Basel-Lausanne,IC,Connection wait,2023-10-16 20:23:00,2,2023
-Lugano-Locarno,RE,Rolling stock,2023-10-17 08:55:00,16,2023
-Genève-Lausanne,IC,External,2023-10-20 07:54:00,18,2023
-S5 Bern,S,Infrastructure,2023-10-20 21:50:00,3,2023
-Lugano-Locarno,RE,Rolling stock,2023-10-23 13:15:00,11,2023
-Lausanne-Brig,IR,Boarding,2023-10-23 22:18:00,8,2023
-Genève-Lausanne,IC,Rolling stock,2023-10-24 14:16:00,19,2023
-Zürich-Luzern,IC,External,2023-10-25 10:14:00,4,2023
-S1 Lausanne,S,Infrastructure,2023-10-28 15:16:00,36,2023
-Olten-Zofingen,RE,Infrastructure,2023-10-28 23:05:00,21,2023
-Basel-Olten,IC,Rolling stock,2023-10-31 20:08:00,3,2023
-Lausanne-Brig,IR,External,2023-11-03 09:18:00,2,2023
-S1 Lausanne,S,Connection wait,2023-11-05 22:46:00,5,2023
-Zürich-Genève,IC,Boarding,2023-11-07 09:17:00,2,2023
-Lausanne-Brig,IR,Rolling stock,2023-11-07 18:00:00,16,2023
-Basel-Lausanne,IC,Infrastructure,2023-11-08 00:51:00,2,2023
-Lausanne-Brig,IR,Boarding,2023-11-08 07:09:00,9,2023
-Basel-Olten,IC,Infrastructure,2023-11-08 19:03:00,22,2023
-Bern-Belp,RE,Connection wait,2023-11-08 23:07:00,5,2023
-Bern-Biel,IR,Infrastructure,2023-11-09 06:03:00,3,2023
-St. Gallen-Zürich,IR,Infrastructure,2023-11-09 17:14:00,15,2023
-St. Gallen-Zürich,IR,Infrastructure,2023-11-10 07:19:00,2,2023
-Olten-Zofingen,RE,Infrastructure,2023-11-10 15:12:00,2,2023
-Zürich-Chur,IC,Connection wait,2023-11-10 19:48:00,13,2023
-Lausanne-Brig,IR,Rolling stock,2023-11-15 06:33:00,11,2023
-Lausanne-Brig,IR,Rolling stock,2023-11-15 15:00:00,6,2023
-S6 Basel,S,Boarding,2023-11-16 06:06:00,2,2023
-Basel-Lausanne,IC,Operations,2023-11-17 02:00:00,2,2023
-Bern-Biel,IR,Boarding,2023-11-17 17:44:00,4,2023
-Basel-Olten,IC,Operations,2023-11-17 18:06:00,11,2023
-Zürich-Schaffhausen,IR,Connection wait,2023-11-18 10:06:00,4,2023
-Lugano-Locarno,RE,Infrastructure,2023-11-18 12:44:00,23,2023
-Genève-Lausanne,IC,Rolling stock,2023-11-20 07:18:00,15,2023
-Zürich-Genève,IC,Infrastructure,2023-11-20 16:30:00,2,2023
-Lugano-Locarno,RE,Operations,2023-11-20 17:04:00,9,2023
-Zürich-Bern,IC,External,2023-11-20 21:42:00,31,2023
-Bern-Belp,RE,Boarding,2023-11-21 05:56:00,16,2023
-S6 Basel,S,Rolling stock,2023-11-21 15:42:00,2,2023
-Lugano-Locarno,RE,Rolling stock,2023-11-22 07:22:00,36,2023
-Bern-Brig,IC,Infrastructure,2023-11-22 22:15:00,50,2023
-S5 Bern,S,External,2023-11-24 19:14:00,12,2023
-Lausanne-Brig,IR,Rolling stock,2023-11-24 23:55:00,8,2023
-S6 Basel,S,Infrastructure,2023-11-26 05:42:00,2,2023
-Zürich-Luzern,IC,External,2023-11-26 08:46:00,6,2023
-Basel-Olten,IC,External,2023-11-26 21:15:00,9,2023
-Zürich-Schaffhausen,IR,Infrastructure,2023-11-27 18:08:00,14,2023
-Zürich-Luzern,IC,Infrastructure,2023-11-28 07:03:00,13,2023
-Genève-Lausanne,IC,Rolling stock,2023-11-28 10:50:00,12,2023
-Bern-Brig,IC,Infrastructure,2023-11-28 21:32:00,82,2023
-Bern-Belp,RE,External,2023-11-29 13:37:00,3,2023
-Basel-Olten,IC,Operations,2023-12-01 06:20:00,5,2023
-Zürich-Schaffhausen,IR,External,2023-12-01 08:44:00,4,2023
-Zürich-Genève,IC,External,2023-12-01 13:02:00,2,2023
-Zürich-Genève,IC,Connection wait,2023-12-02 02:55:00,12,2023
-Bern-Biel,IR,External,2023-12-02 11:00:00,6,2023
-S5 Bern,S,Infrastructure,2023-12-03 21:50:00,30,2023
-St. Gallen-Zürich,IR,Operations,2023-12-03 22:09:00,8,2023
-Genève-Lausanne,IC,Boarding,2023-12-06 17:23:00,2,2023
-Zürich-Chur,IC,Operations,2023-12-08 12:23:00,3,2023
-S2 Zürich,S,Infrastructure,2023-12-08 20:07:00,7,2023
-Zürich-Schaffhausen,IR,Operations,2023-12-09 21:35:00,16,2023
-Bern-Belp,RE,Infrastructure,2023-12-13 20:16:00,7,2023
-Bern-Biel,IR,Connection wait,2023-12-14 07:07:00,4,2023
-S6 Basel,S,Infrastructure,2023-12-14 16:40:00,11,2023
-Basel-Olten,IC,Infrastructure,2023-12-15 13:19:00,18,2023
-Zürich-Schaffhausen,IR,Infrastructure,2023-12-18 15:57:00,17,2023
-Bern-Biel,IR,Rolling stock,2023-12-20 21:39:00,10,2023
-Bern-Belp,RE,Connection wait,2023-12-21 07:01:00,2,2023
-S2 Zürich,S,External,2023-12-21 09:31:00,4,2023
-S2 Zürich,S,Rolling stock,2023-12-21 12:50:00,2,2023
-S6 Basel,S,Connection wait,2023-12-21 14:52:00,2,2023
-Bern-Brig,IC,Boarding,2023-12-21 18:38:00,2,2023
-Basel-Lausanne,IC,Boarding,2023-12-25 05:02:00,2,2023
-St. Gallen-Zürich,IR,External,2023-12-25 11:17:00,2,2023
-Bern-Biel,IR,External,2023-12-25 14:31:00,2,2023
-Genève-Lausanne,IC,Infrastructure,2023-12-25 15:47:00,15,2023
-S5 Bern,S,Infrastructure,2023-12-29 07:06:00,2,2023
-Bern-Brig,IC,Operations,2023-12-31 05:40:00,8,2023
-S2 Zürich,S,Infrastructure,2023-12-31 22:06:00,4,2023
-Zürich-Genève,IC,Infrastructure,2024-01-02 19:30:00,2,2024
-Zürich-Genève,IC,Operations,2024-01-03 20:05:00,12,2024
-S5 Bern,S,Operations,2024-01-04 06:02:00,2,2024
-Lausanne-Brig,IR,Operations,2024-01-05 13:21:00,11,2024
-Genève-Lausanne,IC,Infrastructure,2024-01-07 20:41:00,18,2024
-Bern-Brig,IC,Operations,2024-01-11 09:27:00,3,2024
-Bern-Belp,RE,Boarding,2024-01-12 18:04:00,2,2024
-S2 Zürich,S,Operations,2024-01-12 20:45:00,13,2024
-Bern-Brig,IC,Infrastructure,2024-01-12 22:46:00,13,2024
-Bern-Biel,IR,External,2024-01-13 08:32:00,20,2024
-Genève-Lausanne,IC,Operations,2024-01-13 17:44:00,6,2024
-Basel-Lausanne,IC,Rolling stock,2024-01-15 03:25:00,16,2024
-Zürich-Chur,IC,Boarding,2024-01-16 10:50:00,2,2024
-S2 Zürich,S,Infrastructure,2024-01-17 09:49:00,16,2024
-S1 Lausanne,S,Connection wait,2024-01-17 10:09:00,7,2024
-Bern-Brig,IC,Connection wait,2024-01-17 16:06:00,24,2024
-Zürich-Genève,IC,Rolling stock,2024-01-18 22:43:00,2,2024
-Zürich-Luzern,IC,Infrastructure,2024-01-19 09:50:00,8,2024
-Zürich-Schaffhausen,IR,Infrastructure,2024-01-20 06:38:00,4,2024
-S2 Zürich,S,Infrastructure,2024-01-20 13:25:00,4,2024
-Zürich-Bern,IC,Infrastructure,2024-01-21 14:29:00,2,2024
-Zürich-Bern,IC,External,2024-01-25 23:20:00,2,2024
-Zürich-Genève,IC,Infrastructure,2024-01-26 06:56:00,2,2024
-S6 Basel,S,Rolling stock,2024-01-26 07:22:00,5,2024
-Zürich-Genève,IC,Infrastructure,2024-01-26 12:42:00,25,2024
-S1 Lausanne,S,Boarding,2024-01-26 22:31:00,2,2024
-Genève-Lausanne,IC,Operations,2024-01-29 07:18:00,6,2024
-Zürich-Luzern,IC,Infrastructure,2024-01-29 12:45:00,18,2024
-Zürich-Luzern,IC,Rolling stock,2024-01-30 04:46:00,2,2024
-Olten-Zofingen,RE,Rolling stock,2024-01-30 05:36:00,15,2024
-Zürich-Luzern,IC,Boarding,2024-01-30 07:27:00,2,2024
-Bern-Brig,IC,External,2024-01-30 16:19:00,15,2024
-Zürich-Luzern,IC,External,2024-02-02 13:42:00,37,2024
-Zürich-Luzern,IC,Boarding,2024-02-02 17:21:00,9,2024
-S1 Lausanne,S,Infrastructure,2024-02-02 18:51:00,61,2024
-Zürich-Schaffhausen,IR,Infrastructure,2024-02-03 20:58:00,7,2024
-Basel-Lausanne,IC,External,2024-02-03 22:33:00,5,2024
-Bern-Belp,RE,Operations,2024-02-04 15:46:00,2,2024
-Bern-Brig,IC,Infrastructure,2024-02-06 09:11:00,29,2024
-Lausanne-Brig,IR,Rolling stock,2024-02-06 16:34:00,10,2024
-Zürich-Bern,IC,Boarding,2024-02-06 19:35:00,5,2024
-S5 Bern,S,Infrastructure,2024-02-07 09:11:00,2,2024
-Zürich-Chur,IC,Operations,2024-02-07 16:06:00,2,2024
-Zürich-Luzern,IC,Infrastructure,2024-02-08 07:07:00,18,2024
-Olten-Zofingen,RE,Connection wait,2024-02-08 07:52:00,7,2024
-St. Gallen-Zürich,IR,Rolling stock,2024-02-09 09:23:00,11,2024
-Zürich-Bern,IC,Infrastructure,2024-02-10 05:52:00,29,2024
-Zürich-Genève,IC,External,2024-02-12 13:29:00,31,2024
-Basel-Olten,IC,Infrastructure,2024-02-12 19:21:00,55,2024
-Zürich-Bern,IC,Operations,2024-02-14 13:02:00,2,2024
-Zürich-Schaffhausen,IR,Infrastructure,2024-02-14 18:54:00,30,2024
-Zürich-Luzern,IC,External,2024-02-15 11:20:00,9,2024
-Bern-Brig,IC,Rolling stock,2024-02-15 15:25:00,4,2024
-Genève-Lausanne,IC,Infrastructure,2024-02-17 17:22:00,12,2024
-Basel-Olten,IC,Rolling stock,2024-02-18 05:09:00,2,2024
-Lausanne-Brig,IR,Rolling stock,2024-02-19 19:29:00,10,2024
-S2 Zürich,S,External,2024-02-20 17:53:00,6,2024
-Basel-Lausanne,IC,Rolling stock,2024-02-22 19:53:00,3,2024
-St. Gallen-Zürich,IR,Infrastructure,2024-02-23 19:56:00,17,2024
-Bern-Belp,RE,Operations,2024-02-24 20:23:00,15,2024
-Zürich-Chur,IC,External,2024-02-25 20:29:00,3,2024
-Olten-Zofingen,RE,Rolling stock,2024-02-26 19:19:00,15,2024
-Lausanne-Brig,IR,Boarding,2024-02-27 05:08:00,10,2024
-Zürich-Chur,IC,Operations,2024-02-27 12:18:00,14,2024
-St. Gallen-Zürich,IR,Rolling stock,2024-02-29 06:35:00,11,2024
-Bern-Belp,RE,External,2024-03-01 06:54:00,2,2024
-Bern-Belp,RE,Boarding,2024-03-01 23:11:00,4,2024
-Bern-Brig,IC,Operations,2024-03-02 17:27:00,24,2024
-S5 Bern,S,Boarding,2024-03-03 06:32:00,2,2024
-Lugano-Locarno,RE,External,2024-03-03 10:49:00,2,2024
-Bern-Brig,IC,Infrastructure,2024-03-07 22:22:00,6,2024
-Lausanne-Brig,IR,Rolling stock,2024-03-08 07:14:00,6,2024
-Lausanne-Brig,IR,Rolling stock,2024-03-08 09:35:00,6,2024
-S1 Lausanne,S,Infrastructure,2024-03-09 06:07:00,3,2024
-St. Gallen-Zürich,IR,Connection wait,2024-03-10 08:44:00,19,2024
-Olten-Zofingen,RE,Operations,2024-03-12 13:49:00,22,2024
-Basel-Olten,IC,Operations,2024-03-13 07:59:00,46,2024
-S2 Zürich,S,Operations,2024-03-13 17:10:00,2,2024
-Olten-Zofingen,RE,Infrastructure,2024-03-13 17:19:00,46,2024
-S6 Basel,S,Infrastructure,2024-03-14 07:58:00,12,2024
-Basel-Lausanne,IC,Rolling stock,2024-03-15 19:45:00,2,2024
-S5 Bern,S,Infrastructure,2024-03-17 13:04:00,10,2024
-Olten-Zofingen,RE,Infrastructure,2024-03-17 15:18:00,29,2024
-Zürich-Luzern,IC,Connection wait,2024-03-17 21:55:00,9,2024
-Olten-Zofingen,RE,Rolling stock,2024-03-18 08:54:00,13,2024
-Zürich-Schaffhausen,IR,Boarding,2024-03-18 23:00:00,2,2024
-Bern-Belp,RE,Operations,2024-03-18 23:14:00,5,2024
-Genève-Lausanne,IC,Operations,2024-03-20 21:59:00,12,2024
-Lugano-Locarno,RE,External,2024-03-22 19:20:00,2,2024
-Zürich-Schaffhausen,IR,Operations,2024-03-23 16:29:00,2,2024
-Bern-Brig,IC,Connection wait,2024-03-24 19:38:00,4,2024
-Bern-Belp,RE,External,2024-03-24 20:38:00,21,2024
-Zürich-Bern,IC,External,2024-03-27 12:26:00,2,2024
-Bern-Brig,IC,External,2024-03-27 16:09:00,4,2024
-Basel-Olten,IC,Infrastructure,2024-03-29 22:27:00,8,2024
-Lausanne-Brig,IR,External,2024-03-30 05:26:00,19,2024
-Genève-Lausanne,IC,Operations,2024-04-02 20:16:00,10,2024
-Zürich-Genève,IC,Boarding,2024-04-03 09:17:00,11,2024
-Genève-Lausanne,IC,Infrastructure,2024-04-05 01:56:00,5,2024
-S6 Basel,S,Infrastructure,2024-04-06 17:06:00,2,2024
-Bern-Belp,RE,Boarding,2024-04-08 06:19:00,2,2024
-Bern-Biel,IR,External,2024-04-08 15:49:00,2,2024
-Zürich-Schaffhausen,IR,Rolling stock,2024-04-11 13:46:00,2,2024
-Olten-Zofingen,RE,Operations,2024-04-11 21:38:00,8,2024
-Bern-Biel,IR,Infrastructure,2024-04-12 12:36:00,12,2024
-S2 Zürich,S,External,2024-04-12 14:55:00,4,2024
-Zürich-Schaffhausen,IR,Infrastructure,2024-04-12 19:40:00,12,2024
-Basel-Lausanne,IC,Rolling stock,2024-04-15 00:55:00,10,2024
-S1 Lausanne,S,Infrastructure,2024-04-15 06:18:00,2,2024
-Basel-Lausanne,IC,Rolling stock,2024-04-17 07:49:00,17,2024
-Basel-Olten,IC,Boarding,2024-04-18 16:56:00,7,2024
-Zürich-Genève,IC,Connection wait,2024-04-20 15:03:00,12,2024
-St. Gallen-Zürich,IR,Infrastructure,2024-04-20 15:55:00,95,2024
-Zürich-Chur,IC,Connection wait,2024-04-24 09:23:00,8,2024
-Basel-Lausanne,IC,Rolling stock,2024-04-24 11:52:00,8,2024
-Zürich-Bern,IC,Connection wait,2024-04-24 18:01:00,12,2024
-Lausanne-Brig,IR,Operations,2024-04-27 18:16:00,17,2024
-Bern-Belp,RE,Boarding,2024-04-28 08:37:00,3,2024
-Basel-Olten,IC,Operations,2024-04-29 05:23:00,7,2024
-Zürich-Chur,IC,External,2024-04-29 09:49:00,18,2024
-Bern-Belp,RE,Infrastructure,2024-04-29 21:51:00,5,2024
-St. Gallen-Zürich,IR,Rolling stock,2024-05-01 05:02:00,2,2024
-Zürich-Luzern,IC,Infrastructure,2024-05-02 17:09:00,24,2024
-Olten-Zofingen,RE,Rolling stock,2024-05-02 21:50:00,2,2024
-S2 Zürich,S,Connection wait,2024-05-04 08:22:00,3,2024
-Lugano-Locarno,RE,Operations,2024-05-08 15:44:00,14,2024
-Bern-Biel,IR,Connection wait,2024-05-09 17:04:00,5,2024
-St. Gallen-Zürich,IR,Operations,2024-05-09 21:42:00,3,2024
-S1 Lausanne,S,Infrastructure,2024-05-10 17:36:00,12,2024
-Basel-Olten,IC,Rolling stock,2024-05-12 10:59:00,2,2024
-Zürich-Chur,IC,Rolling stock,2024-05-15 20:05:00,7,2024
-Bern-Belp,RE,Rolling stock,2024-05-16 06:59:00,22,2024
-S1 Lausanne,S,Infrastructure,2024-05-18 08:48:00,5,2024
-Zürich-Chur,IC,Rolling stock,2024-05-18 14:56:00,2,2024
-Zürich-Genève,IC,External,2024-05-20 12:28:00,14,2024
-Lugano-Locarno,RE,Operations,2024-05-20 18:49:00,9,2024
-Zürich-Genève,IC,External,2024-05-20 23:09:00,29,2024
-S5 Bern,S,Connection wait,2024-05-21 07:23:00,8,2024
-Bern-Brig,IC,Boarding,2024-05-24 07:00:00,3,2024
-Bern-Belp,RE,Rolling stock,2024-05-24 11:54:00,22,2024
-S5 Bern,S,Connection wait,2024-05-26 18:59:00,10,2024
-Zürich-Schaffhausen,IR,Operations,2024-05-28 14:01:00,14,2024
-Bern-Belp,RE,Infrastructure,2024-05-31 00:51:00,12,2024
-Bern-Biel,IR,Boarding,2024-06-02 19:33:00,10,2024
-Bern-Brig,IC,Boarding,2024-06-03 09:18:00,2,2024
-S1 Lausanne,S,Connection wait,2024-06-04 07:06:00,2,2024
-Bern-Brig,IC,External,2024-06-04 08:44:00,4,2024
-S5 Bern,S,Infrastructure,2024-06-04 15:29:00,6,2024
-Genève-Lausanne,IC,Connection wait,2024-06-05 00:31:00,6,2024
-Basel-Lausanne,IC,Connection wait,2024-06-08 02:45:00,2,2024
-Bern-Belp,RE,Boarding,2024-06-09 16:04:00,2,2024
-Bern-Belp,RE,Rolling stock,2024-06-10 07:30:00,11,2024
-Zürich-Luzern,IC,Operations,2024-06-12 08:08:00,8,2024
-S6 Basel,S,External,2024-06-12 13:52:00,45,2024
-Basel-Olten,IC,Boarding,2024-06-12 22:32:00,7,2024
-Zürich-Schaffhausen,IR,External,2024-06-13 12:53:00,24,2024
-Bern-Brig,IC,External,2024-06-15 15:13:00,2,2024
-Zürich-Luzern,IC,Rolling stock,2024-06-16 21:01:00,9,2024
-Lausanne-Brig,IR,Boarding,2024-06-17 15:19:00,10,2024
-Lausanne-Brig,IR,Rolling stock,2024-06-18 14:14:00,2,2024
-Lugano-Locarno,RE,Connection wait,2024-06-20 08:00:00,13,2024
-Genève-Lausanne,IC,External,2024-06-20 12:04:00,39,2024
-Zürich-Bern,IC,External,2024-06-20 16:21:00,3,2024
-Genève-Lausanne,IC,Infrastructure,2024-06-20 23:02:00,12,2024
-S6 Basel,S,External,2024-06-22 17:56:00,7,2024
-Bern-Belp,RE,Operations,2024-06-23 12:31:00,16,2024
-Zürich-Bern,IC,External,2024-06-23 19:15:00,15,2024
-Lausanne-Brig,IR,Operations,2024-06-24 06:48:00,6,2024
-Zürich-Bern,IC,Rolling stock,2024-06-24 23:31:00,6,2024
-Bern-Biel,IR,Operations,2024-06-25 18:13:00,2,2024
-Lugano-Locarno,RE,External,2024-06-26 21:12:00,9,2024
-Bern-Brig,IC,Operations,2024-06-27 04:24:00,2,2024
-Zürich-Genève,IC,Operations,2024-06-27 22:27:00,6,2024
-Zürich-Bern,IC,Boarding,2024-06-28 18:15:00,3,2024
-Zürich-Chur,IC,Rolling stock,2024-06-28 21:45:00,5,2024
-Zürich-Bern,IC,Rolling stock,2024-06-29 06:59:00,2,2024
-Bern-Brig,IC,Boarding,2024-06-29 08:54:00,4,2024
-Bern-Brig,IC,Infrastructure,2024-06-29 17:35:00,19,2024
-Lausanne-Brig,IR,External,2024-06-30 16:23:00,4,2024
-St. Gallen-Zürich,IR,Rolling stock,2024-06-30 18:25:00,34,2024
-Bern-Brig,IC,External,2024-07-01 15:33:00,11,2024
-Basel-Lausanne,IC,Rolling stock,2024-07-03 07:05:00,4,2024
-Basel-Lausanne,IC,Operations,2024-07-03 18:21:00,9,2024
-Bern-Brig,IC,Rolling stock,2024-07-04 10:45:00,9,2024
-Lausanne-Brig,IR,Infrastructure,2024-07-06 23:18:00,7,2024
-S2 Zürich,S,Connection wait,2024-07-07 17:41:00,2,2024
-Bern-Belp,RE,Operations,2024-07-08 06:40:00,15,2024
-Bern-Brig,IC,Operations,2024-07-08 11:33:00,11,2024
-Zürich-Bern,IC,Boarding,2024-07-09 22:21:00,5,2024
-Bern-Brig,IC,External,2024-07-11 06:22:00,13,2024
-Basel-Olten,IC,Rolling stock,2024-07-11 11:45:00,13,2024
-Zürich-Bern,IC,Connection wait,2024-07-11 19:11:00,3,2024
-Bern-Belp,RE,Rolling stock,2024-07-13 17:49:00,4,2024
-Zürich-Chur,IC,Rolling stock,2024-07-15 21:15:00,9,2024
-S5 Bern,S,External,2024-07-17 08:18:00,5,2024
-Zürich-Luzern,IC,Connection wait,2024-07-18 13:20:00,11,2024
-Bern-Brig,IC,Operations,2024-07-19 08:16:00,32,2024
-S5 Bern,S,Operations,2024-07-19 14:00:00,19,2024
-Zürich-Schaffhausen,IR,Rolling stock,2024-07-19 17:25:00,14,2024
-Zürich-Luzern,IC,Rolling stock,2024-07-20 20:39:00,2,2024
-S1 Lausanne,S,External,2024-07-22 14:32:00,17,2024
-S6 Basel,S,Operations,2024-07-23 12:34:00,5,2024
-Zürich-Chur,IC,Infrastructure,2024-07-24 14:59:00,16,2024
-Bern-Biel,IR,External,2024-07-24 23:39:00,2,2024
-St. Gallen-Zürich,IR,External,2024-07-25 06:16:00,5,2024
-Olten-Zofingen,RE,Operations,2024-07-26 05:10:00,6,2024
-Zürich-Chur,IC,Rolling stock,2024-07-26 11:37:00,2,2024
-S1 Lausanne,S,Operations,2024-07-26 22:14:00,11,2024
-Basel-Olten,IC,Infrastructure,2024-07-26 22:28:00,3,2024
-Genève-Lausanne,IC,Boarding,2024-07-27 05:50:00,2,2024
-Lugano-Locarno,RE,Infrastructure,2024-07-27 06:27:00,34,2024
-Zürich-Schaffhausen,IR,External,2024-07-27 18:51:00,7,2024
-Genève-Lausanne,IC,Boarding,2024-07-28 19:57:00,29,2024
-Genève-Lausanne,IC,Connection wait,2024-07-28 21:24:00,20,2024
-Zürich-Genève,IC,Connection wait,2024-08-01 17:25:00,44,2024
-S1 Lausanne,S,Boarding,2024-08-02 11:19:00,3,2024
-Lugano-Locarno,RE,Connection wait,2024-08-04 11:45:00,2,2024
-Basel-Lausanne,IC,External,2024-08-04 23:18:00,12,2024
-Lugano-Locarno,RE,Infrastructure,2024-08-05 07:04:00,15,2024
-Zürich-Bern,IC,Infrastructure,2024-08-05 12:33:00,2,2024
-Zürich-Luzern,IC,Infrastructure,2024-08-05 16:23:00,2,2024
-Bern-Biel,IR,Rolling stock,2024-08-08 13:43:00,19,2024
-Zürich-Bern,IC,Boarding,2024-08-09 14:15:00,3,2024
-Basel-Olten,IC,External,2024-08-10 14:50:00,9,2024
-St. Gallen-Zürich,IR,Infrastructure,2024-08-11 13:16:00,23,2024
-Lausanne-Brig,IR,Infrastructure,2024-08-11 14:09:00,7,2024
-Olten-Zofingen,RE,Connection wait,2024-08-12 07:55:00,2,2024
-S2 Zürich,S,Infrastructure,2024-08-12 19:50:00,17,2024
-Zürich-Bern,IC,Operations,2024-08-13 13:13:00,13,2024
-Zürich-Luzern,IC,Infrastructure,2024-08-15 13:59:00,6,2024
-Bern-Biel,IR,External,2024-08-15 23:56:00,2,2024
-Lausanne-Brig,IR,Operations,2024-08-18 07:06:00,3,2024
-Zürich-Schaffhausen,IR,Rolling stock,2024-08-18 08:02:00,3,2024
-Olten-Zofingen,RE,External,2024-08-19 17:06:00,3,2024
-Bern-Biel,IR,Boarding,2024-08-19 17:45:00,28,2024
-St. Gallen-Zürich,IR,Operations,2024-08-21 23:59:00,9,2024
-Lugano-Locarno,RE,Boarding,2024-08-22 05:20:00,3,2024
-S5 Bern,S,Infrastructure,2024-08-24 03:20:00,2,2024
-Basel-Olten,IC,Connection wait,2024-08-24 17:27:00,4,2024
-Bern-Biel,IR,Operations,2024-08-26 23:50:00,35,2024
-Basel-Olten,IC,Boarding,2024-08-27 16:18:00,2,2024
-Bern-Belp,RE,Boarding,2024-08-30 19:22:00,3,2024
-Bern-Biel,IR,Infrastructure,2024-09-01 21:55:00,21,2024
-Zürich-Luzern,IC,Infrastructure,2024-09-03 14:57:00,4,2024
-Zürich-Genève,IC,Connection wait,2024-09-05 09:11:00,2,2024
-Bern-Belp,RE,Rolling stock,2024-09-07 05:38:00,4,2024
-Olten-Zofingen,RE,Operations,2024-09-07 18:02:00,30,2024
-Basel-Lausanne,IC,Operations,2024-09-12 08:46:00,11,2024
-Bern-Brig,IC,Infrastructure,2024-09-13 17:12:00,4,2024
-St. Gallen-Zürich,IR,Rolling stock,2024-09-17 05:44:00,2,2024
-S5 Bern,S,Rolling stock,2024-09-17 05:50:00,7,2024
-Lausanne-Brig,IR,Connection wait,2024-09-17 11:22:00,2,2024
-Bern-Belp,RE,Infrastructure,2024-09-18 11:34:00,73,2024
-Genève-Lausanne,IC,Operations,2024-09-18 21:43:00,2,2024
-Lugano-Locarno,RE,Infrastructure,2024-09-19 06:54:00,4,2024
-Bern-Biel,IR,External,2024-09-21 07:43:00,2,2024
-S6 Basel,S,Infrastructure,2024-09-22 12:46:00,18,2024
-Bern-Brig,IC,Boarding,2024-09-23 08:20:00,2,2024
-Basel-Olten,IC,External,2024-09-23 10:27:00,13,2024
-Lausanne-Brig,IR,External,2024-09-24 11:24:00,3,2024
-Lausanne-Brig,IR,External,2024-09-24 23:12:00,7,2024
-S5 Bern,S,Infrastructure,2024-09-26 12:11:00,4,2024
-Genève-Lausanne,IC,Infrastructure,2024-09-26 12:59:00,32,2024
-Bern-Biel,IR,Infrastructure,2024-09-28 05:42:00,11,2024
-S6 Basel,S,External,2024-09-28 09:28:00,6,2024
-Zürich-Schaffhausen,IR,External,2024-09-28 11:31:00,38,2024
-Basel-Lausanne,IC,Rolling stock,2024-09-29 18:26:00,10,2024
-Zürich-Luzern,IC,Operations,2024-09-30 08:38:00,7,2024
-Zürich-Chur,IC,Infrastructure,2024-09-30 14:56:00,2,2024
-Bern-Brig,IC,Rolling stock,2024-10-01 14:20:00,6,2024
-Genève-Lausanne,IC,Rolling stock,2024-10-02 02:14:00,7,2024
-Zürich-Luzern,IC,Rolling stock,2024-10-02 17:55:00,7,2024
-S1 Lausanne,S,Rolling stock,2024-10-03 09:12:00,2,2024
-Zürich-Genève,IC,Rolling stock,2024-10-04 10:29:00,5,2024
-Zürich-Chur,IC,Boarding,2024-10-04 11:08:00,10,2024
-Bern-Biel,IR,Connection wait,2024-10-06 07:49:00,7,2024
-Zürich-Genève,IC,Operations,2024-10-07 12:10:00,11,2024
-Zürich-Chur,IC,Infrastructure,2024-10-07 19:14:00,28,2024
-Zürich-Bern,IC,Infrastructure,2024-10-08 17:26:00,26,2024
-St. Gallen-Zürich,IR,External,2024-10-08 17:29:00,43,2024
-Zürich-Bern,IC,Connection wait,2024-10-09 09:40:00,20,2024
-Basel-Lausanne,IC,Infrastructure,2024-10-11 13:53:00,22,2024
-Zürich-Bern,IC,Boarding,2024-10-11 17:58:00,2,2024
-Zürich-Bern,IC,Operations,2024-10-12 06:29:00,12,2024
-S2 Zürich,S,Infrastructure,2024-10-12 11:19:00,19,2024
-S5 Bern,S,Infrastructure,2024-10-15 06:46:00,29,2024
-Zürich-Bern,IC,External,2024-10-18 12:10:00,3,2024
-Bern-Biel,IR,Infrastructure,2024-10-22 12:13:00,12,2024
-Zürich-Schaffhausen,IR,Rolling stock,2024-10-24 12:50:00,2,2024
-St. Gallen-Zürich,IR,Operations,2024-10-25 13:21:00,9,2024
-Lugano-Locarno,RE,Boarding,2024-10-29 07:24:00,8,2024
-S6 Basel,S,Connection wait,2024-10-30 14:40:00,2,2024
-St. Gallen-Zürich,IR,Infrastructure,2024-11-02 12:29:00,29,2024
-Zürich-Genève,IC,External,2024-11-04 17:12:00,24,2024
-Zürich-Genève,IC,Rolling stock,2024-11-04 17:26:00,16,2024
-Lugano-Locarno,RE,Operations,2024-11-05 06:23:00,2,2024
-Bern-Brig,IC,Connection wait,2024-11-06 13:35:00,6,2024
-Bern-Belp,RE,Connection wait,2024-11-07 17:36:00,6,2024
-Basel-Olten,IC,External,2024-11-10 08:11:00,3,2024
-Olten-Zofingen,RE,Infrastructure,2024-11-11 14:06:00,10,2024
-S6 Basel,S,External,2024-11-12 05:49:00,7,2024
-S6 Basel,S,Infrastructure,2024-11-12 23:41:00,19,2024
-Zürich-Schaffhausen,IR,Connection wait,2024-11-13 18:58:00,9,2024
-Olten-Zofingen,RE,Operations,2024-11-14 06:42:00,6,2024
-Bern-Biel,IR,Boarding,2024-11-14 21:12:00,8,2024
-S1 Lausanne,S,External,2024-11-15 20:48:00,17,2024
-Zürich-Bern,IC,Infrastructure,2024-11-16 07:21:00,3,2024
-Basel-Lausanne,IC,Rolling stock,2024-11-16 09:45:00,2,2024
-Zürich-Schaffhausen,IR,Connection wait,2024-11-16 23:46:00,5,2024
-Zürich-Luzern,IC,Operations,2024-11-17 07:40:00,4,2024
-S6 Basel,S,Infrastructure,2024-11-17 16:46:00,15,2024
-Bern-Brig,IC,Infrastructure,2024-11-17 19:18:00,21,2024
-Basel-Olten,IC,Boarding,2024-11-18 18:28:00,2,2024
-S2 Zürich,S,Rolling stock,2024-11-19 07:42:00,2,2024
-Zürich-Chur,IC,Rolling stock,2024-11-20 18:41:00,2,2024
-Genève-Lausanne,IC,Rolling stock,2024-11-25 09:56:00,47,2024
-Zürich-Schaffhausen,IR,External,2024-11-25 13:47:00,2,2024
-S5 Bern,S,Operations,2024-11-26 07:46:00,10,2024
-Zürich-Genève,IC,Boarding,2024-11-27 08:18:00,6,2024
-St. Gallen-Zürich,IR,Infrastructure,2024-11-27 18:26:00,12,2024
-St. Gallen-Zürich,IR,Infrastructure,2024-11-28 05:43:00,14,2024
-S2 Zürich,S,External,2024-11-28 12:18:00,2,2024
-Zürich-Chur,IC,External,2024-11-28 13:56:00,8,2024
-Bern-Brig,IC,External,2024-11-29 19:45:00,7,2024
-Zürich-Bern,IC,Rolling stock,2024-11-30 13:18:00,7,2024
-S2 Zürich,S,External,2024-12-01 10:02:00,25,2024
-Zürich-Schaffhausen,IR,Rolling stock,2024-12-01 14:23:00,11,2024
-St. Gallen-Zürich,IR,Infrastructure,2024-12-02 13:37:00,2,2024
-Lugano-Locarno,RE,Rolling stock,2024-12-03 22:21:00,2,2024
-Bern-Brig,IC,Infrastructure,2024-12-04 09:02:00,2,2024
-Lausanne-Brig,IR,External,2024-12-05 17:32:00,10,2024
-Zürich-Chur,IC,External,2024-12-09 13:07:00,11,2024
-Basel-Olten,IC,Operations,2024-12-09 13:45:00,3,2024
-S6 Basel,S,External,2024-12-12 20:44:00,16,2024
-Bern-Belp,RE,Infrastructure,2024-12-14 01:16:00,2,2024
-Bern-Biel,IR,Operations,2024-12-14 06:50:00,4,2024
-Basel-Lausanne,IC,Connection wait,2024-12-14 09:03:00,6,2024
-Zürich-Luzern,IC,Boarding,2024-12-15 06:26:00,2,2024
-Lausanne-Brig,IR,External,2024-12-17 18:33:00,4,2024
-Zürich-Chur,IC,Infrastructure,2024-12-18 18:05:00,19,2024
-Basel-Olten,IC,Infrastructure,2024-12-19 05:42:00,12,2024
-Basel-Lausanne,IC,Rolling stock,2024-12-19 11:57:00,2,2024
-S6 Basel,S,External,2024-12-19 21:20:00,2,2024
-Olten-Zofingen,RE,Operations,2024-12-20 20:25:00,3,2024
-Bern-Belp,RE,Boarding,2024-12-21 08:19:00,10,2024
-Zürich-Genève,IC,Infrastructure,2024-12-21 11:04:00,2,2024
-Lausanne-Brig,IR,Infrastructure,2024-12-21 16:24:00,66,2024
-Zürich-Bern,IC,Infrastructure,2024-12-22 23:08:00,22,2024
-Zürich-Luzern,IC,External,2024-12-23 11:56:00,15,2024
-Lugano-Locarno,RE,Rolling stock,2024-12-25 19:19:00,5,2024
-S5 Bern,S,Rolling stock,2024-12-25 21:26:00,10,2024
-Bern-Biel,IR,Connection wait,2024-12-26 16:49:00,2,2024
-Zürich-Genève,IC,Operations,2024-12-26 23:30:00,3,2024
-Zürich-Schaffhausen,IR,Infrastructure,2024-12-27 05:34:00,13,2024
-Basel-Olten,IC,Boarding,2024-12-27 15:03:00,6,2024
-Genève-Lausanne,IC,Infrastructure,2024-12-28 10:07:00,31,2024
-Bern-Brig,IC,Rolling stock,2024-12-29 13:35:00,6,2024
-Basel-Olten,IC,External,2024-12-30 12:45:00,6,2024
-Genève-Lausanne,IC,Operations,2024-12-30 14:50:00,20,2024
-Bern-Brig,IC,Infrastructure,2024-12-30 19:15:00,2,2024
+route,service_type,cause,start_time,station,delay_min,weather,year
+Bern-Brig,IC,Infrastructure,2022-01-02 09:21:00,Bern,50,rain,2022
+Bern-Brig,IC,Operations,2022-01-02 18:38:00,Bern,25,rain,2022
+S5 Bern,S,Operations,2022-01-02 20:51:00,Burgdorf,3,clear,2022
+Bern-Biel,IR,Rolling stock,2022-01-03 06:52:00,Lyss,2,clear,2022
+S1 Lausanne,S,Operations,2022-01-03 09:38:00,Yverdon,2,clear,2022
+Zürich-Genève,IC,Operations,2022-01-03 20:55:00,Bern,18,clear,2022
+Genève-Lausanne,IC,Infrastructure,2022-01-05 20:50:00,Lausanne,2,fog,2022
+Zürich-Schaffhausen,IR,Connection wait,2022-01-06 08:04:00,Bülach,7,clear,2022
+Zürich-Chur,IC,Rolling stock,2022-01-07 22:18:00,Sargans,3,clear,2022
+Zürich-Bern,IC,External,2022-01-08 05:47:00,Bern,25,rain,2022
+Olten-Zofingen,RE,Infrastructure,2022-01-08 11:05:00,Zofingen,17,fog,2022
+S1 Lausanne,S,External,2022-01-08 18:38:00,Lausanne,11,snow,2022
+Olten-Zofingen,RE,Rolling stock,2022-01-08 22:15:00,Olten,11,clear,2022
+Zürich-Schaffhausen,IR,Rolling stock,2022-01-10 16:43:00,Bülach,3,clear,2022
+Genève-Lausanne,IC,Infrastructure,2022-01-11 11:59:00,Genève,5,snow,2022
+Bern-Belp,RE,Boarding,2022-01-12 08:56:00,Bern,5,clear,2022
+S2 Zürich,S,Operations,2022-01-12 17:04:00,Effretikon,2,clear,2022
+Bern-Brig,IC,Connection wait,2022-01-12 22:46:00,Spiez,7,clear,2022
+Basel-Olten,IC,Operations,2022-01-13 07:31:00,Basel SBB,11,clear,2022
+Olten-Zofingen,RE,Boarding,2022-01-13 07:59:00,Olten,2,clear,2022
+Zürich-Genève,IC,Rolling stock,2022-01-13 17:00:00,Zürich HB,4,clear,2022
+S1 Lausanne,S,Infrastructure,2022-01-17 05:15:00,Yverdon,2,clear,2022
+Zürich-Bern,IC,External,2022-01-17 13:48:00,Bern,27,rain,2022
+Basel-Olten,IC,Rolling stock,2022-01-20 09:13:00,Olten,2,clear,2022
+Zürich-Chur,IC,Rolling stock,2022-01-20 16:41:00,Zürich HB,22,clear,2022
+Zürich-Schaffhausen,IR,Operations,2022-01-21 17:29:00,Schaffhausen,10,clear,2022
+Bern-Brig,IC,External,2022-01-21 21:20:00,Spiez,3,clear,2022
+Basel-Olten,IC,Infrastructure,2022-01-21 23:04:00,Basel SBB,20,rain,2022
+Basel-Olten,IC,Connection wait,2022-01-22 14:44:00,Olten,6,clear,2022
+Basel-Lausanne,IC,External,2022-01-23 07:48:00,Bern,9,snow,2022
+Lugano-Locarno,RE,External,2022-01-23 18:24:00,Locarno,5,snow,2022
+Zürich-Chur,IC,External,2022-01-23 22:40:00,Sargans,10,rain,2022
+Basel-Olten,IC,External,2022-01-25 15:13:00,Liestal,15,clear,2022
+Zürich-Genève,IC,Rolling stock,2022-01-25 23:20:00,Genève,2,clear,2022
+Zürich-Luzern,IC,Connection wait,2022-01-29 10:54:00,Zug,2,clear,2022
+Genève-Lausanne,IC,Rolling stock,2022-01-29 14:22:00,Nyon,4,rain,2022
+S5 Bern,S,Boarding,2022-01-31 15:13:00,Bern,4,clear,2022
+Basel-Lausanne,IC,Rolling stock,2022-01-31 15:58:00,Lausanne,6,clear,2022
+S2 Zürich,S,Operations,2022-01-31 18:01:00,Zürich HB,11,clear,2022
+Zürich-Bern,IC,Boarding,2022-02-01 03:41:00,Bern,5,rain,2022
+Zürich-Schaffhausen,IR,Infrastructure,2022-02-01 10:33:00,Bülach,11,clear,2022
+Olten-Zofingen,RE,Operations,2022-02-02 09:03:00,Zofingen,51,snow,2022
+Zürich-Bern,IC,Connection wait,2022-02-02 19:03:00,Olten,2,fog,2022
+Basel-Olten,IC,Infrastructure,2022-02-02 21:40:00,Basel SBB,7,clear,2022
+St. Gallen-Zürich,IR,Infrastructure,2022-02-02 23:17:00,Zürich HB,18,rain,2022
+Bern-Biel,IR,External,2022-02-03 11:17:00,Biel/Bienne,23,clear,2022
+Zürich-Genève,IC,Operations,2022-02-03 20:48:00,Genève,5,clear,2022
+Bern-Biel,IR,Rolling stock,2022-02-03 22:33:00,Biel/Bienne,4,clear,2022
+Bern-Belp,RE,Connection wait,2022-02-04 07:27:00,Bern,3,clear,2022
+S6 Basel,S,Operations,2022-02-04 20:20:00,Pratteln,23,clear,2022
+Zürich-Schaffhausen,IR,Infrastructure,2022-02-04 23:28:00,Schaffhausen,2,clear,2022
+Bern-Biel,IR,Operations,2022-02-05 16:44:00,Lyss,5,clear,2022
+Zürich-Schaffhausen,IR,Boarding,2022-02-06 10:52:00,Bülach,3,clear,2022
+Zürich-Schaffhausen,IR,Rolling stock,2022-02-07 16:06:00,Schaffhausen,2,rain,2022
+Bern-Belp,RE,External,2022-02-07 19:11:00,Bern,2,clear,2022
+S5 Bern,S,Boarding,2022-02-08 17:16:00,Burgdorf,4,clear,2022
+Bern-Belp,RE,External,2022-02-10 22:21:00,Bern,3,snow,2022
+Zürich-Genève,IC,External,2022-02-11 11:56:00,Bern,2,fog,2022
+Olten-Zofingen,RE,External,2022-02-13 04:08:00,Olten,12,clear,2022
+St. Gallen-Zürich,IR,Boarding,2022-02-13 07:47:00,Zürich HB,2,clear,2022
+Zürich-Genève,IC,Rolling stock,2022-02-13 15:02:00,Zürich HB,2,clear,2022
+Bern-Brig,IC,Connection wait,2022-02-13 20:29:00,Bern,6,clear,2022
+Zürich-Chur,IC,External,2022-02-13 22:01:00,Zürich HB,4,clear,2022
+Bern-Brig,IC,Infrastructure,2022-02-14 05:30:00,Bern,3,clear,2022
+Olten-Zofingen,RE,Infrastructure,2022-02-14 12:47:00,Zofingen,7,fog,2022
+Zürich-Schaffhausen,IR,External,2022-02-15 09:11:00,Schaffhausen,2,clear,2022
+Zürich-Bern,IC,External,2022-02-15 19:05:00,Zürich HB,11,clear,2022
+Basel-Lausanne,IC,Infrastructure,2022-02-16 05:03:00,Bern,17,clear,2022
+Zürich-Chur,IC,External,2022-02-16 08:35:00,Chur,2,clear,2022
+Bern-Belp,RE,External,2022-02-16 09:04:00,Bern,10,clear,2022
+S6 Basel,S,Operations,2022-02-18 05:58:00,Pratteln,17,clear,2022
+Genève-Lausanne,IC,External,2022-02-18 18:47:00,Nyon,2,clear,2022
+Basel-Lausanne,IC,Infrastructure,2022-02-18 21:23:00,Bern,6,fog,2022
+Olten-Zofingen,RE,Rolling stock,2022-02-19 22:47:00,Olten,2,clear,2022
+Bern-Brig,IC,Rolling stock,2022-02-20 21:37:00,Spiez,2,clear,2022
+Zürich-Chur,IC,External,2022-02-21 13:12:00,Sargans,18,clear,2022
+Basel-Lausanne,IC,Operations,2022-02-21 22:39:00,Basel SBB,2,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-02-21 22:41:00,Olten,2,clear,2022
+St. Gallen-Zürich,IR,Boarding,2022-02-22 06:30:00,Winterthur,2,clear,2022
+Zürich-Luzern,IC,External,2022-02-23 05:11:00,Zürich HB,14,rain,2022
+Zürich-Bern,IC,Rolling stock,2022-02-23 19:56:00,Olten,11,clear,2022
+S1 Lausanne,S,Rolling stock,2022-02-24 11:29:00,Yverdon,14,clear,2022
+Zürich-Schaffhausen,IR,Connection wait,2022-02-25 14:04:00,Zürich HB,3,clear,2022
+Bern-Belp,RE,External,2022-02-25 17:27:00,Belp,8,rain,2022
+S2 Zürich,S,Connection wait,2022-02-25 22:31:00,Effretikon,4,clear,2022
+Zürich-Luzern,IC,External,2022-02-26 19:19:00,Luzern,20,fog,2022
+Basel-Olten,IC,Rolling stock,2022-02-28 07:32:00,Basel SBB,2,rain,2022
+S1 Lausanne,S,Infrastructure,2022-02-28 10:55:00,Yverdon,7,clear,2022
+S5 Bern,S,Operations,2022-02-28 18:03:00,Burgdorf,10,clear,2022
+Zürich-Chur,IC,Rolling stock,2022-03-01 05:39:00,Sargans,14,snow,2022
+Zürich-Schaffhausen,IR,Connection wait,2022-03-02 08:14:00,Bülach,12,clear,2022
+Olten-Zofingen,RE,External,2022-03-02 14:59:00,Zofingen,2,clear,2022
+Lausanne-Brig,IR,Infrastructure,2022-03-02 15:48:00,Sion,40,rain,2022
+Lausanne-Brig,IR,Infrastructure,2022-03-03 18:30:00,Brig,9,clear,2022
+St. Gallen-Zürich,IR,External,2022-03-05 07:46:00,Zürich HB,20,clear,2022
+Bern-Biel,IR,Infrastructure,2022-03-05 14:56:00,Bern,5,clear,2022
+S5 Bern,S,Infrastructure,2022-03-06 14:48:00,Burgdorf,16,rain,2022
+Olten-Zofingen,RE,Connection wait,2022-03-06 20:02:00,Zofingen,26,clear,2022
+Zürich-Schaffhausen,IR,External,2022-03-08 06:46:00,Bülach,5,fog,2022
+Basel-Olten,IC,Infrastructure,2022-03-09 05:28:00,Liestal,14,clear,2022
+Zürich-Chur,IC,External,2022-03-09 16:02:00,Zürich HB,3,clear,2022
+Bern-Belp,RE,Infrastructure,2022-03-09 16:40:00,Belp,10,clear,2022
+S5 Bern,S,Boarding,2022-03-10 11:39:00,Bern,10,clear,2022
+S1 Lausanne,S,Infrastructure,2022-03-10 22:14:00,Yverdon,6,snow,2022
+Zürich-Luzern,IC,Infrastructure,2022-03-11 00:17:00,Zug,11,clear,2022
+Genève-Lausanne,IC,External,2022-03-11 04:04:00,Nyon,67,fog,2022
+Bern-Belp,RE,Boarding,2022-03-11 08:56:00,Bern,9,clear,2022
+Bern-Brig,IC,External,2022-03-11 18:31:00,Brig,13,clear,2022
+Lausanne-Brig,IR,Operations,2022-03-12 00:59:00,Lausanne,22,clear,2022
+Bern-Belp,RE,Operations,2022-03-12 01:59:00,Belp,9,clear,2022
+S5 Bern,S,Boarding,2022-03-12 12:25:00,Burgdorf,3,clear,2022
+Zürich-Genève,IC,Infrastructure,2022-03-12 21:04:00,Genève,24,clear,2022
+Genève-Lausanne,IC,Rolling stock,2022-03-12 23:08:00,Lausanne,8,fog,2022
+Lausanne-Brig,IR,Infrastructure,2022-03-13 19:06:00,Sion,36,clear,2022
+Genève-Lausanne,IC,External,2022-03-13 23:52:00,Nyon,2,snow,2022
+Zürich-Bern,IC,Boarding,2022-03-14 11:45:00,Zürich HB,2,clear,2022
+Basel-Lausanne,IC,Infrastructure,2022-03-14 18:01:00,Bern,2,rain,2022
+S2 Zürich,S,Infrastructure,2022-03-14 20:55:00,Effretikon,69,clear,2022
+Bern-Brig,IC,Connection wait,2022-03-16 12:23:00,Brig,7,clear,2022
+Zürich-Bern,IC,Rolling stock,2022-03-16 18:09:00,Zürich HB,3,clear,2022
+S5 Bern,S,Infrastructure,2022-03-17 17:29:00,Bern,19,clear,2022
+Genève-Lausanne,IC,External,2022-03-19 12:24:00,Genève,26,clear,2022
+Bern-Belp,RE,Operations,2022-03-19 16:19:00,Bern,9,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-03-20 14:34:00,Chur,11,clear,2022
+Olten-Zofingen,RE,External,2022-03-20 20:29:00,Olten,2,snow,2022
+Zürich-Bern,IC,Rolling stock,2022-03-21 09:08:00,Olten,2,clear,2022
+Zürich-Luzern,IC,Operations,2022-03-21 21:28:00,Zug,11,snow,2022
+Bern-Brig,IC,Infrastructure,2022-03-22 05:29:00,Brig,21,snow,2022
+St. Gallen-Zürich,IR,Infrastructure,2022-03-23 17:28:00,Zürich HB,7,rain,2022
+Zürich-Chur,IC,Operations,2022-03-24 09:11:00,Chur,2,clear,2022
+Bern-Biel,IR,Rolling stock,2022-03-24 14:22:00,Biel/Bienne,14,clear,2022
+S1 Lausanne,S,Boarding,2022-03-24 19:53:00,Yverdon,3,clear,2022
+Bern-Belp,RE,Infrastructure,2022-03-25 20:38:00,Belp,8,rain,2022
+Basel-Lausanne,IC,External,2022-03-27 09:56:00,Bern,20,rain,2022
+Zürich-Luzern,IC,Infrastructure,2022-03-28 15:02:00,Zürich HB,2,fog,2022
+Zürich-Genève,IC,Connection wait,2022-03-29 22:31:00,Genève,12,rain,2022
+Zürich-Genève,IC,External,2022-03-29 23:01:00,Lausanne,2,rain,2022
+Basel-Lausanne,IC,Rolling stock,2022-03-30 10:57:00,Basel SBB,18,clear,2022
+S2 Zürich,S,Infrastructure,2022-03-30 19:41:00,Effretikon,56,rain,2022
+Basel-Olten,IC,Operations,2022-03-31 18:09:00,Liestal,2,clear,2022
+S5 Bern,S,External,2022-04-01 04:43:00,Burgdorf,19,snow,2022
+S5 Bern,S,Boarding,2022-04-01 07:42:00,Bern,2,clear,2022
+Zürich-Bern,IC,Boarding,2022-04-01 20:10:00,Zürich HB,2,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-04-02 12:40:00,Zürich HB,6,snow,2022
+Lausanne-Brig,IR,Operations,2022-04-02 22:16:00,Lausanne,4,clear,2022
+Bern-Biel,IR,Connection wait,2022-04-03 17:29:00,Lyss,4,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-04-04 16:49:00,Olten,22,clear,2022
+Lausanne-Brig,IR,Connection wait,2022-04-05 12:20:00,Lausanne,2,rain,2022
+Basel-Lausanne,IC,Operations,2022-04-05 12:43:00,Basel SBB,5,clear,2022
+St. Gallen-Zürich,IR,Infrastructure,2022-04-05 23:37:00,Winterthur,6,clear,2022
+Zürich-Chur,IC,External,2022-04-06 20:51:00,Chur,22,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-04-06 22:23:00,Zürich HB,21,snow,2022
+S5 Bern,S,External,2022-04-07 05:44:00,Burgdorf,21,rain,2022
+Bern-Biel,IR,Operations,2022-04-07 12:03:00,Lyss,10,rain,2022
+Zürich-Luzern,IC,Rolling stock,2022-04-07 17:03:00,Zug,16,clear,2022
+Basel-Olten,IC,Infrastructure,2022-04-08 08:23:00,Basel SBB,2,rain,2022
+Zürich-Bern,IC,Connection wait,2022-04-08 08:49:00,Bern,2,clear,2022
+Lausanne-Brig,IR,Operations,2022-04-08 16:05:00,Brig,9,clear,2022
+Lausanne-Brig,IR,Boarding,2022-04-09 18:01:00,Lausanne,8,rain,2022
+Zürich-Bern,IC,Rolling stock,2022-04-10 20:10:00,Olten,24,clear,2022
+Lugano-Locarno,RE,External,2022-04-10 22:31:00,Lugano,2,rain,2022
+Bern-Brig,IC,Infrastructure,2022-04-11 06:19:00,Bern,8,clear,2022
+S6 Basel,S,External,2022-04-11 09:03:00,Basel SBB,40,rain,2022
+Lausanne-Brig,IR,External,2022-04-11 13:34:00,Sion,5,rain,2022
+Genève-Lausanne,IC,Connection wait,2022-04-11 19:11:00,Nyon,6,clear,2022
+Zürich-Luzern,IC,Operations,2022-04-12 07:10:00,Luzern,10,clear,2022
+Bern-Biel,IR,Connection wait,2022-04-12 12:07:00,Lyss,2,clear,2022
+Zürich-Genève,IC,Connection wait,2022-04-12 13:13:00,Bern,5,snow,2022
+Zürich-Chur,IC,Rolling stock,2022-04-12 20:45:00,Zürich HB,12,clear,2022
+Olten-Zofingen,RE,Infrastructure,2022-04-13 12:02:00,Olten,36,clear,2022
+Zürich-Bern,IC,Boarding,2022-04-13 23:24:00,Olten,2,clear,2022
+S6 Basel,S,Connection wait,2022-04-14 07:13:00,Pratteln,5,clear,2022
+Zürich-Luzern,IC,Operations,2022-04-15 07:14:00,Luzern,12,snow,2022
+Basel-Olten,IC,External,2022-04-15 18:32:00,Liestal,2,clear,2022
+Olten-Zofingen,RE,Rolling stock,2022-04-15 23:57:00,Zofingen,22,clear,2022
+St. Gallen-Zürich,IR,Operations,2022-04-16 06:18:00,Zürich HB,2,clear,2022
+S2 Zürich,S,Infrastructure,2022-04-16 10:27:00,Effretikon,32,clear,2022
+S1 Lausanne,S,Boarding,2022-04-19 07:59:00,Yverdon,7,rain,2022
+St. Gallen-Zürich,IR,Rolling stock,2022-04-19 16:13:00,Winterthur,2,clear,2022
+Bern-Brig,IC,Rolling stock,2022-04-21 10:49:00,Bern,2,rain,2022
+Genève-Lausanne,IC,Infrastructure,2022-04-21 14:31:00,Lausanne,18,clear,2022
+Zürich-Chur,IC,External,2022-04-21 15:55:00,Zürich HB,95,clear,2022
+Bern-Biel,IR,External,2022-04-21 18:02:00,Biel/Bienne,6,clear,2022
+Zürich-Bern,IC,Rolling stock,2022-04-22 09:11:00,Olten,2,clear,2022
+S6 Basel,S,Boarding,2022-04-23 06:30:00,Basel SBB,2,clear,2022
+Bern-Belp,RE,Infrastructure,2022-04-24 07:16:00,Bern,40,clear,2022
+Lugano-Locarno,RE,Boarding,2022-04-24 07:39:00,Lugano,4,clear,2022
+Lausanne-Brig,IR,Rolling stock,2022-04-24 16:56:00,Brig,3,clear,2022
+S2 Zürich,S,Infrastructure,2022-04-24 17:28:00,Zürich HB,16,clear,2022
+S5 Bern,S,Infrastructure,2022-04-24 17:43:00,Burgdorf,19,clear,2022
+S5 Bern,S,Rolling stock,2022-04-24 21:16:00,Bern,9,clear,2022
+Zürich-Luzern,IC,External,2022-04-25 12:19:00,Zug,11,clear,2022
+Genève-Lausanne,IC,Infrastructure,2022-04-26 23:38:00,Genève,23,fog,2022
+S1 Lausanne,S,Infrastructure,2022-04-26 23:48:00,Yverdon,5,clear,2022
+Bern-Biel,IR,Operations,2022-04-27 07:28:00,Lyss,10,clear,2022
+Genève-Lausanne,IC,Infrastructure,2022-04-27 13:44:00,Genève,6,clear,2022
+Basel-Olten,IC,Connection wait,2022-04-27 15:19:00,Basel SBB,2,rain,2022
+S5 Bern,S,External,2022-04-27 16:02:00,Burgdorf,2,clear,2022
+Bern-Biel,IR,Boarding,2022-04-28 07:10:00,Lyss,2,clear,2022
+Zürich-Schaffhausen,IR,Rolling stock,2022-04-28 23:06:00,Schaffhausen,2,clear,2022
+Lausanne-Brig,IR,Rolling stock,2022-04-29 06:29:00,Sion,9,rain,2022
+Zürich-Genève,IC,External,2022-04-29 17:07:00,Bern,5,fog,2022
+Olten-Zofingen,RE,Connection wait,2022-04-29 18:29:00,Olten,5,clear,2022
+Zürich-Bern,IC,External,2022-04-29 20:58:00,Olten,6,clear,2022
+Zürich-Luzern,IC,Operations,2022-04-30 16:58:00,Zug,11,clear,2022
+Basel-Olten,IC,Infrastructure,2022-04-30 21:51:00,Basel SBB,5,rain,2022
+Basel-Olten,IC,External,2022-05-01 13:39:00,Basel SBB,18,rain,2022
+St. Gallen-Zürich,IR,Infrastructure,2022-05-02 07:58:00,St. Gallen,21,clear,2022
+Zürich-Luzern,IC,Rolling stock,2022-05-02 07:59:00,Zug,9,clear,2022
+St. Gallen-Zürich,IR,Operations,2022-05-03 09:35:00,Winterthur,11,clear,2022
+Bern-Brig,IC,Operations,2022-05-03 11:47:00,Brig,7,clear,2022
+St. Gallen-Zürich,IR,Connection wait,2022-05-03 17:06:00,Winterthur,3,clear,2022
+Zürich-Schaffhausen,IR,External,2022-05-03 20:54:00,Bülach,49,clear,2022
+Zürich-Luzern,IC,External,2022-05-03 21:50:00,Luzern,2,clear,2022
+Genève-Lausanne,IC,Infrastructure,2022-05-04 06:27:00,Lausanne,2,rain,2022
+S1 Lausanne,S,Operations,2022-05-04 17:30:00,Yverdon,3,clear,2022
+Basel-Olten,IC,External,2022-05-05 06:10:00,Olten,5,clear,2022
+Olten-Zofingen,RE,External,2022-05-05 06:12:00,Olten,19,clear,2022
+Lausanne-Brig,IR,Rolling stock,2022-05-05 13:15:00,Sion,7,clear,2022
+Zürich-Schaffhausen,IR,Operations,2022-05-05 14:33:00,Zürich HB,9,clear,2022
+St. Gallen-Zürich,IR,Rolling stock,2022-05-05 17:43:00,St. Gallen,11,clear,2022
+Zürich-Chur,IC,Operations,2022-05-06 08:18:00,Chur,22,rain,2022
+Genève-Lausanne,IC,Boarding,2022-05-07 08:07:00,Lausanne,2,fog,2022
+St. Gallen-Zürich,IR,Operations,2022-05-07 18:56:00,Winterthur,21,clear,2022
+Lausanne-Brig,IR,Operations,2022-05-08 01:34:00,Lausanne,2,clear,2022
+Lausanne-Brig,IR,Operations,2022-05-08 10:01:00,Lausanne,2,clear,2022
+Lausanne-Brig,IR,Connection wait,2022-05-08 12:42:00,Sion,3,clear,2022
+S5 Bern,S,External,2022-05-09 03:45:00,Bern,7,clear,2022
+Olten-Zofingen,RE,Operations,2022-05-09 06:00:00,Olten,6,clear,2022
+Bern-Biel,IR,Connection wait,2022-05-09 15:44:00,Lyss,10,clear,2022
+Bern-Biel,IR,External,2022-05-09 17:58:00,Bern,3,clear,2022
+S2 Zürich,S,Rolling stock,2022-05-10 19:54:00,Zürich HB,2,clear,2022
+Zürich-Bern,IC,External,2022-05-12 12:12:00,Zürich HB,4,rain,2022
+Lausanne-Brig,IR,Boarding,2022-05-12 18:23:00,Brig,3,clear,2022
+S1 Lausanne,S,Infrastructure,2022-05-13 20:59:00,Lausanne,5,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-05-14 08:38:00,Zürich HB,2,clear,2022
+Bern-Biel,IR,Rolling stock,2022-05-14 09:03:00,Lyss,2,clear,2022
+Bern-Brig,IC,Boarding,2022-05-15 07:09:00,Spiez,3,clear,2022
+Lausanne-Brig,IR,Boarding,2022-05-16 07:19:00,Sion,6,clear,2022
+Zürich-Chur,IC,Connection wait,2022-05-16 08:53:00,Sargans,4,snow,2022
+S2 Zürich,S,Rolling stock,2022-05-16 16:13:00,Zürich HB,2,clear,2022
+Basel-Olten,IC,Connection wait,2022-05-16 18:18:00,Olten,2,rain,2022
+Lausanne-Brig,IR,Infrastructure,2022-05-16 23:03:00,Lausanne,14,rain,2022
+Genève-Lausanne,IC,Rolling stock,2022-05-17 06:59:00,Genève,22,clear,2022
+Bern-Biel,IR,Infrastructure,2022-05-17 12:20:00,Biel/Bienne,3,clear,2022
+Zürich-Chur,IC,External,2022-05-17 12:30:00,Chur,3,clear,2022
+S6 Basel,S,Boarding,2022-05-17 17:43:00,Basel SBB,3,clear,2022
+Bern-Biel,IR,Boarding,2022-05-18 08:01:00,Lyss,2,clear,2022
+Zürich-Genève,IC,Operations,2022-05-18 19:45:00,Zürich HB,10,snow,2022
+Basel-Lausanne,IC,Rolling stock,2022-05-19 15:18:00,Lausanne,4,clear,2022
+S5 Bern,S,Operations,2022-05-19 21:24:00,Bern,5,clear,2022
+S5 Bern,S,Connection wait,2022-05-20 17:00:00,Bern,2,clear,2022
+Zürich-Schaffhausen,IR,Operations,2022-05-21 11:03:00,Zürich HB,2,clear,2022
+Bern-Biel,IR,Infrastructure,2022-05-21 14:28:00,Bern,12,rain,2022
+Genève-Lausanne,IC,Rolling stock,2022-05-23 10:31:00,Nyon,2,rain,2022
+Basel-Olten,IC,Connection wait,2022-05-23 10:33:00,Liestal,20,clear,2022
+Lausanne-Brig,IR,Operations,2022-05-23 10:53:00,Sion,9,clear,2022
+Zürich-Genève,IC,Rolling stock,2022-05-24 08:24:00,Genève,6,clear,2022
+Lausanne-Brig,IR,Infrastructure,2022-05-25 03:28:00,Brig,9,clear,2022
+Bern-Belp,RE,Connection wait,2022-05-26 05:03:00,Bern,5,clear,2022
+Bern-Biel,IR,Rolling stock,2022-05-26 17:20:00,Bern,3,clear,2022
+Zürich-Chur,IC,External,2022-05-27 19:59:00,Chur,17,clear,2022
+Genève-Lausanne,IC,Operations,2022-05-28 06:21:00,Nyon,11,clear,2022
+Olten-Zofingen,RE,Infrastructure,2022-05-28 06:45:00,Olten,7,clear,2022
+Lugano-Locarno,RE,Boarding,2022-05-28 07:45:00,Locarno,9,clear,2022
+Basel-Lausanne,IC,Operations,2022-05-28 23:58:00,Bern,16,rain,2022
+S2 Zürich,S,Boarding,2022-05-29 12:10:00,Effretikon,2,snow,2022
+Lugano-Locarno,RE,Rolling stock,2022-05-30 10:17:00,Lugano,2,clear,2022
+Zürich-Luzern,IC,Infrastructure,2022-05-30 12:30:00,Zürich HB,29,clear,2022
+Lugano-Locarno,RE,Connection wait,2022-05-31 09:36:00,Lugano,2,clear,2022
+Bern-Belp,RE,Rolling stock,2022-06-02 23:32:00,Bern,2,clear,2022
+Zürich-Schaffhausen,IR,External,2022-06-02 23:49:00,Bülach,41,snow,2022
+Bern-Biel,IR,Infrastructure,2022-06-03 06:08:00,Bern,8,clear,2022
+Lausanne-Brig,IR,Connection wait,2022-06-03 08:21:00,Brig,2,clear,2022
+St. Gallen-Zürich,IR,Rolling stock,2022-06-03 09:11:00,Zürich HB,11,clear,2022
+St. Gallen-Zürich,IR,Connection wait,2022-06-03 13:21:00,Winterthur,6,clear,2022
+Zürich-Bern,IC,Connection wait,2022-06-04 07:47:00,Bern,3,fog,2022
+Zürich-Chur,IC,Operations,2022-06-05 19:57:00,Sargans,15,snow,2022
+S5 Bern,S,Connection wait,2022-06-07 08:41:00,Bern,3,clear,2022
+S5 Bern,S,External,2022-06-08 19:20:00,Bern,6,snow,2022
+Zürich-Bern,IC,Rolling stock,2022-06-09 16:11:00,Zürich HB,7,clear,2022
+Zürich-Luzern,IC,Rolling stock,2022-06-11 06:21:00,Zürich HB,2,fog,2022
+S6 Basel,S,Operations,2022-06-11 14:19:00,Pratteln,2,rain,2022
+Bern-Belp,RE,Operations,2022-06-12 18:08:00,Bern,9,rain,2022
+Genève-Lausanne,IC,Rolling stock,2022-06-14 00:47:00,Nyon,17,clear,2022
+Bern-Brig,IC,Infrastructure,2022-06-14 13:37:00,Spiez,3,clear,2022
+Zürich-Schaffhausen,IR,Infrastructure,2022-06-15 06:38:00,Bülach,9,rain,2022
+St. Gallen-Zürich,IR,Connection wait,2022-06-15 19:30:00,Zürich HB,2,clear,2022
+Zürich-Luzern,IC,Operations,2022-06-15 21:50:00,Zug,7,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-06-16 09:26:00,Sargans,25,clear,2022
+Zürich-Luzern,IC,Rolling stock,2022-06-16 11:10:00,Luzern,5,rain,2022
+S1 Lausanne,S,Connection wait,2022-06-16 14:43:00,Lausanne,19,clear,2022
+Olten-Zofingen,RE,External,2022-06-16 16:32:00,Zofingen,11,clear,2022
+St. Gallen-Zürich,IR,External,2022-06-17 06:03:00,Winterthur,19,clear,2022
+Zürich-Schaffhausen,IR,Connection wait,2022-06-17 10:25:00,Bülach,18,fog,2022
+Lugano-Locarno,RE,Connection wait,2022-06-17 20:29:00,Lugano,3,rain,2022
+S5 Bern,S,Operations,2022-06-17 21:01:00,Burgdorf,10,clear,2022
+Bern-Biel,IR,Rolling stock,2022-06-17 23:16:00,Biel/Bienne,33,snow,2022
+Lausanne-Brig,IR,Infrastructure,2022-06-19 17:55:00,Sion,19,clear,2022
+S5 Bern,S,Rolling stock,2022-06-19 19:28:00,Burgdorf,2,rain,2022
+Zürich-Luzern,IC,Infrastructure,2022-06-21 09:00:00,Zug,26,clear,2022
+Lausanne-Brig,IR,Infrastructure,2022-06-21 23:39:00,Lausanne,2,fog,2022
+Basel-Lausanne,IC,Infrastructure,2022-06-22 17:08:00,Bern,16,rain,2022
+Genève-Lausanne,IC,Infrastructure,2022-06-23 11:57:00,Nyon,4,rain,2022
+Zürich-Luzern,IC,Infrastructure,2022-06-23 15:28:00,Luzern,17,clear,2022
+Zürich-Schaffhausen,IR,Infrastructure,2022-06-23 16:42:00,Zürich HB,18,clear,2022
+S2 Zürich,S,Infrastructure,2022-06-23 16:56:00,Effretikon,9,fog,2022
+S1 Lausanne,S,Infrastructure,2022-06-23 23:26:00,Lausanne,37,clear,2022
+Bern-Biel,IR,Boarding,2022-06-24 08:58:00,Bern,6,rain,2022
+Bern-Belp,RE,Boarding,2022-06-25 06:09:00,Bern,2,clear,2022
+Zürich-Genève,IC,Operations,2022-06-25 10:13:00,Zürich HB,2,clear,2022
+Lausanne-Brig,IR,Infrastructure,2022-06-25 20:32:00,Sion,31,clear,2022
+Basel-Olten,IC,Connection wait,2022-06-29 07:35:00,Liestal,2,clear,2022
+S1 Lausanne,S,Connection wait,2022-06-30 08:54:00,Yverdon,6,rain,2022
+Lausanne-Brig,IR,Boarding,2022-06-30 17:35:00,Sion,6,fog,2022
+Bern-Biel,IR,Infrastructure,2022-06-30 17:53:00,Biel/Bienne,24,clear,2022
+S2 Zürich,S,Operations,2022-07-01 07:47:00,Pfäffikon,18,fog,2022
+Basel-Olten,IC,Operations,2022-07-01 10:21:00,Basel SBB,9,clear,2022
+Zürich-Chur,IC,Operations,2022-07-01 11:06:00,Chur,2,clear,2022
+Basel-Lausanne,IC,External,2022-07-01 19:14:00,Bern,4,clear,2022
+Zürich-Schaffhausen,IR,Operations,2022-07-01 20:58:00,Bülach,2,clear,2022
+Bern-Brig,IC,Rolling stock,2022-07-02 07:21:00,Brig,4,clear,2022
+Zürich-Luzern,IC,Operations,2022-07-02 15:51:00,Luzern,9,clear,2022
+Zürich-Genève,IC,External,2022-07-02 18:52:00,Genève,21,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-07-05 05:35:00,Bern,2,clear,2022
+Zürich-Schaffhausen,IR,Rolling stock,2022-07-05 07:40:00,Bülach,2,fog,2022
+Zürich-Schaffhausen,IR,Rolling stock,2022-07-05 10:04:00,Schaffhausen,16,clear,2022
+Zürich-Genève,IC,Infrastructure,2022-07-05 12:34:00,Bern,16,rain,2022
+Zürich-Luzern,IC,Operations,2022-07-05 14:40:00,Zug,3,rain,2022
+Lugano-Locarno,RE,Connection wait,2022-07-05 19:50:00,Lugano,11,clear,2022
+Bern-Biel,IR,External,2022-07-05 22:10:00,Biel/Bienne,12,rain,2022
+Bern-Biel,IR,Connection wait,2022-07-06 07:51:00,Lyss,15,clear,2022
+S5 Bern,S,Connection wait,2022-07-07 22:16:00,Burgdorf,8,clear,2022
+Bern-Biel,IR,Rolling stock,2022-07-09 14:51:00,Lyss,4,clear,2022
+Basel-Lausanne,IC,Boarding,2022-07-09 19:16:00,Lausanne,2,clear,2022
+Zürich-Chur,IC,Rolling stock,2022-07-10 14:11:00,Chur,5,clear,2022
+Zürich-Luzern,IC,Connection wait,2022-07-11 16:25:00,Zürich HB,3,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-07-11 19:15:00,Zürich HB,25,clear,2022
+Zürich-Bern,IC,Boarding,2022-07-14 07:18:00,Olten,2,clear,2022
+Bern-Belp,RE,Infrastructure,2022-07-14 21:44:00,Bern,9,snow,2022
+Zürich-Genève,IC,Boarding,2022-07-16 07:09:00,Lausanne,7,snow,2022
+Lugano-Locarno,RE,Connection wait,2022-07-17 09:01:00,Locarno,2,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-07-17 13:26:00,Sargans,36,rain,2022
+S1 Lausanne,S,Connection wait,2022-07-18 08:59:00,Yverdon,2,rain,2022
+Lausanne-Brig,IR,Operations,2022-07-19 06:30:00,Lausanne,5,clear,2022
+Zürich-Luzern,IC,Infrastructure,2022-07-19 10:15:00,Luzern,7,rain,2022
+S5 Bern,S,External,2022-07-19 13:20:00,Burgdorf,19,clear,2022
+Zürich-Schaffhausen,IR,External,2022-07-20 12:58:00,Zürich HB,6,clear,2022
+Zürich-Chur,IC,Rolling stock,2022-07-20 14:00:00,Chur,17,clear,2022
+Zürich-Luzern,IC,Infrastructure,2022-07-20 14:21:00,Zürich HB,6,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-07-20 22:31:00,Zürich HB,2,clear,2022
+S6 Basel,S,Connection wait,2022-07-21 23:17:00,Basel SBB,7,rain,2022
+Genève-Lausanne,IC,Rolling stock,2022-07-22 01:22:00,Nyon,2,clear,2022
+Zürich-Bern,IC,External,2022-07-22 16:02:00,Bern,7,rain,2022
+Zürich-Bern,IC,Operations,2022-07-22 20:18:00,Bern,5,rain,2022
+Basel-Lausanne,IC,Infrastructure,2022-07-23 06:39:00,Basel SBB,37,snow,2022
+Basel-Lausanne,IC,External,2022-07-23 19:59:00,Bern,7,clear,2022
+Genève-Lausanne,IC,Operations,2022-07-24 18:40:00,Lausanne,2,clear,2022
+Zürich-Bern,IC,Connection wait,2022-07-24 22:35:00,Zürich HB,6,snow,2022
+Zürich-Luzern,IC,Boarding,2022-07-25 08:21:00,Zürich HB,6,rain,2022
+Basel-Olten,IC,Rolling stock,2022-07-25 11:40:00,Olten,2,clear,2022
+Genève-Lausanne,IC,Infrastructure,2022-07-25 12:39:00,Genève,32,rain,2022
+S5 Bern,S,Infrastructure,2022-07-27 05:10:00,Bern,8,fog,2022
+Zürich-Genève,IC,External,2022-07-27 16:23:00,Genève,7,clear,2022
+Lausanne-Brig,IR,Connection wait,2022-07-27 22:14:00,Lausanne,7,clear,2022
+Lugano-Locarno,RE,Rolling stock,2022-07-27 22:28:00,Locarno,2,clear,2022
+Basel-Lausanne,IC,Infrastructure,2022-07-28 05:02:00,Lausanne,9,clear,2022
+Bern-Biel,IR,Boarding,2022-07-29 10:25:00,Biel/Bienne,5,rain,2022
+Zürich-Schaffhausen,IR,Infrastructure,2022-07-30 01:00:00,Bülach,5,rain,2022
+Zürich-Bern,IC,Operations,2022-07-30 06:45:00,Olten,36,rain,2022
+Bern-Biel,IR,Operations,2022-07-31 08:38:00,Biel/Bienne,10,rain,2022
+Olten-Zofingen,RE,Rolling stock,2022-07-31 11:47:00,Olten,7,clear,2022
+Olten-Zofingen,RE,Operations,2022-08-01 19:05:00,Olten,10,clear,2022
+Bern-Brig,IC,External,2022-08-02 06:39:00,Spiez,5,clear,2022
+Zürich-Chur,IC,External,2022-08-02 21:03:00,Zürich HB,36,clear,2022
+Basel-Lausanne,IC,Boarding,2022-08-04 06:24:00,Lausanne,9,rain,2022
+Genève-Lausanne,IC,Boarding,2022-08-04 17:38:00,Nyon,3,clear,2022
+Lausanne-Brig,IR,Connection wait,2022-08-05 14:21:00,Sion,9,clear,2022
+Bern-Belp,RE,Infrastructure,2022-08-05 21:43:00,Bern,24,clear,2022
+Zürich-Genève,IC,Operations,2022-08-06 12:21:00,Bern,12,snow,2022
+Lausanne-Brig,IR,External,2022-08-07 06:28:00,Lausanne,17,rain,2022
+Bern-Biel,IR,Infrastructure,2022-08-08 00:14:00,Lyss,16,clear,2022
+Genève-Lausanne,IC,Connection wait,2022-08-08 07:09:00,Genève,8,clear,2022
+S2 Zürich,S,External,2022-08-08 19:54:00,Effretikon,2,clear,2022
+Bern-Biel,IR,Infrastructure,2022-08-08 23:39:00,Lyss,52,clear,2022
+Olten-Zofingen,RE,Infrastructure,2022-08-09 18:11:00,Zofingen,13,rain,2022
+Olten-Zofingen,RE,Rolling stock,2022-08-09 18:37:00,Olten,12,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-08-10 12:36:00,Sargans,18,rain,2022
+Olten-Zofingen,RE,External,2022-08-11 11:16:00,Zofingen,10,clear,2022
+Lugano-Locarno,RE,Connection wait,2022-08-11 11:40:00,Lugano,11,clear,2022
+Bern-Belp,RE,Rolling stock,2022-08-11 21:59:00,Bern,3,clear,2022
+Olten-Zofingen,RE,Connection wait,2022-08-11 23:12:00,Olten,12,clear,2022
+Bern-Brig,IC,External,2022-08-12 16:37:00,Brig,3,clear,2022
+Olten-Zofingen,RE,Connection wait,2022-08-12 18:29:00,Zofingen,2,rain,2022
+Lugano-Locarno,RE,Infrastructure,2022-08-13 19:50:00,Lugano,17,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-08-13 23:53:00,Olten,3,fog,2022
+Lausanne-Brig,IR,External,2022-08-15 18:09:00,Sion,24,snow,2022
+Bern-Biel,IR,Operations,2022-08-17 14:11:00,Bern,3,clear,2022
+Basel-Olten,IC,Infrastructure,2022-08-18 09:04:00,Basel SBB,2,clear,2022
+Zürich-Genève,IC,Operations,2022-08-18 10:32:00,Zürich HB,22,snow,2022
+Bern-Biel,IR,Operations,2022-08-20 11:09:00,Biel/Bienne,2,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-08-20 15:09:00,Bern,8,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-08-21 05:43:00,Sargans,3,clear,2022
+Zürich-Genève,IC,External,2022-08-21 16:36:00,Bern,3,clear,2022
+Zürich-Bern,IC,Connection wait,2022-08-22 22:30:00,Zürich HB,11,fog,2022
+Zürich-Schaffhausen,IR,Boarding,2022-08-24 15:34:00,Zürich HB,7,fog,2022
+Olten-Zofingen,RE,External,2022-08-24 20:25:00,Olten,9,clear,2022
+Zürich-Luzern,IC,Rolling stock,2022-08-25 11:39:00,Luzern,2,clear,2022
+St. Gallen-Zürich,IR,External,2022-08-26 12:38:00,Zürich HB,14,rain,2022
+S1 Lausanne,S,Connection wait,2022-08-26 20:01:00,Yverdon,18,rain,2022
+Lugano-Locarno,RE,Rolling stock,2022-08-27 23:50:00,Lugano,32,clear,2022
+Bern-Brig,IC,Operations,2022-08-28 08:06:00,Brig,5,clear,2022
+Lugano-Locarno,RE,External,2022-08-28 20:51:00,Locarno,3,clear,2022
+S1 Lausanne,S,External,2022-08-29 16:21:00,Lausanne,10,clear,2022
+Zürich-Schaffhausen,IR,External,2022-08-29 18:02:00,Bülach,9,clear,2022
+Bern-Brig,IC,Rolling stock,2022-08-29 20:44:00,Spiez,2,rain,2022
+S5 Bern,S,Infrastructure,2022-08-30 12:18:00,Bern,5,snow,2022
+Zürich-Luzern,IC,Boarding,2022-08-31 05:26:00,Zug,2,rain,2022
+St. Gallen-Zürich,IR,External,2022-08-31 08:04:00,Zürich HB,7,rain,2022
+Lugano-Locarno,RE,Infrastructure,2022-09-01 15:45:00,Locarno,7,clear,2022
+Zürich-Chur,IC,Boarding,2022-09-01 18:29:00,Chur,14,clear,2022
+Zürich-Luzern,IC,External,2022-09-01 21:08:00,Zürich HB,23,rain,2022
+Lugano-Locarno,RE,Operations,2022-09-02 06:06:00,Locarno,16,rain,2022
+Zürich-Schaffhausen,IR,Connection wait,2022-09-02 07:42:00,Zürich HB,2,clear,2022
+S2 Zürich,S,Rolling stock,2022-09-02 15:27:00,Pfäffikon,5,rain,2022
+Bern-Belp,RE,Rolling stock,2022-09-04 17:43:00,Bern,10,clear,2022
+Genève-Lausanne,IC,Infrastructure,2022-09-05 05:51:00,Genève,15,clear,2022
+Basel-Olten,IC,Connection wait,2022-09-05 08:40:00,Olten,19,clear,2022
+Zürich-Schaffhausen,IR,Connection wait,2022-09-06 08:19:00,Schaffhausen,6,clear,2022
+Zürich-Luzern,IC,Boarding,2022-09-07 14:55:00,Luzern,2,clear,2022
+Zürich-Chur,IC,Boarding,2022-09-08 09:33:00,Sargans,2,clear,2022
+Zürich-Genève,IC,Operations,2022-09-10 15:48:00,Zürich HB,3,clear,2022
+Bern-Brig,IC,Rolling stock,2022-09-10 16:21:00,Brig,13,clear,2022
+S1 Lausanne,S,Infrastructure,2022-09-11 07:46:00,Yverdon,13,clear,2022
+Genève-Lausanne,IC,Boarding,2022-09-11 15:56:00,Nyon,2,clear,2022
+S1 Lausanne,S,Connection wait,2022-09-12 07:51:00,Lausanne,19,clear,2022
+S1 Lausanne,S,Boarding,2022-09-12 14:21:00,Lausanne,11,fog,2022
+Zürich-Chur,IC,Infrastructure,2022-09-12 15:28:00,Sargans,33,fog,2022
+S6 Basel,S,Infrastructure,2022-09-14 13:12:00,Pratteln,13,rain,2022
+Bern-Biel,IR,Boarding,2022-09-14 21:16:00,Lyss,5,snow,2022
+Bern-Belp,RE,Infrastructure,2022-09-14 22:39:00,Bern,7,clear,2022
+Lugano-Locarno,RE,External,2022-09-14 23:18:00,Lugano,7,clear,2022
+Olten-Zofingen,RE,Rolling stock,2022-09-15 23:30:00,Zofingen,2,clear,2022
+Bern-Belp,RE,Rolling stock,2022-09-15 23:55:00,Belp,6,clear,2022
+Zürich-Bern,IC,Rolling stock,2022-09-16 05:31:00,Olten,32,clear,2022
+Zürich-Bern,IC,Boarding,2022-09-16 15:12:00,Zürich HB,3,clear,2022
+Zürich-Chur,IC,Boarding,2022-09-17 02:16:00,Chur,11,fog,2022
+Zürich-Bern,IC,Boarding,2022-09-17 10:08:00,Olten,3,clear,2022
+Bern-Brig,IC,Infrastructure,2022-09-17 14:41:00,Brig,23,rain,2022
+Lugano-Locarno,RE,Operations,2022-09-18 05:44:00,Locarno,2,rain,2022
+Bern-Belp,RE,Infrastructure,2022-09-19 13:48:00,Bern,32,clear,2022
+Lausanne-Brig,IR,Infrastructure,2022-09-19 19:56:00,Brig,7,clear,2022
+S2 Zürich,S,Boarding,2022-09-20 18:41:00,Effretikon,6,clear,2022
+S1 Lausanne,S,Infrastructure,2022-09-22 11:28:00,Lausanne,6,fog,2022
+Basel-Lausanne,IC,Connection wait,2022-09-22 19:03:00,Lausanne,2,snow,2022
+Zürich-Genève,IC,Connection wait,2022-09-23 10:10:00,Bern,3,clear,2022
+Olten-Zofingen,RE,Connection wait,2022-09-23 13:46:00,Olten,2,clear,2022
+Bern-Biel,IR,Infrastructure,2022-09-23 17:40:00,Bern,2,clear,2022
+St. Gallen-Zürich,IR,Boarding,2022-09-23 18:15:00,Winterthur,2,clear,2022
+Bern-Brig,IC,External,2022-09-24 08:04:00,Brig,2,rain,2022
+S2 Zürich,S,Infrastructure,2022-09-25 07:55:00,Zürich HB,5,clear,2022
+Genève-Lausanne,IC,External,2022-09-26 08:48:00,Lausanne,17,clear,2022
+Zürich-Chur,IC,Connection wait,2022-09-26 14:18:00,Sargans,5,clear,2022
+Basel-Olten,IC,Rolling stock,2022-09-26 16:54:00,Olten,2,clear,2022
+Zürich-Schaffhausen,IR,External,2022-09-28 12:44:00,Schaffhausen,9,clear,2022
+Zürich-Schaffhausen,IR,Boarding,2022-09-28 19:28:00,Zürich HB,2,clear,2022
+Genève-Lausanne,IC,Operations,2022-09-29 08:28:00,Genève,5,clear,2022
+S1 Lausanne,S,Boarding,2022-09-29 18:54:00,Yverdon,2,snow,2022
+S1 Lausanne,S,Rolling stock,2022-10-01 05:35:00,Yverdon,6,clear,2022
+S1 Lausanne,S,External,2022-10-01 13:59:00,Yverdon,15,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-10-01 14:56:00,Sargans,2,clear,2022
+Zürich-Bern,IC,Rolling stock,2022-10-02 06:37:00,Bern,2,clear,2022
+Zürich-Schaffhausen,IR,Boarding,2022-10-02 16:25:00,Zürich HB,6,clear,2022
+Basel-Olten,IC,Infrastructure,2022-10-02 19:34:00,Basel SBB,14,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-10-03 09:16:00,Bern,2,clear,2022
+Zürich-Genève,IC,External,2022-10-05 20:47:00,Genève,18,clear,2022
+S1 Lausanne,S,Infrastructure,2022-10-07 15:25:00,Yverdon,5,clear,2022
+Zürich-Chur,IC,Operations,2022-10-08 06:38:00,Chur,11,clear,2022
+Bern-Brig,IC,Operations,2022-10-08 20:09:00,Bern,29,rain,2022
+Zürich-Bern,IC,Connection wait,2022-10-08 23:41:00,Olten,2,rain,2022
+Basel-Lausanne,IC,External,2022-10-09 10:26:00,Bern,52,snow,2022
+S2 Zürich,S,Infrastructure,2022-10-09 15:31:00,Effretikon,7,rain,2022
+Zürich-Luzern,IC,Connection wait,2022-10-10 22:53:00,Luzern,12,clear,2022
+S1 Lausanne,S,Operations,2022-10-11 08:12:00,Yverdon,6,clear,2022
+Basel-Olten,IC,External,2022-10-11 13:34:00,Olten,10,clear,2022
+Zürich-Bern,IC,Boarding,2022-10-12 22:17:00,Olten,2,rain,2022
+Zürich-Genève,IC,Rolling stock,2022-10-14 20:11:00,Bern,2,rain,2022
+Zürich-Genève,IC,Connection wait,2022-10-15 22:51:00,Genève,5,clear,2022
+Zürich-Genève,IC,Infrastructure,2022-10-17 20:02:00,Zürich HB,4,clear,2022
+S2 Zürich,S,Boarding,2022-10-17 21:50:00,Zürich HB,13,clear,2022
+Lausanne-Brig,IR,Rolling stock,2022-10-18 06:30:00,Sion,2,clear,2022
+Bern-Belp,RE,External,2022-10-18 11:17:00,Belp,2,snow,2022
+S2 Zürich,S,Operations,2022-10-18 14:52:00,Effretikon,2,clear,2022
+Genève-Lausanne,IC,Boarding,2022-10-18 18:15:00,Nyon,8,rain,2022
+Basel-Olten,IC,Boarding,2022-10-19 18:03:00,Olten,9,clear,2022
+Zürich-Genève,IC,Boarding,2022-10-19 20:05:00,Bern,5,clear,2022
+Lausanne-Brig,IR,Operations,2022-10-20 12:23:00,Sion,7,rain,2022
+Bern-Belp,RE,Rolling stock,2022-10-22 23:08:00,Belp,10,clear,2022
+Zürich-Chur,IC,External,2022-10-23 15:01:00,Zürich HB,3,clear,2022
+Bern-Brig,IC,Infrastructure,2022-10-23 15:25:00,Bern,21,clear,2022
+Basel-Lausanne,IC,External,2022-10-23 20:04:00,Bern,6,snow,2022
+St. Gallen-Zürich,IR,Infrastructure,2022-10-24 05:50:00,St. Gallen,3,snow,2022
+Basel-Olten,IC,Boarding,2022-10-26 19:33:00,Liestal,2,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-10-27 12:14:00,Zürich HB,2,clear,2022
+Bern-Belp,RE,Connection wait,2022-10-27 16:03:00,Bern,26,rain,2022
+Basel-Lausanne,IC,Infrastructure,2022-10-27 20:50:00,Lausanne,7,rain,2022
+S1 Lausanne,S,External,2022-10-28 02:01:00,Lausanne,3,rain,2022
+Bern-Brig,IC,External,2022-10-28 05:19:00,Brig,15,clear,2022
+S6 Basel,S,Operations,2022-10-28 23:34:00,Pratteln,3,rain,2022
+Bern-Brig,IC,External,2022-10-30 08:45:00,Brig,9,clear,2022
+Bern-Belp,RE,Infrastructure,2022-10-31 15:24:00,Belp,4,rain,2022
+Zürich-Genève,IC,External,2022-11-01 12:02:00,Lausanne,2,rain,2022
+Bern-Biel,IR,Connection wait,2022-11-01 14:46:00,Biel/Bienne,6,clear,2022
+Bern-Belp,RE,Connection wait,2022-11-01 14:51:00,Belp,4,clear,2022
+Basel-Lausanne,IC,External,2022-11-04 06:05:00,Lausanne,26,fog,2022
+Bern-Brig,IC,Operations,2022-11-05 11:07:00,Bern,2,clear,2022
+Bern-Biel,IR,Connection wait,2022-11-06 23:28:00,Lyss,12,snow,2022
+Bern-Brig,IC,Rolling stock,2022-11-07 02:02:00,Spiez,2,rain,2022
+Olten-Zofingen,RE,Infrastructure,2022-11-07 05:25:00,Zofingen,9,clear,2022
+Basel-Lausanne,IC,Infrastructure,2022-11-08 05:23:00,Bern,42,snow,2022
+Zürich-Genève,IC,Operations,2022-11-08 07:14:00,Bern,4,clear,2022
+Bern-Biel,IR,External,2022-11-08 17:51:00,Bern,20,fog,2022
+S2 Zürich,S,Connection wait,2022-11-09 18:10:00,Effretikon,3,rain,2022
+Bern-Belp,RE,Infrastructure,2022-11-10 13:52:00,Belp,5,clear,2022
+Zürich-Chur,IC,External,2022-11-10 17:40:00,Chur,20,rain,2022
+Bern-Belp,RE,External,2022-11-10 20:48:00,Bern,23,clear,2022
+S1 Lausanne,S,Infrastructure,2022-11-11 19:41:00,Yverdon,29,clear,2022
+Bern-Biel,IR,Boarding,2022-11-12 08:25:00,Bern,2,fog,2022
+S6 Basel,S,Infrastructure,2022-11-12 16:12:00,Basel SBB,2,clear,2022
+Olten-Zofingen,RE,External,2022-11-13 05:15:00,Zofingen,2,clear,2022
+Bern-Brig,IC,Rolling stock,2022-11-13 07:09:00,Spiez,33,snow,2022
+Zürich-Genève,IC,Operations,2022-11-13 08:43:00,Genève,8,fog,2022
+S6 Basel,S,Infrastructure,2022-11-13 09:45:00,Basel SBB,9,clear,2022
+S1 Lausanne,S,Connection wait,2022-11-13 18:50:00,Yverdon,4,clear,2022
+Zürich-Bern,IC,Connection wait,2022-11-13 22:28:00,Bern,2,clear,2022
+Zürich-Luzern,IC,Connection wait,2022-11-14 09:13:00,Luzern,2,clear,2022
+Basel-Olten,IC,Infrastructure,2022-11-14 10:28:00,Olten,7,rain,2022
+S5 Bern,S,Rolling stock,2022-11-15 15:36:00,Burgdorf,22,clear,2022
+Basel-Olten,IC,Operations,2022-11-16 16:42:00,Basel SBB,23,clear,2022
+S6 Basel,S,Rolling stock,2022-11-17 09:40:00,Basel SBB,5,fog,2022
+Bern-Belp,RE,Infrastructure,2022-11-18 10:04:00,Belp,11,clear,2022
+Zürich-Genève,IC,Operations,2022-11-18 15:31:00,Bern,6,clear,2022
+Zürich-Genève,IC,Rolling stock,2022-11-18 16:46:00,Bern,10,clear,2022
+Zürich-Chur,IC,Boarding,2022-11-18 18:02:00,Chur,2,rain,2022
+Bern-Brig,IC,Operations,2022-11-19 08:37:00,Bern,32,fog,2022
+Zürich-Bern,IC,Infrastructure,2022-11-19 14:35:00,Zürich HB,6,clear,2022
+Zürich-Genève,IC,Rolling stock,2022-11-23 11:41:00,Lausanne,2,rain,2022
+Zürich-Schaffhausen,IR,Connection wait,2022-11-23 16:39:00,Schaffhausen,3,clear,2022
+Basel-Olten,IC,Operations,2022-11-23 22:08:00,Olten,2,rain,2022
+Bern-Brig,IC,Rolling stock,2022-11-24 18:29:00,Brig,9,clear,2022
+Bern-Brig,IC,Connection wait,2022-11-24 23:55:00,Bern,6,rain,2022
+Bern-Brig,IC,External,2022-11-25 08:15:00,Spiez,15,fog,2022
+Basel-Olten,IC,Operations,2022-11-25 11:19:00,Olten,2,snow,2022
+S2 Zürich,S,Connection wait,2022-11-25 16:58:00,Zürich HB,8,clear,2022
+Zürich-Bern,IC,Boarding,2022-11-26 08:46:00,Olten,2,clear,2022
+Genève-Lausanne,IC,External,2022-11-26 19:01:00,Genève,2,rain,2022
+Bern-Belp,RE,Connection wait,2022-11-27 07:46:00,Bern,7,rain,2022
+Lausanne-Brig,IR,Infrastructure,2022-11-27 12:42:00,Sion,5,rain,2022
+Bern-Biel,IR,External,2022-11-29 13:56:00,Lyss,8,clear,2022
+S2 Zürich,S,External,2022-12-01 11:41:00,Effretikon,2,snow,2022
+Zürich-Schaffhausen,IR,Infrastructure,2022-12-03 05:48:00,Zürich HB,15,clear,2022
+Zürich-Chur,IC,Infrastructure,2022-12-03 10:11:00,Chur,6,clear,2022
+Lugano-Locarno,RE,Infrastructure,2022-12-04 14:47:00,Lugano,19,clear,2022
+Bern-Brig,IC,Infrastructure,2022-12-06 05:25:00,Bern,5,clear,2022
+Zürich-Genève,IC,External,2022-12-06 15:40:00,Zürich HB,9,snow,2022
+S6 Basel,S,Infrastructure,2022-12-07 08:55:00,Basel SBB,2,fog,2022
+Olten-Zofingen,RE,Boarding,2022-12-07 18:53:00,Zofingen,2,clear,2022
+St. Gallen-Zürich,IR,Infrastructure,2022-12-08 10:03:00,Zürich HB,5,rain,2022
+Genève-Lausanne,IC,Infrastructure,2022-12-08 21:03:00,Lausanne,23,clear,2022
+Zürich-Bern,IC,Operations,2022-12-09 06:54:00,Zürich HB,2,clear,2022
+Bern-Belp,RE,External,2022-12-10 18:22:00,Belp,33,clear,2022
+Olten-Zofingen,RE,Connection wait,2022-12-10 20:15:00,Olten,5,clear,2022
+Genève-Lausanne,IC,Infrastructure,2022-12-10 23:38:00,Nyon,4,clear,2022
+Basel-Olten,IC,Operations,2022-12-11 10:58:00,Olten,2,clear,2022
+Genève-Lausanne,IC,External,2022-12-12 17:55:00,Nyon,2,snow,2022
+Olten-Zofingen,RE,Infrastructure,2022-12-12 21:03:00,Zofingen,4,clear,2022
+Genève-Lausanne,IC,Boarding,2022-12-13 06:41:00,Nyon,3,clear,2022
+Zürich-Bern,IC,Infrastructure,2022-12-13 19:37:00,Bern,13,fog,2022
+S2 Zürich,S,Operations,2022-12-14 05:28:00,Effretikon,2,clear,2022
+S1 Lausanne,S,Rolling stock,2022-12-15 05:19:00,Yverdon,3,clear,2022
+Zürich-Schaffhausen,IR,Boarding,2022-12-15 19:25:00,Zürich HB,2,clear,2022
+Basel-Olten,IC,External,2022-12-17 08:32:00,Olten,17,clear,2022
+Lugano-Locarno,RE,External,2022-12-17 19:20:00,Lugano,2,clear,2022
+St. Gallen-Zürich,IR,Operations,2022-12-17 21:03:00,Winterthur,5,clear,2022
+Zürich-Genève,IC,External,2022-12-18 18:33:00,Bern,4,clear,2022
+Basel-Lausanne,IC,Infrastructure,2022-12-23 09:11:00,Lausanne,4,clear,2022
+Zürich-Luzern,IC,Connection wait,2022-12-23 15:42:00,Zürich HB,2,clear,2022
+S6 Basel,S,Infrastructure,2022-12-24 04:35:00,Basel SBB,33,clear,2022
+S6 Basel,S,Rolling stock,2022-12-25 08:10:00,Basel SBB,2,rain,2022
+S6 Basel,S,Connection wait,2022-12-25 08:38:00,Basel SBB,4,snow,2022
+St. Gallen-Zürich,IR,Infrastructure,2022-12-25 08:56:00,St. Gallen,4,clear,2022
+Basel-Olten,IC,External,2022-12-25 14:31:00,Olten,2,rain,2022
+Lugano-Locarno,RE,Infrastructure,2022-12-25 20:08:00,Locarno,34,fog,2022
+Zürich-Schaffhausen,IR,Boarding,2022-12-26 09:36:00,Schaffhausen,22,clear,2022
+S2 Zürich,S,External,2022-12-26 12:38:00,Zürich HB,23,clear,2022
+Zürich-Genève,IC,Infrastructure,2022-12-28 05:34:00,Genève,13,clear,2022
+Bern-Biel,IR,Infrastructure,2022-12-28 12:32:00,Biel/Bienne,7,clear,2022
+Basel-Lausanne,IC,Connection wait,2022-12-29 12:29:00,Lausanne,11,clear,2022
+Genève-Lausanne,IC,Operations,2022-12-30 18:21:00,Nyon,2,clear,2022
+St. Gallen-Zürich,IR,Rolling stock,2022-12-31 16:52:00,St. Gallen,20,rain,2022
+S6 Basel,S,Infrastructure,2023-01-01 05:58:00,Basel SBB,24,clear,2023
+Lausanne-Brig,IR,Infrastructure,2023-01-01 14:51:00,Brig,31,fog,2023
+Bern-Belp,RE,Operations,2023-01-01 21:19:00,Belp,3,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-01-02 10:12:00,Zürich HB,2,clear,2023
+Bern-Brig,IC,Boarding,2023-01-03 19:46:00,Spiez,2,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-01-03 23:01:00,Basel SBB,13,clear,2023
+Zürich-Luzern,IC,Rolling stock,2023-01-05 13:55:00,Luzern,5,rain,2023
+Lausanne-Brig,IR,External,2023-01-06 12:45:00,Lausanne,16,clear,2023
+Bern-Biel,IR,Connection wait,2023-01-07 08:38:00,Biel/Bienne,2,clear,2023
+Genève-Lausanne,IC,Infrastructure,2023-01-07 09:31:00,Lausanne,14,clear,2023
+Basel-Olten,IC,Connection wait,2023-01-09 04:32:00,Olten,2,clear,2023
+Lausanne-Brig,IR,Operations,2023-01-09 09:03:00,Sion,4,clear,2023
+Basel-Lausanne,IC,Operations,2023-01-09 22:35:00,Lausanne,21,clear,2023
+Zürich-Genève,IC,Connection wait,2023-01-13 18:58:00,Bern,3,clear,2023
+Bern-Biel,IR,Boarding,2023-01-14 09:40:00,Bern,4,clear,2023
+Zürich-Genève,IC,Infrastructure,2023-01-15 04:49:00,Zürich HB,15,clear,2023
+Basel-Olten,IC,Rolling stock,2023-01-15 05:44:00,Basel SBB,4,rain,2023
+Lausanne-Brig,IR,Boarding,2023-01-15 12:36:00,Lausanne,2,clear,2023
+Bern-Belp,RE,External,2023-01-15 12:56:00,Bern,39,snow,2023
+S1 Lausanne,S,Infrastructure,2023-01-16 12:12:00,Lausanne,4,clear,2023
+Bern-Biel,IR,Rolling stock,2023-01-18 06:54:00,Lyss,2,rain,2023
+Basel-Lausanne,IC,Infrastructure,2023-01-18 16:12:00,Basel SBB,3,rain,2023
+Bern-Belp,RE,External,2023-01-19 16:33:00,Bern,12,rain,2023
+Lugano-Locarno,RE,Boarding,2023-01-19 19:15:00,Locarno,5,clear,2023
+S6 Basel,S,Rolling stock,2023-01-20 10:45:00,Basel SBB,12,rain,2023
+Genève-Lausanne,IC,External,2023-01-22 09:30:00,Genève,2,clear,2023
+Zürich-Genève,IC,Infrastructure,2023-01-22 17:58:00,Lausanne,10,clear,2023
+Basel-Olten,IC,External,2023-01-22 18:11:00,Olten,6,rain,2023
+Basel-Olten,IC,Connection wait,2023-01-23 12:22:00,Liestal,5,rain,2023
+Zürich-Genève,IC,Rolling stock,2023-01-23 19:19:00,Bern,14,rain,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-01-24 18:02:00,St. Gallen,2,clear,2023
+Basel-Lausanne,IC,External,2023-01-24 23:35:00,Basel SBB,2,clear,2023
+Bern-Biel,IR,Operations,2023-01-26 10:42:00,Lyss,29,clear,2023
+Olten-Zofingen,RE,Operations,2023-01-26 23:05:00,Zofingen,35,clear,2023
+Bern-Brig,IC,Rolling stock,2023-01-27 22:10:00,Bern,16,clear,2023
+Bern-Biel,IR,Boarding,2023-01-28 19:03:00,Lyss,2,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-01-30 09:02:00,Basel SBB,6,clear,2023
+Zürich-Chur,IC,Connection wait,2023-01-30 09:46:00,Sargans,6,snow,2023
+Bern-Brig,IC,Operations,2023-01-31 09:49:00,Bern,10,clear,2023
+Lausanne-Brig,IR,Rolling stock,2023-01-31 19:35:00,Brig,11,rain,2023
+Basel-Lausanne,IC,Infrastructure,2023-02-01 14:16:00,Basel SBB,26,rain,2023
+Zürich-Luzern,IC,Rolling stock,2023-02-02 06:56:00,Zug,3,rain,2023
+Olten-Zofingen,RE,External,2023-02-03 11:38:00,Zofingen,2,clear,2023
+Zürich-Luzern,IC,Rolling stock,2023-02-03 22:01:00,Zürich HB,9,clear,2023
+S6 Basel,S,Boarding,2023-02-04 20:13:00,Pratteln,3,clear,2023
+S1 Lausanne,S,External,2023-02-06 06:56:00,Yverdon,2,rain,2023
+Bern-Belp,RE,Rolling stock,2023-02-06 10:30:00,Bern,2,clear,2023
+S5 Bern,S,Boarding,2023-02-06 16:39:00,Burgdorf,2,rain,2023
+Zürich-Luzern,IC,Rolling stock,2023-02-07 09:46:00,Zug,10,clear,2023
+Bern-Biel,IR,External,2023-02-07 11:24:00,Biel/Bienne,41,rain,2023
+Zürich-Bern,IC,Infrastructure,2023-02-08 06:20:00,Zürich HB,4,clear,2023
+Genève-Lausanne,IC,Connection wait,2023-02-08 07:03:00,Lausanne,9,clear,2023
+Lausanne-Brig,IR,Rolling stock,2023-02-08 08:41:00,Brig,2,fog,2023
+S5 Bern,S,Boarding,2023-02-08 11:32:00,Burgdorf,2,clear,2023
+S2 Zürich,S,Boarding,2023-02-08 16:50:00,Zürich HB,2,clear,2023
+S2 Zürich,S,Operations,2023-02-09 23:16:00,Zürich HB,9,clear,2023
+Olten-Zofingen,RE,Operations,2023-02-10 05:35:00,Olten,8,clear,2023
+Lausanne-Brig,IR,Rolling stock,2023-02-10 22:21:00,Lausanne,14,clear,2023
+Zürich-Bern,IC,Boarding,2023-02-11 04:28:00,Olten,5,clear,2023
+Zürich-Schaffhausen,IR,Infrastructure,2023-02-12 12:59:00,Schaffhausen,2,snow,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-02-12 13:53:00,Zürich HB,13,clear,2023
+Zürich-Chur,IC,Rolling stock,2023-02-13 07:37:00,Zürich HB,3,clear,2023
+S6 Basel,S,External,2023-02-13 09:29:00,Pratteln,31,clear,2023
+Zürich-Genève,IC,Operations,2023-02-13 16:44:00,Genève,19,clear,2023
+Zürich-Schaffhausen,IR,Boarding,2023-02-14 03:20:00,Zürich HB,8,clear,2023
+Zürich-Luzern,IC,Connection wait,2023-02-14 07:06:00,Zug,3,clear,2023
+Basel-Lausanne,IC,Operations,2023-02-14 09:04:00,Lausanne,2,clear,2023
+Bern-Brig,IC,Infrastructure,2023-02-14 09:11:00,Bern,4,clear,2023
+Lugano-Locarno,RE,Rolling stock,2023-02-14 11:18:00,Locarno,6,rain,2023
+Bern-Biel,IR,External,2023-02-14 12:23:00,Biel/Bienne,14,rain,2023
+Zürich-Bern,IC,Connection wait,2023-02-14 17:49:00,Olten,3,clear,2023
+Genève-Lausanne,IC,External,2023-02-16 06:19:00,Lausanne,9,rain,2023
+Zürich-Schaffhausen,IR,Connection wait,2023-02-16 07:00:00,Schaffhausen,4,clear,2023
+Zürich-Bern,IC,Connection wait,2023-02-17 21:34:00,Olten,12,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-02-19 14:09:00,Basel SBB,28,clear,2023
+Zürich-Chur,IC,Operations,2023-02-20 13:07:00,Chur,4,clear,2023
+Bern-Brig,IC,Infrastructure,2023-02-21 05:36:00,Spiez,29,clear,2023
+St. Gallen-Zürich,IR,External,2023-02-21 07:11:00,St. Gallen,9,clear,2023
+Zürich-Bern,IC,Infrastructure,2023-02-21 08:41:00,Bern,2,snow,2023
+Bern-Biel,IR,Operations,2023-02-21 10:09:00,Lyss,2,rain,2023
+Lausanne-Brig,IR,Infrastructure,2023-02-23 07:41:00,Sion,15,rain,2023
+Lausanne-Brig,IR,External,2023-02-23 14:04:00,Lausanne,2,clear,2023
+Zürich-Genève,IC,Operations,2023-02-23 16:20:00,Zürich HB,2,clear,2023
+Zürich-Genève,IC,Operations,2023-02-23 18:02:00,Zürich HB,4,rain,2023
+Olten-Zofingen,RE,External,2023-02-24 06:25:00,Zofingen,25,clear,2023
+S2 Zürich,S,External,2023-02-24 06:39:00,Pfäffikon,2,snow,2023
+Genève-Lausanne,IC,Operations,2023-02-24 17:27:00,Genève,26,rain,2023
+Lausanne-Brig,IR,Boarding,2023-02-25 08:19:00,Lausanne,3,rain,2023
+Zürich-Genève,IC,Boarding,2023-02-25 12:32:00,Genève,6,clear,2023
+Zürich-Chur,IC,External,2023-02-26 18:59:00,Sargans,2,clear,2023
+Zürich-Chur,IC,Rolling stock,2023-02-26 19:45:00,Sargans,8,clear,2023
+Zürich-Schaffhausen,IR,Rolling stock,2023-02-27 09:16:00,Bülach,4,clear,2023
+Zürich-Genève,IC,Operations,2023-02-27 13:22:00,Bern,2,clear,2023
+S2 Zürich,S,External,2023-02-27 13:30:00,Zürich HB,2,rain,2023
+Basel-Lausanne,IC,Rolling stock,2023-02-27 23:47:00,Lausanne,10,clear,2023
+Lugano-Locarno,RE,Rolling stock,2023-02-28 11:34:00,Locarno,9,clear,2023
+Basel-Lausanne,IC,External,2023-02-28 11:52:00,Bern,51,snow,2023
+Genève-Lausanne,IC,Operations,2023-02-28 16:27:00,Genève,6,snow,2023
+Bern-Brig,IC,Operations,2023-03-01 06:24:00,Spiez,2,clear,2023
+Bern-Belp,RE,Infrastructure,2023-03-01 07:22:00,Bern,2,rain,2023
+Basel-Lausanne,IC,External,2023-03-01 07:57:00,Bern,19,clear,2023
+S2 Zürich,S,Operations,2023-03-02 10:58:00,Zürich HB,5,rain,2023
+Bern-Belp,RE,External,2023-03-02 12:49:00,Belp,5,rain,2023
+St. Gallen-Zürich,IR,Operations,2023-03-02 14:19:00,St. Gallen,7,clear,2023
+Bern-Biel,IR,Infrastructure,2023-03-02 18:28:00,Bern,2,snow,2023
+Zürich-Luzern,IC,External,2023-03-03 06:17:00,Zug,7,rain,2023
+Lausanne-Brig,IR,Infrastructure,2023-03-04 09:27:00,Brig,12,fog,2023
+Basel-Olten,IC,External,2023-03-04 22:29:00,Olten,10,clear,2023
+St. Gallen-Zürich,IR,Infrastructure,2023-03-05 05:31:00,St. Gallen,6,snow,2023
+Zürich-Chur,IC,Operations,2023-03-05 08:12:00,Zürich HB,4,clear,2023
+Bern-Brig,IC,Rolling stock,2023-03-05 11:21:00,Spiez,9,clear,2023
+Lugano-Locarno,RE,Operations,2023-03-05 14:59:00,Lugano,2,clear,2023
+Zürich-Schaffhausen,IR,Boarding,2023-03-06 18:01:00,Schaffhausen,11,clear,2023
+Basel-Lausanne,IC,External,2023-03-06 23:02:00,Basel SBB,2,clear,2023
+St. Gallen-Zürich,IR,External,2023-03-07 12:35:00,Zürich HB,13,snow,2023
+S6 Basel,S,Connection wait,2023-03-08 08:02:00,Basel SBB,8,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-03-09 06:46:00,Lausanne,8,clear,2023
+Olten-Zofingen,RE,External,2023-03-09 23:57:00,Olten,6,rain,2023
+Basel-Olten,IC,Infrastructure,2023-03-10 09:47:00,Liestal,2,fog,2023
+S5 Bern,S,Infrastructure,2023-03-10 11:48:00,Bern,16,clear,2023
+Zürich-Chur,IC,Infrastructure,2023-03-11 12:23:00,Zürich HB,6,clear,2023
+Lugano-Locarno,RE,Rolling stock,2023-03-11 16:48:00,Lugano,2,clear,2023
+S5 Bern,S,External,2023-03-12 02:21:00,Bern,3,clear,2023
+S1 Lausanne,S,Boarding,2023-03-13 08:52:00,Yverdon,6,clear,2023
+S1 Lausanne,S,Rolling stock,2023-03-14 05:27:00,Lausanne,2,rain,2023
+S1 Lausanne,S,Infrastructure,2023-03-14 06:01:00,Lausanne,4,clear,2023
+Zürich-Bern,IC,Connection wait,2023-03-15 14:37:00,Zürich HB,6,fog,2023
+St. Gallen-Zürich,IR,Operations,2023-03-16 19:25:00,St. Gallen,16,clear,2023
+Genève-Lausanne,IC,Boarding,2023-03-16 19:36:00,Nyon,3,clear,2023
+Basel-Lausanne,IC,Rolling stock,2023-03-18 06:50:00,Lausanne,15,clear,2023
+Zürich-Luzern,IC,Operations,2023-03-18 11:20:00,Zürich HB,4,clear,2023
+S5 Bern,S,Boarding,2023-03-19 21:44:00,Bern,2,clear,2023
+Bern-Brig,IC,External,2023-03-19 23:30:00,Spiez,3,clear,2023
+Bern-Brig,IC,Infrastructure,2023-03-20 16:10:00,Bern,8,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-03-20 20:11:00,Zürich HB,17,fog,2023
+Zürich-Genève,IC,Infrastructure,2023-03-20 22:52:00,Zürich HB,19,clear,2023
+St. Gallen-Zürich,IR,External,2023-03-21 06:03:00,St. Gallen,9,clear,2023
+Genève-Lausanne,IC,External,2023-03-21 15:18:00,Nyon,5,clear,2023
+Bern-Biel,IR,Connection wait,2023-03-21 21:33:00,Biel/Bienne,2,clear,2023
+Zürich-Genève,IC,Boarding,2023-03-22 07:15:00,Lausanne,2,rain,2023
+Olten-Zofingen,RE,Operations,2023-03-22 20:43:00,Olten,13,clear,2023
+Zürich-Genève,IC,Rolling stock,2023-03-23 13:15:00,Bern,3,clear,2023
+Bern-Biel,IR,External,2023-03-24 14:07:00,Bern,10,rain,2023
+Bern-Belp,RE,Connection wait,2023-03-27 22:45:00,Belp,7,rain,2023
+S6 Basel,S,External,2023-03-28 06:33:00,Pratteln,8,clear,2023
+Olten-Zofingen,RE,External,2023-03-28 09:13:00,Zofingen,7,snow,2023
+Bern-Biel,IR,External,2023-03-29 11:55:00,Lyss,2,snow,2023
+Bern-Belp,RE,Rolling stock,2023-03-29 14:04:00,Bern,20,rain,2023
+Zürich-Chur,IC,Boarding,2023-03-29 14:53:00,Zürich HB,2,rain,2023
+S5 Bern,S,Rolling stock,2023-03-30 12:18:00,Bern,2,fog,2023
+S1 Lausanne,S,Rolling stock,2023-03-30 22:40:00,Lausanne,6,clear,2023
+Basel-Olten,IC,Infrastructure,2023-04-01 06:15:00,Liestal,35,clear,2023
+Bern-Biel,IR,Infrastructure,2023-04-01 12:53:00,Lyss,2,clear,2023
+Bern-Belp,RE,Boarding,2023-04-01 21:33:00,Bern,2,rain,2023
+St. Gallen-Zürich,IR,Connection wait,2023-04-02 20:57:00,Zürich HB,16,clear,2023
+Zürich-Schaffhausen,IR,External,2023-04-03 08:16:00,Bülach,2,clear,2023
+Bern-Brig,IC,Infrastructure,2023-04-03 13:21:00,Spiez,34,clear,2023
+Zürich-Genève,IC,Connection wait,2023-04-03 18:50:00,Genève,4,clear,2023
+Basel-Lausanne,IC,External,2023-04-03 21:50:00,Lausanne,5,fog,2023
+Zürich-Luzern,IC,Infrastructure,2023-04-03 23:27:00,Zug,19,clear,2023
+Basel-Lausanne,IC,Boarding,2023-04-05 13:32:00,Bern,2,clear,2023
+Zürich-Genève,IC,Infrastructure,2023-04-06 06:19:00,Lausanne,12,clear,2023
+Zürich-Chur,IC,Boarding,2023-04-06 19:48:00,Zürich HB,5,clear,2023
+Genève-Lausanne,IC,Rolling stock,2023-04-06 22:18:00,Genève,7,rain,2023
+Basel-Lausanne,IC,Connection wait,2023-04-07 15:52:00,Bern,14,rain,2023
+St. Gallen-Zürich,IR,Operations,2023-04-07 21:23:00,St. Gallen,7,clear,2023
+Bern-Brig,IC,Rolling stock,2023-04-09 00:05:00,Bern,16,clear,2023
+Zürich-Genève,IC,Infrastructure,2023-04-09 09:34:00,Zürich HB,20,clear,2023
+Zürich-Genève,IC,Infrastructure,2023-04-09 18:59:00,Lausanne,95,rain,2023
+Basel-Olten,IC,Boarding,2023-04-10 07:59:00,Basel SBB,3,clear,2023
+Genève-Lausanne,IC,External,2023-04-11 18:43:00,Nyon,16,clear,2023
+Bern-Belp,RE,Connection wait,2023-04-12 08:36:00,Belp,2,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-04-12 11:44:00,Basel SBB,3,rain,2023
+Bern-Biel,IR,Rolling stock,2023-04-12 23:25:00,Lyss,4,clear,2023
+Basel-Olten,IC,Boarding,2023-04-13 08:32:00,Basel SBB,13,clear,2023
+Zürich-Chur,IC,External,2023-04-13 11:41:00,Zürich HB,15,clear,2023
+Lausanne-Brig,IR,Operations,2023-04-13 18:54:00,Brig,24,clear,2023
+S6 Basel,S,Connection wait,2023-04-14 01:43:00,Basel SBB,2,clear,2023
+S6 Basel,S,Operations,2023-04-14 12:36:00,Pratteln,11,rain,2023
+Zürich-Schaffhausen,IR,Connection wait,2023-04-15 08:36:00,Zürich HB,4,clear,2023
+Lugano-Locarno,RE,Infrastructure,2023-04-16 04:08:00,Lugano,24,rain,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-04-16 07:32:00,St. Gallen,2,clear,2023
+Basel-Lausanne,IC,Connection wait,2023-04-16 17:12:00,Bern,3,clear,2023
+Lausanne-Brig,IR,Infrastructure,2023-04-16 22:32:00,Lausanne,86,clear,2023
+Lausanne-Brig,IR,Rolling stock,2023-04-18 07:31:00,Lausanne,12,rain,2023
+Bern-Biel,IR,Rolling stock,2023-04-18 09:01:00,Lyss,21,rain,2023
+Zürich-Chur,IC,Infrastructure,2023-04-18 22:17:00,Chur,12,snow,2023
+Olten-Zofingen,RE,Infrastructure,2023-04-19 11:05:00,Olten,10,clear,2023
+S6 Basel,S,Infrastructure,2023-04-19 11:40:00,Basel SBB,6,clear,2023
+Basel-Olten,IC,Boarding,2023-04-20 08:08:00,Olten,2,clear,2023
+Bern-Brig,IC,Connection wait,2023-04-20 09:34:00,Bern,2,rain,2023
+S2 Zürich,S,Connection wait,2023-04-21 05:51:00,Effretikon,4,rain,2023
+Bern-Brig,IC,Connection wait,2023-04-21 13:18:00,Bern,4,clear,2023
+Zürich-Chur,IC,Operations,2023-04-22 12:50:00,Chur,5,clear,2023
+Lausanne-Brig,IR,Operations,2023-04-22 14:13:00,Lausanne,6,clear,2023
+Zürich-Schaffhausen,IR,Operations,2023-04-22 14:54:00,Schaffhausen,2,rain,2023
+Basel-Lausanne,IC,External,2023-04-22 16:29:00,Basel SBB,9,clear,2023
+S5 Bern,S,External,2023-04-24 09:21:00,Bern,2,clear,2023
+Bern-Belp,RE,Infrastructure,2023-04-24 10:00:00,Bern,2,clear,2023
+Lausanne-Brig,IR,External,2023-04-25 13:35:00,Lausanne,5,rain,2023
+Basel-Lausanne,IC,Connection wait,2023-04-25 13:50:00,Lausanne,2,clear,2023
+Lausanne-Brig,IR,Boarding,2023-04-25 17:52:00,Lausanne,6,clear,2023
+S5 Bern,S,Infrastructure,2023-04-25 20:08:00,Burgdorf,2,clear,2023
+Basel-Olten,IC,Rolling stock,2023-04-26 08:02:00,Olten,3,clear,2023
+Olten-Zofingen,RE,Rolling stock,2023-04-27 07:26:00,Olten,4,clear,2023
+Zürich-Bern,IC,Infrastructure,2023-04-27 08:23:00,Zürich HB,11,rain,2023
+Olten-Zofingen,RE,Operations,2023-04-28 00:57:00,Zofingen,2,clear,2023
+S2 Zürich,S,Infrastructure,2023-04-28 05:18:00,Pfäffikon,28,rain,2023
+Basel-Olten,IC,Operations,2023-04-28 11:20:00,Basel SBB,7,clear,2023
+Bern-Belp,RE,Operations,2023-04-28 13:13:00,Bern,10,clear,2023
+Basel-Olten,IC,Boarding,2023-04-29 09:54:00,Liestal,2,clear,2023
+Lausanne-Brig,IR,External,2023-04-29 20:41:00,Sion,19,clear,2023
+Zürich-Schaffhausen,IR,Connection wait,2023-04-29 20:49:00,Zürich HB,2,clear,2023
+Genève-Lausanne,IC,External,2023-04-30 10:28:00,Genève,13,rain,2023
+Bern-Belp,RE,External,2023-04-30 10:29:00,Belp,2,fog,2023
+Basel-Olten,IC,Operations,2023-04-30 20:07:00,Liestal,2,clear,2023
+Bern-Brig,IC,External,2023-05-01 14:39:00,Spiez,4,clear,2023
+Bern-Brig,IC,Operations,2023-05-01 22:36:00,Spiez,5,rain,2023
+S1 Lausanne,S,Operations,2023-05-02 05:00:00,Lausanne,13,fog,2023
+Bern-Belp,RE,Infrastructure,2023-05-02 14:14:00,Bern,10,clear,2023
+St. Gallen-Zürich,IR,External,2023-05-03 10:09:00,Zürich HB,12,clear,2023
+S1 Lausanne,S,Infrastructure,2023-05-03 11:16:00,Yverdon,2,clear,2023
+Basel-Olten,IC,Boarding,2023-05-03 19:12:00,Liestal,2,rain,2023
+Bern-Brig,IC,Rolling stock,2023-05-04 15:28:00,Brig,2,clear,2023
+Zürich-Chur,IC,Infrastructure,2023-05-04 21:22:00,Chur,4,clear,2023
+S1 Lausanne,S,Rolling stock,2023-05-05 00:57:00,Yverdon,3,clear,2023
+Zürich-Luzern,IC,Operations,2023-05-05 17:01:00,Luzern,11,clear,2023
+Zürich-Bern,IC,Operations,2023-05-06 10:54:00,Zürich HB,2,clear,2023
+Olten-Zofingen,RE,Boarding,2023-05-06 20:29:00,Olten,2,rain,2023
+Olten-Zofingen,RE,Rolling stock,2023-05-07 14:13:00,Olten,20,clear,2023
+Zürich-Schaffhausen,IR,Boarding,2023-05-07 21:02:00,Schaffhausen,2,clear,2023
+Zürich-Luzern,IC,Connection wait,2023-05-08 05:07:00,Zürich HB,3,clear,2023
+Lausanne-Brig,IR,Infrastructure,2023-05-08 09:42:00,Lausanne,6,clear,2023
+Bern-Biel,IR,Boarding,2023-05-08 18:43:00,Biel/Bienne,10,clear,2023
+S5 Bern,S,Infrastructure,2023-05-08 23:47:00,Bern,30,clear,2023
+St. Gallen-Zürich,IR,Operations,2023-05-09 11:31:00,Zürich HB,13,clear,2023
+Zürich-Chur,IC,Rolling stock,2023-05-10 08:37:00,Zürich HB,2,snow,2023
+Lugano-Locarno,RE,Operations,2023-05-11 13:27:00,Locarno,3,clear,2023
+Zürich-Schaffhausen,IR,Connection wait,2023-05-11 16:09:00,Bülach,15,clear,2023
+Zürich-Chur,IC,Boarding,2023-05-11 19:55:00,Zürich HB,7,clear,2023
+St. Gallen-Zürich,IR,Connection wait,2023-05-12 20:58:00,Zürich HB,5,clear,2023
+S5 Bern,S,Infrastructure,2023-05-13 17:59:00,Burgdorf,3,clear,2023
+Genève-Lausanne,IC,Boarding,2023-05-13 19:02:00,Lausanne,3,clear,2023
+Genève-Lausanne,IC,Infrastructure,2023-05-13 23:16:00,Nyon,11,clear,2023
+Lugano-Locarno,RE,Connection wait,2023-05-14 13:03:00,Lugano,24,clear,2023
+Zürich-Bern,IC,Infrastructure,2023-05-16 06:46:00,Olten,33,clear,2023
+S5 Bern,S,Operations,2023-05-16 23:29:00,Burgdorf,2,clear,2023
+Bern-Biel,IR,Infrastructure,2023-05-17 19:20:00,Biel/Bienne,6,clear,2023
+Zürich-Schaffhausen,IR,External,2023-05-18 10:48:00,Bülach,2,fog,2023
+Bern-Brig,IC,Infrastructure,2023-05-18 16:27:00,Spiez,2,rain,2023
+S5 Bern,S,Connection wait,2023-05-19 18:53:00,Burgdorf,5,clear,2023
+Lausanne-Brig,IR,Operations,2023-05-19 21:02:00,Brig,12,clear,2023
+Bern-Belp,RE,Operations,2023-05-21 11:57:00,Belp,2,rain,2023
+Zürich-Luzern,IC,Infrastructure,2023-05-21 14:40:00,Zug,23,rain,2023
+Lausanne-Brig,IR,External,2023-05-22 09:13:00,Sion,9,rain,2023
+Zürich-Genève,IC,Operations,2023-05-22 11:07:00,Bern,7,clear,2023
+Zürich-Luzern,IC,External,2023-05-22 18:32:00,Zug,12,clear,2023
+S2 Zürich,S,Infrastructure,2023-05-23 05:51:00,Pfäffikon,7,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-05-23 07:11:00,Zürich HB,12,clear,2023
+Bern-Biel,IR,Rolling stock,2023-05-23 17:08:00,Lyss,6,clear,2023
+Bern-Belp,RE,External,2023-05-26 22:49:00,Bern,33,fog,2023
+Bern-Biel,IR,Operations,2023-05-27 06:46:00,Biel/Bienne,26,fog,2023
+Zürich-Bern,IC,Rolling stock,2023-05-27 21:43:00,Zürich HB,4,clear,2023
+Basel-Olten,IC,Rolling stock,2023-05-28 10:22:00,Olten,2,fog,2023
+Zürich-Schaffhausen,IR,Connection wait,2023-05-29 19:26:00,Schaffhausen,4,rain,2023
+Zürich-Bern,IC,Operations,2023-05-29 22:00:00,Zürich HB,2,snow,2023
+Bern-Brig,IC,Rolling stock,2023-05-31 05:02:00,Bern,4,clear,2023
+Zürich-Schaffhausen,IR,External,2023-05-31 10:49:00,Bülach,12,rain,2023
+Olten-Zofingen,RE,Operations,2023-05-31 19:55:00,Zofingen,12,clear,2023
+Zürich-Chur,IC,Infrastructure,2023-05-31 22:15:00,Sargans,17,clear,2023
+Basel-Lausanne,IC,External,2023-06-01 05:55:00,Basel SBB,9,fog,2023
+Basel-Lausanne,IC,Infrastructure,2023-06-01 17:14:00,Basel SBB,7,clear,2023
+Lausanne-Brig,IR,Rolling stock,2023-06-02 07:23:00,Sion,2,clear,2023
+Lausanne-Brig,IR,Connection wait,2023-06-03 17:57:00,Lausanne,2,clear,2023
+Lugano-Locarno,RE,Infrastructure,2023-06-03 22:57:00,Locarno,2,clear,2023
+Basel-Olten,IC,External,2023-06-05 10:07:00,Olten,24,clear,2023
+Basel-Lausanne,IC,External,2023-06-05 12:35:00,Lausanne,5,clear,2023
+Zürich-Luzern,IC,Infrastructure,2023-06-06 23:20:00,Luzern,26,fog,2023
+Zürich-Genève,IC,Connection wait,2023-06-07 06:49:00,Zürich HB,19,clear,2023
+Zürich-Chur,IC,Operations,2023-06-08 11:47:00,Chur,2,clear,2023
+Basel-Olten,IC,Operations,2023-06-08 16:56:00,Basel SBB,23,clear,2023
+S1 Lausanne,S,External,2023-06-09 12:39:00,Lausanne,35,rain,2023
+S1 Lausanne,S,Connection wait,2023-06-09 14:30:00,Lausanne,9,clear,2023
+Lugano-Locarno,RE,Connection wait,2023-06-12 17:35:00,Locarno,2,rain,2023
+St. Gallen-Zürich,IR,Boarding,2023-06-13 12:40:00,St. Gallen,2,clear,2023
+S5 Bern,S,Infrastructure,2023-06-13 15:48:00,Burgdorf,27,clear,2023
+Zürich-Genève,IC,Connection wait,2023-06-14 09:18:00,Bern,9,rain,2023
+Bern-Belp,RE,External,2023-06-14 18:06:00,Belp,16,clear,2023
+Bern-Brig,IC,Connection wait,2023-06-14 18:13:00,Bern,9,clear,2023
+Zürich-Bern,IC,Infrastructure,2023-06-15 06:18:00,Olten,35,rain,2023
+Lausanne-Brig,IR,Connection wait,2023-06-16 13:47:00,Brig,11,clear,2023
+Olten-Zofingen,RE,Infrastructure,2023-06-16 23:25:00,Olten,63,clear,2023
+Bern-Brig,IC,Infrastructure,2023-06-17 06:43:00,Spiez,12,fog,2023
+Zürich-Luzern,IC,Rolling stock,2023-06-17 08:50:00,Zug,14,rain,2023
+Bern-Belp,RE,Infrastructure,2023-06-18 00:32:00,Bern,9,fog,2023
+Zürich-Schaffhausen,IR,External,2023-06-18 05:24:00,Zürich HB,2,clear,2023
+Zürich-Bern,IC,External,2023-06-18 13:26:00,Bern,2,clear,2023
+Zürich-Genève,IC,Rolling stock,2023-06-19 22:21:00,Bern,15,clear,2023
+S1 Lausanne,S,External,2023-06-20 10:39:00,Lausanne,11,clear,2023
+Zürich-Luzern,IC,Infrastructure,2023-06-20 23:28:00,Luzern,9,clear,2023
+S5 Bern,S,External,2023-06-22 21:49:00,Bern,44,clear,2023
+S6 Basel,S,Infrastructure,2023-06-24 10:06:00,Basel SBB,18,snow,2023
+Bern-Belp,RE,Rolling stock,2023-06-25 03:53:00,Belp,9,clear,2023
+Bern-Belp,RE,External,2023-06-25 11:34:00,Belp,21,clear,2023
+S6 Basel,S,External,2023-06-25 21:23:00,Basel SBB,6,clear,2023
+St. Gallen-Zürich,IR,Boarding,2023-06-26 07:58:00,Zürich HB,2,clear,2023
+Bern-Biel,IR,Infrastructure,2023-06-26 12:13:00,Biel/Bienne,6,rain,2023
+Basel-Lausanne,IC,Operations,2023-06-27 11:30:00,Basel SBB,16,rain,2023
+Basel-Olten,IC,Infrastructure,2023-06-27 12:12:00,Basel SBB,2,rain,2023
+Bern-Biel,IR,Infrastructure,2023-06-29 08:22:00,Lyss,2,rain,2023
+Zürich-Schaffhausen,IR,Infrastructure,2023-06-29 21:57:00,Zürich HB,13,clear,2023
+Zürich-Schaffhausen,IR,Rolling stock,2023-06-30 06:50:00,Zürich HB,15,clear,2023
+Bern-Brig,IC,Rolling stock,2023-06-30 15:06:00,Spiez,8,clear,2023
+Bern-Brig,IC,Boarding,2023-07-02 06:50:00,Spiez,6,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-07-02 19:35:00,Winterthur,8,clear,2023
+Lugano-Locarno,RE,Boarding,2023-07-02 23:58:00,Locarno,2,rain,2023
+Bern-Biel,IR,Rolling stock,2023-07-03 20:38:00,Bern,9,rain,2023
+S5 Bern,S,Infrastructure,2023-07-04 12:14:00,Burgdorf,3,snow,2023
+S2 Zürich,S,Rolling stock,2023-07-04 19:00:00,Pfäffikon,10,rain,2023
+Zürich-Genève,IC,Connection wait,2023-07-05 18:46:00,Lausanne,2,clear,2023
+Basel-Olten,IC,Operations,2023-07-05 22:00:00,Basel SBB,6,rain,2023
+Zürich-Bern,IC,Connection wait,2023-07-06 08:58:00,Bern,12,rain,2023
+St. Gallen-Zürich,IR,Infrastructure,2023-07-06 23:54:00,St. Gallen,38,clear,2023
+Basel-Olten,IC,Connection wait,2023-07-08 06:31:00,Liestal,13,clear,2023
+S6 Basel,S,Operations,2023-07-09 07:03:00,Basel SBB,2,clear,2023
+Zürich-Schaffhausen,IR,Infrastructure,2023-07-09 08:37:00,Schaffhausen,8,clear,2023
+S1 Lausanne,S,Boarding,2023-07-10 18:35:00,Lausanne,2,clear,2023
+Bern-Belp,RE,External,2023-07-11 06:04:00,Belp,2,fog,2023
+S1 Lausanne,S,Connection wait,2023-07-11 20:37:00,Yverdon,3,clear,2023
+S5 Bern,S,External,2023-07-12 08:57:00,Burgdorf,3,snow,2023
+St. Gallen-Zürich,IR,Boarding,2023-07-12 17:35:00,Zürich HB,5,snow,2023
+Basel-Olten,IC,Rolling stock,2023-07-12 22:23:00,Basel SBB,2,clear,2023
+Lausanne-Brig,IR,External,2023-07-13 06:55:00,Sion,2,fog,2023
+Zürich-Luzern,IC,Infrastructure,2023-07-13 19:11:00,Zug,2,clear,2023
+S1 Lausanne,S,Infrastructure,2023-07-14 16:04:00,Lausanne,37,clear,2023
+Bern-Brig,IC,External,2023-07-15 13:20:00,Brig,9,clear,2023
+S1 Lausanne,S,Infrastructure,2023-07-15 18:29:00,Lausanne,7,clear,2023
+Zürich-Schaffhausen,IR,Infrastructure,2023-07-16 13:53:00,Schaffhausen,2,clear,2023
+Bern-Brig,IC,Boarding,2023-07-17 16:11:00,Bern,2,clear,2023
+S2 Zürich,S,Boarding,2023-07-19 08:50:00,Effretikon,2,clear,2023
+Zürich-Schaffhausen,IR,Rolling stock,2023-07-21 06:26:00,Bülach,2,clear,2023
+Zürich-Luzern,IC,Operations,2023-07-21 11:14:00,Luzern,2,snow,2023
+Lausanne-Brig,IR,External,2023-07-21 12:41:00,Lausanne,8,clear,2023
+Basel-Olten,IC,Rolling stock,2023-07-22 05:56:00,Basel SBB,6,clear,2023
+Lausanne-Brig,IR,Boarding,2023-07-22 14:09:00,Sion,9,rain,2023
+Genève-Lausanne,IC,Infrastructure,2023-07-24 11:02:00,Nyon,12,clear,2023
+S1 Lausanne,S,Operations,2023-07-26 05:02:00,Lausanne,7,clear,2023
+Olten-Zofingen,RE,Infrastructure,2023-07-27 20:19:00,Olten,15,fog,2023
+S6 Basel,S,Boarding,2023-07-30 10:09:00,Pratteln,2,rain,2023
+Basel-Lausanne,IC,Infrastructure,2023-07-30 14:18:00,Bern,5,clear,2023
+Zürich-Chur,IC,Boarding,2023-07-31 07:14:00,Sargans,9,clear,2023
+Zürich-Chur,IC,Infrastructure,2023-08-01 10:55:00,Zürich HB,10,clear,2023
+Bern-Belp,RE,Rolling stock,2023-08-02 02:57:00,Bern,4,clear,2023
+Olten-Zofingen,RE,Rolling stock,2023-08-02 03:18:00,Zofingen,3,clear,2023
+S2 Zürich,S,Boarding,2023-08-02 19:50:00,Pfäffikon,6,clear,2023
+S5 Bern,S,Rolling stock,2023-08-04 01:35:00,Bern,2,clear,2023
+S1 Lausanne,S,Connection wait,2023-08-04 07:09:00,Yverdon,26,clear,2023
+Olten-Zofingen,RE,Boarding,2023-08-04 08:07:00,Zofingen,3,clear,2023
+Genève-Lausanne,IC,External,2023-08-07 10:19:00,Lausanne,43,clear,2023
+Zürich-Schaffhausen,IR,External,2023-08-07 12:17:00,Zürich HB,15,rain,2023
+Bern-Belp,RE,Infrastructure,2023-08-08 11:42:00,Bern,2,clear,2023
+Zürich-Genève,IC,Infrastructure,2023-08-10 20:38:00,Zürich HB,2,snow,2023
+Genève-Lausanne,IC,Rolling stock,2023-08-11 08:29:00,Lausanne,2,rain,2023
+S2 Zürich,S,External,2023-08-11 09:49:00,Pfäffikon,51,snow,2023
+S6 Basel,S,Operations,2023-08-11 10:26:00,Basel SBB,3,clear,2023
+S1 Lausanne,S,Infrastructure,2023-08-11 11:52:00,Lausanne,13,clear,2023
+Zürich-Schaffhausen,IR,Boarding,2023-08-11 19:02:00,Schaffhausen,6,snow,2023
+Lausanne-Brig,IR,Connection wait,2023-08-11 22:51:00,Sion,2,rain,2023
+Basel-Olten,IC,Operations,2023-08-12 08:29:00,Basel SBB,2,clear,2023
+Zürich-Genève,IC,External,2023-08-12 11:18:00,Lausanne,2,snow,2023
+Bern-Belp,RE,External,2023-08-12 15:50:00,Belp,24,clear,2023
+Olten-Zofingen,RE,Boarding,2023-08-14 09:36:00,Olten,10,clear,2023
+Bern-Biel,IR,Infrastructure,2023-08-14 10:26:00,Biel/Bienne,35,clear,2023
+Zürich-Genève,IC,Boarding,2023-08-14 22:56:00,Bern,2,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-08-15 20:39:00,Basel SBB,15,clear,2023
+Zürich-Bern,IC,Operations,2023-08-17 05:28:00,Bern,2,clear,2023
+Genève-Lausanne,IC,Rolling stock,2023-08-17 13:29:00,Nyon,13,clear,2023
+Lausanne-Brig,IR,External,2023-08-18 07:35:00,Brig,3,clear,2023
+Zürich-Schaffhausen,IR,External,2023-08-18 10:03:00,Schaffhausen,6,clear,2023
+Zürich-Genève,IC,Connection wait,2023-08-19 05:28:00,Genève,14,clear,2023
+Zürich-Genève,IC,Rolling stock,2023-08-19 19:11:00,Zürich HB,23,clear,2023
+Bern-Biel,IR,Connection wait,2023-08-21 13:18:00,Bern,4,clear,2023
+Basel-Olten,IC,Rolling stock,2023-08-21 16:38:00,Olten,24,clear,2023
+Zürich-Schaffhausen,IR,Rolling stock,2023-08-22 15:19:00,Zürich HB,7,rain,2023
+S5 Bern,S,Infrastructure,2023-08-22 22:53:00,Burgdorf,8,clear,2023
+S6 Basel,S,Operations,2023-08-24 13:19:00,Pratteln,9,clear,2023
+Zürich-Luzern,IC,Connection wait,2023-08-24 14:38:00,Zug,2,clear,2023
+Zürich-Bern,IC,Rolling stock,2023-08-26 05:24:00,Olten,3,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-08-26 07:11:00,Lausanne,3,clear,2023
+Zürich-Schaffhausen,IR,External,2023-08-26 11:04:00,Schaffhausen,10,clear,2023
+S2 Zürich,S,Infrastructure,2023-08-26 16:56:00,Zürich HB,18,snow,2023
+Zürich-Bern,IC,Operations,2023-08-27 18:10:00,Zürich HB,14,snow,2023
+Lugano-Locarno,RE,Operations,2023-08-28 17:25:00,Locarno,5,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-08-28 20:30:00,Bern,2,clear,2023
+St. Gallen-Zürich,IR,External,2023-08-29 01:13:00,St. Gallen,15,rain,2023
+Bern-Belp,RE,External,2023-08-29 19:13:00,Bern,5,fog,2023
+Bern-Brig,IC,Rolling stock,2023-08-29 19:30:00,Bern,6,clear,2023
+Zürich-Schaffhausen,IR,Infrastructure,2023-08-30 06:19:00,Bülach,5,clear,2023
+Zürich-Luzern,IC,Operations,2023-08-31 01:09:00,Zug,2,clear,2023
+Bern-Brig,IC,Boarding,2023-08-31 17:44:00,Brig,3,clear,2023
+St. Gallen-Zürich,IR,Connection wait,2023-09-01 18:14:00,Zürich HB,26,clear,2023
+Bern-Brig,IC,Rolling stock,2023-09-01 23:09:00,Bern,13,clear,2023
+Zürich-Schaffhausen,IR,Connection wait,2023-09-02 11:40:00,Schaffhausen,9,rain,2023
+Zürich-Bern,IC,Infrastructure,2023-09-02 13:56:00,Bern,15,snow,2023
+Olten-Zofingen,RE,Infrastructure,2023-09-02 20:10:00,Olten,2,snow,2023
+Basel-Olten,IC,Rolling stock,2023-09-06 13:17:00,Liestal,6,clear,2023
+Basel-Olten,IC,External,2023-09-07 05:38:00,Olten,26,clear,2023
+Bern-Brig,IC,Boarding,2023-09-07 18:35:00,Brig,2,clear,2023
+Lugano-Locarno,RE,Rolling stock,2023-09-07 23:19:00,Locarno,9,clear,2023
+Lugano-Locarno,RE,Operations,2023-09-07 23:24:00,Locarno,6,clear,2023
+Zürich-Genève,IC,Infrastructure,2023-09-08 12:32:00,Bern,30,clear,2023
+S6 Basel,S,Rolling stock,2023-09-08 22:27:00,Basel SBB,35,rain,2023
+Lugano-Locarno,RE,Rolling stock,2023-09-08 22:28:00,Lugano,18,clear,2023
+Zürich-Chur,IC,Operations,2023-09-09 11:53:00,Zürich HB,22,clear,2023
+St. Gallen-Zürich,IR,Connection wait,2023-09-09 23:20:00,Zürich HB,9,clear,2023
+Lugano-Locarno,RE,Connection wait,2023-09-10 14:16:00,Lugano,8,snow,2023
+S2 Zürich,S,Operations,2023-09-10 20:41:00,Pfäffikon,9,clear,2023
+S1 Lausanne,S,Boarding,2023-09-10 22:36:00,Yverdon,2,rain,2023
+Zürich-Genève,IC,External,2023-09-11 13:37:00,Zürich HB,2,clear,2023
+Zürich-Schaffhausen,IR,Rolling stock,2023-09-12 12:34:00,Bülach,12,snow,2023
+Bern-Biel,IR,Connection wait,2023-09-12 20:09:00,Lyss,2,clear,2023
+Bern-Brig,IC,Infrastructure,2023-09-13 10:15:00,Spiez,59,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-09-13 11:03:00,Zürich HB,2,rain,2023
+Zürich-Genève,IC,External,2023-09-13 11:33:00,Zürich HB,9,fog,2023
+Zürich-Bern,IC,Connection wait,2023-09-16 03:32:00,Bern,13,snow,2023
+Zürich-Luzern,IC,Connection wait,2023-09-17 06:26:00,Zug,4,clear,2023
+Zürich-Genève,IC,External,2023-09-17 19:31:00,Zürich HB,21,clear,2023
+Bern-Biel,IR,External,2023-09-17 21:54:00,Lyss,15,rain,2023
+Basel-Lausanne,IC,Connection wait,2023-09-19 06:45:00,Lausanne,5,clear,2023
+Bern-Biel,IR,Connection wait,2023-09-19 15:34:00,Lyss,2,clear,2023
+Zürich-Chur,IC,Rolling stock,2023-09-20 09:38:00,Zürich HB,20,clear,2023
+S6 Basel,S,Infrastructure,2023-09-20 23:01:00,Pratteln,3,clear,2023
+S6 Basel,S,Operations,2023-09-21 12:41:00,Pratteln,22,clear,2023
+Zürich-Luzern,IC,External,2023-09-21 13:35:00,Zug,36,rain,2023
+St. Gallen-Zürich,IR,External,2023-09-22 01:02:00,St. Gallen,14,clear,2023
+Zürich-Genève,IC,Connection wait,2023-09-25 11:33:00,Genève,8,clear,2023
+Zürich-Luzern,IC,External,2023-09-25 14:12:00,Zürich HB,61,clear,2023
+Basel-Olten,IC,Boarding,2023-09-25 19:20:00,Liestal,17,clear,2023
+S6 Basel,S,External,2023-09-26 11:13:00,Basel SBB,6,clear,2023
+Zürich-Bern,IC,External,2023-09-27 11:49:00,Olten,2,clear,2023
+S5 Bern,S,External,2023-09-28 14:37:00,Bern,15,clear,2023
+Basel-Lausanne,IC,Connection wait,2023-09-28 20:48:00,Lausanne,10,clear,2023
+Zürich-Genève,IC,Rolling stock,2023-09-29 07:08:00,Zürich HB,18,clear,2023
+S1 Lausanne,S,External,2023-09-29 11:39:00,Yverdon,2,clear,2023
+Lugano-Locarno,RE,External,2023-09-29 19:59:00,Lugano,12,clear,2023
+Bern-Biel,IR,Operations,2023-10-01 23:13:00,Bern,3,clear,2023
+S2 Zürich,S,Connection wait,2023-10-02 11:38:00,Pfäffikon,2,clear,2023
+S2 Zürich,S,External,2023-10-02 20:23:00,Effretikon,25,clear,2023
+Bern-Brig,IC,Boarding,2023-10-03 11:04:00,Bern,2,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-10-04 08:10:00,Zürich HB,3,clear,2023
+Olten-Zofingen,RE,Rolling stock,2023-10-04 14:30:00,Olten,8,clear,2023
+Olten-Zofingen,RE,Infrastructure,2023-10-04 17:29:00,Olten,7,clear,2023
+S6 Basel,S,External,2023-10-05 07:55:00,Pratteln,60,clear,2023
+Basel-Lausanne,IC,Connection wait,2023-10-05 08:24:00,Lausanne,12,clear,2023
+Basel-Olten,IC,External,2023-10-05 08:41:00,Olten,2,clear,2023
+Olten-Zofingen,RE,External,2023-10-05 15:36:00,Olten,2,rain,2023
+Lausanne-Brig,IR,Operations,2023-10-05 20:54:00,Lausanne,18,clear,2023
+S2 Zürich,S,Infrastructure,2023-10-05 23:20:00,Effretikon,58,clear,2023
+Basel-Olten,IC,Boarding,2023-10-06 09:00:00,Liestal,2,clear,2023
+Olten-Zofingen,RE,Rolling stock,2023-10-06 22:26:00,Olten,3,clear,2023
+Zürich-Luzern,IC,Connection wait,2023-10-07 09:10:00,Zürich HB,2,clear,2023
+Zürich-Schaffhausen,IR,Boarding,2023-10-07 10:13:00,Bülach,7,clear,2023
+Zürich-Luzern,IC,Operations,2023-10-07 18:37:00,Luzern,2,fog,2023
+S5 Bern,S,Rolling stock,2023-10-07 19:00:00,Burgdorf,10,clear,2023
+Zürich-Schaffhausen,IR,Connection wait,2023-10-08 14:13:00,Schaffhausen,3,clear,2023
+Zürich-Chur,IC,Boarding,2023-10-08 17:51:00,Chur,7,clear,2023
+Zürich-Bern,IC,Operations,2023-10-08 19:36:00,Olten,2,clear,2023
+S6 Basel,S,Connection wait,2023-10-09 08:37:00,Basel SBB,4,clear,2023
+St. Gallen-Zürich,IR,Infrastructure,2023-10-09 18:39:00,Zürich HB,3,fog,2023
+Bern-Biel,IR,Connection wait,2023-10-10 08:54:00,Lyss,12,clear,2023
+St. Gallen-Zürich,IR,Connection wait,2023-10-10 17:37:00,Zürich HB,24,rain,2023
+Bern-Brig,IC,External,2023-10-11 17:47:00,Brig,16,snow,2023
+Zürich-Chur,IC,Infrastructure,2023-10-12 17:29:00,Chur,21,clear,2023
+St. Gallen-Zürich,IR,Infrastructure,2023-10-13 04:44:00,Winterthur,10,clear,2023
+S5 Bern,S,Rolling stock,2023-10-13 14:08:00,Burgdorf,23,clear,2023
+S1 Lausanne,S,Boarding,2023-10-14 08:09:00,Lausanne,4,clear,2023
+Lugano-Locarno,RE,Rolling stock,2023-10-14 14:53:00,Locarno,11,clear,2023
+Zürich-Genève,IC,Operations,2023-10-14 23:43:00,Lausanne,15,fog,2023
+Olten-Zofingen,RE,Rolling stock,2023-10-15 07:27:00,Zofingen,6,clear,2023
+Zürich-Schaffhausen,IR,Infrastructure,2023-10-15 14:33:00,Zürich HB,2,fog,2023
+Zürich-Schaffhausen,IR,External,2023-10-15 22:06:00,Zürich HB,2,clear,2023
+Zürich-Luzern,IC,Connection wait,2023-10-15 23:53:00,Luzern,2,rain,2023
+Bern-Biel,IR,External,2023-10-16 12:50:00,Lyss,18,clear,2023
+Basel-Lausanne,IC,Infrastructure,2023-10-17 10:20:00,Bern,10,fog,2023
+Zürich-Schaffhausen,IR,Connection wait,2023-10-17 17:07:00,Bülach,6,clear,2023
+Bern-Belp,RE,Rolling stock,2023-10-18 23:41:00,Belp,6,clear,2023
+St. Gallen-Zürich,IR,Connection wait,2023-10-19 11:25:00,Winterthur,2,clear,2023
+Bern-Belp,RE,Connection wait,2023-10-20 12:10:00,Belp,2,rain,2023
+Basel-Olten,IC,Rolling stock,2023-10-22 14:02:00,Liestal,9,rain,2023
+Zürich-Chur,IC,Infrastructure,2023-10-22 22:35:00,Zürich HB,10,clear,2023
+Olten-Zofingen,RE,Boarding,2023-10-23 13:06:00,Zofingen,2,fog,2023
+Zürich-Luzern,IC,Boarding,2023-10-23 15:45:00,Luzern,13,rain,2023
+Lugano-Locarno,RE,Boarding,2023-10-24 09:38:00,Locarno,3,clear,2023
+Zürich-Luzern,IC,External,2023-10-25 13:46:00,Zug,35,snow,2023
+Bern-Biel,IR,External,2023-10-25 16:08:00,Biel/Bienne,3,clear,2023
+Bern-Brig,IC,External,2023-10-27 18:28:00,Bern,18,clear,2023
+St. Gallen-Zürich,IR,External,2023-10-27 19:24:00,Zürich HB,14,clear,2023
+S2 Zürich,S,Infrastructure,2023-10-27 20:46:00,Effretikon,29,clear,2023
+Bern-Belp,RE,External,2023-10-28 05:28:00,Bern,4,clear,2023
+Olten-Zofingen,RE,Rolling stock,2023-10-28 08:08:00,Olten,19,snow,2023
+Genève-Lausanne,IC,External,2023-10-28 14:45:00,Genève,33,clear,2023
+Zürich-Genève,IC,Connection wait,2023-10-28 20:55:00,Lausanne,2,clear,2023
+Basel-Lausanne,IC,Boarding,2023-10-29 17:28:00,Basel SBB,2,clear,2023
+S5 Bern,S,Connection wait,2023-10-29 18:31:00,Burgdorf,2,clear,2023
+Zürich-Bern,IC,Operations,2023-10-30 15:01:00,Olten,13,clear,2023
+Genève-Lausanne,IC,Infrastructure,2023-10-30 15:14:00,Genève,6,clear,2023
+Basel-Olten,IC,Infrastructure,2023-11-01 22:04:00,Olten,11,clear,2023
+S5 Bern,S,Boarding,2023-11-02 09:09:00,Bern,2,fog,2023
+Bern-Belp,RE,External,2023-11-02 18:51:00,Bern,6,rain,2023
+Olten-Zofingen,RE,Rolling stock,2023-11-02 20:55:00,Zofingen,2,clear,2023
+Zürich-Luzern,IC,Rolling stock,2023-11-03 17:23:00,Zürich HB,16,clear,2023
+Basel-Lausanne,IC,Connection wait,2023-11-04 12:22:00,Bern,3,fog,2023
+Zürich-Chur,IC,Infrastructure,2023-11-05 16:24:00,Sargans,11,rain,2023
+Zürich-Luzern,IC,Infrastructure,2023-11-06 14:06:00,Zürich HB,2,clear,2023
+Lugano-Locarno,RE,Infrastructure,2023-11-07 06:33:00,Lugano,36,clear,2023
+S6 Basel,S,Operations,2023-11-07 21:42:00,Basel SBB,9,rain,2023
+Olten-Zofingen,RE,External,2023-11-07 22:55:00,Zofingen,16,clear,2023
+Zürich-Luzern,IC,External,2023-11-08 08:56:00,Zug,33,rain,2023
+Zürich-Luzern,IC,Connection wait,2023-11-09 23:07:00,Zug,3,rain,2023
+Zürich-Bern,IC,Operations,2023-11-10 11:36:00,Bern,2,clear,2023
+Basel-Lausanne,IC,Operations,2023-11-10 17:26:00,Lausanne,6,clear,2023
+Bern-Biel,IR,Rolling stock,2023-11-10 19:42:00,Lyss,6,clear,2023
+Zürich-Luzern,IC,Boarding,2023-11-11 05:47:00,Luzern,2,clear,2023
+Lugano-Locarno,RE,Connection wait,2023-11-11 15:51:00,Locarno,11,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-11-12 06:17:00,Winterthur,3,rain,2023
+Lugano-Locarno,RE,External,2023-11-13 14:32:00,Locarno,9,clear,2023
+Bern-Brig,IC,Infrastructure,2023-11-14 23:31:00,Bern,11,clear,2023
+Lugano-Locarno,RE,Rolling stock,2023-11-15 20:29:00,Locarno,24,clear,2023
+Zürich-Chur,IC,Infrastructure,2023-11-16 07:38:00,Sargans,26,rain,2023
+Bern-Belp,RE,Connection wait,2023-11-17 08:46:00,Belp,17,clear,2023
+Olten-Zofingen,RE,Infrastructure,2023-11-18 14:17:00,Zofingen,31,clear,2023
+Lugano-Locarno,RE,Infrastructure,2023-11-18 19:34:00,Locarno,9,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-11-19 06:07:00,Zürich HB,3,clear,2023
+Zürich-Luzern,IC,Operations,2023-11-19 10:53:00,Luzern,5,clear,2023
+Bern-Brig,IC,Boarding,2023-11-19 11:39:00,Brig,9,clear,2023
+Lausanne-Brig,IR,Rolling stock,2023-11-19 11:49:00,Lausanne,27,rain,2023
+Zürich-Genève,IC,Rolling stock,2023-11-19 21:35:00,Lausanne,6,rain,2023
+Zürich-Schaffhausen,IR,Boarding,2023-11-22 07:15:00,Zürich HB,5,rain,2023
+Zürich-Chur,IC,Rolling stock,2023-11-26 18:20:00,Sargans,3,clear,2023
+Lausanne-Brig,IR,Connection wait,2023-11-26 21:25:00,Lausanne,8,rain,2023
+S2 Zürich,S,Boarding,2023-11-27 08:09:00,Pfäffikon,7,clear,2023
+Bern-Biel,IR,Infrastructure,2023-11-27 14:53:00,Bern,2,clear,2023
+Basel-Lausanne,IC,Connection wait,2023-11-28 05:17:00,Basel SBB,6,clear,2023
+Zürich-Chur,IC,Connection wait,2023-11-28 07:16:00,Chur,2,clear,2023
+St. Gallen-Zürich,IR,Infrastructure,2023-11-28 10:13:00,Winterthur,8,rain,2023
+S5 Bern,S,Rolling stock,2023-11-29 16:31:00,Burgdorf,16,clear,2023
+Basel-Olten,IC,Rolling stock,2023-11-30 08:11:00,Liestal,6,clear,2023
+S6 Basel,S,Connection wait,2023-11-30 12:41:00,Basel SBB,10,clear,2023
+Zürich-Schaffhausen,IR,Operations,2023-12-01 07:14:00,Zürich HB,41,clear,2023
+St. Gallen-Zürich,IR,Boarding,2023-12-01 17:14:00,St. Gallen,2,rain,2023
+Genève-Lausanne,IC,Boarding,2023-12-01 19:15:00,Lausanne,2,clear,2023
+Basel-Lausanne,IC,External,2023-12-01 23:07:00,Lausanne,57,snow,2023
+Basel-Lausanne,IC,Rolling stock,2023-12-03 14:18:00,Basel SBB,2,clear,2023
+Lausanne-Brig,IR,Connection wait,2023-12-04 22:46:00,Lausanne,2,clear,2023
+Lausanne-Brig,IR,External,2023-12-05 06:14:00,Sion,2,rain,2023
+Lugano-Locarno,RE,Infrastructure,2023-12-06 00:14:00,Locarno,2,clear,2023
+Bern-Brig,IC,Infrastructure,2023-12-07 16:37:00,Spiez,22,rain,2023
+Bern-Biel,IR,Operations,2023-12-07 17:23:00,Lyss,2,clear,2023
+S2 Zürich,S,Infrastructure,2023-12-08 12:08:00,Zürich HB,4,rain,2023
+S6 Basel,S,Connection wait,2023-12-09 19:16:00,Pratteln,4,rain,2023
+Basel-Olten,IC,Operations,2023-12-10 19:32:00,Basel SBB,24,rain,2023
+S6 Basel,S,Operations,2023-12-11 18:27:00,Basel SBB,2,clear,2023
+Genève-Lausanne,IC,Rolling stock,2023-12-11 19:24:00,Genève,8,clear,2023
+Olten-Zofingen,RE,Connection wait,2023-12-12 13:55:00,Olten,7,rain,2023
+Zürich-Genève,IC,External,2023-12-13 08:02:00,Lausanne,2,rain,2023
+Zürich-Schaffhausen,IR,Infrastructure,2023-12-14 12:36:00,Zürich HB,7,rain,2023
+Olten-Zofingen,RE,Boarding,2023-12-15 09:35:00,Olten,6,clear,2023
+Bern-Biel,IR,Operations,2023-12-15 22:41:00,Biel/Bienne,2,clear,2023
+Basel-Olten,IC,Infrastructure,2023-12-16 05:24:00,Basel SBB,4,clear,2023
+S1 Lausanne,S,External,2023-12-17 13:23:00,Yverdon,13,rain,2023
+Genève-Lausanne,IC,Boarding,2023-12-17 16:08:00,Lausanne,4,rain,2023
+Zürich-Chur,IC,Boarding,2023-12-18 09:00:00,Chur,5,clear,2023
+S2 Zürich,S,Operations,2023-12-18 23:46:00,Zürich HB,9,clear,2023
+St. Gallen-Zürich,IR,External,2023-12-20 17:32:00,St. Gallen,19,snow,2023
+S6 Basel,S,Rolling stock,2023-12-22 08:27:00,Basel SBB,2,clear,2023
+S5 Bern,S,External,2023-12-23 16:26:00,Bern,6,rain,2023
+Bern-Belp,RE,Operations,2023-12-23 20:26:00,Bern,12,clear,2023
+Genève-Lausanne,IC,External,2023-12-24 04:38:00,Genève,21,rain,2023
+S1 Lausanne,S,Boarding,2023-12-25 07:24:00,Yverdon,7,clear,2023
+Zürich-Schaffhausen,IR,Rolling stock,2023-12-25 16:08:00,Zürich HB,6,clear,2023
+Zürich-Chur,IC,External,2023-12-25 19:10:00,Sargans,9,clear,2023
+Lugano-Locarno,RE,Operations,2023-12-25 20:56:00,Locarno,5,clear,2023
+Basel-Olten,IC,External,2023-12-26 09:25:00,Olten,2,rain,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-12-26 10:00:00,St. Gallen,13,clear,2023
+St. Gallen-Zürich,IR,Operations,2023-12-26 22:30:00,Winterthur,2,clear,2023
+Zürich-Chur,IC,Operations,2023-12-27 08:13:00,Sargans,13,clear,2023
+Bern-Belp,RE,Infrastructure,2023-12-27 17:25:00,Belp,15,clear,2023
+Basel-Lausanne,IC,Operations,2023-12-27 18:09:00,Lausanne,2,clear,2023
+Zürich-Luzern,IC,External,2023-12-27 20:09:00,Zürich HB,30,fog,2023
+Lausanne-Brig,IR,Infrastructure,2023-12-27 23:27:00,Brig,9,rain,2023
+Zürich-Luzern,IC,Connection wait,2023-12-28 03:29:00,Zürich HB,2,clear,2023
+St. Gallen-Zürich,IR,Rolling stock,2023-12-28 13:48:00,Winterthur,3,clear,2023
+Basel-Olten,IC,External,2023-12-28 13:54:00,Basel SBB,13,rain,2023
+S2 Zürich,S,External,2023-12-28 14:54:00,Pfäffikon,10,clear,2023
+Zürich-Luzern,IC,External,2023-12-28 17:36:00,Zürich HB,6,snow,2023
+Zürich-Schaffhausen,IR,Infrastructure,2023-12-29 20:06:00,Bülach,2,clear,2023
+St. Gallen-Zürich,IR,Boarding,2023-12-30 16:52:00,Zürich HB,2,rain,2023
+Basel-Olten,IC,External,2023-12-31 12:25:00,Basel SBB,19,clear,2023
+Zürich-Bern,IC,Boarding,2023-12-31 16:56:00,Zürich HB,5,rain,2023
+Bern-Brig,IC,External,2023-12-31 17:59:00,Bern,3,snow,2023
+Zürich-Schaffhausen,IR,Infrastructure,2024-01-01 06:21:00,Bülach,24,clear,2024
+Lausanne-Brig,IR,Operations,2024-01-01 17:07:00,Brig,8,clear,2024
+Zürich-Bern,IC,External,2024-01-05 09:19:00,Olten,2,fog,2024
+Bern-Biel,IR,External,2024-01-05 18:44:00,Biel/Bienne,9,clear,2024
+Zürich-Bern,IC,Rolling stock,2024-01-06 15:13:00,Bern,19,fog,2024
+Bern-Brig,IC,Infrastructure,2024-01-07 21:58:00,Bern,4,clear,2024
+Bern-Brig,IC,Operations,2024-01-10 16:13:00,Spiez,11,clear,2024
+St. Gallen-Zürich,IR,Rolling stock,2024-01-10 16:13:00,Winterthur,25,clear,2024
+Zürich-Bern,IC,Operations,2024-01-12 07:34:00,Olten,8,clear,2024
+Bern-Belp,RE,Rolling stock,2024-01-12 11:38:00,Bern,6,clear,2024
+Lausanne-Brig,IR,Rolling stock,2024-01-12 12:50:00,Sion,3,rain,2024
+Basel-Olten,IC,External,2024-01-12 20:25:00,Liestal,17,clear,2024
+Bern-Brig,IC,External,2024-01-13 11:59:00,Bern,2,clear,2024
+Lausanne-Brig,IR,Operations,2024-01-13 12:39:00,Lausanne,4,fog,2024
+Bern-Biel,IR,Connection wait,2024-01-14 08:38:00,Lyss,4,clear,2024
+Zürich-Genève,IC,Infrastructure,2024-01-14 17:15:00,Bern,5,clear,2024
+St. Gallen-Zürich,IR,Boarding,2024-01-15 07:54:00,St. Gallen,2,clear,2024
+Bern-Biel,IR,External,2024-01-16 11:45:00,Bern,12,clear,2024
+Bern-Belp,RE,Connection wait,2024-01-16 12:25:00,Belp,12,fog,2024
+S2 Zürich,S,Boarding,2024-01-16 17:44:00,Pfäffikon,5,rain,2024
+Basel-Olten,IC,Operations,2024-01-16 22:01:00,Basel SBB,14,clear,2024
+Zürich-Genève,IC,Operations,2024-01-17 05:26:00,Bern,2,clear,2024
+Zürich-Schaffhausen,IR,External,2024-01-17 05:44:00,Bülach,10,clear,2024
+Lausanne-Brig,IR,Infrastructure,2024-01-23 06:20:00,Lausanne,27,clear,2024
+Zürich-Schaffhausen,IR,Infrastructure,2024-01-23 23:24:00,Bülach,7,clear,2024
+Zürich-Chur,IC,Rolling stock,2024-01-24 11:50:00,Sargans,4,clear,2024
+Basel-Lausanne,IC,Connection wait,2024-01-25 02:02:00,Bern,2,rain,2024
+Bern-Brig,IC,Boarding,2024-01-25 17:18:00,Spiez,2,clear,2024
+Zürich-Luzern,IC,Operations,2024-01-25 18:25:00,Zürich HB,22,rain,2024
+Zürich-Schaffhausen,IR,Operations,2024-01-26 21:28:00,Bülach,9,rain,2024
+Zürich-Bern,IC,Infrastructure,2024-01-27 17:47:00,Bern,6,clear,2024
+Bern-Biel,IR,Boarding,2024-01-29 07:15:00,Bern,2,clear,2024
+Zürich-Chur,IC,External,2024-01-29 12:15:00,Zürich HB,11,snow,2024
+Zürich-Bern,IC,External,2024-01-29 19:17:00,Zürich HB,6,rain,2024
+Bern-Brig,IC,Infrastructure,2024-01-29 19:55:00,Brig,6,clear,2024
+Bern-Belp,RE,Operations,2024-02-02 22:06:00,Belp,2,rain,2024
+Zürich-Luzern,IC,Infrastructure,2024-02-03 10:50:00,Luzern,6,clear,2024
+S5 Bern,S,Connection wait,2024-02-03 19:43:00,Burgdorf,2,clear,2024
+Zürich-Schaffhausen,IR,External,2024-02-03 20:46:00,Bülach,12,clear,2024
+Genève-Lausanne,IC,Infrastructure,2024-02-05 10:29:00,Genève,2,clear,2024
+Basel-Lausanne,IC,Infrastructure,2024-02-06 10:40:00,Bern,3,clear,2024
+Zürich-Bern,IC,External,2024-02-07 12:47:00,Olten,5,clear,2024
+Basel-Lausanne,IC,External,2024-02-09 08:29:00,Bern,37,rain,2024
+Zürich-Bern,IC,Connection wait,2024-02-09 15:37:00,Zürich HB,4,fog,2024
+Bern-Brig,IC,Infrastructure,2024-02-10 01:31:00,Spiez,6,clear,2024
+Lausanne-Brig,IR,Rolling stock,2024-02-10 08:33:00,Brig,10,clear,2024
+S2 Zürich,S,Operations,2024-02-11 04:20:00,Pfäffikon,8,rain,2024
+Zürich-Luzern,IC,Rolling stock,2024-02-11 14:32:00,Zürich HB,13,clear,2024
+S1 Lausanne,S,Connection wait,2024-02-12 15:26:00,Yverdon,10,clear,2024
+Lugano-Locarno,RE,External,2024-02-12 18:35:00,Lugano,6,rain,2024
+Bern-Belp,RE,Operations,2024-02-13 08:20:00,Belp,2,clear,2024
+Genève-Lausanne,IC,Operations,2024-02-13 10:14:00,Genève,12,fog,2024
+Zürich-Bern,IC,Boarding,2024-02-14 07:28:00,Bern,5,rain,2024
+Basel-Olten,IC,External,2024-02-14 18:58:00,Liestal,19,clear,2024
+Zürich-Genève,IC,Infrastructure,2024-02-16 22:40:00,Bern,2,clear,2024
+Zürich-Chur,IC,Connection wait,2024-02-17 23:47:00,Zürich HB,2,clear,2024
+Zürich-Schaffhausen,IR,Infrastructure,2024-02-18 11:45:00,Zürich HB,11,clear,2024
+Basel-Lausanne,IC,Rolling stock,2024-02-19 18:25:00,Lausanne,7,clear,2024
+Genève-Lausanne,IC,Connection wait,2024-02-20 05:37:00,Genève,7,rain,2024
+Lausanne-Brig,IR,Rolling stock,2024-02-22 15:39:00,Brig,15,clear,2024
+Lugano-Locarno,RE,Boarding,2024-02-22 19:45:00,Lugano,10,clear,2024
+Genève-Lausanne,IC,Operations,2024-02-23 20:08:00,Nyon,12,clear,2024
+Zürich-Chur,IC,External,2024-02-24 05:06:00,Zürich HB,4,clear,2024
+Bern-Brig,IC,Connection wait,2024-02-24 10:24:00,Spiez,4,fog,2024
+Basel-Lausanne,IC,Operations,2024-02-24 16:59:00,Bern,6,clear,2024
+Zürich-Schaffhausen,IR,External,2024-02-26 06:14:00,Bülach,19,fog,2024
+Bern-Brig,IC,Rolling stock,2024-02-28 08:56:00,Spiez,6,clear,2024
+St. Gallen-Zürich,IR,Connection wait,2024-02-28 23:02:00,Winterthur,6,clear,2024
+S6 Basel,S,Boarding,2024-02-29 08:39:00,Basel SBB,17,rain,2024
+Basel-Lausanne,IC,Boarding,2024-02-29 12:10:00,Lausanne,2,clear,2024
+Lausanne-Brig,IR,External,2024-02-29 18:11:00,Sion,20,clear,2024
+S1 Lausanne,S,Connection wait,2024-02-29 18:56:00,Lausanne,35,rain,2024
+Zürich-Bern,IC,External,2024-03-01 16:28:00,Zürich HB,38,clear,2024
+S5 Bern,S,External,2024-03-01 20:07:00,Bern,2,clear,2024
+Bern-Brig,IC,External,2024-03-02 18:16:00,Bern,4,clear,2024
+St. Gallen-Zürich,IR,Boarding,2024-03-03 21:22:00,St. Gallen,2,clear,2024
+Bern-Biel,IR,External,2024-03-04 13:25:00,Lyss,2,fog,2024
+S5 Bern,S,Rolling stock,2024-03-04 19:28:00,Burgdorf,2,clear,2024
+Zürich-Luzern,IC,Infrastructure,2024-03-05 18:46:00,Luzern,28,clear,2024
+Zürich-Schaffhausen,IR,Infrastructure,2024-03-06 11:20:00,Schaffhausen,2,clear,2024
+Lausanne-Brig,IR,External,2024-03-06 16:10:00,Lausanne,10,snow,2024
+Zürich-Genève,IC,Boarding,2024-03-06 18:23:00,Genève,2,clear,2024
+Bern-Brig,IC,Boarding,2024-03-07 13:52:00,Bern,2,fog,2024
+Basel-Lausanne,IC,Rolling stock,2024-03-07 19:23:00,Basel SBB,3,clear,2024
+Olten-Zofingen,RE,External,2024-03-08 08:58:00,Zofingen,6,rain,2024
+Zürich-Chur,IC,External,2024-03-08 12:42:00,Zürich HB,4,clear,2024
+Genève-Lausanne,IC,Infrastructure,2024-03-08 20:29:00,Genève,16,clear,2024
+Lugano-Locarno,RE,Infrastructure,2024-03-09 08:07:00,Lugano,12,clear,2024
+Basel-Olten,IC,Connection wait,2024-03-09 13:39:00,Olten,3,fog,2024
+S5 Bern,S,External,2024-03-10 06:09:00,Burgdorf,6,snow,2024
+Bern-Belp,RE,External,2024-03-10 13:10:00,Belp,16,clear,2024
+Lugano-Locarno,RE,Boarding,2024-03-10 21:24:00,Locarno,11,clear,2024
+S1 Lausanne,S,Infrastructure,2024-03-12 23:45:00,Yverdon,2,clear,2024
+Olten-Zofingen,RE,External,2024-03-13 02:03:00,Olten,10,clear,2024
+Zürich-Bern,IC,Operations,2024-03-13 17:52:00,Bern,2,fog,2024
+Zürich-Schaffhausen,IR,Operations,2024-03-13 19:06:00,Zürich HB,2,rain,2024
+Zürich-Genève,IC,Connection wait,2024-03-14 17:40:00,Genève,2,clear,2024
+Bern-Brig,IC,Infrastructure,2024-03-14 20:25:00,Brig,2,clear,2024
+Zürich-Bern,IC,External,2024-03-15 02:03:00,Zürich HB,10,fog,2024
+Bern-Biel,IR,Rolling stock,2024-03-15 15:26:00,Bern,18,clear,2024
+Bern-Brig,IC,External,2024-03-15 20:47:00,Spiez,10,snow,2024
+Bern-Belp,RE,Infrastructure,2024-03-16 01:31:00,Belp,2,rain,2024
+St. Gallen-Zürich,IR,Operations,2024-03-16 10:28:00,St. Gallen,4,clear,2024
+Zürich-Bern,IC,Operations,2024-03-16 21:33:00,Bern,11,clear,2024
+Basel-Lausanne,IC,Infrastructure,2024-03-17 14:30:00,Basel SBB,48,clear,2024
+Basel-Olten,IC,Rolling stock,2024-03-18 07:57:00,Olten,8,clear,2024
+Olten-Zofingen,RE,Infrastructure,2024-03-18 21:03:00,Zofingen,8,clear,2024
+Basel-Olten,IC,Boarding,2024-03-19 07:52:00,Olten,2,clear,2024
+Basel-Lausanne,IC,Infrastructure,2024-03-19 11:15:00,Lausanne,2,rain,2024
+Lausanne-Brig,IR,External,2024-03-19 12:20:00,Sion,2,clear,2024
+Zürich-Luzern,IC,Rolling stock,2024-03-19 12:54:00,Zürich HB,10,clear,2024
+Lugano-Locarno,RE,Infrastructure,2024-03-19 18:24:00,Lugano,5,clear,2024
+S1 Lausanne,S,Operations,2024-03-19 20:01:00,Lausanne,3,clear,2024
+Genève-Lausanne,IC,Operations,2024-03-20 17:11:00,Nyon,7,clear,2024
+S6 Basel,S,Operations,2024-03-21 02:52:00,Basel SBB,2,clear,2024
+Genève-Lausanne,IC,Rolling stock,2024-03-21 08:00:00,Genève,2,clear,2024
+S2 Zürich,S,Boarding,2024-03-22 09:41:00,Zürich HB,8,clear,2024
+Zürich-Schaffhausen,IR,Boarding,2024-03-22 11:36:00,Bülach,7,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-03-22 22:11:00,Zürich HB,5,clear,2024
+S5 Bern,S,Infrastructure,2024-03-23 08:35:00,Burgdorf,8,clear,2024
+Lausanne-Brig,IR,Infrastructure,2024-03-24 17:07:00,Lausanne,14,snow,2024
+S5 Bern,S,Rolling stock,2024-03-24 23:17:00,Burgdorf,4,rain,2024
+Basel-Lausanne,IC,Rolling stock,2024-03-25 05:57:00,Basel SBB,2,clear,2024
+Zürich-Luzern,IC,Connection wait,2024-03-25 08:49:00,Zug,2,clear,2024
+Lugano-Locarno,RE,Operations,2024-03-25 13:41:00,Lugano,2,clear,2024
+S1 Lausanne,S,Rolling stock,2024-03-25 17:28:00,Lausanne,31,rain,2024
+Bern-Brig,IC,Infrastructure,2024-03-26 03:13:00,Bern,7,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-03-26 11:02:00,St. Gallen,6,clear,2024
+Zürich-Luzern,IC,Rolling stock,2024-03-26 14:06:00,Zug,6,clear,2024
+S1 Lausanne,S,Rolling stock,2024-03-27 13:23:00,Yverdon,7,snow,2024
+S2 Zürich,S,Infrastructure,2024-03-27 21:05:00,Effretikon,5,rain,2024
+Zürich-Luzern,IC,Operations,2024-03-28 18:43:00,Zug,19,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-03-29 15:32:00,St. Gallen,6,rain,2024
+Basel-Olten,IC,Operations,2024-03-30 07:39:00,Basel SBB,25,snow,2024
+Zürich-Bern,IC,Infrastructure,2024-03-30 09:00:00,Zürich HB,25,rain,2024
+S6 Basel,S,Infrastructure,2024-03-30 14:55:00,Pratteln,19,rain,2024
+Bern-Belp,RE,External,2024-03-31 09:56:00,Bern,19,clear,2024
+S6 Basel,S,Infrastructure,2024-03-31 11:40:00,Pratteln,2,clear,2024
+Zürich-Chur,IC,Infrastructure,2024-04-01 08:33:00,Chur,6,clear,2024
+Genève-Lausanne,IC,Boarding,2024-04-01 17:15:00,Genève,24,clear,2024
+Bern-Belp,RE,Operations,2024-04-03 08:33:00,Bern,20,clear,2024
+Bern-Brig,IC,External,2024-04-03 18:11:00,Spiez,6,clear,2024
+S2 Zürich,S,Infrastructure,2024-04-04 05:41:00,Effretikon,8,clear,2024
+Lausanne-Brig,IR,Operations,2024-04-04 14:22:00,Sion,3,clear,2024
+Genève-Lausanne,IC,Operations,2024-04-04 16:25:00,Nyon,18,rain,2024
+Basel-Olten,IC,Infrastructure,2024-04-05 22:05:00,Liestal,25,rain,2024
+Zürich-Genève,IC,Infrastructure,2024-04-06 01:45:00,Lausanne,37,clear,2024
+Basel-Olten,IC,Operations,2024-04-06 08:40:00,Liestal,11,clear,2024
+Zürich-Luzern,IC,Connection wait,2024-04-06 10:18:00,Zürich HB,3,rain,2024
+Zürich-Schaffhausen,IR,Infrastructure,2024-04-06 13:10:00,Schaffhausen,2,clear,2024
+S2 Zürich,S,Connection wait,2024-04-06 17:14:00,Effretikon,2,rain,2024
+Basel-Olten,IC,Infrastructure,2024-04-07 23:21:00,Liestal,6,clear,2024
+St. Gallen-Zürich,IR,Operations,2024-04-10 18:44:00,Winterthur,4,clear,2024
+S2 Zürich,S,Connection wait,2024-04-10 21:38:00,Effretikon,21,clear,2024
+Zürich-Schaffhausen,IR,Operations,2024-04-12 10:06:00,Schaffhausen,2,clear,2024
+S2 Zürich,S,External,2024-04-12 12:31:00,Pfäffikon,17,clear,2024
+Lausanne-Brig,IR,Infrastructure,2024-04-13 06:02:00,Lausanne,39,clear,2024
+S5 Bern,S,Infrastructure,2024-04-13 09:43:00,Bern,6,rain,2024
+Olten-Zofingen,RE,Operations,2024-04-14 14:20:00,Olten,2,clear,2024
+Zürich-Bern,IC,Boarding,2024-04-15 16:36:00,Bern,3,clear,2024
+Genève-Lausanne,IC,Boarding,2024-04-16 09:53:00,Lausanne,4,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-04-16 10:37:00,Zürich HB,5,clear,2024
+Bern-Belp,RE,External,2024-04-16 21:39:00,Belp,2,clear,2024
+Zürich-Schaffhausen,IR,Boarding,2024-04-19 11:31:00,Schaffhausen,2,clear,2024
+Bern-Belp,RE,External,2024-04-19 12:39:00,Bern,3,clear,2024
+Zürich-Bern,IC,External,2024-04-21 20:37:00,Zürich HB,2,rain,2024
+Bern-Biel,IR,Rolling stock,2024-04-22 17:22:00,Lyss,2,clear,2024
+Basel-Lausanne,IC,Operations,2024-04-23 16:49:00,Basel SBB,23,clear,2024
+Bern-Biel,IR,Infrastructure,2024-04-23 19:27:00,Lyss,2,rain,2024
+Basel-Lausanne,IC,Connection wait,2024-04-24 12:41:00,Basel SBB,2,clear,2024
+Bern-Brig,IC,Connection wait,2024-04-24 14:00:00,Spiez,9,clear,2024
+Basel-Lausanne,IC,Connection wait,2024-04-25 08:51:00,Bern,3,clear,2024
+Olten-Zofingen,RE,External,2024-04-25 15:45:00,Olten,7,snow,2024
+Bern-Brig,IC,External,2024-04-25 20:10:00,Brig,4,clear,2024
+Bern-Biel,IR,Connection wait,2024-04-26 06:25:00,Lyss,4,rain,2024
+S2 Zürich,S,Boarding,2024-04-26 09:09:00,Zürich HB,2,clear,2024
+Zürich-Bern,IC,Connection wait,2024-04-26 11:09:00,Olten,3,clear,2024
+Zürich-Chur,IC,Infrastructure,2024-04-27 17:26:00,Chur,4,clear,2024
+Bern-Brig,IC,Rolling stock,2024-04-28 08:14:00,Bern,2,rain,2024
+Zürich-Luzern,IC,Connection wait,2024-04-28 08:31:00,Luzern,5,clear,2024
+Olten-Zofingen,RE,Operations,2024-04-28 14:02:00,Zofingen,2,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-04-28 18:39:00,St. Gallen,28,clear,2024
+Lugano-Locarno,RE,Operations,2024-04-29 07:16:00,Lugano,3,clear,2024
+Bern-Belp,RE,External,2024-04-29 14:04:00,Belp,10,clear,2024
+Zürich-Schaffhausen,IR,External,2024-04-29 20:33:00,Schaffhausen,10,fog,2024
+Olten-Zofingen,RE,External,2024-04-29 20:36:00,Zofingen,14,rain,2024
+Bern-Biel,IR,Connection wait,2024-05-01 11:57:00,Bern,2,clear,2024
+Bern-Belp,RE,Infrastructure,2024-05-01 12:14:00,Belp,2,clear,2024
+Zürich-Bern,IC,External,2024-05-02 15:55:00,Zürich HB,3,clear,2024
+Lugano-Locarno,RE,Infrastructure,2024-05-04 18:00:00,Lugano,13,clear,2024
+Olten-Zofingen,RE,Boarding,2024-05-05 06:55:00,Zofingen,7,clear,2024
+Zürich-Schaffhausen,IR,Infrastructure,2024-05-05 09:26:00,Bülach,2,clear,2024
+Olten-Zofingen,RE,Boarding,2024-05-05 13:27:00,Olten,4,rain,2024
+Bern-Brig,IC,Infrastructure,2024-05-05 14:32:00,Bern,11,rain,2024
+Basel-Olten,IC,Connection wait,2024-05-05 17:39:00,Liestal,6,clear,2024
+Lugano-Locarno,RE,External,2024-05-06 22:17:00,Locarno,5,rain,2024
+Basel-Lausanne,IC,Operations,2024-05-07 09:56:00,Lausanne,16,clear,2024
+S1 Lausanne,S,Rolling stock,2024-05-07 19:41:00,Lausanne,12,clear,2024
+Genève-Lausanne,IC,Rolling stock,2024-05-07 22:39:00,Nyon,17,clear,2024
+Zürich-Luzern,IC,Infrastructure,2024-05-07 23:34:00,Luzern,3,clear,2024
+Zürich-Luzern,IC,Infrastructure,2024-05-08 07:43:00,Luzern,2,clear,2024
+Bern-Biel,IR,External,2024-05-08 09:07:00,Lyss,3,clear,2024
+Bern-Biel,IR,External,2024-05-09 05:56:00,Bern,23,rain,2024
+Zürich-Bern,IC,Rolling stock,2024-05-09 11:52:00,Zürich HB,2,clear,2024
+S6 Basel,S,Connection wait,2024-05-09 21:42:00,Basel SBB,2,clear,2024
+S5 Bern,S,Connection wait,2024-05-09 23:00:00,Burgdorf,44,rain,2024
+St. Gallen-Zürich,IR,External,2024-05-10 20:47:00,Zürich HB,16,clear,2024
+Bern-Belp,RE,Infrastructure,2024-05-12 11:24:00,Bern,4,clear,2024
+S1 Lausanne,S,Infrastructure,2024-05-12 13:58:00,Yverdon,7,clear,2024
+S5 Bern,S,Infrastructure,2024-05-12 22:02:00,Burgdorf,6,clear,2024
+Basel-Olten,IC,External,2024-05-13 08:57:00,Basel SBB,47,rain,2024
+Zürich-Bern,IC,External,2024-05-14 16:23:00,Olten,34,clear,2024
+Basel-Lausanne,IC,Rolling stock,2024-05-14 18:36:00,Lausanne,5,clear,2024
+Zürich-Genève,IC,Rolling stock,2024-05-16 05:22:00,Zürich HB,2,clear,2024
+Bern-Biel,IR,Connection wait,2024-05-16 10:38:00,Lyss,3,clear,2024
+Zürich-Luzern,IC,Connection wait,2024-05-16 17:40:00,Zug,14,clear,2024
+Bern-Biel,IR,External,2024-05-17 08:36:00,Lyss,15,rain,2024
+Olten-Zofingen,RE,Rolling stock,2024-05-19 06:34:00,Zofingen,3,rain,2024
+Zürich-Genève,IC,Infrastructure,2024-05-19 14:07:00,Bern,4,rain,2024
+Zürich-Genève,IC,Boarding,2024-05-20 19:56:00,Genève,2,clear,2024
+Lugano-Locarno,RE,Rolling stock,2024-05-20 23:30:00,Locarno,15,fog,2024
+Basel-Lausanne,IC,Connection wait,2024-05-22 07:14:00,Basel SBB,3,clear,2024
+Zürich-Chur,IC,Rolling stock,2024-05-22 22:53:00,Zürich HB,9,rain,2024
+Genève-Lausanne,IC,Operations,2024-05-23 05:50:00,Lausanne,7,clear,2024
+Basel-Olten,IC,Infrastructure,2024-05-23 09:40:00,Basel SBB,3,clear,2024
+Zürich-Bern,IC,Connection wait,2024-05-23 11:17:00,Zürich HB,16,fog,2024
+Zürich-Chur,IC,Connection wait,2024-05-23 23:00:00,Zürich HB,14,rain,2024
+Lausanne-Brig,IR,Infrastructure,2024-05-25 06:03:00,Sion,23,clear,2024
+Lausanne-Brig,IR,External,2024-05-25 19:16:00,Brig,4,rain,2024
+Basel-Olten,IC,Rolling stock,2024-05-26 07:31:00,Olten,20,clear,2024
+Bern-Biel,IR,Infrastructure,2024-05-26 17:21:00,Lyss,10,fog,2024
+Zürich-Chur,IC,External,2024-05-26 22:31:00,Sargans,14,snow,2024
+S5 Bern,S,External,2024-05-27 05:04:00,Burgdorf,12,clear,2024
+Lausanne-Brig,IR,Infrastructure,2024-05-28 09:12:00,Sion,3,clear,2024
+S6 Basel,S,Rolling stock,2024-05-28 10:38:00,Basel SBB,20,clear,2024
+St. Gallen-Zürich,IR,Boarding,2024-05-29 11:31:00,Winterthur,2,clear,2024
+Genève-Lausanne,IC,Infrastructure,2024-05-29 23:27:00,Nyon,25,clear,2024
+St. Gallen-Zürich,IR,Rolling stock,2024-05-31 18:23:00,St. Gallen,11,clear,2024
+Zürich-Luzern,IC,Infrastructure,2024-05-31 23:27:00,Zürich HB,6,clear,2024
+St. Gallen-Zürich,IR,Operations,2024-06-02 06:21:00,Zürich HB,2,rain,2024
+Genève-Lausanne,IC,Boarding,2024-06-03 18:25:00,Genève,3,rain,2024
+Bern-Biel,IR,Rolling stock,2024-06-04 10:41:00,Lyss,5,clear,2024
+Genève-Lausanne,IC,Operations,2024-06-04 17:07:00,Nyon,4,rain,2024
+St. Gallen-Zürich,IR,Rolling stock,2024-06-04 20:55:00,St. Gallen,12,rain,2024
+Genève-Lausanne,IC,Operations,2024-06-04 23:31:00,Lausanne,3,clear,2024
+Zürich-Genève,IC,Connection wait,2024-06-05 05:21:00,Genève,3,clear,2024
+Lausanne-Brig,IR,Boarding,2024-06-05 12:10:00,Sion,4,clear,2024
+Basel-Lausanne,IC,External,2024-06-06 11:09:00,Basel SBB,2,clear,2024
+Zürich-Schaffhausen,IR,Rolling stock,2024-06-07 06:33:00,Schaffhausen,6,clear,2024
+Zürich-Bern,IC,Operations,2024-06-07 13:05:00,Olten,2,clear,2024
+Zürich-Schaffhausen,IR,Connection wait,2024-06-08 08:45:00,Schaffhausen,4,clear,2024
+Zürich-Schaffhausen,IR,Infrastructure,2024-06-10 17:09:00,Zürich HB,14,clear,2024
+Zürich-Luzern,IC,Boarding,2024-06-11 07:16:00,Luzern,2,clear,2024
+Bern-Belp,RE,External,2024-06-11 20:26:00,Belp,7,rain,2024
+Zürich-Chur,IC,Rolling stock,2024-06-12 06:57:00,Sargans,3,rain,2024
+Bern-Biel,IR,Infrastructure,2024-06-12 09:15:00,Bern,16,clear,2024
+Lausanne-Brig,IR,Boarding,2024-06-12 18:43:00,Sion,3,clear,2024
+Basel-Lausanne,IC,Connection wait,2024-06-13 07:30:00,Bern,5,rain,2024
+Genève-Lausanne,IC,Operations,2024-06-13 15:06:00,Lausanne,27,clear,2024
+S2 Zürich,S,Infrastructure,2024-06-13 18:03:00,Effretikon,12,clear,2024
+Basel-Lausanne,IC,External,2024-06-13 23:34:00,Basel SBB,2,clear,2024
+Zürich-Schaffhausen,IR,Connection wait,2024-06-14 06:56:00,Schaffhausen,2,rain,2024
+Zürich-Bern,IC,External,2024-06-14 09:37:00,Bern,2,rain,2024
+Lugano-Locarno,RE,Operations,2024-06-14 12:59:00,Lugano,3,clear,2024
+Bern-Biel,IR,Infrastructure,2024-06-15 10:29:00,Bern,3,clear,2024
+Basel-Lausanne,IC,Operations,2024-06-16 20:49:00,Lausanne,21,clear,2024
+S5 Bern,S,Infrastructure,2024-06-17 16:09:00,Burgdorf,14,clear,2024
+Zürich-Schaffhausen,IR,Rolling stock,2024-06-17 17:32:00,Zürich HB,12,clear,2024
+Basel-Olten,IC,Rolling stock,2024-06-17 19:27:00,Olten,21,clear,2024
+Bern-Biel,IR,External,2024-06-19 11:43:00,Bern,10,clear,2024
+Zürich-Luzern,IC,Boarding,2024-06-21 14:41:00,Zug,10,clear,2024
+Lausanne-Brig,IR,Boarding,2024-06-22 09:05:00,Brig,3,rain,2024
+Lugano-Locarno,RE,Connection wait,2024-06-22 23:28:00,Locarno,3,clear,2024
+Zürich-Chur,IC,External,2024-06-23 20:17:00,Chur,6,rain,2024
+S1 Lausanne,S,Rolling stock,2024-06-24 21:35:00,Lausanne,4,clear,2024
+Zürich-Chur,IC,Infrastructure,2024-06-25 05:13:00,Zürich HB,11,clear,2024
+Zürich-Bern,IC,Operations,2024-06-25 10:35:00,Zürich HB,5,clear,2024
+Zürich-Genève,IC,Rolling stock,2024-06-25 22:24:00,Zürich HB,2,fog,2024
+Zürich-Luzern,IC,Connection wait,2024-06-26 07:29:00,Zug,5,clear,2024
+Bern-Belp,RE,Boarding,2024-06-26 09:25:00,Bern,2,clear,2024
+Zürich-Bern,IC,External,2024-06-26 15:11:00,Olten,4,clear,2024
+Genève-Lausanne,IC,Boarding,2024-06-28 17:10:00,Genève,7,rain,2024
+Zürich-Chur,IC,Infrastructure,2024-06-29 17:23:00,Zürich HB,4,clear,2024
+Basel-Lausanne,IC,Boarding,2024-06-29 20:38:00,Basel SBB,2,clear,2024
+S1 Lausanne,S,Connection wait,2024-07-03 20:08:00,Yverdon,2,clear,2024
+Bern-Belp,RE,External,2024-07-04 14:47:00,Bern,9,rain,2024
+Bern-Biel,IR,External,2024-07-04 16:30:00,Bern,11,clear,2024
+Zürich-Chur,IC,Operations,2024-07-04 22:35:00,Zürich HB,21,clear,2024
+Bern-Belp,RE,Infrastructure,2024-07-05 06:45:00,Bern,29,clear,2024
+S2 Zürich,S,Connection wait,2024-07-05 21:45:00,Effretikon,13,clear,2024
+Genève-Lausanne,IC,Connection wait,2024-07-06 12:42:00,Genève,8,clear,2024
+Bern-Brig,IC,External,2024-07-08 21:02:00,Bern,16,clear,2024
+Lugano-Locarno,RE,Infrastructure,2024-07-09 11:40:00,Lugano,12,rain,2024
+Lugano-Locarno,RE,Operations,2024-07-09 17:36:00,Locarno,6,clear,2024
+Bern-Belp,RE,Infrastructure,2024-07-09 18:03:00,Belp,3,clear,2024
+Basel-Lausanne,IC,Connection wait,2024-07-10 16:01:00,Basel SBB,15,clear,2024
+Lausanne-Brig,IR,Boarding,2024-07-12 07:40:00,Brig,2,clear,2024
+Bern-Brig,IC,External,2024-07-12 21:16:00,Bern,5,clear,2024
+Zürich-Luzern,IC,Rolling stock,2024-07-13 12:29:00,Zürich HB,2,clear,2024
+St. Gallen-Zürich,IR,Connection wait,2024-07-14 05:51:00,Winterthur,2,clear,2024
+Lausanne-Brig,IR,Infrastructure,2024-07-14 18:54:00,Sion,5,clear,2024
+Genève-Lausanne,IC,External,2024-07-15 16:01:00,Lausanne,2,snow,2024
+Genève-Lausanne,IC,Connection wait,2024-07-15 16:29:00,Nyon,2,rain,2024
+Zürich-Genève,IC,Infrastructure,2024-07-15 21:12:00,Bern,5,clear,2024
+Bern-Brig,IC,Boarding,2024-07-16 05:26:00,Spiez,2,clear,2024
+Genève-Lausanne,IC,Infrastructure,2024-07-16 17:52:00,Lausanne,37,clear,2024
+S1 Lausanne,S,Connection wait,2024-07-16 21:44:00,Yverdon,6,clear,2024
+Zürich-Luzern,IC,Operations,2024-07-17 01:25:00,Luzern,18,fog,2024
+Genève-Lausanne,IC,Boarding,2024-07-17 08:21:00,Nyon,2,clear,2024
+Zürich-Bern,IC,Boarding,2024-07-17 09:38:00,Zürich HB,3,snow,2024
+Lausanne-Brig,IR,Infrastructure,2024-07-17 11:14:00,Brig,6,rain,2024
+S6 Basel,S,Boarding,2024-07-17 13:16:00,Basel SBB,2,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-07-18 06:39:00,Zürich HB,3,clear,2024
+Lausanne-Brig,IR,Connection wait,2024-07-19 21:58:00,Lausanne,2,rain,2024
+Olten-Zofingen,RE,Operations,2024-07-20 03:16:00,Olten,6,clear,2024
+Lausanne-Brig,IR,External,2024-07-20 22:46:00,Lausanne,3,rain,2024
+Basel-Olten,IC,Operations,2024-07-21 22:20:00,Olten,22,clear,2024
+Zürich-Luzern,IC,Operations,2024-07-22 08:43:00,Zürich HB,2,clear,2024
+Olten-Zofingen,RE,Rolling stock,2024-07-23 08:21:00,Zofingen,13,clear,2024
+S2 Zürich,S,Rolling stock,2024-07-23 23:47:00,Pfäffikon,10,clear,2024
+Lausanne-Brig,IR,Boarding,2024-07-24 08:59:00,Sion,2,fog,2024
+S2 Zürich,S,Rolling stock,2024-07-24 15:28:00,Effretikon,2,clear,2024
+Basel-Olten,IC,Infrastructure,2024-07-29 17:09:00,Basel SBB,7,rain,2024
+Basel-Olten,IC,Infrastructure,2024-07-29 23:06:00,Basel SBB,29,clear,2024
+Bern-Brig,IC,Infrastructure,2024-07-30 12:24:00,Bern,23,clear,2024
+Zürich-Bern,IC,Rolling stock,2024-07-30 17:14:00,Bern,2,clear,2024
+Basel-Olten,IC,External,2024-07-30 18:21:00,Basel SBB,20,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-07-31 19:56:00,Zürich HB,23,clear,2024
+Lugano-Locarno,RE,Rolling stock,2024-07-31 21:48:00,Locarno,13,rain,2024
+S2 Zürich,S,External,2024-08-02 17:26:00,Pfäffikon,5,clear,2024
+Olten-Zofingen,RE,Infrastructure,2024-08-03 10:46:00,Zofingen,11,snow,2024
+Olten-Zofingen,RE,External,2024-08-04 06:14:00,Olten,2,clear,2024
+S1 Lausanne,S,Operations,2024-08-05 06:26:00,Yverdon,20,rain,2024
+Lausanne-Brig,IR,Connection wait,2024-08-05 16:46:00,Brig,2,clear,2024
+Zürich-Luzern,IC,Rolling stock,2024-08-05 18:11:00,Zürich HB,14,clear,2024
+Lausanne-Brig,IR,Boarding,2024-08-05 21:54:00,Brig,2,clear,2024
+Olten-Zofingen,RE,Connection wait,2024-08-06 07:23:00,Olten,3,clear,2024
+Genève-Lausanne,IC,Operations,2024-08-06 16:33:00,Nyon,2,clear,2024
+Zürich-Bern,IC,Rolling stock,2024-08-07 08:19:00,Zürich HB,2,rain,2024
+Bern-Belp,RE,Infrastructure,2024-08-07 19:24:00,Bern,5,rain,2024
+Lausanne-Brig,IR,Infrastructure,2024-08-08 05:43:00,Brig,33,clear,2024
+Lugano-Locarno,RE,External,2024-08-08 18:12:00,Lugano,14,clear,2024
+Genève-Lausanne,IC,Operations,2024-08-09 10:39:00,Nyon,22,clear,2024
+Zürich-Luzern,IC,Rolling stock,2024-08-10 09:48:00,Luzern,26,clear,2024
+Zürich-Schaffhausen,IR,Operations,2024-08-11 04:31:00,Zürich HB,19,clear,2024
+Basel-Lausanne,IC,Connection wait,2024-08-11 13:09:00,Bern,8,clear,2024
+Zürich-Bern,IC,External,2024-08-11 22:06:00,Bern,2,rain,2024
+Basel-Olten,IC,Operations,2024-08-12 07:20:00,Olten,34,clear,2024
+S2 Zürich,S,External,2024-08-13 09:23:00,Zürich HB,17,clear,2024
+Lausanne-Brig,IR,Boarding,2024-08-13 12:43:00,Brig,2,rain,2024
+Zürich-Bern,IC,Boarding,2024-08-13 14:35:00,Zürich HB,7,clear,2024
+Lugano-Locarno,RE,External,2024-08-14 11:33:00,Locarno,19,rain,2024
+Zürich-Genève,IC,Connection wait,2024-08-14 13:57:00,Genève,4,clear,2024
+Zürich-Genève,IC,Rolling stock,2024-08-15 09:22:00,Zürich HB,3,snow,2024
+Genève-Lausanne,IC,External,2024-08-15 13:45:00,Nyon,21,rain,2024
+Zürich-Genève,IC,External,2024-08-17 11:07:00,Zürich HB,11,clear,2024
+Lausanne-Brig,IR,Operations,2024-08-17 17:54:00,Brig,2,clear,2024
+Basel-Olten,IC,Boarding,2024-08-17 18:37:00,Olten,2,clear,2024
+Basel-Lausanne,IC,External,2024-08-17 23:06:00,Bern,4,rain,2024
+Lugano-Locarno,RE,Connection wait,2024-08-18 07:01:00,Locarno,48,rain,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-08-18 09:56:00,Winterthur,2,clear,2024
+Zürich-Bern,IC,Operations,2024-08-18 22:17:00,Bern,8,rain,2024
+Basel-Lausanne,IC,Operations,2024-08-19 05:58:00,Basel SBB,8,clear,2024
+Genève-Lausanne,IC,Infrastructure,2024-08-19 09:25:00,Nyon,7,clear,2024
+S1 Lausanne,S,Infrastructure,2024-08-20 14:16:00,Lausanne,11,clear,2024
+S2 Zürich,S,Boarding,2024-08-20 16:32:00,Pfäffikon,3,clear,2024
+Lugano-Locarno,RE,Operations,2024-08-20 17:29:00,Locarno,6,rain,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-08-21 11:38:00,Zürich HB,43,clear,2024
+Bern-Belp,RE,Operations,2024-08-21 17:10:00,Bern,2,rain,2024
+Zürich-Genève,IC,Boarding,2024-08-21 19:27:00,Genève,2,clear,2024
+Zürich-Chur,IC,Boarding,2024-08-23 18:36:00,Zürich HB,2,clear,2024
+St. Gallen-Zürich,IR,External,2024-08-23 20:13:00,Winterthur,2,rain,2024
+Zürich-Luzern,IC,Rolling stock,2024-08-25 10:44:00,Zürich HB,12,clear,2024
+Bern-Biel,IR,External,2024-08-26 14:06:00,Bern,5,rain,2024
+S5 Bern,S,External,2024-08-26 16:56:00,Bern,2,fog,2024
+S1 Lausanne,S,External,2024-08-27 06:52:00,Lausanne,2,clear,2024
+Zürich-Bern,IC,Connection wait,2024-08-28 12:41:00,Olten,5,rain,2024
+Genève-Lausanne,IC,Operations,2024-08-28 23:20:00,Genève,17,clear,2024
+Zürich-Bern,IC,Infrastructure,2024-08-29 04:32:00,Bern,7,rain,2024
+Zürich-Schaffhausen,IR,Infrastructure,2024-08-29 08:53:00,Bülach,9,clear,2024
+S6 Basel,S,Boarding,2024-08-29 17:41:00,Basel SBB,8,fog,2024
+Zürich-Genève,IC,Infrastructure,2024-08-29 17:42:00,Zürich HB,3,clear,2024
+Bern-Belp,RE,Connection wait,2024-08-31 17:51:00,Bern,2,clear,2024
+Bern-Biel,IR,Operations,2024-08-31 18:14:00,Bern,8,rain,2024
+Basel-Lausanne,IC,Infrastructure,2024-09-02 09:26:00,Lausanne,3,clear,2024
+Bern-Brig,IC,Operations,2024-09-03 10:02:00,Bern,25,clear,2024
+Zürich-Chur,IC,External,2024-09-04 12:30:00,Zürich HB,15,clear,2024
+Zürich-Bern,IC,Operations,2024-09-05 06:30:00,Bern,4,clear,2024
+Zürich-Genève,IC,External,2024-09-05 12:18:00,Lausanne,23,clear,2024
+Bern-Brig,IC,Connection wait,2024-09-06 01:59:00,Bern,2,fog,2024
+Genève-Lausanne,IC,Connection wait,2024-09-06 12:33:00,Nyon,7,snow,2024
+Zürich-Chur,IC,Rolling stock,2024-09-07 12:18:00,Chur,2,snow,2024
+Lausanne-Brig,IR,Infrastructure,2024-09-09 21:50:00,Lausanne,13,clear,2024
+Zürich-Bern,IC,Boarding,2024-09-10 14:35:00,Bern,4,rain,2024
+Zürich-Chur,IC,External,2024-09-10 20:09:00,Chur,3,snow,2024
+Zürich-Schaffhausen,IR,External,2024-09-11 19:46:00,Schaffhausen,5,rain,2024
+Lugano-Locarno,RE,Connection wait,2024-09-11 23:36:00,Lugano,2,clear,2024
+Zürich-Schaffhausen,IR,Operations,2024-09-12 07:03:00,Schaffhausen,18,clear,2024
+Genève-Lausanne,IC,External,2024-09-12 19:16:00,Nyon,8,clear,2024
+Bern-Belp,RE,Infrastructure,2024-09-14 15:59:00,Belp,4,clear,2024
+Zürich-Bern,IC,Rolling stock,2024-09-14 19:51:00,Bern,2,rain,2024
+Lausanne-Brig,IR,Connection wait,2024-09-15 19:43:00,Lausanne,2,fog,2024
+Bern-Biel,IR,Boarding,2024-09-16 08:14:00,Lyss,4,clear,2024
+S5 Bern,S,Infrastructure,2024-09-16 15:22:00,Bern,17,clear,2024
+Genève-Lausanne,IC,External,2024-09-16 19:10:00,Genève,16,clear,2024
+Basel-Lausanne,IC,Operations,2024-09-16 23:20:00,Lausanne,16,snow,2024
+Olten-Zofingen,RE,Infrastructure,2024-09-18 08:54:00,Olten,17,rain,2024
+Genève-Lausanne,IC,Rolling stock,2024-09-18 16:44:00,Nyon,2,clear,2024
+Bern-Brig,IC,Infrastructure,2024-09-20 07:59:00,Brig,3,clear,2024
+Bern-Brig,IC,External,2024-09-20 11:13:00,Bern,10,clear,2024
+Basel-Olten,IC,Infrastructure,2024-09-20 21:11:00,Olten,16,clear,2024
+Olten-Zofingen,RE,Rolling stock,2024-09-21 05:58:00,Zofingen,15,rain,2024
+Lausanne-Brig,IR,External,2024-09-21 06:54:00,Lausanne,2,clear,2024
+Zürich-Genève,IC,Rolling stock,2024-09-21 19:41:00,Bern,8,rain,2024
+S2 Zürich,S,Rolling stock,2024-09-22 06:23:00,Effretikon,3,fog,2024
+S2 Zürich,S,Rolling stock,2024-09-22 08:31:00,Zürich HB,18,clear,2024
+Olten-Zofingen,RE,Operations,2024-09-22 09:01:00,Zofingen,14,clear,2024
+Basel-Olten,IC,External,2024-09-24 17:38:00,Liestal,5,clear,2024
+Basel-Lausanne,IC,External,2024-09-25 17:32:00,Lausanne,9,rain,2024
+S5 Bern,S,Infrastructure,2024-09-26 08:12:00,Burgdorf,9,clear,2024
+Lugano-Locarno,RE,Infrastructure,2024-09-26 11:03:00,Locarno,25,rain,2024
+St. Gallen-Zürich,IR,Boarding,2024-09-26 11:12:00,Winterthur,2,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-09-26 22:22:00,Winterthur,4,rain,2024
+Basel-Lausanne,IC,Rolling stock,2024-09-27 14:57:00,Lausanne,2,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-09-27 22:06:00,St. Gallen,29,clear,2024
+Zürich-Genève,IC,Rolling stock,2024-09-29 12:31:00,Bern,7,rain,2024
+Lausanne-Brig,IR,Operations,2024-09-29 22:33:00,Brig,9,clear,2024
+St. Gallen-Zürich,IR,Operations,2024-09-30 07:26:00,Zürich HB,3,clear,2024
+Basel-Olten,IC,External,2024-10-01 10:55:00,Olten,55,clear,2024
+S6 Basel,S,Operations,2024-10-03 18:35:00,Pratteln,23,clear,2024
+Bern-Belp,RE,External,2024-10-03 20:41:00,Belp,3,snow,2024
+Bern-Biel,IR,Rolling stock,2024-10-04 13:58:00,Bern,13,clear,2024
+Zürich-Luzern,IC,External,2024-10-04 20:32:00,Zürich HB,2,fog,2024
+Bern-Biel,IR,Operations,2024-10-05 07:13:00,Biel/Bienne,3,clear,2024
+Basel-Lausanne,IC,Connection wait,2024-10-05 11:14:00,Bern,10,clear,2024
+Olten-Zofingen,RE,Infrastructure,2024-10-05 12:29:00,Olten,2,rain,2024
+Zürich-Luzern,IC,External,2024-10-05 12:44:00,Luzern,2,clear,2024
+Zürich-Chur,IC,Boarding,2024-10-05 15:02:00,Sargans,11,clear,2024
+Lausanne-Brig,IR,External,2024-10-08 12:49:00,Lausanne,6,rain,2024
+Basel-Olten,IC,Connection wait,2024-10-09 07:42:00,Olten,5,snow,2024
+Lausanne-Brig,IR,Boarding,2024-10-09 07:52:00,Brig,5,clear,2024
+S5 Bern,S,Boarding,2024-10-10 08:33:00,Burgdorf,3,clear,2024
+Genève-Lausanne,IC,External,2024-10-10 18:21:00,Genève,2,clear,2024
+Bern-Belp,RE,Connection wait,2024-10-11 02:44:00,Belp,2,rain,2024
+Zürich-Chur,IC,Infrastructure,2024-10-11 16:42:00,Zürich HB,2,clear,2024
+Zürich-Bern,IC,Infrastructure,2024-10-13 09:33:00,Olten,60,snow,2024
+Bern-Biel,IR,External,2024-10-14 08:55:00,Bern,8,rain,2024
+Lausanne-Brig,IR,Boarding,2024-10-14 11:00:00,Lausanne,2,rain,2024
+Lausanne-Brig,IR,Infrastructure,2024-10-15 05:54:00,Brig,4,clear,2024
+S6 Basel,S,Boarding,2024-10-15 17:22:00,Pratteln,2,clear,2024
+Zürich-Schaffhausen,IR,Rolling stock,2024-10-16 17:56:00,Bülach,2,fog,2024
+Bern-Biel,IR,Boarding,2024-10-17 19:37:00,Bern,2,rain,2024
+Olten-Zofingen,RE,Rolling stock,2024-10-18 09:53:00,Zofingen,9,rain,2024
+Basel-Olten,IC,Rolling stock,2024-10-19 07:27:00,Olten,11,clear,2024
+Basel-Olten,IC,Infrastructure,2024-10-20 05:42:00,Liestal,22,fog,2024
+Zürich-Genève,IC,Infrastructure,2024-10-21 06:11:00,Genève,2,clear,2024
+Zürich-Bern,IC,External,2024-10-22 12:50:00,Zürich HB,5,clear,2024
+Zürich-Bern,IC,External,2024-10-22 19:33:00,Bern,6,fog,2024
+Basel-Lausanne,IC,Rolling stock,2024-10-22 22:45:00,Basel SBB,6,clear,2024
+S6 Basel,S,Operations,2024-10-23 17:36:00,Pratteln,4,clear,2024
+Zürich-Genève,IC,Operations,2024-10-23 20:35:00,Zürich HB,28,clear,2024
+S6 Basel,S,Infrastructure,2024-10-24 06:53:00,Pratteln,2,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-10-24 15:13:00,Zürich HB,10,clear,2024
+St. Gallen-Zürich,IR,Connection wait,2024-10-24 19:55:00,St. Gallen,10,rain,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-10-25 05:06:00,St. Gallen,24,rain,2024
+Basel-Olten,IC,Infrastructure,2024-10-25 11:38:00,Basel SBB,24,clear,2024
+Basel-Lausanne,IC,Operations,2024-10-25 17:33:00,Lausanne,45,clear,2024
+Zürich-Genève,IC,Operations,2024-10-25 19:00:00,Genève,2,clear,2024
+St. Gallen-Zürich,IR,External,2024-10-26 19:28:00,Winterthur,5,clear,2024
+Lugano-Locarno,RE,Operations,2024-10-26 23:25:00,Locarno,17,clear,2024
+Lugano-Locarno,RE,Infrastructure,2024-10-27 22:47:00,Lugano,18,clear,2024
+Lausanne-Brig,IR,Connection wait,2024-10-28 01:29:00,Brig,2,clear,2024
+Bern-Belp,RE,External,2024-10-28 11:21:00,Bern,24,snow,2024
+Bern-Belp,RE,Operations,2024-10-28 13:32:00,Bern,23,clear,2024
+Bern-Biel,IR,Connection wait,2024-10-28 18:18:00,Bern,7,clear,2024
+Basel-Olten,IC,Connection wait,2024-10-28 21:32:00,Liestal,2,snow,2024
+Zürich-Genève,IC,Operations,2024-10-29 09:58:00,Lausanne,4,clear,2024
+Genève-Lausanne,IC,External,2024-10-29 18:38:00,Genève,12,clear,2024
+S1 Lausanne,S,Operations,2024-10-29 22:19:00,Yverdon,7,clear,2024
+Zürich-Chur,IC,External,2024-10-29 22:58:00,Sargans,16,clear,2024
+Basel-Lausanne,IC,Infrastructure,2024-10-30 03:26:00,Bern,2,clear,2024
+Lugano-Locarno,RE,Rolling stock,2024-10-30 06:40:00,Locarno,2,clear,2024
+Basel-Olten,IC,Operations,2024-10-30 12:35:00,Liestal,8,clear,2024
+Zürich-Luzern,IC,Rolling stock,2024-10-30 21:16:00,Zürich HB,2,clear,2024
+Basel-Lausanne,IC,Operations,2024-10-31 09:35:00,Lausanne,2,fog,2024
+Olten-Zofingen,RE,External,2024-10-31 10:30:00,Olten,2,fog,2024
+Lausanne-Brig,IR,Rolling stock,2024-10-31 14:48:00,Lausanne,2,clear,2024
+Lausanne-Brig,IR,Connection wait,2024-10-31 20:10:00,Sion,3,rain,2024
+Zürich-Bern,IC,Infrastructure,2024-10-31 22:13:00,Bern,6,clear,2024
+Lugano-Locarno,RE,Connection wait,2024-11-01 07:08:00,Locarno,8,rain,2024
+Zürich-Genève,IC,Operations,2024-11-01 08:52:00,Genève,9,clear,2024
+Olten-Zofingen,RE,Connection wait,2024-11-01 21:54:00,Zofingen,3,rain,2024
+Basel-Lausanne,IC,External,2024-11-03 05:18:00,Lausanne,15,clear,2024
+Zürich-Schaffhausen,IR,Operations,2024-11-03 07:57:00,Bülach,2,clear,2024
+Lausanne-Brig,IR,External,2024-11-03 15:32:00,Sion,3,rain,2024
+S2 Zürich,S,Rolling stock,2024-11-03 17:57:00,Pfäffikon,3,rain,2024
+Bern-Belp,RE,Rolling stock,2024-11-04 05:34:00,Bern,34,clear,2024
+S1 Lausanne,S,Rolling stock,2024-11-05 12:14:00,Lausanne,2,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-11-05 14:06:00,Winterthur,24,clear,2024
+Genève-Lausanne,IC,External,2024-11-06 13:42:00,Nyon,7,rain,2024
+Basel-Lausanne,IC,Operations,2024-11-06 15:22:00,Bern,22,clear,2024
+Zürich-Luzern,IC,External,2024-11-06 17:25:00,Zürich HB,6,clear,2024
+Olten-Zofingen,RE,Boarding,2024-11-06 22:10:00,Zofingen,4,clear,2024
+Lausanne-Brig,IR,Operations,2024-11-07 19:26:00,Lausanne,2,rain,2024
+Zürich-Schaffhausen,IR,Infrastructure,2024-11-07 21:36:00,Bülach,32,clear,2024
+Bern-Biel,IR,Boarding,2024-11-08 08:58:00,Lyss,2,rain,2024
+S1 Lausanne,S,Operations,2024-11-08 12:36:00,Yverdon,6,clear,2024
+Olten-Zofingen,RE,Rolling stock,2024-11-08 15:14:00,Zofingen,29,rain,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-11-08 21:16:00,St. Gallen,13,clear,2024
+Lausanne-Brig,IR,Infrastructure,2024-11-10 05:13:00,Lausanne,37,clear,2024
+S2 Zürich,S,Boarding,2024-11-10 15:01:00,Zürich HB,2,clear,2024
+Zürich-Schaffhausen,IR,Connection wait,2024-11-11 18:51:00,Bülach,2,clear,2024
+St. Gallen-Zürich,IR,Connection wait,2024-11-11 20:26:00,St. Gallen,10,clear,2024
+Bern-Brig,IC,Infrastructure,2024-11-12 13:21:00,Spiez,28,clear,2024
+Olten-Zofingen,RE,External,2024-11-13 09:47:00,Zofingen,4,clear,2024
+Genève-Lausanne,IC,Rolling stock,2024-11-13 19:24:00,Nyon,26,fog,2024
+Lugano-Locarno,RE,Operations,2024-11-13 19:48:00,Lugano,3,clear,2024
+Lugano-Locarno,RE,External,2024-11-14 18:37:00,Lugano,2,clear,2024
+Zürich-Chur,IC,Rolling stock,2024-11-16 08:47:00,Zürich HB,3,clear,2024
+Zürich-Luzern,IC,Operations,2024-11-16 09:40:00,Luzern,26,clear,2024
+Basel-Lausanne,IC,Infrastructure,2024-11-16 15:55:00,Lausanne,2,snow,2024
+Zürich-Luzern,IC,Rolling stock,2024-11-16 18:07:00,Luzern,2,fog,2024
+Basel-Olten,IC,Infrastructure,2024-11-17 12:01:00,Basel SBB,37,snow,2024
+Zürich-Genève,IC,Rolling stock,2024-11-19 11:45:00,Genève,10,clear,2024
+Basel-Lausanne,IC,Operations,2024-11-19 12:50:00,Lausanne,8,snow,2024
+Zürich-Luzern,IC,Rolling stock,2024-11-19 13:51:00,Zug,2,clear,2024
+S1 Lausanne,S,Connection wait,2024-11-19 14:54:00,Lausanne,8,rain,2024
+Zürich-Schaffhausen,IR,Boarding,2024-11-20 07:58:00,Bülach,2,snow,2024
+Zürich-Genève,IC,External,2024-11-21 07:55:00,Zürich HB,2,clear,2024
+Basel-Olten,IC,External,2024-11-21 12:53:00,Liestal,3,clear,2024
+S2 Zürich,S,Rolling stock,2024-11-21 17:40:00,Pfäffikon,5,clear,2024
+Zürich-Bern,IC,Boarding,2024-11-21 18:57:00,Olten,10,snow,2024
+Basel-Olten,IC,Connection wait,2024-11-23 17:00:00,Liestal,10,snow,2024
+S2 Zürich,S,Rolling stock,2024-11-24 19:23:00,Pfäffikon,3,clear,2024
+Basel-Olten,IC,Infrastructure,2024-11-24 20:34:00,Basel SBB,16,clear,2024
+Bern-Biel,IR,External,2024-11-25 23:02:00,Lyss,26,clear,2024
+Zürich-Luzern,IC,Rolling stock,2024-11-26 10:30:00,Zug,11,clear,2024
+Zürich-Luzern,IC,External,2024-11-26 11:10:00,Zürich HB,6,rain,2024
+Bern-Biel,IR,External,2024-11-26 12:33:00,Lyss,6,rain,2024
+Bern-Biel,IR,External,2024-11-26 17:41:00,Biel/Bienne,2,rain,2024
+Zürich-Genève,IC,External,2024-11-27 07:45:00,Genève,2,rain,2024
+Lausanne-Brig,IR,Infrastructure,2024-11-27 08:31:00,Brig,10,clear,2024
+S6 Basel,S,Infrastructure,2024-11-27 17:51:00,Basel SBB,2,clear,2024
+S2 Zürich,S,Infrastructure,2024-11-28 20:43:00,Zürich HB,9,clear,2024
+Zürich-Chur,IC,Rolling stock,2024-11-28 22:45:00,Sargans,13,clear,2024
+Zürich-Chur,IC,Infrastructure,2024-11-29 17:19:00,Sargans,18,rain,2024
+Bern-Belp,RE,External,2024-11-29 18:33:00,Belp,26,clear,2024
+Zürich-Chur,IC,Operations,2024-11-30 20:13:00,Zürich HB,10,clear,2024
+St. Gallen-Zürich,IR,Infrastructure,2024-11-30 22:03:00,Zürich HB,12,clear,2024
+S2 Zürich,S,Operations,2024-12-02 22:42:00,Zürich HB,36,clear,2024
+Olten-Zofingen,RE,External,2024-12-03 05:47:00,Zofingen,7,snow,2024
+Basel-Olten,IC,Boarding,2024-12-04 14:50:00,Liestal,3,clear,2024
+Basel-Lausanne,IC,Boarding,2024-12-04 19:41:00,Bern,2,clear,2024
+S6 Basel,S,Operations,2024-12-05 16:20:00,Basel SBB,22,rain,2024
+St. Gallen-Zürich,IR,Rolling stock,2024-12-06 08:44:00,St. Gallen,2,clear,2024
+Bern-Belp,RE,Infrastructure,2024-12-06 09:25:00,Belp,2,rain,2024
+Zürich-Schaffhausen,IR,Operations,2024-12-06 23:36:00,Schaffhausen,12,clear,2024
+Lausanne-Brig,IR,Infrastructure,2024-12-07 08:00:00,Brig,50,rain,2024
+Basel-Lausanne,IC,Operations,2024-12-07 19:11:00,Bern,11,clear,2024
+Genève-Lausanne,IC,Operations,2024-12-09 15:54:00,Nyon,4,clear,2024
+Zürich-Bern,IC,Operations,2024-12-09 17:38:00,Olten,7,clear,2024
+Bern-Brig,IC,External,2024-12-10 10:12:00,Spiez,2,rain,2024
+Zürich-Bern,IC,Infrastructure,2024-12-11 09:19:00,Bern,9,fog,2024
+Bern-Biel,IR,Infrastructure,2024-12-11 22:50:00,Lyss,2,clear,2024
+Zürich-Schaffhausen,IR,Connection wait,2024-12-12 13:02:00,Zürich HB,4,clear,2024
+S1 Lausanne,S,Rolling stock,2024-12-12 22:52:00,Yverdon,13,clear,2024
+S1 Lausanne,S,Rolling stock,2024-12-13 14:11:00,Yverdon,9,clear,2024
+Basel-Olten,IC,Rolling stock,2024-12-13 18:16:00,Olten,16,clear,2024
+Bern-Belp,RE,Operations,2024-12-15 12:42:00,Belp,6,clear,2024
+Lugano-Locarno,RE,Connection wait,2024-12-16 10:05:00,Lugano,9,clear,2024
+S6 Basel,S,Operations,2024-12-16 20:27:00,Pratteln,12,clear,2024
+Bern-Brig,IC,Rolling stock,2024-12-17 05:00:00,Spiez,5,clear,2024
+Bern-Biel,IR,Connection wait,2024-12-17 11:28:00,Biel/Bienne,10,clear,2024
+Zürich-Genève,IC,Connection wait,2024-12-17 14:25:00,Bern,4,snow,2024
+Zürich-Schaffhausen,IR,External,2024-12-18 15:09:00,Bülach,2,clear,2024
+Bern-Brig,IC,Rolling stock,2024-12-19 06:25:00,Brig,5,clear,2024
+Zürich-Bern,IC,Operations,2024-12-19 07:56:00,Bern,3,fog,2024
+Zürich-Chur,IC,Infrastructure,2024-12-19 15:31:00,Chur,2,clear,2024
+Zürich-Luzern,IC,Boarding,2024-12-19 18:41:00,Zug,3,clear,2024
+Lausanne-Brig,IR,Infrastructure,2024-12-21 05:31:00,Lausanne,3,clear,2024
+Zürich-Schaffhausen,IR,External,2024-12-23 05:05:00,Schaffhausen,26,rain,2024
+Lugano-Locarno,RE,Operations,2024-12-24 08:11:00,Lugano,7,snow,2024
+S6 Basel,S,Connection wait,2024-12-24 21:58:00,Basel SBB,3,clear,2024
+Zürich-Chur,IC,Rolling stock,2024-12-24 22:00:00,Zürich HB,4,clear,2024
+S5 Bern,S,Rolling stock,2024-12-25 04:50:00,Bern,2,clear,2024
+Basel-Lausanne,IC,External,2024-12-25 15:27:00,Basel SBB,7,rain,2024
+Zürich-Bern,IC,External,2024-12-25 23:12:00,Olten,2,clear,2024
+St. Gallen-Zürich,IR,External,2024-12-26 03:35:00,St. Gallen,2,snow,2024
+Bern-Belp,RE,Operations,2024-12-26 09:04:00,Belp,3,clear,2024
+Lugano-Locarno,RE,External,2024-12-26 12:48:00,Locarno,2,rain,2024
+Bern-Brig,IC,Infrastructure,2024-12-26 14:03:00,Bern,20,clear,2024
+S2 Zürich,S,Infrastructure,2024-12-27 06:42:00,Effretikon,4,clear,2024
+Bern-Biel,IR,External,2024-12-27 07:05:00,Biel/Bienne,7,clear,2024
+Basel-Lausanne,IC,Connection wait,2024-12-27 09:32:00,Bern,2,clear,2024
+Bern-Biel,IR,Infrastructure,2024-12-27 15:38:00,Lyss,44,clear,2024
+Genève-Lausanne,IC,External,2024-12-28 14:03:00,Genève,2,rain,2024
+Genève-Lausanne,IC,Connection wait,2024-12-29 09:16:00,Nyon,2,rain,2024
+Zürich-Chur,IC,Operations,2024-12-29 12:25:00,Zürich HB,7,clear,2024
+Lugano-Locarno,RE,Infrastructure,2024-12-29 22:18:00,Lugano,79,fog,2024
+Zürich-Luzern,IC,Infrastructure,2024-12-30 17:25:00,Zug,16,rain,2024

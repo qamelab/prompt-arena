@@ -1,67 +1,75 @@
 id: stock-returns
-title: Best-performing tech stocks of 2024
+title: Risk-adjusted winners — five years of tech
 round: 4
 
 # ─── Public parts (shown to students) ───
 briefing: |
-  You are a junior analyst on the markets desk of a financial daily. The
-  year-end edition needs a "best of 2024" chart for the tech-stocks feature.
+  You are a junior analyst on the markets desk of a financial daily. The year-end
+  edition needs a "risk-adjusted winners" chart for the tech-stocks feature: not
+  the obvious raw winners, but the names that delivered return per unit of risk.
 
 task: |
-  Identify the five US large-cap tech stocks with the highest total return in 2024,
-  and then show how an investment of USD 100 in each of those five at the start of
-  2022 would have grown through the end of 2024.
+  For each ticker, compute daily simple returns (close_t / close_{t-1} − 1).
+  Restricted to 2024 trading days, compute (a) the total return, and (b) the
+  annualized return standard deviation (daily SD × √252). Pick the five tickers
+  with the highest risk-adjusted return defined as 2024 total return ÷ annualized
+  SD. For those five, plot the cumulative price path indexed to 100 starting on
+  the first trading day of 2020 through the end of 2024. Color the lines by sector
+  (one consistent colour per sector, IBCS-style) and place each ticker label
+  directly at the end of its line — not in a side legend.
 
 dataset:
   filename: tech_stocks_daily.csv
-  rows: 11730
+  rows: 32600
   schema_preview: |
-    date        ticker  name        sector              close    volume
-    2022-01-03  NVDA    NVIDIA      Technology          30.00    436500000
-    2022-01-03  AAPL    Apple       Technology         182.00    104487900
-    2022-01-03  TSLA    Tesla       Cons. Discretionary 400.00   103931400
-    ... (15 US tickers × 782 trading days, 2022-01-03 to 2024-12-31)
+    date        ticker  name        sector              close    volume     market_cap_usd
+    2020-01-02  NVDA    NVIDIA      Technology          60.00    234500000        367000000000
+    2020-01-02  AAPL    Apple       Technology          75.00    136100000       1296000000000
+    2020-01-02  TSLA    Tesla       Cons. Discretionary 86.05    142800000        155000000000
+    ... (25 US large-cap tickers × 1304 trading days, 2020-01-02 to 2024-12-31)
   description: |
-    Daily closing prices for 15 US large-cap tech-and-adjacent stocks over three
+    Daily closing prices for 25 US large-cap tech-and-adjacent stocks over five
     calendar years. Columns: date (chr ISO YYYY-MM-DD), ticker (chr), name (chr),
-    sector (chr), close (num USD), volume (int). 782 trading days per ticker,
-    11730 rows total. No splits or dividends adjustments needed beyond what the
+    sector (chr — Technology / Communication Svcs. / Cons. Discretionary /
+    Industrials / Financials), close (num USD), volume (int),
+    market_cap_usd (num — period-end snapshot). 1304 trading days per ticker,
+    32600 rows. No splits or dividends adjustments needed beyond what the
     closing prices already encode.
 
 # ─── Hidden parts (used by the judge, not shown in UI) ───
 mechanical_checks:
   - key: parses_dates
     label: Parses dates correctly
-    description: the date column is parsed as a Date / POSIXct (e.g. with lubridate::ymd or as.Date) and used on the x-axis as a date scale, not as a character/factor
-  - key: total_return_2024
-    label: 2024 total return is correct
-    description: per-ticker 2024 total return is (last 2024 close / first 2024 close) − 1, computed on 2024 data only
-  - key: picks_top5_by_2024
-    label: Selects top 5 by 2024 return
-    description: top 5 tickers are picked by 2024 total return — not by price level, not by 3-year return
-  - key: indexes_to_100
-    label: Indexes growth path to 100
-    description: each of the five paths starts at 100 on the first trading day of 2022; subsequent values are price relative to that day × 100
-  - key: tracks_those5_full_period
-    label: Plots full 2022-2024 path
-    description: shows the same 5 cumulative paths across the entire 2022-01-03 to 2024-12-31 window — not just 2024
-  - key: distinguishes_tickers
-    label: Tickers distinguishable
-    description: each ticker is identifiable on the chart (color, line type, or facet) AND a legend or facet labels names them
+    description: the date column is parsed as a Date / POSIXct (e.g. lubridate::ymd or as.Date) and used on the x-axis as a date scale, not as a character/factor
+  - key: computes_daily_returns
+    label: Computes daily returns
+    description: per-ticker daily simple returns are computed from consecutive closes (close_t / close_{t-1} − 1) — not just a single total-period return
+  - key: computes_annualized_sd
+    label: Annualized SD computed correctly
+    description: annualized return SD is daily SD × √252 (or equivalent), per ticker, restricted to 2024 trading days
+  - key: picks_top5_risk_adjusted
+    label: Picks top 5 by risk-adjusted return
+    description: top 5 tickers are picked by 2024 total return ÷ 2024 annualized SD — not by raw total return, not by lowest SD alone
+  - key: indexes_path_to_100_from_2020
+    label: Indexes path to 100 from 2020
+    description: each of the five paths starts at 100 on the first trading day of 2020 (close_t / close_{first_2020} × 100) — not from 2024, not from each ticker's series start independently
+  - key: color_by_sector
+    label: Lines coloured by sector
+    description: the colour aesthetic is mapped to sector (one fixed colour per sector across all selected tickers) — not to ticker, not to year
   - key: tidyverse_idiomatic
     label: Tidyverse idiomatic
-    description: clean dplyr/ggplot2 with appropriate date handling (lubridate or as.Date), no base-R hacks or copy-paste loops
+    description: clean dplyr/ggplot2 with appropriate date handling and lag()/group_by(), no base-R hacks or copy-paste loops
 
 holistic:
   audience: markets-desk editor at a financial daily
   voice: terse markets-desk editor preparing the year-end edition
   evaluation_lens:
-    - Does the chart let a reader see both the 2024 winners and how durable that performance was?
+    - Does the chart let a reader see the risk-adjusted winners and how durable that performance was over the full five years?
     - Is the indexing-to-100 framing honest — same starting point, no rebasing tricks?
-    - Is the prompt scoped well — is the total-return definition unambiguous, is the index basis stated?
-    - Does the framing match the audience (newspaper readers, not a trading desk pitch deck)?
+    - Is sector colour used semantically (e.g. tech vs consumer-disc vs financials) and is the labelling direct rather than via a remote legend?
+    - Is the prompt scoped well — is "risk-adjusted return" defined unambiguously, is the index basis stated, is the SD annualization made explicit?
   anchors:
-    "0-9": wrong, misleading, or compares apples to oranges (e.g. raw prices instead of indexed paths)
+    "0-9": wrong, misleading, or compares apples to oranges (raw prices, wrong period for SD, picks by raw return)
     "10-19": technically present but the markets desk would send it back for rework
     "20-26": good — would publish with minor edits
     "27-30": exceptional — sharp, year-end-feature ready

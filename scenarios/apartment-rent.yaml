@@ -1,63 +1,71 @@
 id: apartment-rent
-title: Apartment rent vs. building age
+title: Building age vs rent — three-city comparison
 round: 3
 
 # ─── Public parts (shown to students) ───
 briefing: |
   You are a junior data scientist at a Swiss real-estate listings site. The product
-  team wants a chart for the homepage that says something honest about how building
-  age affects rent.
+  team wants a homepage chart that says something honest about how building age
+  affects rent per square meter, controlling for city. The eventual readers are
+  not experts — the chart needs to communicate the relationship at a glance.
 
 task: |
-  For Zürich and Geneva listings, show how rent per square meter relates to the year
-  the building was built, and call out any visible difference between the two cities.
+  For listings in Zürich, Geneva, and Basel, show the relationship between
+  year_built and rent_per_m² with one panel per city. Each panel needs both
+  individual points and a smoothed trend (a scatter + smoother).
+  Compute and report the Pearson correlation between year_built and rent_per_m²
+  for each of the three cities. Annotate each panel directly with that correlation
+  and with the city's median rent_per_m² (IBCS-style direct labels — do not push
+  these to a side legend).
 
 dataset:
   filename: ch_apartments.csv
-  rows: 480
+  rows: 800
   schema_preview: |
-    city      district          size_m2  rooms  year_built  rent_chf
-    Zürich    Kreis 4               68      3        1962       2890
-    Geneva    Plainpalais          82      3.5      1985       3120
-    Bern      Länggasse            55      2        2014       1840
-    ... (480 listings across six Swiss cities)
+    city      district          size_m2  rooms  year_built  rent_chf  floor  has_balcony  distance_to_station_m
+    Zürich    Kreis 4               68      3        1962       2890      4        TRUE                   480
+    Geneva    Plainpalais          82      3.5      1985       3120      2        FALSE                  290
+    Bern      Länggasse            55      2        2014       1840      3        TRUE                   650
+    ... (800 listings across eight Swiss cities, 1900-2024)
   description: |
-    Synthetic rental listings. Columns: city (chr, one of Zürich, Geneva, Basel,
-    Bern, Lausanne, Lugano), district (chr), size_m2 (num), rooms (num — half
-    rooms allowed, e.g. 3.5), year_built (int 1900-2024), rent_chf (num, monthly).
-    480 rows.
+    Synthetic rental listings. Columns: city (chr — Zürich, Geneva, Basel, Bern,
+    Lausanne, Lugano, Winterthur, St. Gallen), district (chr), size_m2 (num),
+    rooms (num — half rooms allowed, e.g. 3.5), year_built (int 1900-2024),
+    rent_chf (num — monthly), floor (int 0-12), has_balcony (logical),
+    distance_to_station_m (int). 800 rows. Floor and balcony fields are extra
+    context; the main task is rent_per_m² ~ year_built across cities.
 
 # ─── Hidden parts (used by the judge, not shown in UI) ───
 mechanical_checks:
   - key: computes_rent_per_m2
     label: Computes rent per m²
-    description: rent_chf / size_m2 is computed as the y-axis variable
-  - key: filters_zurich_geneva
-    label: Filters to Zürich and Geneva
-    description: filters to city %in% c("Zürich", "Geneva") before plotting
-  - key: year_built_on_x
-    label: year_built on x-axis
-    description: year_built is the x-axis variable (continuous, not bucketed into a single category)
-  - key: distinguishes_cities
-    label: Cities distinguishable
-    description: the two cities are shown separately — color, shape, or facet
-  - key: appropriate_geom
-    label: Appropriate geom for relationship
-    description: uses a geom that shows a relationship between two continuous variables (point, smooth, line) — not a single bar/box
-  - key: has_labels_legend
-    label: Axis labels & legend
-    description: axis labels present AND legend (or facet labels) identifies which series is which city
+    description: rent_chf / size_m2 is computed and used as the y-axis variable
+  - key: filters_three_cities
+    label: Filters to ZH, GE, BS
+    description: filters listings to city %in% c("Zürich","Geneva","Basel") before plotting — does not silently include the other five
+  - key: scatter_plus_smoother
+    label: Scatter plus smoother
+    description: chart contains both individual points (geom_point) and a smoothed trend (geom_smooth) — not just one or the other
+  - key: faceted_by_city
+    label: One panel per city
+    description: cities are separated into three panels via facet_wrap or facet_grid (not just colour-coded on one panel)
+  - key: pearson_correlation_per_city
+    label: Pearson correlation per city
+    description: Pearson correlation between year_built and rent_per_m² is computed separately for each of the three cities (cor() inside summarise()/group_by, or equivalent)
+  - key: annotates_panels_directly
+    label: Direct in-panel annotations
+    description: each panel is directly annotated (geom_text, geom_label, or annotate()) with that city's correlation AND its median rent_per_m² — these are NOT pushed to a side legend or printed only in the console
   - key: tidyverse_idiomatic
     label: Tidyverse idiomatic
-    description: clean dplyr/ggplot2 usage, no base-R hacks or copy-paste loops
+    description: clean dplyr + ggplot2 with appropriate group_by/summarise, no base-R hacks or copy-paste loops
 
 holistic:
   audience: product team picking a homepage chart
   voice: pragmatic product manager who wants a chart users can read in two seconds
   evaluation_lens:
-    - Can a homepage visitor read the comparison at a glance?
-    - Is the relationship shown honestly (not over-smoothed, not cherry-picked)?
-    - Is the prompt scoped well — does it ask for the relationship without micromanaging the geom?
+    - Can a homepage visitor read the comparison and the per-city numbers without consulting a legend?
+    - Is the relationship shown honestly (not over-smoothed, not cherry-picked, not faked precision in correlation)?
+    - Is the prompt scoped well — does it ask for the relationship and the per-city numbers without micromanaging the geom?
     - Does the framing match the audience (homepage chart, not a regression report)?
   anchors:
     "0-9": misleading, unreadable, or answers a different question
@@ -67,8 +75,8 @@ holistic:
 
 # ─── Seeded leaderboard ───
 leaderboard_seed:
-  - {name: "Robin M.",  mech: 70, hol: 24}
-  - {name: "Sara D.",   mech: 60, hol: 19}
-  - {name: "Felix T.",  mech: 50, hol: 22}
-  - {name: "Ines C.",   mech: 40, hol: 21}
-  - {name: "Jonas R.",  mech: 30, hol: 18}
+  - {name: "Robin M.", mech: 70, hol: 24}
+  - {name: "Sara D.",  mech: 60, hol: 19}
+  - {name: "Felix T.", mech: 50, hol: 22}
+  - {name: "Ines C.",  mech: 40, hol: 21}
+  - {name: "Jonas R.", mech: 30, hol: 18}

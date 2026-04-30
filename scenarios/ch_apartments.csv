@@ -1,481 +1,801 @@
-city,district,size_m2,rooms,year_built,rent_chf
-Lausanne,Sévelin,68,2.0,1959,1960
-Basel,Gundeldingen,35,2.0,1942,1030
-Zürich,Kreis 1,180,7.5,1934,3900
-Lugano,Besso,53,2.0,2006,1490
-Bern,Länggasse,74,3.5,1956,1560
-Geneva,Champel,80,3.0,1965,2440
-Geneva,Carouge,79,3.0,1948,2110
-Zürich,Kreis 8,66,2.5,1995,2350
-Basel,St. Johann,89,3.5,1968,1710
-Bern,Mattenhof,34,1.0,1948,870
-Basel,Gundeldingen,61,2.5,1993,1960
-Lausanne,Sévelin,60,2.0,1985,1800
-Lausanne,Sous-Gare,62,2.5,1980,1880
-Zürich,Kreis 6,40,1.5,1985,1400
-Bern,Länggasse,42,2.0,1951,1030
-Geneva,Carouge,68,3.0,1975,1880
-Zürich,Kreis 6,54,2.0,1919,1730
-Basel,Bachletten,62,2.5,1991,1550
-Basel,Altstadt,126,5.0,1930,2660
-Zürich,Kreis 3,93,4.0,1960,2440
-Geneva,Servette,130,5.0,2013,4140
-Bern,Kirchenfeld,77,3.5,1930,1700
-Bern,Mattenhof,180,7.5,1958,3070
-Basel,St. Johann,70,2.5,1958,1880
-Lugano,Cassarate,88,4.0,1998,1590
-Lugano,Molino Nuovo,113,4.5,1934,1650
-Bern,Mattenhof,69,3.0,1950,1320
-Lausanne,Sous-Gare,106,3.5,1915,2400
-Lugano,Centro,44,2.0,1977,920
-Geneva,Carouge,69,3.0,1969,2380
-Basel,Kleinbasel,92,4.0,1999,2300
-Lausanne,Sous-Gare,71,3.0,1998,1900
-Lausanne,Chailly,86,3.5,2004,2340
-Bern,Mattenhof,58,2.5,1974,1010
-Lausanne,Chailly,70,3.0,1941,1480
-Lausanne,Sévelin,50,2.5,1993,1320
-Basel,Altstadt,84,4.0,1947,2140
-Lausanne,Ouchy,44,1.5,1949,1140
-Bern,Länggasse,53,2.0,2013,1380
-Bern,Kirchenfeld,50,2.0,1981,1160
-Bern,Breitenrain,71,3.0,1932,1400
-Geneva,Champel,99,3.5,1951,2610
-Basel,Altstadt,73,2.5,1977,1710
-Geneva,Carouge,73,3.5,1921,2290
-Lausanne,Sévelin,56,2.0,2006,1570
-Geneva,Carouge,83,3.0,1980,2360
-Bern,Breitenrain,78,3.5,1976,1960
-Lugano,Cassarate,55,2.0,1964,1330
-Geneva,Plainpalais,80,3.0,1952,2110
-Bern,Mattenhof,73,2.5,2002,1850
-Lausanne,Sévelin,47,1.5,1976,1320
-Basel,Kleinbasel,60,2.5,1997,1370
-Bern,Länggasse,71,3.0,1926,1480
-Lugano,Besso,45,1.5,1933,1120
-Lugano,Cassarate,54,2.5,1972,1000
-Basel,Kleinbasel,71,3.5,2002,2230
-Zürich,Kreis 7,73,3.0,2011,2430
-Bern,Bümpliz,115,4.0,1998,1940
-Geneva,Eaux-Vives,85,3.0,1985,2840
-Bern,Mattenhof,126,4.5,1971,1990
-Zürich,Kreis 5,116,5.0,2000,3610
-Geneva,Carouge,117,4.0,1986,2910
-Lugano,Centro,37,1.5,2004,910
-Geneva,Pâquis,43,2.0,1983,1380
-Geneva,Carouge,87,3.5,2010,2520
-Zürich,Kreis 8,140,5.5,1965,3560
-Geneva,Servette,82,3.5,1965,2490
-Geneva,Servette,49,1.5,1969,1540
-Bern,Länggasse,102,4.0,1980,2160
-Geneva,Pâquis,73,3.0,2011,2350
-Bern,Breitenrain,86,3.0,1955,2070
-Geneva,Servette,52,2.0,1956,1520
-Lausanne,Ouchy,76,3.0,1974,2350
-Geneva,Pâquis,91,3.5,1975,2710
-Basel,St. Johann,78,3.0,1982,2120
-Lausanne,Sévelin,78,3.0,1982,1800
-Lausanne,Sévelin,105,4.0,1963,2310
-Lausanne,Sous-Gare,109,4.5,1951,2420
-Lausanne,Flon,71,3.0,1916,1640
-Zürich,Kreis 5,43,2.0,1986,1490
-Lausanne,Chailly,79,3.0,1973,2210
-Geneva,Plainpalais,133,5.0,1971,2730
-Lugano,Molino Nuovo,111,4.5,1966,2280
-Geneva,Servette,118,5.0,1995,3550
-Lugano,Molino Nuovo,67,3.0,1917,1300
-Zürich,Kreis 8,180,7.0,1990,4270
-Zürich,Kreis 5,112,4.0,2009,3770
-Basel,Gundeldingen,76,3.5,1991,1910
-Bern,Kirchenfeld,131,5.0,1992,2750
-Lausanne,Flon,36,1.0,1991,1070
-Zürich,Kreis 6,139,5.5,1955,3810
-Geneva,Champel,54,2.5,1939,1380
-Basel,Gundeldingen,92,4.0,1920,2280
-Lugano,Besso,104,4.0,1967,2020
-Lausanne,Ouchy,75,3.0,1980,1890
-Basel,Gundeldingen,66,2.5,2014,1840
-Geneva,Carouge,117,4.5,1940,2410
-Zürich,Kreis 6,94,3.5,1967,2830
-Bern,Kirchenfeld,57,2.5,1936,1110
-Lugano,Besso,76,3.0,2009,1760
-Basel,Bachletten,54,2.0,1987,1500
-Bern,Breitenrain,65,2.5,1988,1290
-Basel,Bachletten,111,4.0,1965,2530
-Geneva,Eaux-Vives,86,4.0,1933,1950
-Lugano,Molino Nuovo,115,4.5,2006,2330
-Geneva,Carouge,71,3.5,1975,2330
-Lugano,Cassarate,100,4.0,1970,1830
-Geneva,Pâquis,83,3.5,1966,2370
-Zürich,Kreis 8,114,4.5,1927,2760
-Zürich,Kreis 1,30,1.0,1979,910
-Zürich,Kreis 1,60,2.5,1976,1650
-Lausanne,Ouchy,74,2.5,1960,1470
-Lausanne,Sévelin,60,3.0,1967,1560
-Zürich,Kreis 4,74,3.0,1989,2680
-Geneva,Servette,87,3.5,1918,1820
-Bern,Bümpliz,84,3.5,1962,1790
-Zürich,Kreis 4,51,1.5,1940,1490
-Zürich,Kreis 1,48,1.5,1984,1790
-Bern,Länggasse,100,3.5,1994,2190
-Zürich,Kreis 4,77,3.0,1937,1980
-Geneva,Pâquis,40,1.5,1916,780
-Geneva,Plainpalais,64,2.5,1964,1810
-Geneva,Servette,78,3.0,1989,2530
-Lausanne,Sévelin,60,2.5,1942,1270
-Geneva,Servette,77,2.5,1955,2430
-Zürich,Kreis 5,119,4.5,1906,2980
-Lausanne,Chailly,85,3.0,1977,1830
-Geneva,Pâquis,59,2.5,1964,1810
-Zürich,Kreis 1,93,3.5,1978,3020
-Geneva,Champel,98,3.5,1977,2410
-Zürich,Kreis 11,67,2.5,1974,1850
-Lausanne,Sévelin,62,2.5,1946,1320
-Bern,Breitenrain,64,2.5,1989,1240
-Geneva,Plainpalais,85,3.0,1969,2200
-Bern,Mattenhof,134,5.0,1976,2380
-Basel,Altstadt,46,2.0,1952,1210
-Lugano,Molino Nuovo,49,2.0,1943,1040
-Basel,St. Johann,41,2.0,2003,1160
-Zürich,Kreis 4,84,4.0,2002,3210
-Basel,Gundeldingen,127,5.0,1978,2330
-Geneva,Eaux-Vives,96,4.5,2012,2900
-Lausanne,Chailly,64,3.0,2013,1880
-Basel,Bachletten,51,2.0,1968,1470
-Basel,Kleinbasel,40,2.0,1972,1050
-Geneva,Champel,135,5.5,1952,3070
-Basel,Altstadt,67,3.0,1920,1830
-Zürich,Kreis 8,74,3.5,1991,2340
-Lugano,Centro,43,1.5,1975,1040
-Lausanne,Ouchy,73,3.0,1978,2080
-Basel,Altstadt,94,4.0,1991,2250
-Bern,Breitenrain,101,3.5,1918,2000
-Lugano,Centro,109,4.0,1986,1760
-Basel,Bachletten,64,3.0,1966,1600
-Lugano,Besso,110,4.5,1987,1800
-Geneva,Plainpalais,72,3.0,1950,1960
-Geneva,Servette,96,4.0,2000,2830
-Geneva,Eaux-Vives,124,4.5,1994,3360
-Geneva,Eaux-Vives,75,3.0,1922,2060
-Bern,Mattenhof,65,3.0,1992,1660
-Geneva,Pâquis,133,5.0,1973,3710
-Geneva,Champel,66,2.5,1983,2000
-Zürich,Kreis 4,69,3.0,1934,2090
-Bern,Länggasse,60,2.0,1966,1310
-Lausanne,Sévelin,120,5.5,1974,2610
-Basel,Altstadt,41,1.5,1940,1190
-Geneva,Servette,144,6.0,2016,4290
-Geneva,Champel,77,3.0,1968,2030
-Zürich,Kreis 4,64,3.0,2003,2250
-Bern,Bümpliz,104,4.5,1952,2390
-Lugano,Cassarate,56,2.0,1983,1390
-Geneva,Pâquis,63,3.0,1967,1950
-Zürich,Kreis 8,50,1.5,1975,1880
-Lugano,Molino Nuovo,63,2.5,2008,1630
-Geneva,Plainpalais,45,1.5,2012,1790
-Zürich,Kreis 4,81,3.0,1958,2600
-Zürich,Kreis 1,62,2.5,1927,1810
-Basel,Bachletten,100,4.0,1978,1870
-Zürich,Kreis 4,93,3.5,1931,2460
-Bern,Breitenrain,41,1.5,1931,1170
-Basel,St. Johann,55,2.0,1977,1260
-Zürich,Kreis 3,54,2.5,2002,2130
-Lausanne,Ouchy,88,4.0,1951,1730
-Lugano,Centro,65,2.5,1993,1490
-Basel,Altstadt,48,2.0,1980,1080
-Zürich,Kreis 3,96,3.5,1917,2200
-Geneva,Plainpalais,72,3.0,1986,2190
-Zürich,Kreis 11,70,3.0,2018,2400
-Basel,Bachletten,99,4.0,1953,2590
-Lausanne,Sous-Gare,105,4.5,1960,2030
-Geneva,Eaux-Vives,62,2.0,1963,1780
-Zürich,Kreis 6,86,3.5,1967,2980
-Basel,St. Johann,81,3.0,1988,2280
-Geneva,Carouge,54,2.0,2006,1800
-Lugano,Cassarate,75,3.5,1951,1560
-Basel,Altstadt,59,2.5,1963,1530
-Zürich,Kreis 11,62,2.0,1954,2060
-Lugano,Molino Nuovo,104,4.5,1990,2090
-Geneva,Pâquis,47,1.5,1972,1660
-Geneva,Eaux-Vives,82,3.0,1952,2090
-Bern,Länggasse,67,2.0,1969,1340
-Zürich,Kreis 11,107,4.0,1930,2780
-Lausanne,Chailly,82,3.5,1993,1870
-Bern,Mattenhof,141,6.0,1981,2330
-Lausanne,Ouchy,43,1.5,2005,1290
-Geneva,Plainpalais,55,2.5,1994,1710
-Zürich,Kreis 11,75,2.5,1909,2030
-Lausanne,Sous-Gare,61,2.5,1939,1420
-Geneva,Servette,66,2.5,1989,1810
-Bern,Kirchenfeld,132,6.0,1984,2610
-Lausanne,Sous-Gare,102,4.0,1980,2340
-Basel,Gundeldingen,78,3.0,1991,1720
-Zürich,Kreis 3,71,3.0,1970,2380
-Lugano,Besso,45,1.5,1948,1000
-Lausanne,Chailly,66,2.5,2019,1710
-Basel,Kleinbasel,63,2.5,2022,1810
-Lugano,Molino Nuovo,61,2.5,1986,1260
-Basel,Bachletten,74,3.5,1985,1770
-Zürich,Kreis 11,91,3.5,1984,2900
-Geneva,Servette,73,3.5,1946,2110
-Zürich,Kreis 11,103,4.5,1976,3140
-Bern,Breitenrain,55,2.5,1999,1440
-Lugano,Cassarate,59,2.0,1996,1100
-Lugano,Besso,77,3.5,2012,1500
-Bern,Mattenhof,88,3.5,2005,1960
-Geneva,Plainpalais,98,3.5,1934,2120
-Geneva,Pâquis,86,4.0,1939,2310
-Lugano,Centro,102,3.5,1948,2340
-Lausanne,Chailly,47,2.5,1984,1350
-Lugano,Cassarate,70,3.0,1989,1310
-Basel,Kleinbasel,39,1.5,1926,990
-Bern,Kirchenfeld,108,4.0,2002,2080
-Zürich,Kreis 11,77,3.0,1979,2550
-Bern,Breitenrain,72,3.0,1987,1420
-Zürich,Kreis 11,103,4.0,1959,2930
-Lugano,Besso,82,3.0,1986,1800
-Zürich,Kreis 5,47,1.5,1972,1710
-Geneva,Champel,70,3.0,1962,2080
-Bern,Länggasse,110,4.5,1977,1630
-Lausanne,Ouchy,69,2.5,1998,1900
-Zürich,Kreis 1,118,4.5,1925,2820
-Bern,Breitenrain,111,4.0,1973,2630
-Zürich,Kreis 8,153,6.0,1966,4060
-Zürich,Kreis 1,73,2.5,1987,2300
-Bern,Breitenrain,68,3.0,1965,1660
-Geneva,Plainpalais,54,2.0,1947,1560
-Basel,Bachletten,87,3.5,1983,2150
-Zürich,Kreis 4,50,2.5,1951,1590
-Lausanne,Flon,57,2.0,1956,1400
-Geneva,Pâquis,96,3.5,1961,2420
-Zürich,Kreis 8,47,1.5,1973,1400
-Zürich,Kreis 1,97,4.5,1946,2720
-Bern,Bümpliz,65,3.0,1996,1390
-Zürich,Kreis 11,55,2.5,1982,1900
-Basel,St. Johann,55,2.5,1946,1310
-Bern,Kirchenfeld,79,3.0,1936,1730
-Geneva,Pâquis,51,2.5,1941,1640
-Lausanne,Sévelin,42,1.0,1962,1100
-Bern,Länggasse,49,2.0,1990,1080
-Zürich,Kreis 3,87,3.5,1976,2380
-Lausanne,Sévelin,48,2.5,1969,1260
-Zürich,Kreis 3,86,3.0,1960,2270
-Bern,Mattenhof,90,3.5,2015,2300
-Lausanne,Ouchy,54,2.0,1947,1230
-Zürich,Kreis 6,44,2.0,1947,1690
-Basel,Bachletten,66,2.5,1981,2080
-Zürich,Kreis 8,100,4.0,1936,2550
-Zürich,Kreis 1,107,4.5,1933,2770
-Zürich,Kreis 7,85,4.0,1991,2850
-Lausanne,Sous-Gare,53,2.0,1984,1530
-Basel,Altstadt,114,4.5,1989,3020
-Bern,Länggasse,52,1.5,1975,1040
-Lausanne,Sous-Gare,75,2.5,1944,1470
-Geneva,Carouge,53,2.5,1944,1430
-Zürich,Kreis 3,37,1.0,1941,1160
-Geneva,Carouge,69,2.5,1950,1840
-Basel,Altstadt,47,1.5,1960,950
-Lausanne,Flon,64,2.0,1964,1280
-Zürich,Kreis 4,60,3.0,1928,1820
-Bern,Breitenrain,74,2.5,2010,1700
-Geneva,Champel,81,3.0,1938,2530
-Zürich,Kreis 6,68,2.5,1999,2360
-Geneva,Carouge,151,6.0,1999,3570
-Basel,Altstadt,89,4.0,1967,2160
-Zürich,Kreis 7,50,2.0,1977,1860
-Zürich,Kreis 1,35,1.5,1941,1220
-Geneva,Servette,55,2.0,1996,1660
-Geneva,Carouge,100,3.5,1963,2440
-Zürich,Kreis 6,81,3.5,1960,2100
-Basel,Altstadt,63,2.5,1952,1550
-Lausanne,Ouchy,102,4.5,1970,2150
-Geneva,Eaux-Vives,93,4.0,1965,2870
-Lausanne,Sous-Gare,86,3.5,1926,1990
-Zürich,Kreis 4,53,2.0,1940,1620
-Lausanne,Chailly,52,2.5,1902,1190
-Zürich,Kreis 11,70,3.0,1945,1700
-Bern,Bümpliz,81,3.5,1925,1800
-Bern,Länggasse,70,3.0,1955,1320
-Basel,Altstadt,47,1.5,1973,1400
-Bern,Länggasse,146,5.5,1982,2740
-Lugano,Molino Nuovo,39,2.0,2013,1110
-Zürich,Kreis 1,124,5.0,2012,3980
-Basel,Altstadt,65,2.0,1938,1770
-Lausanne,Sévelin,94,3.5,1942,1780
-Geneva,Plainpalais,89,3.5,1947,2230
-Zürich,Kreis 11,74,2.5,1995,2560
-Lugano,Centro,47,2.5,1940,890
-Zürich,Kreis 4,90,4.0,1956,2280
-Geneva,Servette,68,2.5,1977,2420
-Zürich,Kreis 8,81,3.0,1951,2540
-Zürich,Kreis 3,79,3.5,1952,2150
-Lausanne,Chailly,65,3.0,1993,1860
-Zürich,Kreis 4,39,1.5,1968,1270
-Zürich,Kreis 8,91,3.5,1956,2700
-Lausanne,Sous-Gare,41,1.5,1945,1050
-Zürich,Kreis 5,83,3.5,1984,2820
-Geneva,Servette,54,2.0,1959,1880
-Basel,Bachletten,155,6.0,1924,2870
-Geneva,Carouge,54,2.5,1971,1450
-Geneva,Carouge,57,2.5,1916,1650
-Zürich,Kreis 6,28,1.0,1952,920
-Geneva,Servette,92,4.0,2008,2670
-Zürich,Kreis 1,47,2.0,1990,1870
-Zürich,Kreis 5,102,4.0,1934,3110
-Bern,Bümpliz,54,2.0,1916,1130
-Lausanne,Chailly,103,4.0,2001,2890
-Lugano,Cassarate,136,5.5,1977,2430
-Zürich,Kreis 8,55,2.0,1956,1840
-Zürich,Kreis 4,81,3.0,2009,2530
-Lausanne,Flon,99,3.5,2008,2910
-Lausanne,Ouchy,92,4.0,1954,2320
-Lausanne,Chailly,91,3.5,1986,2400
-Zürich,Kreis 4,151,6.0,1996,4240
-Basel,Kleinbasel,63,2.0,1994,1420
-Geneva,Servette,98,4.0,1965,2820
-Lugano,Centro,107,4.0,1999,2190
-Geneva,Carouge,41,2.0,1952,1130
-Geneva,Eaux-Vives,89,4.0,2010,2860
-Zürich,Kreis 4,73,2.5,1992,2430
-Lugano,Centro,148,6.5,1947,2410
-Geneva,Carouge,141,5.5,1919,3130
-Bern,Kirchenfeld,113,4.5,1987,2200
-Lausanne,Sévelin,94,3.5,1974,2300
-Basel,Gundeldingen,101,4.0,1922,2010
-Bern,Kirchenfeld,58,2.5,1976,1510
-Geneva,Servette,115,4.0,1977,2960
-Lugano,Cassarate,113,4.5,1984,2440
-Zürich,Kreis 8,68,3.0,1993,2250
-Zürich,Kreis 5,118,5.0,1965,3330
-Zürich,Kreis 6,128,5.5,1920,2790
-Basel,St. Johann,63,2.5,1974,1470
-Bern,Bümpliz,51,2.5,1959,990
-Zürich,Kreis 6,65,2.5,1987,2060
-Lausanne,Flon,111,4.0,1976,2620
-Basel,Altstadt,62,2.5,1944,1590
-Lugano,Centro,83,3.5,1942,1770
-Lausanne,Ouchy,65,2.5,1941,1350
-Basel,Kleinbasel,58,3.0,1940,1310
-Lausanne,Chailly,84,3.5,1976,2440
-Lugano,Besso,110,4.5,1963,2800
-Zürich,Kreis 11,48,2.5,1966,1370
-Zürich,Kreis 11,61,2.5,1990,2240
-Geneva,Champel,97,3.5,1989,2950
-Geneva,Carouge,87,3.5,1971,2530
-Lausanne,Chailly,64,2.0,1977,1570
-Lugano,Centro,72,3.0,1957,1280
-Zürich,Kreis 5,81,3.5,1972,2670
-Zürich,Kreis 5,78,3.0,1967,2650
-Geneva,Pâquis,62,2.0,2006,1910
-Bern,Kirchenfeld,66,2.5,1929,1220
-Lugano,Centro,90,4.0,1977,2020
-Zürich,Kreis 11,70,2.5,1975,2040
-Zürich,Kreis 6,85,3.0,1958,2660
-Zürich,Kreis 6,174,7.0,1961,4080
-Bern,Breitenrain,50,2.5,1980,1010
-Lugano,Molino Nuovo,92,3.5,1951,2030
-Zürich,Kreis 5,70,3.0,1985,2380
-Geneva,Pâquis,82,3.0,1940,2360
-Geneva,Plainpalais,88,3.5,2018,2880
-Lausanne,Chailly,68,3.0,2022,1950
-Bern,Kirchenfeld,60,2.0,1964,1470
-Basel,Gundeldingen,77,3.0,1948,1880
-Lugano,Molino Nuovo,84,3.5,1975,1920
-Zürich,Kreis 1,103,4.0,1969,3030
-Lugano,Molino Nuovo,102,4.5,1956,1980
-Bern,Länggasse,90,4.0,1996,1880
-Bern,Bümpliz,36,1.0,1949,770
-Geneva,Pâquis,85,3.0,1998,3080
-Bern,Bümpliz,45,1.5,1982,810
-Zürich,Kreis 4,86,4.0,1934,2160
-Zürich,Kreis 4,98,3.5,1968,2990
-Basel,Bachletten,78,3.0,1983,1720
-Lugano,Centro,53,2.0,1986,900
-Lugano,Besso,65,2.5,1986,1590
-Zürich,Kreis 8,77,3.5,1921,1900
-Geneva,Champel,98,4.0,1961,2800
-Lugano,Centro,98,4.0,1950,2390
-Zürich,Kreis 1,49,2.5,1935,1370
-Zürich,Kreis 6,56,2.0,1948,1700
-Lausanne,Sévelin,54,2.5,1935,1450
-Lausanne,Sous-Gare,58,2.0,1972,1600
-Geneva,Eaux-Vives,74,2.5,1934,2050
-Zürich,Kreis 8,59,2.0,1936,1950
-Zürich,Kreis 4,96,4.0,1953,2910
-Lausanne,Ouchy,55,2.0,1984,1590
-Geneva,Carouge,76,3.0,1998,2230
-Zürich,Kreis 11,53,2.0,2000,1790
-Zürich,Kreis 1,91,3.5,1962,2860
-Zürich,Kreis 5,50,2.0,1987,2020
-Zürich,Kreis 8,49,1.5,2003,2030
-Lausanne,Sévelin,56,2.5,1982,1520
-Geneva,Champel,66,2.5,1984,2430
-Basel,Bachletten,72,2.5,1953,1750
-Basel,Bachletten,54,2.5,1940,1470
-Lausanne,Sévelin,66,2.0,1949,1560
-Basel,St. Johann,96,4.0,1965,2470
-Lugano,Besso,59,3.0,1979,1370
-Basel,Altstadt,105,4.5,1976,2640
-Lausanne,Ouchy,47,2.0,1957,1250
-Geneva,Servette,59,2.0,1936,1400
-Bern,Breitenrain,88,3.0,1977,1860
-Zürich,Kreis 7,102,4.5,1946,3220
-Basel,Gundeldingen,80,3.5,1949,1900
-Zürich,Kreis 8,66,2.5,1903,1660
-Zürich,Kreis 11,55,2.0,1947,1920
-Geneva,Champel,146,5.5,2004,3810
-Basel,Gundeldingen,72,3.0,2018,1920
-Basel,Kleinbasel,81,3.5,1961,1940
-Lausanne,Sévelin,38,1.5,1988,1010
-Geneva,Champel,81,3.0,1912,1970
-Zürich,Kreis 6,98,4.0,1955,2840
-Zürich,Kreis 5,88,3.5,1927,2360
-Basel,Altstadt,73,2.5,1947,2040
-Basel,Bachletten,96,4.0,1946,2020
-Basel,St. Johann,95,3.5,1966,2090
-Geneva,Pâquis,47,2.0,1975,1500
-Bern,Mattenhof,88,3.0,1951,2020
-Geneva,Servette,73,2.5,2020,2260
-Lugano,Centro,48,1.5,1962,1110
-Geneva,Servette,60,2.0,1939,1710
-Bern,Länggasse,67,3.0,2000,1980
-Bern,Länggasse,180,7.0,1982,3710
-Zürich,Kreis 1,76,3.0,1983,2500
-Bern,Breitenrain,145,5.5,1948,2790
-Zürich,Kreis 4,71,3.0,1998,2370
-Lugano,Besso,78,3.0,1937,1690
-Basel,Bachletten,48,1.5,1983,1430
-Zürich,Kreis 1,54,2.0,2010,1980
-Lausanne,Ouchy,67,2.5,1981,1680
-Zürich,Kreis 5,76,3.5,1984,2400
-Geneva,Champel,58,2.5,1948,1690
-Bern,Länggasse,78,3.0,1993,2110
-Basel,Gundeldingen,62,2.5,1937,1650
-Zürich,Kreis 6,88,4.0,1911,1990
-Bern,Bümpliz,105,4.0,1986,2080
-Basel,St. Johann,49,2.0,1999,1540
-Geneva,Champel,75,3.5,1936,1700
-Bern,Breitenrain,91,4.0,1997,1940
-Basel,St. Johann,55,2.0,1945,1560
-Lausanne,Ouchy,93,4.0,1963,2260
-Geneva,Eaux-Vives,81,3.0,1995,2440
-Bern,Breitenrain,155,6.0,1924,2620
-Lausanne,Sous-Gare,71,3.0,1966,2020
-Basel,Kleinbasel,46,2.0,1982,1360
-Zürich,Kreis 6,69,2.5,2004,2220
-Bern,Breitenrain,35,1.0,1937,760
-Lausanne,Sous-Gare,102,4.5,1977,2180
-Basel,Bachletten,123,5.5,1938,1920
-Lugano,Cassarate,62,3.0,1950,1690
-Zürich,Kreis 8,57,3.0,1932,1790
-Bern,Mattenhof,71,3.0,1983,1820
-Bern,Mattenhof,78,3.5,2005,1930
-Geneva,Servette,55,2.5,1973,1630
-Zürich,Kreis 5,89,3.0,1971,2820
-Zürich,Kreis 4,58,2.5,1974,1850
-Geneva,Carouge,70,2.5,2003,1980
-Zürich,Kreis 11,81,3.5,1968,2480
-Zürich,Kreis 11,87,3.5,1974,3190
-Geneva,Champel,56,2.5,1941,1480
-Geneva,Plainpalais,92,3.5,1955,2210
-Basel,Altstadt,75,2.5,1970,1820
+city,district,size_m2,rooms,year_built,rent_chf,floor,has_balcony,distance_to_station_m
+Lugano,Cassarate,110,4.0,2001,2220,5,False,936
+Zürich,Kreis 1,54,2.0,1970,1530,9,False,2500
+Lugano,Molino Nuovo,56,2.5,1956,920,5,False,1000
+Basel,Altstadt,82,3.0,1964,1900,4,True,572
+Zürich,Kreis 8,100,3.5,1929,2680,4,True,542
+Basel,Altstadt,95,4.0,1948,1880,3,True,350
+Zürich,Kreis 5,112,4.0,2009,3720,8,False,497
+St. Gallen,St. Fiden,121,5.0,1985,1850,4,False,313
+Bern,Breitenrain,67,3.0,1967,1470,4,False,719
+Winterthur,Töss,72,3.0,1945,1490,1,True,903
+Zürich,Kreis 5,60,2.5,1972,2370,10,True,727
+Geneva,Champel,82,3.5,1954,2130,3,False,615
+Zürich,Kreis 1,79,3.0,1948,1890,3,False,652
+Zürich,Kreis 6,81,3.5,1961,2320,8,False,288
+Zürich,Kreis 8,66,2.5,1903,1590,4,True,168
+Bern,Breitenrain,93,4.0,1942,2170,10,False,370
+Lugano,Molino Nuovo,83,3.0,1979,1540,2,False,457
+Zürich,Kreis 4,84,3.0,2010,3330,3,True,445
+Lugano,Cassarate,45,1.5,1937,660,4,False,558
+Bern,Länggasse,68,3.0,1983,1410,6,False,827
+Lausanne,Chailly,99,3.5,2005,2840,6,False,316
+Basel,Gundeldingen,79,3.5,1958,1750,3,False,705
+Geneva,Servette,99,3.5,1988,3500,2,True,260
+Geneva,Servette,104,4.0,1986,2450,3,True,582
+Lugano,Besso,119,4.5,1961,2560,3,False,459
+Geneva,Champel,75,2.5,1987,2520,2,True,405
+Lugano,Besso,86,3.5,2015,1580,6,False,392
+Winterthur,Töss,126,5.0,1975,2240,5,False,517
+Basel,Bachletten,86,3.5,1995,2160,6,False,327
+St. Gallen,Centrum,55,2.0,1976,1000,6,False,1273
+Lausanne,Chailly,95,4.0,1993,2420,4,True,752
+Zürich,Kreis 4,54,2.0,1966,1780,9,True,442
+Lausanne,Sous-Gare,65,2.5,1986,1880,8,True,646
+Zürich,Kreis 3,119,4.5,1976,3580,4,False,277
+Lugano,Molino Nuovo,77,3.0,1961,1650,5,False,446
+Zürich,Kreis 1,64,3.0,1956,1830,3,False,707
+Winterthur,Töss,103,3.5,1953,2280,3,False,896
+Bern,Länggasse,141,5.5,1929,2660,6,True,1381
+Lausanne,Flon,64,2.0,1991,1950,5,False,467
+Lugano,Cassarate,69,2.5,1972,1790,3,True,439
+Winterthur,Töss,42,2.0,1927,900,9,True,1174
+Lausanne,Chailly,133,5.0,1969,2530,3,True,683
+Geneva,Eaux-Vives,69,3.0,1973,2480,2,True,442
+Zürich,Kreis 1,105,4.5,1991,3010,5,False,164
+Geneva,Servette,48,1.5,1984,1600,3,True,677
+Zürich,Kreis 7,76,3.0,1982,1980,4,False,674
+Basel,Altstadt,116,4.5,1963,2940,2,True,470
+Basel,Gundeldingen,63,2.5,1989,1630,4,False,519
+Basel,Kleinbasel,67,2.5,1997,1580,2,False,367
+Winterthur,Wülflingen,117,5.0,1994,2470,2,True,175
+St. Gallen,Bruggen,65,2.5,1992,1230,8,False,472
+St. Gallen,Centrum,80,3.0,2002,1900,8,True,261
+Lausanne,Sous-Gare,119,5.0,1995,2840,5,False,544
+Lugano,Besso,117,4.5,1963,2100,2,False,317
+Winterthur,Wülflingen,90,3.5,1983,2200,7,False,943
+Basel,Bachletten,50,2.0,2016,1630,5,True,1152
+Bern,Kirchenfeld,77,3.5,1974,2200,9,True,532
+Bern,Mattenhof,116,4.5,2004,2940,8,True,275
+Bern,Mattenhof,83,3.0,1986,1850,1,False,267
+Winterthur,Altstadt,103,4.0,1992,2270,2,True,960
+Bern,Mattenhof,69,2.5,1990,1740,4,True,472
+Lugano,Centro,158,6.5,1925,2890,6,False,110
+Lausanne,Sévelin,46,2.0,1969,1450,6,True,345
+Zürich,Kreis 6,86,3.5,1967,2080,4,True,678
+Basel,Altstadt,129,5.5,1931,1980,4,False,930
+Basel,Bachletten,73,2.5,1994,1950,2,True,1031
+Lugano,Molino Nuovo,58,2.0,1989,1310,4,False,1012
+Basel,Kleinbasel,83,3.0,1979,1840,3,False,720
+Basel,St. Johann,80,3.5,1972,1810,4,False,661
+Geneva,Servette,69,3.0,1998,2170,9,False,892
+Basel,St. Johann,105,4.0,1916,2000,5,False,663
+Lausanne,Flon,55,2.0,1990,1590,1,False,1266
+Zürich,Kreis 8,82,3.0,1940,2260,11,True,234
+Bern,Bümpliz,62,3.0,1930,1480,5,True,560
+Bern,Bümpliz,63,2.5,1976,1300,2,False,918
+Lugano,Cassarate,48,2.0,2010,1050,2,True,2214
+Lugano,Centro,73,3.0,1936,1560,7,True,167
+Zürich,Kreis 1,74,3.5,1967,2500,3,False,542
+Zürich,Kreis 7,99,4.5,1928,2750,6,False,529
+Zürich,Kreis 8,114,4.5,1951,2740,2,False,321
+Zürich,Kreis 1,88,3.5,2018,2790,2,True,2088
+Lugano,Cassarate,76,3.5,1951,1810,3,True,388
+Winterthur,Oberwinterthur,94,3.5,1996,1910,0,False,588
+St. Gallen,Riethüsli,87,3.5,2008,1420,5,False,321
+Lausanne,Sous-Gare,107,4.0,1920,2160,6,True,431
+Zürich,Kreis 4,82,3.0,1952,2420,3,False,446
+Zürich,Kreis 4,107,4.5,2006,3270,5,True,606
+Geneva,Champel,152,6.5,2001,4020,4,True,498
+Geneva,Carouge,80,3.5,1973,2270,3,True,239
+Basel,Gundeldingen,63,2.5,1976,1700,3,False,184
+Zürich,Kreis 6,102,4.0,2000,3230,9,True,733
+Basel,Altstadt,51,2.0,1994,1460,1,True,877
+Basel,St. Johann,128,5.5,1950,2690,6,True,695
+Bern,Länggasse,135,6.0,1979,2470,4,False,660
+Basel,Kleinbasel,81,3.0,2006,2060,4,False,722
+Basel,St. Johann,50,1.5,1966,1660,8,True,484
+Winterthur,Wülflingen,66,3.0,1970,1330,6,True,1026
+Geneva,Champel,83,3.0,1975,2560,7,True,299
+Geneva,Champel,73,3.0,1969,2210,4,True,413
+Bern,Bümpliz,76,3.0,1965,1950,2,True,539
+Bern,Mattenhof,74,2.5,1960,1750,1,False,546
+Basel,Bachletten,59,2.0,1975,1560,4,True,781
+Basel,Kleinbasel,67,3.0,1987,1870,6,True,303
+Geneva,Servette,92,3.5,1958,2700,6,True,286
+Lugano,Centro,63,2.0,1950,1230,3,True,244
+Geneva,Plainpalais,66,2.5,1968,1820,5,True,971
+Geneva,Champel,131,5.0,1984,3390,6,True,844
+Basel,Bachletten,68,2.5,1973,1650,5,True,465
+Basel,Gundeldingen,97,4.5,1974,2140,4,True,970
+Lausanne,Flon,82,3.5,1990,1740,6,False,2500
+Bern,Länggasse,81,3.0,1976,1710,6,True,1061
+Geneva,Plainpalais,64,2.5,1947,1830,3,False,782
+Bern,Breitenrain,60,2.5,1970,1420,8,True,195
+Geneva,Servette,67,2.5,1972,2030,5,False,334
+Geneva,Carouge,90,3.0,1951,2430,10,False,876
+Zürich,Kreis 11,133,5.0,2002,3880,5,True,569
+Lugano,Besso,46,1.5,1989,990,1,True,459
+Bern,Bümpliz,98,4.0,1929,1790,2,False,519
+Zürich,Kreis 6,74,3.0,1980,2610,3,False,442
+Geneva,Carouge,63,2.0,1986,1960,5,True,530
+Basel,Gundeldingen,100,4.0,1947,2050,6,True,646
+Zürich,Kreis 6,50,1.5,1965,1540,3,True,480
+Geneva,Carouge,95,4.0,1951,2400,5,True,561
+Geneva,Eaux-Vives,67,3.0,1917,1570,7,True,940
+Lausanne,Chailly,70,3.0,1996,1950,4,True,409
+Basel,Bachletten,56,2.5,2003,1620,9,False,562
+Zürich,Kreis 5,61,2.0,1991,2150,5,True,301
+Lugano,Cassarate,119,5.0,1994,2180,4,True,287
+Lausanne,Sous-Gare,74,3.0,1985,1930,9,True,399
+Geneva,Carouge,50,1.5,1981,1620,6,False,603
+Zürich,Kreis 8,108,4.0,1956,2970,1,True,699
+Winterthur,Töss,70,2.5,1974,1760,2,True,426
+Winterthur,Wülflingen,73,2.5,2000,1350,2,True,1003
+Zürich,Kreis 5,74,3.0,1987,2560,5,True,392
+Lugano,Centro,104,4.5,1985,2110,4,True,406
+Zürich,Kreis 1,74,3.5,1943,2450,0,False,199
+Zürich,Kreis 7,70,3.5,1966,2390,5,True,651
+Basel,Gundeldingen,44,2.0,1943,1010,8,False,425
+Zürich,Kreis 6,44,2.0,1947,1410,1,False,248
+Lugano,Centro,64,2.0,1989,1600,0,True,1057
+Lausanne,Chailly,98,4.0,1968,2380,7,True,497
+Bern,Bümpliz,95,3.5,1961,2020,4,False,571
+Zürich,Kreis 8,86,3.5,1965,2810,10,True,367
+Geneva,Pâquis,64,2.0,1920,1660,5,False,799
+St. Gallen,Riethüsli,109,4.5,1999,2230,4,False,766
+Basel,Kleinbasel,94,3.5,1925,2310,7,True,312
+Lausanne,Ouchy,56,2.5,1912,1220,5,False,566
+Lugano,Molino Nuovo,95,3.5,1956,1680,12,True,880
+Basel,Bachletten,95,3.5,1932,2110,3,True,503
+Winterthur,Töss,70,3.5,1978,1550,4,True,296
+Lugano,Centro,43,1.5,1937,920,5,True,346
+Geneva,Carouge,79,3.0,1966,2530,5,False,811
+Winterthur,Töss,124,5.5,1979,2650,7,True,443
+Geneva,Eaux-Vives,56,2.0,1919,1580,2,True,518
+Zürich,Kreis 6,40,1.5,1959,1200,5,True,857
+Zürich,Kreis 4,37,1.0,1960,1420,4,False,490
+Zürich,Kreis 11,97,4.0,1985,2690,0,False,426
+Zürich,Kreis 11,77,3.0,1979,2540,4,False,533
+St. Gallen,Bruggen,76,3.0,1963,1630,3,True,366
+Lausanne,Sous-Gare,50,2.5,1951,1520,4,True,836
+Basel,Bachletten,71,3.0,1962,1520,7,False,439
+Zürich,Kreis 4,114,4.0,1978,3700,9,True,561
+Geneva,Servette,100,4.5,1986,2860,11,False,257
+Geneva,Plainpalais,54,2.5,1907,1580,5,True,1221
+Zürich,Kreis 7,40,1.5,1979,1530,4,False,648
+Basel,Bachletten,122,5.0,1923,2610,6,True,247
+Bern,Mattenhof,61,2.5,1975,1570,5,True,425
+Lausanne,Chailly,66,2.5,1973,1800,6,True,616
+Geneva,Plainpalais,104,3.5,2003,3230,5,False,306
+Geneva,Pâquis,73,3.5,1992,2130,8,False,894
+Lugano,Besso,59,2.0,2005,1220,5,False,606
+Zürich,Kreis 6,120,4.5,1932,3460,5,False,704
+Geneva,Pâquis,155,6.5,1932,3580,4,True,342
+Lausanne,Ouchy,57,2.0,1928,1430,4,True,388
+Lausanne,Sévelin,51,2.0,1919,1190,2,False,388
+Bern,Länggasse,63,2.0,1975,1570,3,True,668
+Lausanne,Chailly,61,2.5,1973,1660,5,False,747
+Geneva,Servette,69,3.0,2008,2240,8,False,605
+Zürich,Kreis 11,66,2.5,1945,2190,5,True,795
+Bern,Länggasse,90,3.5,1992,2070,3,True,905
+Zürich,Kreis 6,68,2.5,1965,2200,2,True,580
+Bern,Breitenrain,74,3.0,1936,1550,6,True,634
+Zürich,Kreis 5,50,2.0,1987,1680,5,True,762
+Lausanne,Chailly,71,3.5,1971,1890,3,True,623
+Bern,Breitenrain,113,4.5,2003,2380,4,True,454
+Geneva,Plainpalais,148,6.0,1985,3640,3,True,332
+Zürich,Kreis 11,80,2.5,1929,2350,6,True,183
+Lausanne,Ouchy,70,3.0,1976,1160,2,False,2500
+Zürich,Kreis 5,82,3.5,1964,2600,5,False,159
+Bern,Bümpliz,69,2.5,2002,1470,4,False,1184
+Basel,St. Johann,49,2.5,1953,1420,7,True,443
+Geneva,Pâquis,71,3.0,1918,2000,1,True,751
+Basel,Altstadt,129,5.5,1981,2940,6,True,654
+Lugano,Centro,146,5.5,1993,2120,1,True,740
+Zürich,Kreis 8,55,2.0,1905,1230,5,False,513
+Winterthur,Oberwinterthur,56,2.0,1998,1240,5,True,347
+Geneva,Plainpalais,61,2.5,1960,1910,3,True,494
+Basel,Altstadt,103,4.0,1991,2150,8,True,562
+Zürich,Kreis 5,65,2.5,1990,2350,4,True,338
+Basel,Altstadt,84,3.0,2009,2020,1,False,1007
+Bern,Kirchenfeld,51,2.0,1953,1200,6,True,635
+Lausanne,Sévelin,109,5.0,2003,2680,0,False,1314
+Zürich,Kreis 3,83,3.0,1925,2090,4,True,1476
+St. Gallen,Riethüsli,76,3.5,2013,1450,5,False,185
+Zürich,Kreis 11,73,3.0,2011,2750,3,True,821
+Bern,Kirchenfeld,65,3.0,2009,1850,7,True,845
+Geneva,Carouge,46,2.5,1959,1350,7,False,703
+Geneva,Servette,180,7.0,1990,4580,1,True,634
+Bern,Länggasse,101,3.5,1934,1910,6,True,663
+Lugano,Centro,56,2.5,1998,910,2,False,799
+Geneva,Pâquis,55,2.5,1923,1650,4,True,527
+Geneva,Eaux-Vives,53,2.0,1985,1860,1,True,1231
+Basel,St. Johann,87,3.0,1973,2190,2,False,360
+Bern,Mattenhof,72,3.0,2008,1480,3,True,1464
+Geneva,Pâquis,98,3.5,1964,2830,3,False,1039
+Basel,Bachletten,118,5.0,1960,2640,2,False,490
+Geneva,Plainpalais,72,2.5,1982,2320,5,False,229
+Geneva,Plainpalais,110,4.5,1977,2940,4,False,446
+Lugano,Cassarate,79,3.0,1941,1350,7,False,415
+Bern,Breitenrain,71,3.5,2000,1740,3,False,574
+Winterthur,Wülflingen,172,7.0,1963,2330,6,True,1173
+Zürich,Kreis 1,48,1.5,1984,1570,1,True,864
+Winterthur,Oberwinterthur,71,3.0,1999,1510,5,True,679
+Geneva,Carouge,101,4.5,1982,2950,8,False,362
+Zürich,Kreis 3,41,1.5,1958,1450,4,False,130
+Zürich,Kreis 4,88,3.5,1941,2360,2,False,411
+Zürich,Kreis 7,105,4.0,1996,3440,1,False,409
+Geneva,Pâquis,76,3.5,1968,2110,7,False,586
+Bern,Breitenrain,50,1.5,1973,1220,8,False,506
+Zürich,Kreis 3,55,2.0,1966,1660,3,False,422
+Basel,Altstadt,79,2.5,1973,1870,6,True,336
+Basel,Bachletten,137,6.0,1961,2100,2,False,1430
+Lugano,Besso,103,4.5,2004,1850,3,True,1391
+Basel,Altstadt,136,5.5,1980,3000,10,True,644
+Lausanne,Sous-Gare,86,3.0,1945,2130,8,False,508
+St. Gallen,St. Fiden,54,2.5,1911,960,9,False,485
+Winterthur,Wülflingen,83,3.5,1914,1750,5,False,492
+Zürich,Kreis 4,151,6.0,1996,3930,7,False,554
+Zürich,Kreis 4,86,3.5,1972,2540,1,True,671
+Zürich,Kreis 8,78,3.0,1946,2080,9,True,1034
+Geneva,Champel,79,3.0,1977,2680,6,True,751
+Lausanne,Chailly,57,2.5,1988,1630,8,False,623
+Bern,Mattenhof,85,3.5,1940,2040,3,True,812
+St. Gallen,Centrum,49,2.5,1931,940,3,True,998
+Winterthur,Töss,113,4.5,1958,2020,9,True,1366
+Geneva,Pâquis,84,3.0,1932,2150,10,True,811
+Basel,Kleinbasel,46,1.5,1964,1040,3,True,848
+Lausanne,Sous-Gare,53,1.5,2008,1510,2,True,329
+St. Gallen,Bruggen,73,3.5,1958,1610,3,True,759
+Lausanne,Sous-Gare,60,2.5,1956,1640,5,True,737
+Geneva,Pâquis,50,2.5,1965,1510,4,True,272
+Geneva,Eaux-Vives,77,3.0,1923,1660,3,True,1005
+Basel,St. Johann,75,3.0,1934,1720,2,True,335
+Geneva,Eaux-Vives,89,3.5,1937,2000,7,False,803
+Basel,Bachletten,65,2.5,1971,1470,4,True,444
+Bern,Länggasse,102,4.5,1938,1970,3,True,744
+Geneva,Pâquis,82,3.0,1986,2520,2,True,576
+Zürich,Kreis 4,96,4.0,1939,2600,9,False,384
+Zürich,Kreis 3,86,4.0,2008,2750,3,False,461
+Geneva,Plainpalais,83,3.0,1980,2120,5,False,1247
+Basel,St. Johann,59,2.0,1971,1440,1,True,575
+Lausanne,Sévelin,60,2.0,1952,1610,3,True,350
+Zürich,Kreis 4,81,3.5,1968,2690,6,False,488
+Geneva,Eaux-Vives,70,3.0,1967,2160,5,True,755
+Lugano,Centro,67,2.5,1924,1360,3,False,600
+Lugano,Cassarate,126,5.5,2007,2710,5,True,704
+Basel,St. Johann,57,2.5,1974,1480,2,True,500
+Basel,Altstadt,77,3.0,1952,1660,8,False,2003
+Basel,Gundeldingen,51,2.5,1990,1210,5,True,1184
+Lugano,Molino Nuovo,106,4.0,1958,2300,4,True,644
+Lausanne,Flon,47,2.0,1925,1190,4,False,301
+Lausanne,Ouchy,55,2.5,2012,1590,9,False,1141
+Zürich,Kreis 5,59,2.0,1933,1800,2,False,489
+St. Gallen,Bruggen,65,2.5,1968,1450,9,True,348
+Geneva,Pâquis,104,4.0,1967,3070,7,True,365
+Lausanne,Chailly,56,2.0,1954,1430,3,True,477
+Lugano,Molino Nuovo,49,2.0,1932,1100,9,False,423
+Zürich,Kreis 4,71,3.0,1951,1930,7,False,307
+Geneva,Pâquis,126,5.0,2010,3090,7,False,1196
+Zürich,Kreis 5,132,5.0,1945,3090,8,True,578
+Zürich,Kreis 11,41,1.0,1952,1500,4,True,292
+Lugano,Centro,84,4.0,2002,1980,12,True,465
+Basel,Bachletten,85,3.0,2010,2210,2,True,1364
+Bern,Mattenhof,78,3.0,1928,1660,1,False,298
+Basel,Altstadt,126,4.5,1970,2430,3,False,464
+Lugano,Besso,51,2.0,1967,980,7,False,983
+Zürich,Kreis 1,144,6.0,1998,3950,1,False,434
+Lausanne,Chailly,79,3.5,1971,2210,4,True,556
+Bern,Bümpliz,71,2.5,1946,1440,12,False,452
+Lugano,Centro,89,3.0,1925,1750,6,True,1268
+Lugano,Molino Nuovo,42,1.5,1943,890,6,False,740
+Zürich,Kreis 6,87,3.5,1982,2870,1,False,893
+Geneva,Champel,70,2.5,1902,1810,7,False,669
+St. Gallen,Bruggen,85,3.5,1966,1570,1,False,843
+Geneva,Champel,81,3.0,1988,2140,7,False,1573
+Lausanne,Chailly,124,5.5,1968,2650,4,True,654
+Basel,Gundeldingen,82,3.0,1988,2040,2,False,567
+Lausanne,Sévelin,37,1.5,1973,1040,2,False,779
+Zürich,Kreis 7,112,4.5,2017,3560,5,True,1471
+St. Gallen,Riethüsli,113,4.5,1950,1850,4,True,172
+Bern,Mattenhof,57,2.0,1999,1170,1,False,740
+Geneva,Champel,56,2.0,1956,1760,3,False,417
+Bern,Mattenhof,92,3.5,1983,1930,3,True,774
+Lausanne,Sous-Gare,94,3.5,1987,2730,5,True,493
+Bern,Länggasse,111,4.5,2001,2360,5,False,764
+Winterthur,Altstadt,113,4.5,1996,2370,5,True,472
+Zürich,Kreis 6,68,2.5,2011,2590,8,True,355
+Basel,Gundeldingen,46,1.5,1946,1320,3,False,435
+Lausanne,Flon,101,3.5,1970,1810,7,False,403
+St. Gallen,Riethüsli,34,1.5,1977,670,3,False,522
+Bern,Länggasse,69,3.0,1967,1500,2,True,960
+St. Gallen,Bruggen,57,2.0,2009,1450,6,True,781
+Geneva,Carouge,119,4.5,1963,2870,7,False,534
+Geneva,Servette,67,3.0,1990,2080,8,True,664
+Zürich,Kreis 6,139,5.5,1955,3410,8,False,1974
+Zürich,Kreis 3,83,4.0,1976,2430,2,True,261
+Geneva,Servette,45,2.0,1987,1620,4,True,278
+Geneva,Plainpalais,58,2.0,1971,1830,8,True,496
+Lausanne,Chailly,48,2.0,2015,1520,2,False,487
+Zürich,Kreis 1,90,4.0,1984,3080,1,True,822
+Geneva,Carouge,73,2.5,2003,2220,5,True,399
+Zürich,Kreis 4,72,3.0,2009,2520,8,False,352
+Zürich,Kreis 11,74,2.5,1942,2080,3,True,942
+Bern,Mattenhof,107,4.0,1970,2220,5,True,334
+St. Gallen,Centrum,69,3.0,1949,1490,7,True,1492
+Zürich,Kreis 5,92,4.0,1920,2280,2,False,356
+Basel,Bachletten,166,7.0,1984,2620,4,True,358
+St. Gallen,Riethüsli,85,3.5,1943,1560,5,False,611
+Bern,Länggasse,87,3.5,1967,1520,2,False,1820
+Geneva,Eaux-Vives,136,5.5,1977,3960,3,True,166
+Basel,St. Johann,66,2.5,2004,1790,4,False,395
+Geneva,Eaux-Vives,78,2.5,2006,2620,2,True,359
+Zürich,Kreis 3,69,3.0,1962,2290,2,True,461
+Winterthur,Oberwinterthur,42,1.5,1973,1150,8,True,453
+Basel,Bachletten,74,3.0,1918,1360,4,True,291
+Basel,Kleinbasel,136,5.0,2000,3320,7,False,413
+Geneva,Servette,111,4.5,1966,3040,3,False,1119
+Zürich,Kreis 7,68,3.0,1974,2180,7,True,479
+Lugano,Besso,91,4.0,1977,1550,1,False,1180
+Zürich,Kreis 8,65,3.0,1957,2030,6,True,248
+Zürich,Kreis 11,96,4.0,1965,2870,2,False,549
+Basel,Altstadt,63,2.5,2013,1700,2,True,519
+Zürich,Kreis 6,97,3.5,2009,2850,6,False,508
+Geneva,Eaux-Vives,61,2.5,1920,1630,3,False,362
+Geneva,Eaux-Vives,59,2.5,2014,1800,10,False,529
+Lausanne,Sous-Gare,56,2.5,1984,1520,6,False,683
+Winterthur,Altstadt,65,3.0,1978,1560,10,True,481
+Zürich,Kreis 11,48,1.5,1985,1880,7,True,227
+Geneva,Servette,54,2.5,1974,1660,10,True,1624
+Bern,Kirchenfeld,49,2.0,1959,1240,9,True,326
+Basel,Gundeldingen,153,5.5,1946,2670,6,False,496
+Zürich,Kreis 7,38,2.0,1958,1350,6,False,352
+Geneva,Pâquis,46,1.5,1930,1460,4,False,691
+St. Gallen,Centrum,74,2.5,1935,1430,1,True,1173
+Winterthur,Altstadt,67,3.0,2010,1520,9,True,561
+Lausanne,Sévelin,60,2.0,1990,1590,4,False,406
+Lausanne,Sévelin,68,2.5,1991,1600,4,True,1788
+St. Gallen,Riethüsli,74,2.5,1948,1440,4,False,554
+Geneva,Pâquis,67,3.0,1983,2370,5,False,566
+Zürich,Kreis 6,72,3.0,2011,2720,4,True,1114
+Zürich,Kreis 1,59,2.5,2018,2200,2,False,460
+St. Gallen,Bruggen,123,5.0,2018,2770,5,False,829
+Lausanne,Sévelin,141,5.0,1924,2450,7,False,348
+Zürich,Kreis 11,67,3.0,1969,2220,7,False,779
+Geneva,Eaux-Vives,54,2.5,1961,1820,5,False,329
+Basel,Altstadt,84,3.5,1996,2290,4,False,539
+Geneva,Plainpalais,88,4.0,1964,2280,5,False,269
+Bern,Mattenhof,121,5.0,2018,1970,3,False,572
+St. Gallen,Bruggen,85,3.0,1991,1610,5,False,1239
+Basel,St. Johann,48,1.5,2003,1370,8,False,440
+Zürich,Kreis 1,121,4.5,1958,3520,0,True,827
+Bern,Kirchenfeld,103,4.5,1958,1760,6,True,778
+Winterthur,Oberwinterthur,73,2.5,2000,1790,5,True,635
+Lugano,Centro,84,3.5,1936,1390,5,False,724
+Zürich,Kreis 4,73,2.5,2022,2700,3,False,267
+St. Gallen,Riethüsli,97,4.0,1977,1170,4,False,620
+Geneva,Pâquis,159,6.5,1970,4270,3,False,392
+St. Gallen,St. Fiden,76,3.0,1999,1510,4,False,989
+Winterthur,Altstadt,67,3.0,1975,1620,4,True,469
+Zürich,Kreis 11,67,2.5,1974,2230,5,False,396
+Lausanne,Chailly,80,3.5,1943,1860,2,True,355
+Geneva,Plainpalais,55,2.0,1942,1550,4,False,512
+Lugano,Besso,115,4.5,1981,2060,5,True,259
+Geneva,Eaux-Vives,88,3.5,1993,2800,7,True,666
+Basel,Altstadt,78,2.5,1937,1260,3,False,1963
+Bern,Kirchenfeld,78,3.0,2008,1690,8,False,919
+Zürich,Kreis 1,112,4.5,1982,3210,7,True,459
+Lausanne,Sévelin,67,2.5,1976,1810,8,False,746
+Lugano,Centro,66,2.5,1962,1250,4,False,880
+Geneva,Carouge,69,3.0,2002,2340,3,False,241
+Zürich,Kreis 4,67,2.5,1992,2120,2,False,592
+Basel,Gundeldingen,96,4.0,1941,2020,3,True,559
+St. Gallen,Bruggen,67,3.0,1959,1490,5,True,900
+St. Gallen,St. Fiden,66,2.5,1985,1320,3,True,744
+Basel,Altstadt,86,3.5,1963,2350,7,True,600
+Bern,Bümpliz,70,2.5,1990,1410,4,True,1498
+Zürich,Kreis 3,63,3.0,2007,2170,4,False,485
+Basel,Altstadt,66,3.0,1921,1630,7,True,348
+Winterthur,Altstadt,87,3.5,1968,2050,1,True,376
+Lugano,Besso,85,3.5,1935,1760,3,True,322
+Zürich,Kreis 5,79,3.0,1940,2310,10,True,389
+Basel,Gundeldingen,55,2.0,1964,1110,2,False,849
+Geneva,Champel,74,3.5,1937,1840,3,False,758
+Lugano,Molino Nuovo,87,4.0,2001,1950,8,True,329
+Bern,Bümpliz,68,3.0,1956,1600,4,False,464
+Geneva,Carouge,59,3.0,1918,1630,4,False,624
+Geneva,Champel,72,3.0,2011,2170,1,True,992
+Lausanne,Sous-Gare,58,2.0,1975,1730,4,True,1297
+Zürich,Kreis 8,133,5.0,1976,3910,9,True,243
+Zürich,Kreis 7,73,3.0,1936,2120,4,True,357
+Winterthur,Oberwinterthur,66,2.5,1959,1220,9,False,409
+Winterthur,Oberwinterthur,75,3.5,1959,1230,2,False,289
+St. Gallen,St. Fiden,55,2.5,2007,1350,8,False,386
+Geneva,Pâquis,89,3.0,1974,2630,2,True,1384
+Bern,Mattenhof,85,3.0,1958,2450,5,True,314
+Geneva,Pâquis,75,3.0,2004,2170,5,False,269
+Zürich,Kreis 5,54,2.5,1965,1620,1,False,1011
+Geneva,Plainpalais,101,3.5,1983,2710,8,True,346
+Zürich,Kreis 3,55,2.5,1994,1870,5,False,494
+Zürich,Kreis 5,76,3.5,1983,2300,5,True,629
+Winterthur,Töss,96,3.5,1972,1350,11,False,1084
+Geneva,Champel,111,4.0,1975,2940,8,False,476
+Lausanne,Flon,103,4.5,1987,2830,6,True,282
+Geneva,Pâquis,131,5.5,1916,2920,3,False,963
+Basel,Bachletten,122,5.0,1987,2890,9,True,737
+Lausanne,Sévelin,129,5.5,1956,2960,3,True,671
+Winterthur,Oberwinterthur,90,4.0,1957,1490,5,False,960
+Lugano,Centro,92,4.0,1997,1800,7,False,130
+Lausanne,Ouchy,61,2.0,1911,1520,6,True,431
+Zürich,Kreis 4,61,2.0,1965,1930,7,True,871
+Zürich,Kreis 4,55,2.0,1935,1510,5,False,1304
+Geneva,Eaux-Vives,155,6.0,1933,3580,10,True,459
+St. Gallen,Riethüsli,63,2.0,1987,1450,6,True,192
+Winterthur,Altstadt,77,3.0,1971,1350,4,False,1488
+Geneva,Plainpalais,40,2.0,2010,1570,4,False,746
+Bern,Bümpliz,94,4.0,1995,2310,11,True,855
+Lugano,Besso,75,3.0,1973,1580,1,False,253
+Geneva,Servette,102,4.5,1956,2680,5,True,590
+Winterthur,Altstadt,87,3.5,1984,2180,5,True,193
+St. Gallen,Bruggen,116,5.0,1978,2810,5,True,234
+Basel,Altstadt,56,2.5,1967,1330,5,True,923
+Geneva,Pâquis,50,2.5,1980,1550,5,False,789
+Lugano,Centro,60,2.5,1997,1390,5,False,652
+Lausanne,Sous-Gare,117,4.5,1975,2870,4,True,387
+Zürich,Kreis 5,88,3.5,1969,2270,2,False,565
+Geneva,Plainpalais,89,4.0,1985,2660,1,False,782
+Geneva,Servette,76,3.0,2014,2260,3,False,1325
+Lugano,Centro,116,4.5,2009,2230,3,True,238
+St. Gallen,Bruggen,64,3.0,1922,1770,9,True,418
+Geneva,Champel,117,4.5,1926,2490,9,True,300
+Basel,Bachletten,42,1.5,1970,1060,3,True,770
+Bern,Länggasse,89,4.0,1953,1850,10,False,432
+Lausanne,Chailly,38,2.0,1974,1030,4,False,373
+Basel,Gundeldingen,77,3.0,1990,2020,5,False,511
+Bern,Mattenhof,58,2.5,1968,1280,3,True,511
+Zürich,Kreis 8,119,4.5,1976,3310,1,False,422
+Bern,Bümpliz,72,2.5,1938,1500,8,True,270
+Zürich,Kreis 3,74,3.0,2002,2520,6,False,368
+Geneva,Champel,54,2.0,1926,1820,9,True,151
+Winterthur,Wülflingen,118,4.5,1972,2420,5,True,363
+Zürich,Kreis 3,83,3.5,1985,2490,5,True,1409
+Bern,Kirchenfeld,51,2.0,1956,1200,2,True,826
+St. Gallen,St. Fiden,71,3.5,1976,850,11,True,1198
+Zürich,Kreis 7,67,3.0,1994,2030,6,True,726
+Winterthur,Töss,71,2.5,1933,1220,7,True,956
+Lausanne,Sous-Gare,89,4.0,2019,2280,10,True,996
+Bern,Bümpliz,56,2.0,1971,1380,4,True,2247
+Lugano,Molino Nuovo,53,2.0,1983,1220,5,True,621
+Geneva,Eaux-Vives,76,3.0,1980,2410,3,True,421
+Lausanne,Flon,68,2.5,2002,1840,11,True,753
+Bern,Breitenrain,35,1.5,2001,890,3,True,876
+Basel,St. Johann,95,3.5,1981,2370,5,True,1113
+Bern,Mattenhof,84,3.0,1916,1640,8,True,909
+Winterthur,Altstadt,85,3.5,1982,1720,11,False,1286
+Geneva,Champel,58,2.5,1996,1870,11,True,491
+Winterthur,Oberwinterthur,76,2.5,1955,1660,6,False,346
+Basel,Bachletten,55,2.0,1975,1540,9,False,714
+Geneva,Eaux-Vives,69,3.0,1953,1860,9,True,476
+Bern,Kirchenfeld,133,5.5,2003,3140,2,True,525
+Geneva,Pâquis,69,3.0,1986,2230,2,True,354
+Zürich,Kreis 11,77,3.5,2020,2540,11,True,623
+Geneva,Carouge,136,5.5,1954,3600,5,False,417
+Basel,Altstadt,54,1.5,1957,1340,2,False,337
+Winterthur,Altstadt,77,3.5,1954,1480,12,False,537
+Zürich,Kreis 6,105,4.0,1990,3550,7,False,523
+Lugano,Centro,70,3.0,1996,1640,6,True,450
+Winterthur,Altstadt,88,3.0,1964,1490,8,False,1120
+Basel,Altstadt,55,1.5,1976,1400,4,False,1088
+Bern,Kirchenfeld,43,1.5,1953,1090,6,False,548
+Bern,Mattenhof,44,1.5,1986,1090,5,True,906
+St. Gallen,Riethüsli,163,6.0,1949,2020,9,False,1750
+St. Gallen,St. Fiden,92,3.5,1985,1930,5,True,521
+Winterthur,Oberwinterthur,89,4.0,1959,1760,3,True,436
+Basel,St. Johann,56,2.0,1977,1570,6,True,441
+Zürich,Kreis 4,49,2.5,1988,1610,3,False,459
+Lugano,Centro,77,3.0,1974,1850,6,True,535
+Winterthur,Altstadt,64,3.0,1964,1310,1,False,737
+Winterthur,Wülflingen,70,2.5,1933,1410,4,False,447
+Bern,Breitenrain,70,2.5,1927,1670,4,True,832
+Zürich,Kreis 4,102,4.0,2004,3170,3,False,415
+Lugano,Centro,72,2.5,1981,1610,4,True,2499
+Geneva,Plainpalais,107,4.0,1999,2750,3,False,293
+St. Gallen,St. Fiden,109,4.5,1998,1790,4,True,588
+Winterthur,Oberwinterthur,88,3.5,1911,1790,4,True,807
+Lugano,Cassarate,102,4.5,1920,1780,4,True,191
+Zürich,Kreis 8,135,5.5,1984,3290,4,False,653
+Geneva,Plainpalais,72,3.0,1943,2180,6,True,571
+Zürich,Kreis 5,93,4.0,1965,2750,4,False,201
+Lausanne,Chailly,56,2.5,1992,1480,2,True,515
+Bern,Bümpliz,86,4.0,1967,2030,5,True,740
+Basel,Kleinbasel,80,3.5,1988,2080,6,False,529
+Basel,Kleinbasel,66,2.0,1988,1590,3,True,665
+Basel,Bachletten,69,3.0,1927,1500,8,False,332
+Geneva,Eaux-Vives,155,6.5,1936,4020,9,True,494
+Bern,Kirchenfeld,73,3.0,1994,1680,1,False,360
+Winterthur,Oberwinterthur,79,2.5,1968,1490,1,False,383
+Geneva,Champel,64,2.0,2006,1970,3,True,595
+St. Gallen,Centrum,69,2.5,1937,1400,2,True,552
+Lausanne,Ouchy,84,3.5,1962,2030,4,False,305
+Lausanne,Sévelin,138,5.5,1973,2600,9,False,1129
+Bern,Bümpliz,65,3.0,1978,1590,3,False,1216
+Bern,Breitenrain,92,3.5,1972,2220,8,True,554
+Zürich,Kreis 7,47,1.5,2006,1790,5,False,514
+Bern,Länggasse,74,3.0,1981,1780,1,True,533
+Basel,Gundeldingen,84,3.0,1963,2210,10,True,328
+Lugano,Molino Nuovo,139,5.0,1980,2380,1,True,435
+Lausanne,Sévelin,46,2.0,2000,1370,1,True,888
+Lausanne,Ouchy,60,2.5,1998,1460,3,False,335
+Geneva,Champel,50,2.0,2005,1640,10,True,836
+Lausanne,Sous-Gare,95,3.5,1975,2240,3,True,653
+Geneva,Eaux-Vives,76,3.0,2012,2410,1,True,484
+Bern,Kirchenfeld,78,3.5,2007,1950,2,True,532
+Lausanne,Sévelin,77,3.0,1980,2140,4,True,372
+St. Gallen,Riethüsli,58,2.0,1962,1310,4,True,366
+Winterthur,Wülflingen,96,3.5,1970,1640,10,True,1289
+Zürich,Kreis 6,48,1.5,1949,1830,2,False,390
+Bern,Mattenhof,48,2.0,1983,1180,3,True,248
+Lugano,Besso,118,5.0,1911,1930,11,False,217
+Basel,Altstadt,67,3.0,1994,2080,7,True,605
+Zürich,Kreis 6,107,4.5,1945,2710,2,True,876
+Basel,Altstadt,80,3.0,1976,1990,2,True,206
+Basel,Gundeldingen,59,2.5,1916,1240,5,False,1037
+St. Gallen,Bruggen,58,2.0,1940,1180,6,False,503
+Lausanne,Sévelin,82,3.5,1943,2040,2,True,694
+St. Gallen,Centrum,80,3.0,1959,1380,8,False,377
+Winterthur,Töss,74,3.5,1954,1350,5,False,671
+Zürich,Kreis 8,61,2.0,1959,2110,8,True,813
+Bern,Bümpliz,39,1.0,1965,960,9,True,464
+Lausanne,Sévelin,60,2.0,2013,1430,4,True,771
+Zürich,Kreis 1,60,2.5,1976,2000,5,False,283
+Geneva,Servette,74,3.0,1920,1760,5,False,505
+St. Gallen,Riethüsli,53,2.5,2012,1160,8,False,261
+Lugano,Cassarate,81,3.0,1993,1260,1,False,364
+Lausanne,Sévelin,86,3.5,1998,2020,1,True,1024
+Lausanne,Flon,127,5.0,1967,2660,1,False,1548
+Lausanne,Sévelin,54,2.5,1981,1510,8,False,340
+Lugano,Besso,72,3.0,1955,1710,11,True,536
+St. Gallen,Bruggen,77,3.0,1979,1620,5,False,453
+Zürich,Kreis 3,101,3.5,1975,2860,4,True,485
+Winterthur,Wülflingen,83,3.0,1947,1860,1,True,466
+Basel,St. Johann,87,3.0,1982,1860,6,True,769
+Basel,Kleinbasel,79,3.5,2005,2330,3,False,393
+Winterthur,Altstadt,91,4.0,1992,1870,7,False,405
+Bern,Kirchenfeld,119,5.0,1981,2140,7,False,1049
+Basel,Kleinbasel,96,4.0,1953,1980,7,False,764
+Zürich,Kreis 8,47,1.5,1942,1660,8,True,522
+Lausanne,Sévelin,79,3.5,1974,2110,4,True,688
+Lugano,Cassarate,59,2.0,1996,1500,3,True,297
+Bern,Länggasse,49,2.0,1989,1170,4,False,305
+Zürich,Kreis 4,127,5.0,1978,3610,5,False,318
+Winterthur,Altstadt,102,4.5,1929,1660,7,False,490
+Winterthur,Altstadt,93,3.5,1947,2520,5,True,188
+Winterthur,Altstadt,51,2.5,2003,1110,6,True,409
+Geneva,Eaux-Vives,62,3.0,2007,2070,5,True,1236
+St. Gallen,Riethüsli,76,3.5,1989,1880,2,True,619
+Zürich,Kreis 5,113,5.0,1978,2930,2,True,652
+St. Gallen,St. Fiden,134,5.5,1974,2350,6,True,440
+Basel,St. Johann,135,5.0,1981,2680,8,False,363
+Winterthur,Wülflingen,111,5.0,2009,2350,3,False,680
+Lausanne,Ouchy,56,2.5,1921,1420,9,True,1151
+Zürich,Kreis 4,110,4.5,1983,3410,8,True,571
+Zürich,Kreis 8,50,1.5,1975,1670,1,False,222
+Winterthur,Wülflingen,66,2.5,1947,1020,7,True,890
+Basel,Bachletten,91,3.5,1961,2010,10,True,813
+Lausanne,Flon,54,2.5,1963,1440,5,False,334
+Zürich,Kreis 6,63,2.0,1980,2000,5,False,632
+Zürich,Kreis 4,45,2.0,1973,1410,2,False,543
+St. Gallen,Riethüsli,49,1.5,1954,810,2,False,358
+Lausanne,Flon,45,2.0,1976,1310,3,True,383
+Bern,Mattenhof,48,2.5,1941,980,5,False,136
+St. Gallen,Riethüsli,89,4.0,1961,1800,5,False,543
+Bern,Länggasse,65,2.5,1978,1480,9,False,469
+Geneva,Champel,74,2.5,1983,2750,3,True,497
+Bern,Kirchenfeld,61,2.5,1968,1460,2,True,164
+Lausanne,Ouchy,66,2.0,1988,1900,4,True,392
+Lausanne,Flon,94,3.5,1998,1980,5,True,365
+Zürich,Kreis 1,75,3.0,1934,2280,7,False,467
+Winterthur,Wülflingen,68,2.0,1991,1600,10,True,208
+Basel,Bachletten,60,2.5,2001,1420,6,False,286
+Basel,St. Johann,87,3.5,1924,1740,3,True,383
+Zürich,Kreis 7,130,5.0,2013,4730,4,True,450
+Lausanne,Chailly,72,3.5,1933,1560,10,False,528
+Winterthur,Oberwinterthur,73,3.0,1991,1480,5,True,148
+Zürich,Kreis 7,53,2.0,1976,1770,3,False,477
+Geneva,Carouge,88,3.5,1927,2110,7,False,263
+Basel,St. Johann,46,2.0,2002,1270,2,True,558
+Lugano,Molino Nuovo,63,3.0,1931,1460,4,True,361
+Geneva,Eaux-Vives,64,2.5,2003,2060,3,True,436
+Basel,Kleinbasel,62,2.0,2002,1690,5,False,732
+Basel,St. Johann,102,4.0,1955,2220,3,True,853
+Geneva,Eaux-Vives,91,3.5,2010,2640,3,True,1126
+Basel,Bachletten,68,3.0,1932,1810,6,True,285
+Lausanne,Sous-Gare,90,3.0,2014,2300,2,True,400
+Winterthur,Töss,64,2.0,1976,1390,8,False,147
+Geneva,Plainpalais,120,5.0,1973,3630,9,True,401
+Geneva,Plainpalais,111,5.0,1940,2540,2,True,229
+Lausanne,Ouchy,58,2.5,1983,1600,5,False,896
+St. Gallen,Bruggen,136,6.0,1982,2080,4,False,430
+Geneva,Pâquis,77,3.5,1984,2050,4,True,1127
+Zürich,Kreis 6,80,3.0,1912,2240,4,False,402
+Winterthur,Altstadt,86,3.5,1979,2130,2,True,760
+Bern,Bümpliz,92,4.0,1923,1660,3,True,661
+Lausanne,Ouchy,56,2.0,1967,1700,9,False,369
+Lugano,Molino Nuovo,114,4.0,1918,2740,5,False,740
+Bern,Bümpliz,39,1.5,1966,930,6,False,350
+Lugano,Besso,98,4.0,1951,1600,5,True,424
+Winterthur,Oberwinterthur,51,2.0,1944,1010,4,False,242
+Zürich,Kreis 1,79,3.5,1969,2260,5,False,445
+Lausanne,Sous-Gare,50,2.5,2007,1650,10,True,568
+Geneva,Eaux-Vives,84,3.0,1955,2330,7,True,280
+Basel,St. Johann,80,2.5,2010,2160,10,True,487
+Basel,St. Johann,84,3.5,2005,2200,6,True,315
+Winterthur,Töss,52,1.5,1954,1070,5,False,1193
+Basel,Bachletten,83,3.0,1945,2050,5,False,755
+Basel,St. Johann,115,4.5,1937,2580,4,False,317
+Geneva,Carouge,155,6.5,1962,3830,1,True,891
+Zürich,Kreis 5,92,4.0,2009,2940,5,False,239
+Winterthur,Altstadt,97,3.5,1965,1750,11,False,831
+Lugano,Molino Nuovo,77,3.0,1923,1270,0,False,351
+Lausanne,Ouchy,70,3.0,1920,1960,8,True,350
+Geneva,Servette,108,4.0,1986,3030,4,False,1130
+Zürich,Kreis 4,96,4.0,1990,3260,2,False,280
+Lugano,Molino Nuovo,104,4.5,1966,2220,9,False,327
+Zürich,Kreis 4,84,3.0,1938,2360,4,False,695
+Geneva,Plainpalais,57,2.0,1956,1800,6,True,660
+Geneva,Carouge,49,2.0,1940,1290,1,False,160
+Lausanne,Flon,72,2.5,1978,1440,3,False,1180
+Lausanne,Sous-Gare,82,4.0,2009,2200,2,False,531
+Zürich,Kreis 1,72,3.5,2003,2710,5,True,177
+Zürich,Kreis 1,64,2.5,1991,2380,4,True,773
+St. Gallen,St. Fiden,84,3.5,1989,1690,4,True,295
+Bern,Breitenrain,115,5.0,1928,2150,6,True,1694
+St. Gallen,Centrum,38,2.0,1928,840,5,False,529
+Lausanne,Sous-Gare,121,4.5,1980,3300,2,True,415
+Winterthur,Wülflingen,116,4.5,1957,2510,8,True,276
+St. Gallen,Centrum,122,5.0,1993,1600,3,True,731
+Geneva,Pâquis,90,3.0,1935,2310,3,True,1255
+Lausanne,Chailly,79,3.5,1951,1650,4,False,277
+Zürich,Kreis 6,71,2.5,1969,2360,5,True,270
+Basel,Kleinbasel,89,4.0,1980,2170,9,False,610
+Bern,Länggasse,62,2.5,1977,1350,6,False,638
+Geneva,Champel,78,3.0,2006,2460,5,False,771
+Bern,Breitenrain,85,3.5,1946,2150,7,True,576
+Winterthur,Wülflingen,137,6.0,2007,2350,4,True,690
+Geneva,Plainpalais,66,2.0,1969,2210,5,True,691
+St. Gallen,Centrum,120,4.5,1969,1880,6,True,1040
+Basel,Gundeldingen,80,3.5,1922,1710,3,True,689
+Zürich,Kreis 8,87,3.0,1941,2260,7,True,421
+Basel,St. Johann,84,3.0,1927,1560,4,True,303
+Basel,St. Johann,114,4.5,1911,2390,2,False,517
+Basel,Kleinbasel,129,5.0,2004,2880,5,False,506
+Geneva,Servette,78,3.0,1997,2450,2,False,1181
+Basel,Altstadt,80,3.0,1952,1900,6,True,354
+Zürich,Kreis 4,103,4.0,1934,2580,3,True,1090
+Winterthur,Wülflingen,107,4.5,1973,2030,10,True,1476
+Bern,Länggasse,118,5.0,1966,1850,3,False,995
+Zürich,Kreis 3,59,2.5,1984,1810,8,False,395
+St. Gallen,St. Fiden,83,3.5,1957,1660,5,False,817
+Geneva,Servette,81,3.0,1995,2580,4,False,867
+Lausanne,Chailly,39,1.5,1991,1160,6,False,693
+St. Gallen,Centrum,59,2.5,1931,1230,2,True,520
+Zürich,Kreis 8,88,4.0,1996,3280,10,True,733
+Zürich,Kreis 4,98,3.5,1968,3100,3,True,466
+Winterthur,Töss,112,5.0,1956,1850,7,False,638
+Zürich,Kreis 4,94,3.5,1953,2300,3,True,1138
+Bern,Länggasse,94,3.5,1974,1990,9,True,739
+Lausanne,Sévelin,81,3.5,1925,1960,1,True,1119
+Lausanne,Ouchy,79,3.5,1995,2010,5,False,892
+Basel,Bachletten,107,4.5,1941,2640,2,True,440
+Winterthur,Töss,91,4.0,1981,1810,3,False,301
+Geneva,Eaux-Vives,56,2.0,1983,1810,5,False,1066
+St. Gallen,St. Fiden,84,3.5,1993,1100,5,False,1811
+Zürich,Kreis 7,84,3.5,1989,2620,9,False,288
+Geneva,Servette,63,2.0,1968,1760,11,False,282
+Bern,Bümpliz,77,2.5,1976,2060,7,False,863
+Lugano,Centro,88,3.5,1970,1880,8,False,481
+Lugano,Besso,54,1.5,1946,1010,5,False,807
+Winterthur,Altstadt,92,3.5,1976,1940,1,True,280
+Geneva,Carouge,95,3.5,1966,2780,3,False,470
+Geneva,Champel,90,4.0,1964,2680,3,False,1483
+Zürich,Kreis 7,85,4.0,1983,2820,3,True,265
+Bern,Kirchenfeld,121,4.5,1988,2990,7,True,370
+Lugano,Cassarate,105,4.0,1967,2700,4,True,597
+Zürich,Kreis 8,42,1.5,1988,1620,6,False,582
+Winterthur,Wülflingen,103,4.5,1994,2190,1,True,1567
+Zürich,Kreis 4,94,4.0,1955,2780,4,False,322
+Lausanne,Ouchy,142,6.0,1949,2680,0,False,698
+Geneva,Pâquis,66,3.0,1987,2030,5,True,346
+Zürich,Kreis 11,62,2.0,1975,2200,3,True,759
+Basel,Altstadt,65,3.0,1932,1420,2,True,1142
+Zürich,Kreis 4,39,1.5,1968,1260,4,True,665
+St. Gallen,Riethüsli,68,3.0,1958,1270,3,False,339
+Basel,Bachletten,69,2.5,1916,1550,3,True,299
+St. Gallen,Riethüsli,53,2.5,1955,1110,9,True,600
+Lausanne,Ouchy,60,2.5,1906,1550,3,False,385
+Geneva,Eaux-Vives,55,2.0,1981,1950,3,True,273
+Bern,Kirchenfeld,50,2.0,1918,990,6,False,286
+Zürich,Kreis 5,83,3.5,1932,2320,10,True,798
+Bern,Mattenhof,76,3.5,1981,1670,4,True,391
+Zürich,Kreis 11,54,2.5,2006,2050,1,True,826
+Lugano,Molino Nuovo,66,3.0,1951,1560,8,False,893
+Zürich,Kreis 3,60,2.5,1939,1550,1,False,511
+Zürich,Kreis 6,180,7.5,1925,3600,1,True,746
+Bern,Kirchenfeld,54,2.0,1965,1140,3,False,303
+Bern,Breitenrain,102,4.5,1973,2210,4,True,487
+Basel,Gundeldingen,38,2.0,2009,1160,8,False,181
+Geneva,Servette,68,3.0,2022,2180,7,False,544
+Geneva,Pâquis,120,5.0,1962,3070,7,True,1419
+Lausanne,Sévelin,65,2.5,1949,1580,4,False,503
+Geneva,Plainpalais,60,2.0,1966,1640,4,True,764
+St. Gallen,St. Fiden,93,3.5,1993,1430,9,True,297
+Basel,St. Johann,109,4.5,1926,1950,3,True,309
+Bern,Breitenrain,99,3.5,2012,2000,1,False,534
+Lausanne,Ouchy,148,6.0,1989,3140,4,True,557
+Bern,Bümpliz,69,3.0,1947,1570,8,True,214
+Lugano,Cassarate,62,2.5,1996,1140,8,False,573
+Basel,Bachletten,36,1.5,1951,1040,6,True,486
+Geneva,Plainpalais,73,3.0,1924,1690,8,False,322
+Bern,Kirchenfeld,90,3.5,1970,2200,4,True,306
+Lausanne,Ouchy,97,3.5,1990,2930,4,True,529
+Bern,Länggasse,121,5.0,1963,2110,2,True,847
+Bern,Mattenhof,69,3.0,1965,1660,5,True,570
+Bern,Bümpliz,69,2.5,1928,1570,5,True,1041
+Basel,Gundeldingen,75,2.5,1978,2080,5,False,335
+Lugano,Cassarate,55,1.5,1984,1250,3,True,1018
+Winterthur,Wülflingen,51,1.5,1927,1170,5,True,339
+Zürich,Kreis 6,126,5.5,1929,3360,1,False,212
+Basel,Gundeldingen,154,6.5,1971,2700,5,True,915
+Bern,Mattenhof,95,4.0,1993,2250,6,True,579
+Basel,St. Johann,53,2.0,2006,1540,7,True,841
+Basel,Gundeldingen,53,2.0,1984,1470,5,True,710
+Zürich,Kreis 5,58,2.0,1990,1930,5,False,432
+Geneva,Servette,92,3.5,2005,2580,3,False,1105
+Zürich,Kreis 1,54,2.0,1962,1780,5,True,188
+Bern,Länggasse,89,3.0,1909,1670,4,False,211
+Lugano,Besso,79,2.5,1976,1830,2,False,616
+St. Gallen,St. Fiden,160,6.0,1935,2680,2,False,838
+Lugano,Besso,62,2.5,2011,1120,6,False,595
+Lugano,Cassarate,53,2.5,1973,1310,3,True,694
+Lugano,Centro,66,3.0,1997,1500,3,False,962
+Geneva,Plainpalais,73,3.0,1937,1830,9,False,960
+Zürich,Kreis 1,57,2.5,1930,1850,8,False,391
+Winterthur,Wülflingen,61,2.5,1982,1460,4,True,417
+Bern,Länggasse,99,4.5,1989,2140,9,False,441
+Geneva,Pâquis,116,5.0,1983,3460,2,True,452
+Lausanne,Ouchy,102,4.0,1968,2740,4,True,721
+Zürich,Kreis 8,36,1.0,1973,1290,2,True,921
+Zürich,Kreis 11,79,3.5,1922,2010,3,True,1220
+Geneva,Champel,67,3.0,1963,1780,5,True,384
+Lugano,Molino Nuovo,68,2.5,1963,1320,5,False,406
+Lausanne,Flon,74,3.0,1933,1680,4,False,522
+Bern,Breitenrain,70,3.0,1924,1370,8,False,367
+Geneva,Carouge,62,2.5,2019,2160,4,True,498
+St. Gallen,Riethüsli,54,2.5,1974,980,6,False,239
+Bern,Mattenhof,122,5.0,1948,1810,10,True,1649
+Lausanne,Sous-Gare,61,2.5,1940,1330,5,True,350
+Bern,Breitenrain,55,2.0,1967,1220,4,True,665
+Bern,Breitenrain,83,3.5,1982,2110,3,True,217
+Winterthur,Töss,69,3.0,2005,1350,2,True,1215
+Bern,Kirchenfeld,124,5.0,1968,3230,6,True,188
+Zürich,Kreis 8,49,1.5,1956,1630,1,True,570
+Geneva,Plainpalais,73,3.0,1970,2390,9,True,655
+St. Gallen,St. Fiden,60,2.0,1948,1010,7,False,776
+Geneva,Eaux-Vives,55,2.0,2017,1810,5,False,1604
+Winterthur,Wülflingen,89,3.5,1967,1930,11,True,484
+Lausanne,Chailly,133,5.0,1958,2840,7,True,643
+Bern,Bümpliz,93,3.5,1986,2080,4,False,765
+Bern,Länggasse,79,3.0,1923,1440,1,False,853
+Basel,St. Johann,113,4.0,1996,2870,5,True,320
+St. Gallen,St. Fiden,103,4.5,2006,1970,6,False,687
+Zürich,Kreis 3,59,2.5,1963,1930,2,False,513
+Winterthur,Wülflingen,76,3.0,1965,1640,2,True,275
+St. Gallen,Centrum,101,4.0,1983,1850,4,False,409
+Zürich,Kreis 4,90,4.0,1956,2360,4,False,314
+Geneva,Eaux-Vives,62,2.0,1973,1730,10,False,756
+Geneva,Servette,46,2.0,1960,1310,5,False,409
+Zürich,Kreis 1,82,3.0,1902,1800,9,False,381
+Zürich,Kreis 5,101,4.0,2016,3300,3,False,486
+Geneva,Champel,110,4.5,1987,3170,2,True,784
+Zürich,Kreis 1,71,3.0,2016,2570,7,True,402

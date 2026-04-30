@@ -1,72 +1,77 @@
 id: swiss-cantons-tax
-title: Swiss cantonal tax burden
+title: Cantonal tax burden — wealthy outliers
 round: 1
 
 # ─── Public parts (shown to students) ───
 briefing: |
-  You are a junior analyst at SwissStat. Your editor wants a chart for tomorrow's
-  brief on cantonal tax burden trends.
+  You are a junior analyst at the Federal Statistical Office (BFS). The cantonal-finances
+  chapter of next month's Swiss Statistical Yearbook needs a chart and one accompanying
+  paragraph on which cantons sit unusually far above the rest on tax revenue per capita.
 
 task: |
-  Identify the top 5 Swiss cantons by tax revenue per capita in 2023, then
-  visualize how those cantons' per-capita ranking has shifted over the last 5 years.
+  Identify the five Swiss cantons with the highest tax revenue per capita in 2023.
+  Show how the per-capita value (or rank) of those five has shifted across 2014-2023.
+  Above or beside the chart, report the median and interquartile range (IQR) of 2023
+  per-capita tax revenue across all 26 cantons, and flag any cantons whose 2023
+  per-capita value lies more than 1.5 × IQR above the third quartile — these are the
+  "wealthy outliers" the chapter wants to name.
 
 dataset:
   filename: ch_cantons_tax.csv
-  rows: 130
+  rows: 260
   schema_preview: |
-    canton  year  population  tax_revenue
-    ZH      2023   1559300    18943000
-    BE      2023   1051600     9847000
-    LU      2023    420326     3687000
-    ZG      2023    130968     2641000
-    ... (26 cantons × 5 years, 2019–2023)
+    canton  year  population  tax_revenue  gdp_per_capita  cantonal_expenditure
+    ZH      2023   1559300    18943000          92400              17820000
+    BE      2023   1051600     9847000          78900              10412000
+    LU      2023    420326     3687000          82500               3941000
+    ZG      2023    130968     2641000         162400               2258000
+    ... (26 cantons × 10 years, 2014-2023, 260 rows)
   description: |
-    Swiss cantonal tax data with columns canton (chr 2-letter code),
-    year (int 2019-2023), population (int), tax_revenue (int CHF).
-    26 cantons × 5 years = 130 rows.
+    Swiss cantonal financial indicators. Columns: canton (chr 2-letter code),
+    year (int 2014-2023), population (int), tax_revenue (int CHF), gdp_per_capita
+    (int CHF), cantonal_expenditure (int CHF). 26 cantons × 10 years = 260 rows.
+    The gdp and expenditure columns are extra context; the central question is
+    about tax_revenue / population.
 
 # ─── Hidden parts (used by the judge, not shown in UI) ───
 mechanical_checks:
   - key: computes_per_capita
     label: Computes per-capita correctly
-    description: tax_revenue / population computed
-  - key: filters_top5_2023
-    label: Selects top 5 from 2023
-    description: top-5 selection happens on 2023 data only
-  - key: tracks_those5_over_time
-    label: Tracks same 5 across years
-    description: visualizes the SAME 5 cantons across 2019-2023 (not top-5-of-each-year)
-  - key: uses_rank_or_per_capita_axis
-    label: Right y-axis encoding
-    description: y-axis encodes rank or per-capita value over time
-  - key: has_labels_legend
+    description: tax_revenue / population computed (not gdp_per_capita confused with it, not divided by expenditure)
+  - key: picks_top5_2023
+    label: Picks top 5 from 2023
+    description: top-5 selection happens on 2023 data only — not pooled across years and not based on GDP per capita
+  - key: tracks_those5_full_decade
+    label: Tracks same 5 across 2014-2023
+    description: visualises the SAME 5 cantons across the full 10-year window — not top-5-of-each-year, and not just 2023
+  - key: reports_median_iqr_2023
+    label: Reports median & IQR for 2023
+    description: median and interquartile range of 2023 per-capita tax revenue across all 26 cantons are explicitly computed and shown (table, annotation, or accompanying text)
+  - key: flags_outliers_above_q3
+    label: Flags wealthy outliers
+    description: cantons whose 2023 per-capita value exceeds Q3 + 1.5 × IQR are explicitly identified in the output (named, marked on chart, or listed)
+  - key: has_axis_labels_legend
     label: Axis labels & legend
-    description: axis labels present AND legend distinguishes cantons
+    description: axis labels are present and a legend (or direct end-of-line labels) makes individual cantons identifiable on the chart
   - key: tidyverse_idiomatic
     label: Tidyverse idiomatic
-    description: clean dplyr/ggplot2 usage, no base-R hacks or copy-paste loops
-  - key: handles_data_correctly
-    label: No data handling errors
-    description: no division errors, wrong groupings, or wrong-year filters
+    description: clean dplyr/ggplot2 usage with quantile()/summarise(), no base-R hacks or copy-paste loops
 
 holistic:
-  audience: newspaper editor preparing tomorrow's brief
-  voice: editor at a Swiss newspaper
+  audience: editor of the Swiss Statistical Yearbook
+  voice: editor at the Federal Statistical Office
   evaluation_lens:
-    - Does the answer come across at a glance?
-    - Is the chart honest (no misleading axis tricks, sensible scale)?
-    - Is the prompt scoped well — neither under-specified nor over-specified?
-    - Does the framing match the audience (newspaper editor, not academic paper)?
+    - Does the answer foreground the "wealthy outliers" the chapter actually needs?
+    - Is the chart honest — Y-axis from a sensible baseline, no truncation tricks?
+    - Are summary statistics communicated alongside the chart (median + IQR), not buried?
+    - Does the framing match the audience (statistical yearbook, not a campaign blog)?
   anchors:
-    "0-9": output is wrong, misleading, or unusable
-    "10-19": technically present but a real editor would send it back for rework
-    "20-26": good — would publish with minor edits
-    "27-30": exceptional — sharp, clear, publication-ready as-is
+    "0-9": output is wrong, misleading, or fails to identify outliers
+    "10-19": technically present but the BFS editor would send it back for rework
+    "20-26": good — would publish in the yearbook with minor edits
+    "27-30": exceptional — sharp, publication-ready as-is
 
 # ─── Seeded leaderboard ───
-# Used so the leaderboard is not empty on the first submission of the round.
-# Replace with real classroom data if you want.
 leaderboard_seed:
   - {name: "Anna K.",  mech: 60, hol: 27}
   - {name: "Marco P.", mech: 70, hol: 12}

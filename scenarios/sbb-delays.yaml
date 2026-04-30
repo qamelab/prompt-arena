@@ -1,52 +1,58 @@
 id: sbb-delays
-title: SBB intercity delay causes
+title: SBB delays — when, where, why
 round: 2
 
 # ─── Public parts (shown to students) ───
 briefing: |
   You are an analyst at the Federal Office of Transport. The communications team
-  is preparing a press briefing on intercity train delays in 2024.
+  is preparing a press briefing on intercity (IC) train delays in 2024 and wants a
+  single chart that reads cleanly for journalists.
 
 task: |
-  Identify the three delay causes that accounted for the most total minutes lost on
-  intercity (IC) services in 2024, and show how each of those causes is distributed
-  across the hours of the day.
+  Identify the three delay causes that account for the most total delay minutes
+  on intercity (IC) services in 2024. For those three causes, show how delay
+  minutes are distributed across hours of the day, AND distinguish weekday from
+  weekend incidents in the same chart. Use a consistent semantic colour per
+  cause (one fixed colour each — no rainbow palette), and avoid chart junk
+  (no 3D, no decorative grid, no pie slices).
 
 dataset:
   filename: sbb_delays.csv
-  rows: 720
+  rows: 1800
   schema_preview: |
-    route       service_type  cause              start_time            delay_min  year
-    Zürich-Bern         IC    Infrastructure     2024-03-14 08:12:00          7    2024
-    Genève-Lausanne     IR    External           2024-07-22 17:48:00         12    2024
-    Basel-Olten         IC    Rolling stock      2024-11-05 07:31:00          4    2024
-    ... (720 incidents across 2023-2024, six cause categories)
+    route             service_type  cause            start_time            station         delay_min  weather       year
+    Zürich-Bern               IC    Infrastructure   2024-03-14 08:12:00   Bern               7        clear         2024
+    Genève-Lausanne           IR    External         2024-07-22 17:48:00   Lausanne          12        rain          2024
+    Basel-Olten               IC    Rolling stock    2024-11-05 07:31:00   Olten              4        clear         2024
+    ... (1800 incidents across 2022-2024, six cause categories, weekday/weekend implicit in date)
   description: |
     SBB-style synthetic delay incidents. Columns: route (chr), service_type (chr,
-    one of IC/IR/RE/S), cause (chr, one of Infrastructure / Rolling stock /
-    External / Operations / Connection wait / Boarding), start_time (chr ISO 8601
-    timestamp), delay_min (int, minutes late), year (int 2023-2024). 720 rows.
+    IC/IR/RE/S), cause (chr, one of Infrastructure / Rolling stock / External /
+    Operations / Connection wait / Boarding), start_time (chr ISO 8601 timestamp),
+    station (chr — primary station affected), delay_min (int), weather (chr —
+    clear / rain / snow / fog), year (int 2022-2024). Weekday vs weekend can be
+    derived from start_time. 1800 rows.
 
 # ─── Hidden parts (used by the judge, not shown in UI) ───
 mechanical_checks:
   - key: filters_ic_2024
-    label: Filter to IC services in 2024
+    label: Filter to IC in 2024
     description: rows are filtered to service_type == "IC" AND year == 2024 before any aggregation
   - key: sums_delay_minutes
     label: Aggregates by sum of delay_min
-    description: groups by cause and computes sum(delay_min) — not count of incidents
+    description: groups by cause and computes sum(delay_min) — not count of incidents, not mean
   - key: picks_top3_causes
     label: Picks the top 3 causes
-    description: only the top 3 causes by total minutes are shown, not all of them
+    description: only the three causes with the largest 2024 IC total minutes are shown — not all six
   - key: extracts_hour_of_day
     label: Extracts hour-of-day
-    description: hour is extracted from start_time (lubridate::hour or similar) and used as an axis
-  - key: distinguishes_causes
-    label: Each cause distinguished
-    description: the chart distinguishes the three causes (color, facet, or panel) so they are individually readable
-  - key: has_labels_legend
-    label: Axis labels & legend
-    description: axis labels present AND a legend (or facet labels) makes the causes identifiable
+    description: hour is extracted from start_time (lubridate::hour or similar) and used as an x-axis variable
+  - key: weekday_vs_weekend
+    label: Weekday vs weekend distinguished
+    description: weekday is derived from start_time and used to distinguish weekday from weekend incidents (color, linetype, facet, or split bars) — not just "weekday" as a variable that goes unused
+  - key: semantic_color_per_cause
+    label: Semantic colour per cause
+    description: each cause is mapped to a single, consistent colour across the entire chart — no rainbow palette, no decorative recolouring, colour carries information (IBCS-style)
   - key: tidyverse_idiomatic
     label: Tidyverse idiomatic
     description: clean dplyr/ggplot2 with lubridate, no base-R hacks or copy-paste loops
@@ -55,9 +61,9 @@ holistic:
   audience: communications team preparing a press briefing
   voice: senior government data analyst writing a one-paragraph summary for journalists
   evaluation_lens:
-    - Is the headline finding (which 3 causes, when in the day) easy to read off the chart?
-    - Does the visualisation choice fit the question (hour-of-day distribution, not just totals)?
-    - Is the framing factual and cautious — no over-claiming about causation or trends?
+    - Is the headline finding (which 3 causes, when in the day, weekday or weekend) easy to read off the chart?
+    - Is the geom appropriate for the relationships (categorical cause × continuous hour × binary weekday)?
+    - Does the colour use carry information rather than decoration (Tufte/IBCS)?
     - Is the prompt scoped well — neither under-specified nor over-specified for a one-shot Copilot generation?
   anchors:
     "0-9": output is wrong, misleading, or unusable for the briefing
@@ -66,7 +72,6 @@ holistic:
     "27-30": exceptional — sharp, journalist-ready as-is
 
 # ─── Seeded leaderboard ───
-# Fallback only — disappears as soon as any real submission lands.
 leaderboard_seed:
   - {name: "Nina V.",   mech: 60, hol: 23}
   - {name: "Patrick L.", mech: 70, hol: 14}
