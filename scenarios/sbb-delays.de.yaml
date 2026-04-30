@@ -4,7 +4,7 @@ round: 2
 
 # ─── Öffentliche Inhalte ───
 briefing: |
-  Sie sind Analyst:in beim Bundesamt für Verkehr. Das Kommunikationsteam
+  Du bist Analyst:in beim Bundesamt für Verkehr. Das Kommunikationsteam
   bereitet ein Pressebriefing zu den Intercity-Verspätungen (IC) im Jahr 2024
   vor und möchte eine einzige Grafik, die für Journalist:innen sauber lesbar
   ist — sie haben zwei Absätze Spaltenraum und wollen eine Abbildung, die den
@@ -14,15 +14,15 @@ briefing: |
   Beobachtungen in einem einzigen Bild kombiniert sehen.
 
 task: |
-  Identifizieren Sie die drei Verspätungsursachen, die im Jahr 2024 die
+  Identifiziere die drei Verspätungsursachen, die im Jahr 2024 die
   meisten Verspätungsminuten auf Intercity-Verbindungen (IC) verursacht
-  haben. Zeigen Sie für diese drei Ursachen, wie sich die Verspätungsminuten
-  über die Stunden des Tages verteilen, UND unterscheiden Sie in derselben
+  haben. Zeige für diese drei Ursachen, wie sich die Verspätungsminuten
+  über die Stunden des Tages verteilen, UND unterscheide in derselben
   Grafik Werktag- von Wochenend-Vorfällen.
 
-  Verwenden Sie eine konsistente, semantische Farbe pro Ursache (eine fixe
+  Verwende eine konsistente, semantische Farbe pro Ursache (eine fixe
   Farbe je Ursache — keine Regenbogen-Palette, keine dekorative Umfärbung)
-  und vermeiden Sie Chart Junk: kein 3D, kein dichtes dekoratives Gitternetz,
+  und vermeide Chart Junk: kein 3D, kein dichtes dekoratives Gitternetz,
   keine Tortenscheiben.
 
   Worauf zu achten ist: "die meisten Verspätungsminuten" ist eine Summe,
@@ -30,12 +30,12 @@ task: |
   zehn 5-minütige Einsteige-Verspätungen, und ein Count würde die Antwort
   verändern. Die Grafik muss drei Codierungen unterbringen: Ursache
   (kategoriell, drei Stufen), Stunde des Tages (kontinuierlich, 0-23) und
-  Werktag vs. Wochenende (binär). Wählen Sie Geom und Aesthetics so, dass
+  Werktag vs. Wochenende (binär). Wähle Geom und Aesthetics so, dass
   sich die Codierungen nicht in die Quere kommen — typischerweise heisst
   das, dass die Ursache auf Facetten oder die Hauptfarbe geht und Werktag
   vs. Wochenende eine sekundäre Aesthetic erhält (Linientyp, Füllung oder
   geteilte Balken). Der Datensatz enthält Spalten für Bahnhof (station)
-  und Wetter (weather) als Zusatzkontext; Sie brauchen sie für diese Frage
+  und Wetter (weather) als Zusatzkontext; du brauchst sie für diese Frage
   nicht.
 
 dataset:

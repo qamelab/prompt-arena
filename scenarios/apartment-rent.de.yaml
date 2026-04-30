@@ -4,7 +4,7 @@ round: 3
 
 # ─── Öffentliche Inhalte ───
 briefing: |
-  Sie sind Junior-Data-Scientist bei einem Schweizer Immobilieninserat-Portal.
+  Du bist Junior-Data-Scientist bei einem Schweizer Immobilieninserat-Portal.
   Das Produkt-Team möchte eine Startseiten-Grafik, die ehrlich zeigt, wie das
   Baujahr eines Gebäudes die Miete pro Quadratmeter beeinflusst — kontrolliert
   nach Stadt. Die späteren Leser:innen sind Wohnungssuchende, keine
@@ -14,14 +14,14 @@ briefing: |
   gesucht werden muss.
 
 task: |
-  Zeigen Sie für Inserate aus Zürich, Genf und Basel die Beziehung zwischen
+  Zeige für Inserate aus Zürich, Genf und Basel die Beziehung zwischen
   year_built und rent_per_m² mit je einem Panel pro Stadt. Jedes Panel
   braucht sowohl Einzelpunkte (damit die Streuung sichtbar ist) als auch
   einen geglätteten Trend (damit die Richtung lesbar ist) — die Schichtung
   Scatter + Smoother ist hier eine bewusste ggplot2-Wahl.
 
-  Berechnen und berichten Sie die Pearson-Korrelation zwischen year_built
-  und rent_per_m² für jede der drei Städte. Annotieren Sie jedes Panel
+  Berechne und berichte die Pearson-Korrelation zwischen year_built
+  und rent_per_m² für jede der drei Städte. Annotiere jedes Panel
   direkt mit dieser Korrelation und mit dem Median-rent_per_m² der Stadt
   (IBCS-Stil mit direkten Beschriftungen — die Startseite hat keinen Platz
   für eine seitliche Legende).
@@ -31,9 +31,9 @@ task: |
   selbst einen Trend abschätzen. Eine Korrelation pro Stadt — nicht eine
   globale Korrelation — lässt die Grafik ehrlich darüber sprechen, wie sich
   die Beziehung zwischen den Städten unterscheidet. Der Datensatz enthält
-  insgesamt acht Städte — filtern Sie auf die drei genannten. Es gibt
-  Köder-Spalten (floor, has_balcony, distance_to_station_m), die Sie für
-  diese spezifische Grafik nicht brauchen; Sie dürfen sie ignorieren.
+  insgesamt acht Städte — filtere auf die drei genannten. Es gibt
+  Köder-Spalten (floor, has_balcony, distance_to_station_m), die du für
+  diese spezifische Grafik nicht brauchst; du darfst sie ignorieren.
 
 dataset:
   filename: ch_apartments.de.csv

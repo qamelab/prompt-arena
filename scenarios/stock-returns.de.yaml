@@ -4,7 +4,7 @@ round: 4
 
 # ─── Öffentliche Inhalte ───
 briefing: |
-  Sie sind Junior-Analyst:in im Markets-Desk einer Finanzzeitung. Die
+  Du bist Junior-Analyst:in im Markets-Desk einer Finanzzeitung. Die
   Jahresend-Ausgabe braucht eine Grafik der "risikobereinigten Gewinner" für
   das Tech-Aktien-Feature: nicht die offensichtlichen Roh-Gewinner, sondern
   die Titel, die Rendite pro Risiko-Einheit geliefert haben. Das Argument
@@ -16,17 +16,17 @@ briefing: |
   haltbar die Performance über ein Fünfjahresfenster war.
 
 task: |
-  Berechnen Sie für jeden Ticker einfache tägliche Renditen: heutiger
+  Berechne für jeden Ticker einfache tägliche Renditen: heutiger
   Schlusskurs geteilt durch den Schlusskurs des vorigen Handelstags, minus 1
-  (in R: close / lag(close) - 1). Berechnen Sie für 2024 (nur 2024er
+  (in R: close / lag(close) - 1). Berechne für 2024 (nur 2024er
   Handelstage) (a) die Gesamtrendite und (b) die annualisierte
   Renditen-Standardabweichung (tägliche SD multipliziert mit sqrt(252)).
 
-  Wählen Sie die fünf Ticker mit der höchsten risikobereinigten Rendite,
+  Wähle die fünf Ticker mit der höchsten risikobereinigten Rendite,
   definiert als 2024er Gesamtrendite geteilt durch 2024er annualisierte SD.
-  Plotten Sie für diese fünf den kumulierten Kursverlauf, indexiert auf 100
-  am ersten Handelstag 2020 bis Ende 2024. Färben Sie die Linien nach Sektor
-  (eine konsistente Farbe pro Sektor, IBCS-Stil) und platzieren Sie das
+  Plotte für diese fünf den kumulierten Kursverlauf, indexiert auf 100
+  am ersten Handelstag 2020 bis Ende 2024. Färbe die Linien nach Sektor
+  (eine konsistente Farbe pro Sektor, IBCS-Stil) und platziere das
   Ticker-Label direkt am Ende seiner Linie — nicht in einer seitlichen
   Legende.
 
@@ -35,11 +35,11 @@ task: |
   aber das Desk will etwas, das ein Absatz Text erklären kann. Der
   Annualisierungsfaktor sqrt(252) folgt aus der groben Konvention von 252
   Handelstagen pro Jahr und der i.i.d.-Annahme für tägliche Renditen;
-  multiplizieren Sie nicht mit 252 (das würde die Varianz skalieren, nicht
+  multipliziere nicht mit 252 (das würde die Varianz skalieren, nicht
   die Standardabweichung). Der kumulierte Pfad braucht für alle fünf Linien
   dieselbe Startbasis (erster Handelstag 2020), nicht jeweils einen
   ticker-spezifischen ersten Tag, damit der visuelle Vergleich ehrlich ist.
-  Der Datensatz hat 25 Ticker und eine Spalte market_cap_usd, die Sie für
+  Der Datensatz hat 25 Ticker und eine Spalte market_cap_usd, die du für
   diese Frage nicht benötigen — gerade fünf auswählen und zeigen ist der
   Witz.
 

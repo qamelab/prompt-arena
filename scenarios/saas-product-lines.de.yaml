@@ -4,7 +4,7 @@ round: 5
 
 # ─── Öffentliche Inhalte ───
 briefing: |
-  Sie sind Analyst:in im Controlling-Team einer Schweizer B2B-Software-Firma.
+  Du bist Analyst:in im Controlling-Team einer Schweizer B2B-Software-Firma.
   Der CFO will EINE Grafik fürs Q4-Board-Pack — eine einzige Abbildung, mit
   der das Board auf einen Blick sieht, welche der sechs Produktlinien im
   Q4 2024 das Geschäft tragen und welche im Jahresvergleich nachlassen. Das
@@ -14,17 +14,17 @@ briefing: |
   ausgesprochen hat.
 
 task: |
-  Erstellen Sie eine einzige Grafik, die die sechs Produktlinien nach
+  Erstelle eine einzige Grafik, die die sechs Produktlinien nach
   Q4-2024-Umsatz rankt UND zugleich die Veränderung gegenüber Q4 2023
   (year-over-year) je Linie kommuniziert.
 
   Die Grafik muss der richtige Typ von Grafik für diesen Vergleich sein —
   einer, den Führungskräfte in fünf Sekunden überblicken — und sie muss
-  ggplot2-Schichten klug einsetzen: Wählen Sie ein Geom, das zu einem
-  geordneten kategoriellen Vergleich passt; sortieren Sie die Kategorien
-  nach der Ranking-Kennzahl (lassen Sie sie nicht alphabetisch); beschriften
-  Sie Werte direkt auf den Geoms; formatieren Sie den Umsatz mit
-  Währungs- / abgekürzten Einheiten; wenden Sie ein klares minimalistisches
+  ggplot2-Schichten klug einsetzen: Wähle ein Geom, das zu einem
+  geordneten kategoriellen Vergleich passt; sortiere die Kategorien
+  nach der Ranking-Kennzahl (lass sie nicht alphabetisch); beschriften
+  du Werte direkt auf den Geoms; formatiere den Umsatz mit
+  Währungs- / abgekürzten Einheiten; wende ein klares minimalistisches
   Theme an.
 
   Worauf zu achten ist: "Geordneter kategorieller Vergleich" schliesst
@@ -37,7 +37,7 @@ task: |
   Grafik (Umsatz + YoY) bedeutet, dass eine davon eine sekundäre Aesthetic
   trägt — Farbskala auf den Balken, End-of-Bar-Text, Paired-Bar-Höhe oder
   Dumbbell-Delta. Der Datensatz liegt im Long-Format vor (eine Zeile pro
-  product × region × month) — vor dem Plotten müssen Sie über Regionen und
+  product × region × month) — vor dem Plotten musst du über Regionen und
   Q4-Monate aggregieren.
 
 dataset:

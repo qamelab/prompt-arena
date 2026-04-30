@@ -4,7 +4,7 @@ round: 1
 
 # ─── Öffentliche Inhalte (für Studierende sichtbar) ───
 briefing: |
-  Sie sind Junior-Analyst:in beim Bundesamt für Statistik (BFS). Das Kapitel
+  Du bist Junior-Analyst:in beim Bundesamt für Statistik (BFS). Das Kapitel
   zur Kantonsfinanzlage im Statistischen Jahrbuch der Schweiz braucht für die
   nächste Ausgabe eine Grafik und einen begleitenden Absatz dazu, welche
   Kantone bei den Steuereinnahmen pro Kopf ungewöhnlich weit über dem Rest
@@ -14,14 +14,14 @@ briefing: |
   das Kapitel braucht eine normierte Sicht, die die Ausreisser fair benennt.
 
 task: |
-  Identifizieren Sie die fünf Schweizer Kantone mit den höchsten
-  Steuereinnahmen pro Kopf im Jahr 2023 und zeigen Sie, wie sich der
+  Identifiziere die fünf Schweizer Kantone mit den höchsten
+  Steuereinnahmen pro Kopf im Jahr 2023 und zeige, wie sich der
   Pro-Kopf-Wert (oder der Rang) dieser fünf über den Zeitraum 2014-2023
   verschoben hat.
 
-  Berichten Sie neben der Grafik den Median und den Interquartilsabstand
+  Berichte neben der Grafik den Median und den Interquartilsabstand
   (IQR) der Pro-Kopf-Steuereinnahmen 2023 über alle 26 Kantone und
-  markieren Sie diejenigen Kantone, deren 2023er-Wert um mehr als 1.5 × IQR
+  markiere diejenigen Kantone, deren 2023er-Wert um mehr als 1.5 × IQR
   über dem dritten Quartil liegt — das sind die "wohlhabenden Ausreisser",
   die das Kapitel benennen möchte.
 
@@ -33,7 +33,7 @@ task: |
   Designfrage; beides ist vertretbar, aber die Geschichten, die sie
   erzählen, unterscheiden sich. Der Datensatz enthält zwei zusätzliche
   Spalten (gdp_per_capita, cantonal_expenditure), die für diese Frage
-  nicht nötig sind — Sie dürfen sie ignorieren.
+  nicht nötig sind — du darfst sie ignorieren.
 
 dataset:
   filename: ch_cantons_tax.csv
