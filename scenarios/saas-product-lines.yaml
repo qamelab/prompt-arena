@@ -7,16 +7,32 @@ briefing: |
   You are an analyst on the controlling team of a Swiss B2B software company.
   The CFO wants ONE chart for the Q4 board pack — a single figure that lets the
   board see, at a glance, which of the six product lines are pulling weight in
-  Q4 2024 and which are slipping year-over-year.
+  Q4 2024 and which are slipping year-over-year. The board has thirty seconds for
+  this slide; the chair will read the ranking off the chart, not from a footnote,
+  and will ask "and how is each one trending?" before the analyst finishes the
+  sentence.
 
 task: |
   Build a single chart that ranks the six product lines by Q4 2024 revenue and
   also communicates each line's year-over-year change versus Q4 2023.
+
   The chart must be the right *kind* of chart for this comparison — one that an
   executive can scan in five seconds — and it must use ggplot2 layers smartly:
   pick a geom that fits a ranked categorical comparison, sort the categories by
-  the ranking metric, label values directly on the geoms, format revenue with
-  currency / abbreviated units, and apply a clean minimal theme.
+  the ranking metric (do not leave them alphabetical), label values directly on
+  the geoms, format revenue with currency / abbreviated units, and apply a clean
+  minimal theme.
+
+  Things to think about: "ranked categorical comparison" rules out a few default
+  choices that a generic Copilot prompt might produce — pies fight ranking,
+  lines over discrete unordered categories are wrong, 3D bars distort
+  proportions. Sorted horizontal bars (geom_col + coord_flip + fct_reorder) are
+  a strong default; dumbbell plots and paired-bar charts also work if both years
+  are shown. Two metrics in one chart (revenue + YoY) means one of them has to
+  ride a secondary aesthetic — colour scale on bars, end-of-bar text, paired-bar
+  height, or dumbbell delta. The dataset is in long format (one row per
+  product × region × month) — you will need to aggregate across regions and
+  Q4 months before plotting.
 
 dataset:
   filename: saas_product_lines.csv

@@ -7,14 +7,27 @@ briefing: |
   You are a junior analyst at the Federal Statistical Office (BFS). The cantonal-finances
   chapter of next month's Swiss Statistical Yearbook needs a chart and one accompanying
   paragraph on which cantons sit unusually far above the rest on tax revenue per capita.
+  Cantonal populations differ by an order of magnitude (Zürich is roughly a hundred times
+  the size of Appenzell Innerrhoden), so the raw tax revenue numbers do not compare —
+  the chapter needs a normalised view that names the outliers fairly.
 
 task: |
-  Identify the five Swiss cantons with the highest tax revenue per capita in 2023.
-  Show how the per-capita value (or rank) of those five has shifted across 2014-2023.
-  Above or beside the chart, report the median and interquartile range (IQR) of 2023
+  Identify the five Swiss cantons with the highest tax revenue per capita in 2023, and
+  show how the per-capita value (or rank) of those five has shifted across 2014-2023.
+
+  Alongside the chart, report the median and interquartile range (IQR) of 2023
   per-capita tax revenue across all 26 cantons, and flag any cantons whose 2023
   per-capita value lies more than 1.5 × IQR above the third quartile — these are the
   "wealthy outliers" the chapter wants to name.
+
+  Things to think about: the question is about wealth concentration, so summary
+  statistics that are *robust* to extreme values (median, IQR) make more sense than
+  the mean and standard deviation — the latter would be pulled by the very outliers
+  we are trying to identify. Picking the y-axis encoding (raw CHF per capita vs.
+  rank position) is a real design choice; both are defensible, but they tell
+  slightly different stories. The dataset ships with two extra columns
+  (gdp_per_capita, cantonal_expenditure) that are not needed for this question —
+  ignoring them is fine.
 
 dataset:
   filename: ch_cantons_tax.csv

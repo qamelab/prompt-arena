@@ -5,16 +5,32 @@ round: 2
 # ─── Public parts (shown to students) ───
 briefing: |
   You are an analyst at the Federal Office of Transport. The communications team
-  is preparing a press briefing on intercity (IC) train delays in 2024 and wants a
-  single chart that reads cleanly for journalists.
+  is preparing a press briefing on intercity (IC) train delays in 2024 and wants
+  a single chart that reads cleanly for journalists — they have two paragraphs
+  of column space and want one figure that does most of the work. The press team
+  is allergic to "weather is unpredictable, infrastructure is the real story" and
+  also to "trains are late at rush hour" — they want both observations packed
+  into the same picture.
 
 task: |
   Identify the three delay causes that account for the most total delay minutes
   on intercity (IC) services in 2024. For those three causes, show how delay
   minutes are distributed across hours of the day, AND distinguish weekday from
-  weekend incidents in the same chart. Use a consistent semantic colour per
-  cause (one fixed colour each — no rainbow palette), and avoid chart junk
-  (no 3D, no decorative grid, no pie slices).
+  weekend incidents in the same chart.
+
+  Use a consistent semantic colour per cause (one fixed colour each — no rainbow
+  palette, no decorative recolouring), and avoid chart junk: no 3D, no dense
+  decorative grid, no pie slices.
+
+  Things to think about: "most total delay minutes" is a sum, not a count — a
+  single 60-minute infrastructure failure outweighs ten 5-minute boarding delays,
+  and using count would change the answer. The chart has three encodings to fit
+  in one figure: cause (categorical, three levels), hour-of-day (continuous 0-23),
+  and weekday vs. weekend (binary). Pick the geom and aesthetics so the encodings
+  do not fight each other — typically that means cause goes on facets or the
+  primary colour, and weekday vs. weekend takes a secondary aesthetic
+  (linetype, fill, or split bars). The dataset has a station and a weather
+  column that are extra context; you do not need them for this question.
 
 dataset:
   filename: sbb_delays.csv

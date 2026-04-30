@@ -7,18 +7,35 @@ briefing: |
   You are a junior analyst on the markets desk of a financial daily. The year-end
   edition needs a "risk-adjusted winners" chart for the tech-stocks feature: not
   the obvious raw winners, but the names that delivered return per unit of risk.
+  The desk's argument is that a stock that doubled with daily swings of ±5% is a
+  different proposition from one that doubled with daily swings of ±1%, and the
+  chart should reflect that distinction. The page lead does not want a name
+  appearing just because it had one explosive month — the chart should show how
+  durable the performance was over a five-year window.
 
 task: |
   For each ticker, compute daily simple returns: today's close divided by the
   previous trading day's close, minus 1 (in R: close / lag(close) - 1).
   Restricted to 2024 trading days, compute (a) the total return, and (b) the
   annualized return standard deviation (daily SD multiplied by sqrt(252)).
+
   Pick the five tickers with the highest risk-adjusted return, defined as
   2024 total return divided by 2024 annualized SD. For those five, plot the
   cumulative price path indexed to 100 starting on the first trading day of
   2020 through the end of 2024. Color the lines by sector (one consistent
   colour per sector, IBCS-style) and place each ticker label directly at the
   end of its line — not in a side legend.
+
+  Things to think about: "risk" here is just return SD — there are fancier
+  measures (Sortino, Sharpe with a risk-free rate, drawdown), but the desk
+  wants something one paragraph of copy can explain. The annualization factor
+  sqrt(252) comes from the rough convention of 252 trading days per year and
+  the i.i.d. assumption on daily returns; do not multiply by 252 (that would
+  scale variance, not standard deviation). The cumulative path needs the
+  *same* starting basis for all five lines (first trading day of 2020), not
+  a per-ticker first day, so the visual comparison is honest. The dataset
+  has 25 tickers and a market_cap_usd column you do not need for this
+  question — picking and showing only the 5 selected is the point.
 
 dataset:
   filename: tech_stocks_daily.csv

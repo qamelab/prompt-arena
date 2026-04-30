@@ -7,16 +7,29 @@ briefing: |
   You are a junior data scientist at a Swiss real-estate listings site. The product
   team wants a homepage chart that says something honest about how building age
   affects rent per square meter, controlling for city. The eventual readers are
-  not experts — the chart needs to communicate the relationship at a glance.
+  house-hunters, not data analysts — the chart has to communicate the relationship
+  at a glance and put the per-city numbers right where the reader is already
+  looking, without forcing them to chase a separate caption or legend.
 
 task: |
   For listings in Zürich, Geneva, and Basel, show the relationship between
   year_built and rent_per_m² with one panel per city. Each panel needs both
-  individual points and a smoothed trend (a scatter + smoother).
+  individual points (so the spread is visible) and a smoothed trend (so the
+  direction is readable) — the layered scatter + smoother is a deliberate ggplot2
+  choice here.
+
   Compute and report the Pearson correlation between year_built and rent_per_m²
-  for each of the three cities. Annotate each panel directly with that correlation
-  and with the city's median rent_per_m² (IBCS-style direct labels — do not push
-  these to a side legend).
+  for each of the three cities. Annotate each panel directly with that
+  correlation and with the city's median rent_per_m² (IBCS-style direct labels —
+  the homepage layout has no room for a side legend).
+
+  Things to think about: a smoother alone hides the spread (which is real and
+  large in this dataset); a scatter alone leaves the reader to eyeball a trend.
+  Reporting one correlation per city, not one global correlation, lets the chart
+  speak honestly about how the relationship differs across the cities. The
+  dataset has eight cities total — filter to the three the brief names. There
+  are decoy columns (floor, has_balcony, distance_to_station_m) that you do not
+  need for this specific chart; ignoring them is fine.
 
 dataset:
   filename: ch_apartments.csv
