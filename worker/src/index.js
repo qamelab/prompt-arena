@@ -14,8 +14,7 @@ const MAX_TOKENS = 10000;
 const ALLOWED_ORIGINS = [
   "http://localhost:8000",
   "http://localhost:5173",
-  // Add your GitHub Pages origin here, e.g.:
-  // "https://qamelab.github.io",
+  "https://qamelab.github.io",
 ];
 
 const MAX_NAME_LEN = 30;

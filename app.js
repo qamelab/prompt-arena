@@ -4,7 +4,7 @@
 
 // Edit PROD_JUDGE_ENDPOINT to your deployed worker URL before pushing to Pages.
 const LOCAL_JUDGE_ENDPOINT = "http://localhost:8787";
-const PROD_JUDGE_ENDPOINT = "https://prompt-arena-judge.<your-subdomain>.workers.dev";
+const PROD_JUDGE_ENDPOINT = "https://prompt-arena-judge.umatter.workers.dev";
 
 const isLocalHost =
   location.hostname === "localhost" ||
