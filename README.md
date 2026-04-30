@@ -66,10 +66,24 @@ so returning students go straight through.
 
 ## Deploying to production
 
-This is the full checklist for a first deploy. The worker and the frontend
-are deployed independently.
+The worker (Cloudflare) and the frontend (GitHub Pages) deploy
+independently. The order below matters — the frontend depends on the
+worker URL, and the worker needs CORS to allow the frontend origin.
+
+| Step | What it touches | Where it lives | Reversible? |
+|:--:|---|---|:--:|
+| 1 | KV namespace | Cloudflare | Yes (delete the namespace) |
+| 2 | Worker secrets (OpenRouter, password) | Cloudflare | Yes (`wrangler secret delete`) |
+| 3 | Worker code | Cloudflare | Yes (redeploy any earlier version) |
+| 4 | `PROD_JUDGE_ENDPOINT` in `app.js` | GitHub repo | Yes (edit + push) |
+| 5 | `ALLOWED_ORIGINS` in `worker/src/index.js` | Cloudflare (after redeploy) | Yes |
+| 6 | GitHub Pages activation | GitHub repo settings | Yes |
+| 7 | First deploy + smoke test | Pages + Cloudflare | n/a |
 
 ### 1. Create the KV namespace
+
+The leaderboard lives in Cloudflare KV. Create both a production and a
+preview namespace from inside `worker/`:
 
 ```bash
 cd worker
@@ -77,34 +91,61 @@ npx wrangler kv:namespace create LEADERBOARD
 npx wrangler kv:namespace create LEADERBOARD --preview
 ```
 
-Each command prints an id; paste both into `worker/wrangler.toml`, replacing
-the `0000...` placeholders:
+Each command prints an id (a 32-character hex string). Paste both into
+`worker/wrangler.toml`, replacing the `0000...` placeholders:
 
 ```toml
 [[kv_namespaces]]
 binding    = "LEADERBOARD"
-id         = "<production id>"
-preview_id = "<preview id>"
+id         = "<production id>"     # used by `wrangler deploy`
+preview_id = "<preview id>"        # used by `wrangler dev` if you ever run with --remote
 ```
 
-### 2. Set the secrets in production
+The two ids are independent — the preview namespace is a separate
+sandbox so dev traffic doesn't pollute the live leaderboard.
+
+### 2. Set the worker secrets
 
 ```bash
 npx wrangler secret put OPENROUTER_API_KEY    # paste your sk-or-... key
 npx wrangler secret put ACCESS_PASSWORD       # the password students will type
 ```
-The local `.dev.vars` file is for `wrangler dev` only — production reads
-secrets from the deploy environment. The classroom password is the only
-gate between random internet visitors and your OpenRouter bill, so pick
-something the room will know but a casual scraper won't guess.
+
+Wrangler reads each secret from stdin and stores it encrypted on
+Cloudflare; you cannot read either back later, only overwrite them. The
+local `.dev.vars` file is for `wrangler dev` only and is gitignored.
+
+The classroom password is the only gate between random internet visitors
+and your OpenRouter bill — pick something the room will recognise (e.g.
+the course code + semester, a memorable phrase from the first lecture)
+but that a casual scraper won't guess.
+
+To verify the secrets are set:
+
+```bash
+npx wrangler secret list
+```
+
+You should see `OPENROUTER_API_KEY` and `ACCESS_PASSWORD` (values are
+not shown — Cloudflare cannot reveal them once stored).
 
 ### 3. Deploy the worker
 
 ```bash
 npm run deploy
 ```
-Wrangler prints the assigned URL, e.g.
-`https://prompt-arena-judge.<your-subdomain>.workers.dev`.
+
+Wrangler prints the assigned URL on success, e.g.
+`https://prompt-arena-judge.<your-subdomain>.workers.dev`. Note this
+URL — you'll need it in step 4. A quick sanity check from the command
+line:
+
+```bash
+curl -X POST https://prompt-arena-judge.<your-subdomain>.workers.dev/verify \
+     -H "Content-Type: application/json" \
+     -d '{"password":"the-classroom-password"}'
+# → {"ok":true}    when the password matches
+```
 
 ### 4. Wire the frontend to the deployed worker
 
@@ -114,42 +155,259 @@ Edit `app.js`, replace the placeholder in `PROD_JUDGE_ENDPOINT`:
 const PROD_JUDGE_ENDPOINT = "https://prompt-arena-judge.<your-subdomain>.workers.dev";
 ```
 
-The page picks `LOCAL_JUDGE_ENDPOINT` automatically when served from
-`localhost`; everywhere else it uses the prod URL.
+The page automatically uses `LOCAL_JUDGE_ENDPOINT` when served from
+`localhost` / `127.0.0.1`; everywhere else (including GitHub Pages) it
+uses the prod URL.
 
 ### 5. Allow the Pages origin in CORS
 
-Edit `worker/src/index.js`, add your GitHub Pages origin to `ALLOWED_ORIGINS`,
-e.g.:
+Edit `worker/src/index.js` and add your GitHub Pages origin to
+`ALLOWED_ORIGINS`. Pages URLs follow `https://<user>.github.io` for a
+user/organisation site or `https://<user>.github.io/<repo>` for a
+project site — but **the origin is just protocol + host**, never the
+path:
 
 ```js
 const ALLOWED_ORIGINS = [
-  "http://localhost:8000",
-  "http://localhost:5173",
-  "https://umatter.github.io",
+  "http://localhost:8000",          // local python http.server
+  "http://localhost:5173",           // local vite, in case you ever switch
+  "https://umatter.github.io",       // <-- your Pages origin
 ];
 ```
 
-Redeploy the worker (`npm run deploy`) to pick up the change.
+Redeploy the worker (`npm run deploy`) to pick up the change. The
+worker silently falls back to `ALLOWED_ORIGINS[0]` for any origin not
+on the list — if you ever see CORS errors in production, this list is
+the first place to look.
 
 ### 6. Enable GitHub Pages
 
-Settings → Pages → Source: **GitHub Actions**. The
-`.github/workflows/deploy.yml` workflow builds `_site/` from `index.html`,
-`styles.css`, `app.js`, and the entire `scenarios/` and `brand/` directories,
-then publishes it.
+Repo settings → **Pages** → Source: **GitHub Actions**. The
+`.github/workflows/deploy.yml` workflow builds `_site/` from
+`index.html`, `styles.css`, `app.js`, and the entire `scenarios/` and
+`brand/` directories, then publishes it. The worker is not part of
+this build — it deploys separately via wrangler.
 
-> **Private repo note**: Pages on private repos requires a paid GitHub plan.
-> If the repo is private and you're on a free plan, flip it public before
-> enabling Pages.
+> **Private repo note**: Pages on private repos requires a paid GitHub
+> plan. If the repo is private and you're on the free tier, flip it
+> public before enabling Pages.
 
-### 7. Push and verify
+### 7. Push and smoke-test
 
 ```bash
 git push
 ```
-The workflow runs on push to `main`. Once it's green, visit your Pages URL,
-submit a test prompt, and confirm the entry shows up on the leaderboard.
+
+The workflow runs on every push to `main`. Watch it under the **Actions**
+tab; once green, visit your Pages URL and run through the full flow:
+
+1. Landing page shows up with the brand mark.
+2. Wrong password → "That password isn't right" appears.
+3. Correct password → main app appears, scenario card loads.
+4. Submit a test prompt with a recognisable display name (e.g. "Smoke
+   Test").
+5. The result renders, and the leaderboard at the bottom shows your row.
+6. Open the same URL in a second browser, enter the password, switch
+   to the same scenario — your "Smoke Test" row should be visible
+   without re-submitting.
+
+If any step fails, see **Troubleshooting** below.
+
+## Operations after deploy
+
+Day-2 changes you'll likely want to make. Anything in `worker/`
+requires a re-deploy with `npm run deploy`; anything in
+`index.html` / `app.js` / `styles.css` / `scenarios/` / `brand/`
+requires a `git push` (the workflow handles the rest).
+
+### Rotate the access password
+
+When you start a new semester, or whenever the password leaks beyond the
+classroom:
+
+```bash
+cd worker
+npx wrangler secret put ACCESS_PASSWORD     # type the new password
+```
+
+The change takes effect on the next request — no redeploy needed. Any
+student with the old password cached in localStorage will get a 401 on
+their next submission, which makes the frontend clear its cache and
+bounces them back to the landing page. They'll just need to re-enter
+the new password.
+
+To force-clear the gate cache for a specific student (e.g. when
+debugging together), have them open DevTools → Application → Local
+Storage and delete the `prompt-arena:password` key.
+
+### Rotate the OpenRouter key
+
+If you regenerate the OpenRouter key (because of suspected leak, scope
+change, or just hygiene):
+
+```bash
+cd worker
+npx wrangler secret put OPENROUTER_API_KEY  # paste the new sk-or-... key
+```
+
+Effective immediately. No redeploy. Any in-flight request that was
+already validated will complete on the old key; new requests use the
+new key.
+
+### Switch the LLM model
+
+The model id is a constant in `worker/src/index.js`:
+
+```js
+const MODEL = "anthropic/claude-sonnet-4.5";
+```
+
+Common alternatives on OpenRouter:
+- `anthropic/claude-opus-4` — slower, pricier, better at nuanced
+  holistic verdicts
+- `anthropic/claude-haiku-4.5` — much cheaper, often good enough for
+  the mechanical checks; the holistic verdict can read flatter
+- `openai/gpt-4o`, `openai/gpt-4o-mini` — different judging style;
+  worth pilot-testing before a real classroom session
+
+Edit, then `npm run deploy`. Score calibration may shift — if the new
+model is more lenient, raise the anti-leniency hint in `buildJudgePrompt`
+or tighten the holistic anchors in each scenario's YAML.
+
+### Adjust `MAX_TOKENS`
+
+```js
+const MAX_TOKENS = 10000;
+```
+
+Bump this if the judge response gets truncated (you'll see "Failed:
+Unexpected end of JSON input" in the UI). Lower it to save cost if your
+scenarios are simpler than the shipped five. Edit + `npm run deploy`.
+
+### Add a Pages origin
+
+If you also serve the frontend from a custom domain or a different
+GitHub user/org, add the new origin to `ALLOWED_ORIGINS` in
+`worker/src/index.js` and `npm run deploy`. **Remember it's just
+protocol + host**, no path — `https://example.com`, not
+`https://example.com/prompt-arena/`.
+
+### Wipe the leaderboard
+
+Per-scenario (e.g. fresh start of a semester for one round):
+
+```bash
+cd worker
+npx wrangler kv:key delete --binding=LEADERBOARD lb:swiss-cantons-tax
+npx wrangler kv:key delete --binding=LEADERBOARD lb:sbb-delays
+# ... etc.
+```
+
+To list everything in the namespace before deleting:
+
+```bash
+npx wrangler kv:key list --binding=LEADERBOARD
+```
+
+Wipe **all** leaderboards in one shot:
+
+```bash
+npx wrangler kv:key list --binding=LEADERBOARD --output json \
+  | jq -r '.[].name' \
+  | while read k; do npx wrangler kv:key delete --binding=LEADERBOARD "$k"; done
+```
+
+For local dev, `rm -rf worker/.wrangler/state/v3/kv/` resets all
+leaderboards in the wrangler emulator.
+
+### Add a new scenario
+
+1. Drop `scenarios/new-scenario.yaml` and the matching dataset CSV
+   (filename must match `dataset.filename`) into `scenarios/`.
+2. (Optional) Smoke-test locally first by visiting
+   `http://localhost:8000/?scenario=new-scenario` with both servers
+   running.
+3. `git add scenarios/new-scenario.yaml scenarios/<your_data>.csv`
+4. `git push`. The Pages workflow picks them up automatically; no
+   worker change is required because the worker validates whatever
+   scenario object the client posts.
+
+See **Authoring new scenarios** below for the YAML shape.
+
+### Edit an existing scenario
+
+Same flow — change the YAML or CSV, push, Pages redeploys. The
+old leaderboard for that scenario id stays in KV; if the rubric
+changed in a way that makes old scores incomparable, also wipe
+that scenario's KV key (see above).
+
+### Update brand assets
+
+Drop replacement SVGs into `brand/logos/`, push. The Pages workflow
+copies the entire `brand/` directory. If you add a new SVG, also
+update any `<link rel>` or `og:image` references in `index.html`.
+
+### Tail worker logs in real time
+
+```bash
+cd worker
+npx wrangler tail
+```
+
+Useful when diagnosing 401s, CORS issues, or JSON-parse failures
+during a live session. Each request to the worker shows up as a
+line; press Ctrl-C to stop.
+
+### Watch OpenRouter spend
+
+OpenRouter dashboard → **Activity**. You can also set a per-key
+spending cap on the OpenRouter key page so a runaway scenario can't
+exceed your budget.
+
+## Troubleshooting
+
+**"Submissions return 401 even with the right password."** Most likely
+the `ACCESS_PASSWORD` secret was never set in production. Check
+`wrangler secret list` from inside `worker/` — both `OPENROUTER_API_KEY`
+and `ACCESS_PASSWORD` need to appear.
+
+**"The landing page accepts the password but the first submission fails
+with `Failed: Unauthorized`."** The frontend cached an old password
+from a previous deploy where the password was different. Have the
+student clear `localStorage` (DevTools → Application → Storage →
+`prompt-arena:password`) or just re-enter the password — a 401 from
+the worker now triggers an automatic cache-clear on the next reload.
+
+**"CORS errors in the browser console after deploy."** The Pages
+origin isn't in `ALLOWED_ORIGINS` in `worker/src/index.js`. Add it,
+`npm run deploy`. Origin is just protocol + host — no trailing slash,
+no path.
+
+**"`Failed: Unexpected end of JSON input` on a real submission."**
+The judge response was truncated. Bump `MAX_TOKENS` in
+`worker/src/index.js`, redeploy. The shipped 10000 is enough for the
+five included scenarios; a much larger custom scenario might need
+more.
+
+**"Pages workflow succeeded but the page is blank or 404."** Confirm
+Settings → Pages → Source is set to **GitHub Actions** (not "Deploy
+from a branch"). Also check that the deploy workflow ran successfully
+under the **Actions** tab.
+
+**"Leaderboard shows seeded fake names instead of real submissions."**
+Either no real submissions have landed yet (in which case the seeded
+names are fallback by design) or the GET to the worker is failing.
+Open DevTools → Network and look for the GET to your worker URL — a
+non-200 response or a CORS error there is the culprit.
+
+**"Old scores still appear after I changed the rubric."** The KV
+entries for that scenario are stale. Wipe them with
+`wrangler kv:key delete --binding=LEADERBOARD lb:<scenario-id>`.
+
+**"`wrangler dev` fails with `Error: The package "@cloudflare/workerd-linux-64" could not be found`."**
+Optional dependencies were skipped during `npm install`. From `worker/`,
+`rm -rf node_modules package-lock.json && npm install --include=optional`
+fixes it.
 
 ## Scoring model
 
