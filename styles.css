@@ -226,6 +226,42 @@ html, body {
   background: var(--bg-card);
 }
 
+/* ─── Scenario picker ─── */
+.scenario-picker {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  padding: 4px 28px 4px 10px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--ink);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23707070' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 10px;
+  max-width: 260px;
+}
+.scenario-picker:hover { border-color: var(--ink-3); }
+.scenario-picker:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-soft); }
+
+/* ─── Text button (sign out) ─── */
+.text-btn {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--ink-3);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.text-btn:hover { color: var(--ink); border-color: var(--ink-3); }
+
 /* ─── Language toggle ─── */
 .lang-toggle {
   display: inline-flex;

@@ -19,6 +19,16 @@ const CONFIG = {
   scenariosDir: "scenarios",
 };
 
+// Manifest of shipped scenarios — drives the in-UI scenario picker.
+// Add an entry here when you add a new <slug>.<lang>.yaml pair.
+const SCENARIOS = [
+  { slug: "swiss-cantons",      round: 1, label_en: "Cantonal tax burden",     label_de: "Kantonale Steuerlast" },
+  { slug: "sbb-delays",         round: 2, label_en: "SBB delays",              label_de: "SBB-Verspätungen" },
+  { slug: "apartment-rent",     round: 3, label_en: "Apartment rent",          label_de: "Wohnungsmieten" },
+  { slug: "stock-returns",      round: 4, label_en: "Risk-adjusted winners",   label_de: "Risikobereinigte Gewinner" },
+  { slug: "saas-product-lines", round: 5, label_en: "Q4 product lines",        label_de: "Q4-Produktlinien" },
+];
+
 const state = {
   scenario: null,
   locked: false,
@@ -91,6 +101,7 @@ const STRINGS = {
     gate_checking: "Checking…",
     gate_error: "That password isn't right — try again.",
     gate_foot: "QAME Lab · Institute of Applied Data Science & Finance · BFH-W",
+    signout_btn: "Sign out",
   },
   de: {
     round: "Runde",
@@ -149,6 +160,7 @@ const STRINGS = {
     gate_checking: "Wird geprüft…",
     gate_error: "Das Passwort ist nicht korrekt — bitte erneut versuchen.",
     gate_foot: "QAME Lab · Institute of Applied Data Science & Finance · BFH-W",
+    signout_btn: "Abmelden",
   },
 };
 
@@ -181,6 +193,7 @@ async function setLang(lang) {
   state.lang = lang;
   try { localStorage.setItem(LANG_KEY, lang); } catch {}
   applyLang(lang);
+  populateScenarioPicker();
   // Re-fetch the scenario in the new language and re-render.
   state.locked = false;
   state.yourMech = null;
@@ -496,6 +509,7 @@ async function gateSubmit(e) {
 }
 
 function initApp() {
+  populateScenarioPicker();
   loadScenario();
   try {
     const stored = localStorage.getItem(NAME_KEY);
@@ -503,6 +517,44 @@ function initApp() {
   } catch {}
   $("submit-btn").addEventListener("click", submitPrompt);
   $("reflection-save").addEventListener("click", saveReflection);
+  $("signout-btn").addEventListener("click", signOut);
+  $("scenario-picker").addEventListener("change", onScenarioPickerChange);
+}
+
+function signOut() {
+  try { localStorage.removeItem(PASSWORD_KEY); } catch {}
+  location.reload();
+}
+
+// ─── Scenario picker ───
+function currentScenarioSlug() {
+  const params = new URLSearchParams(location.search);
+  return params.get("scenario") || CONFIG.defaultScenario;
+}
+
+function populateScenarioPicker() {
+  const sel = $("scenario-picker");
+  if (!sel) return;
+  const current = currentScenarioSlug();
+  const labelKey = `label_${state.lang}`;
+  sel.innerHTML = SCENARIOS.map((s) =>
+    `<option value="${escapeHtml(s.slug)}"${s.slug === current ? " selected" : ""}>` +
+      `${escapeHtml(t("round"))} ${s.round} · ${escapeHtml(s[labelKey])}` +
+    `</option>`
+  ).join("");
+}
+
+function onScenarioPickerChange(e) {
+  const slug = e.target.value;
+  const url = new URL(location.href);
+  if (slug === CONFIG.defaultScenario) {
+    url.searchParams.delete("scenario");
+  } else {
+    url.searchParams.set("scenario", slug);
+  }
+  // Hard navigation — simplest way to reset locked state, results,
+  // leaderboard fetch, and rendered scenario without subtle bugs.
+  location.href = url.toString();
 }
 
 // ─── Bootstrap ───
