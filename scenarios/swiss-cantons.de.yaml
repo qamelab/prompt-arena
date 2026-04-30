@@ -1,0 +1,101 @@
+id: swiss-cantons-tax
+title: "Steuerlast der Kantone — wohlhabende Ausreisser"
+round: 1
+
+# ─── Öffentliche Inhalte (für Studierende sichtbar) ───
+briefing: |
+  Sie sind Junior-Analyst:in beim Bundesamt für Statistik (BFS). Das Kapitel
+  zur Kantonsfinanzlage im Statistischen Jahrbuch der Schweiz braucht für die
+  nächste Ausgabe eine Grafik und einen begleitenden Absatz dazu, welche
+  Kantone bei den Steuereinnahmen pro Kopf ungewöhnlich weit über dem Rest
+  liegen. Die Bevölkerung der Kantone unterscheidet sich um eine
+  Grössenordnung (Zürich ist rund hundertmal so gross wie Appenzell
+  Innerrhoden), deshalb sind die rohen Steuereinnahmen nicht vergleichbar —
+  das Kapitel braucht eine normierte Sicht, die die Ausreisser fair benennt.
+
+task: |
+  Identifizieren Sie die fünf Schweizer Kantone mit den höchsten
+  Steuereinnahmen pro Kopf im Jahr 2023 und zeigen Sie, wie sich der
+  Pro-Kopf-Wert (oder der Rang) dieser fünf über den Zeitraum 2014-2023
+  verschoben hat.
+
+  Berichten Sie neben der Grafik den Median und den Interquartilsabstand
+  (IQR) der Pro-Kopf-Steuereinnahmen 2023 über alle 26 Kantone und
+  markieren Sie diejenigen Kantone, deren 2023er-Wert um mehr als 1.5 × IQR
+  über dem dritten Quartil liegt — das sind die "wohlhabenden Ausreisser",
+  die das Kapitel benennen möchte.
+
+  Worauf zu achten ist: Es geht um Wohlstandsverteilung — Kennzahlen, die
+  *robust* gegenüber Extremwerten sind (Median, IQR), passen besser als
+  Mittelwert und Standardabweichung, denn die Letzteren würden gerade durch
+  jene Ausreisser verzerrt, die wir benennen wollen. Die Wahl der
+  Y-Achsen-Codierung (rohe CHF pro Kopf vs. Rangposition) ist eine echte
+  Designfrage; beides ist vertretbar, aber die Geschichten, die sie
+  erzählen, unterscheiden sich. Der Datensatz enthält zwei zusätzliche
+  Spalten (gdp_per_capita, cantonal_expenditure), die für diese Frage
+  nicht nötig sind — Sie dürfen sie ignorieren.
+
+dataset:
+  filename: ch_cantons_tax.csv
+  rows: 260
+  schema_preview: |
+    canton  year  population  tax_revenue  gdp_per_capita  cantonal_expenditure
+    ZH      2023   1559300    18943000          92400              17820000
+    BE      2023   1051600     9847000          78900              10412000
+    LU      2023    420326     3687000          82500               3941000
+    ZG      2023    130968     2641000         162400               2258000
+    ... (26 Kantone × 10 Jahre, 2014-2023, 260 Zeilen)
+  description: |
+    Schweizer Kantonsfinanzdaten. Spalten: canton (chr, 2-Buchstaben-Kürzel),
+    year (int 2014-2023), population (int), tax_revenue (int CHF),
+    gdp_per_capita (int CHF), cantonal_expenditure (int CHF). 26 Kantone × 10
+    Jahre = 260 Zeilen. Die Spalten gdp_per_capita und cantonal_expenditure
+    sind Zusatzkontext; die zentrale Frage betrifft tax_revenue / population.
+
+# ─── Verborgene Inhalte (nur für die Bewertung) ───
+mechanical_checks:
+  - key: computes_per_capita
+    label: Pro-Kopf-Berechnung korrekt
+    description: tax_revenue / population wurde berechnet (nicht gdp_per_capita verwechselt, nicht durch cantonal_expenditure dividiert)
+  - key: picks_top5_2023
+    label: Top 5 aus 2023 ausgewählt
+    description: Die Top-5-Auswahl basiert ausschliesslich auf 2023er-Daten — nicht über Jahre gepoolt und nicht auf Basis von gdp_per_capita
+  - key: tracks_those5_full_decade
+    label: Dieselben 5 über 2014-2023 verfolgt
+    description: Visualisiert werden DIESELBEN 5 Kantone über das gesamte 10-Jahres-Fenster — nicht jährlich neue Top-5 und nicht nur 2023
+  - key: reports_median_iqr_2023
+    label: Median & IQR für 2023 ausgewiesen
+    description: Median und Interquartilsabstand der Pro-Kopf-Steuereinnahmen 2023 über alle 26 Kantone werden explizit berechnet und gezeigt (Tabelle, Annotation oder Begleittext)
+  - key: flags_outliers_above_q3
+    label: Wohlhabende Ausreisser markiert
+    description: Kantone, deren 2023er-Pro-Kopf-Wert Q3 + 1.5 × IQR übersteigt, werden im Output explizit benannt (auf der Grafik markiert, in einer Liste oder im Begleittext)
+  - key: has_axis_labels_legend
+    label: Achsenbeschriftung & Legende
+    description: Achsenbeschriftungen sind vorhanden und eine Legende (oder direkte Beschriftung am Linienende) macht die einzelnen Kantone identifizierbar
+  - key: tidyverse_idiomatic
+    label: Tidyverse-idiomatisch
+    description: Sauberer dplyr/ggplot2-Code mit quantile()/summarise(), keine Base-R-Hacks oder Copy-Paste-Schleifen
+
+holistic:
+  audience: Redaktion des Statistischen Jahrbuchs der Schweiz
+  voice: Redaktor:in beim Bundesamt für Statistik
+  evaluation_lens:
+    - Hebt das Resultat die "wohlhabenden Ausreisser" hervor, die das Kapitel braucht?
+    - Ist die Grafik ehrlich — Y-Achse mit sinnvoller Basis, keine Achsen-Tricks?
+    - Werden die Kennzahlen (Median + IQR) zusammen mit der Grafik kommuniziert, nicht versteckt?
+    - Passt der Stil zur Zielgruppe (Statistisches Jahrbuch, kein Kampagnen-Blog)?
+  anchors:
+    "0-9": Resultat ist falsch, irreführend oder benennt die Ausreisser nicht
+    "10-19": technisch vorhanden, aber die BFS-Redaktion würde es zur Überarbeitung zurückweisen
+    "20-26": gut — würde mit kleineren Korrekturen ins Jahrbuch aufgenommen
+    "27-30": ausgezeichnet — publikationsreif
+
+# ─── Bestenliste-Saat ───
+leaderboard_seed:
+  - {name: "Anna K.",  mech: 60, hol: 27}
+  - {name: "Marco P.", mech: 70, hol: 12}
+  - {name: "Lukas B.", mech: 50, hol: 24}
+  - {name: "Sarah W.", mech: 50, hol: 19}
+  - {name: "Tim H.",   mech: 40, hol: 21}
+  - {name: "Elena R.", mech: 30, hol: 22}
+  - {name: "David M.", mech: 30, hol: 17}

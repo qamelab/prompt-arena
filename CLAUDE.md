@@ -10,7 +10,7 @@ Prompt Arena is a classroom prompt-engineering exercise (BFH / HSG). Students su
 
 ```
 index.html, app.js, styles.css    # frontend (root, served as-is by GitHub Pages)
-scenarios/                        # *.yaml + *.csv pairs, fetched client-side via js-yaml
+scenarios/                        # bilingual: <slug>.en.yaml / <slug>.de.yaml + *.csv (one or two per scenario), fetched client-side via js-yaml
 brand/                            # mark, favicon, lockups, social card, brand specimen page
 worker/                           # Cloudflare Worker (the judge proxy)
   src/index.js                    # worker entry — buildJudgePrompt + OpenRouter call + KV writes
@@ -78,9 +78,19 @@ Five are shipped, each anchored to specific concepts from the BSAN courses (`~/t
 
 Each scenario tests 7 mechanical checks (10 points each) plus a 0-30 holistic. Datasets are synthetic but tuned so the headline answer is unambiguous (clean separation between top-N and the rest).
 
-Switch at runtime with `?scenario=<id>` (e.g. `?scenario=sbb-delays`). The default is `swiss-cantons` (`CONFIG.defaultScenario` in `app.js`).
+Switch scenarios at runtime with `?scenario=<id>` (e.g. `?scenario=sbb-delays`). The default is `swiss-cantons` (`CONFIG.defaultScenario` in `app.js`).
 
 Each scenario ships its dataset CSV in `scenarios/` with the filename declared in `dataset.filename`. The frontend turns that filename into a download link in the scenario card; the GitHub Pages workflow copies the whole `scenarios/` directory.
+
+## Internationalisation (DE / EN)
+
+The app is fully bilingual — German is the default for the BFH/HSG audience; English is one toggle click away.
+
+- **Static UI strings** live in the `STRINGS` object in `app.js` (one block per language). DOM elements with `data-i18n="key"` get their `textContent` set from `STRINGS[state.lang][key]`; `data-i18n-placeholder="key"` does the same for input placeholders. `applyLang(lang)` walks both selectors on every language change.
+- **Scenarios** are split into `<slug>.en.yaml` / `<slug>.de.yaml` pairs. The frontend fetches `scenarios/<slug>.<lang>.yaml`. Each language's YAML is a self-contained translation — title, briefing, task, schema_preview, dataset.description, mechanical_checks (label + description), and holistic (audience, voice, lens, anchors). Both languages target the same `id`, so a scenario's leaderboard is shared regardless of which language students used to write their prompt.
+- **Datasets** are split into language variants only when a category column has translatable values (e.g. SBB cause names, sector names, region names). `swiss-cantons` ships a single CSV (`ch_cantons_tax.csv`) referenced by both YAMLs because its values are all numeric / canton codes. The other four scenarios have `<file>.en.csv` / `<file>.de.csv` pairs declared in their respective YAMLs.
+- **Toggle UI**: two `.lang-btn` buttons (`data-lang="de"` / `data-lang="en"`) in the masthead and inside the gate card. Clicking calls `setLang(lang)`, which persists to `localStorage["prompt-arena:lang"]`, re-renders all `data-i18n` elements, refetches the scenario in the new language, and resets any pending submission state. The locked-submission case is intentionally cleared so language never silently mixes English judge feedback with a German UI (or vice versa).
+- **Adding a new scenario** means writing both `.en.yaml` and `.de.yaml`, plus translated CSVs if the category values differ. See "Adding scenarios" below for the YAML shape.
 
 ## Adding scenarios
 

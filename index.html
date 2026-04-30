@@ -42,8 +42,8 @@
         <path d="M 64 56 L 134 100 L 64 144" stroke="url(#pa-gate)" stroke-width="14" fill="none" stroke-linejoin="round" />
       </svg>
       <h1 class="gate-wordmark">Prompt Arena</h1>
-      <p class="gate-tag">Score the prompt, not the student.</p>
-      <p class="gate-desc">
+      <p class="gate-tag" data-i18n="gate_tag">Score the prompt, not the student.</p>
+      <p class="gate-desc" data-i18n="gate_desc">
         A classroom prompt-engineering exercise. You'll get one data-analytics
         scenario and one dataset; iterate on your prompt locally in RStudio with
         Microsoft Copilot, then submit your final, polished version here once.
@@ -52,11 +52,15 @@
         leaderboard.
       </p>
       <form id="gate-form" class="gate-form">
-        <input id="gate-password" type="password" placeholder="Access password" autocomplete="current-password" autofocus />
-        <button id="gate-submit" type="submit" class="primary">Enter</button>
-        <p id="gate-error" class="gate-error hidden">That password isn't right — try again.</p>
+        <input id="gate-password" type="password" data-i18n-placeholder="gate_password_placeholder" placeholder="Access password" autocomplete="current-password" autofocus />
+        <button id="gate-submit" type="submit" class="primary" data-i18n="gate_submit">Enter</button>
+        <p id="gate-error" class="gate-error hidden" data-i18n="gate_error">That password isn't right — try again.</p>
       </form>
-      <p class="gate-foot muted">QAME · BFH / HSG</p>
+      <div class="gate-langs">
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <p class="gate-foot muted" data-i18n="gate_foot">QAME · BFH / HSG</p>
     </article>
   </div>
 
@@ -78,8 +82,12 @@
         <span class="brand-name">Prompt Arena</span>
       </div>
       <div class="masthead-meta">
-        <span id="round-pill" class="pill">Round —</span>
-        <span class="muted">Single shot · final submission</span>
+        <span id="round-pill" class="pill">—</span>
+        <span class="muted" data-i18n="single_shot">Single shot · final submission</span>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
       </div>
     </div>
   </header>
@@ -88,59 +96,59 @@
 
     <!-- ─── Scenario card ─── -->
     <section class="block">
-      <div class="block-label">Scenario</div>
+      <div class="block-label" data-i18n="scenario_label">Scenario</div>
       <article class="scenario-card">
-        <h1 id="scenario-title" class="scenario-title">Loading…</h1>
+        <h1 id="scenario-title" class="scenario-title" data-i18n="loading">Loading…</h1>
         <div id="scenario-briefing" class="scenario-briefing"></div>
         <div id="scenario-task" class="scenario-task"></div>
         <pre id="scenario-schema" class="scenario-schema"></pre>
         <div class="scenario-meta">
-          <span><span class="meta-key">File</span> <a id="meta-filename" href="#" download>—</a></span>
-          <span><span class="meta-key">Rows</span> <span id="meta-rows">—</span></span>
+          <span><span class="meta-key" data-i18n="file_label">File</span> <a id="meta-filename" href="#" download>—</a></span>
+          <span><span class="meta-key" data-i18n="rows_label">Rows</span> <span id="meta-rows">—</span></span>
         </div>
       </article>
     </section>
 
     <!-- ─── Submission ─── -->
     <section class="block">
-      <div class="callout">
+      <div class="callout" data-i18n="iterate_callout">
         Iterate freely in RStudio with Microsoft Copilot. When you're sure, paste your final prompt below — submission locks it in.
       </div>
-      <div class="block-label">Display name</div>
-      <input id="name-input" type="text" maxlength="30" placeholder="Shown on the class leaderboard" autocomplete="off" />
+      <div class="block-label" data-i18n="name_label">Display name</div>
+      <input id="name-input" type="text" maxlength="30" data-i18n-placeholder="name_placeholder" placeholder="Shown on the class leaderboard" autocomplete="off" />
 
-      <div class="block-label">Your final prompt</div>
-      <textarea id="prompt-input" rows="6" placeholder="Paste your final, polished prompt…"></textarea>
+      <div class="block-label" data-i18n="prompt_label">Your final prompt</div>
+      <textarea id="prompt-input" rows="6" data-i18n-placeholder="prompt_placeholder" placeholder="Paste your final, polished prompt…"></textarea>
       <div class="submit-row">
-        <button id="submit-btn" class="primary">Lock in &amp; submit</button>
+        <button id="submit-btn" class="primary" data-i18n="submit_btn">Lock in &amp; submit</button>
         <span id="submit-status" class="muted"></span>
       </div>
     </section>
 
     <!-- ─── Results ─── -->
     <section id="results" class="block hidden">
-      <div class="block-label">Final score</div>
+      <div class="block-label" data-i18n="final_score_label">Final score</div>
       <article class="verdict-card">
         <div class="verdict-grid">
           <div class="verdict-score">
             <div id="total-score" class="score-big">—</div>
-            <div class="score-sub">out of 100</div>
+            <div class="score-sub" data-i18n="out_of_100">out of 100</div>
             <div id="tier-pill" class="tier-pill"></div>
             <div id="score-breakdown" class="score-breakdown"></div>
           </div>
           <div class="verdict-checks">
-            <div class="checks-head">Mechanical checks</div>
+            <div class="checks-head" data-i18n="mech_checks_head">Mechanical checks</div>
             <ul id="checks-list" class="checks-list"></ul>
           </div>
         </div>
       </article>
 
-      <div class="block-label">Editor's verdict</div>
+      <div class="block-label" data-i18n="editor_verdict_label">Editor's verdict</div>
       <article class="holistic-card">
         <div class="holistic-grid">
           <div>
             <div id="holistic-num" class="holistic-num">—</div>
-            <div class="score-sub">/ 30 · holistic</div>
+            <div class="score-sub" data-i18n="holistic_sub">/ 30 · holistic</div>
           </div>
           <div id="holistic-text" class="holistic-text"></div>
         </div>
@@ -148,19 +156,19 @@
 
       <div id="mech-feedback" class="mech-feedback"></div>
 
-      <div class="block-label">R code your prompt produced</div>
+      <div class="block-label" data-i18n="code_label">R code your prompt produced</div>
       <pre id="generated-code" class="code-block"></pre>
 
-      <div class="block-label">Result of running it</div>
+      <div class="block-label" data-i18n="output_label">Result of running it</div>
       <div id="generated-output" class="output-block"></div>
 
       <article id="reflection-card" class="reflection-card hidden">
-        <div class="block-label">Reflection · optional</div>
-        <p class="reflection-prompt">Looking at the editor's verdict, what would you change about your prompt next time?</p>
-        <p class="reflection-sub">Not graded — for your own notes.</p>
-        <textarea id="reflection-input" rows="3" placeholder="One or two sentences…"></textarea>
+        <div class="block-label" data-i18n="reflection_label">Reflection · optional</div>
+        <p class="reflection-prompt" data-i18n="reflection_prompt">Looking at the editor's verdict, what would you change about your prompt next time?</p>
+        <p class="reflection-sub" data-i18n="reflection_sub">Not graded — for your own notes.</p>
+        <textarea id="reflection-input" rows="3" data-i18n-placeholder="reflection_placeholder" placeholder="One or two sentences…"></textarea>
         <div class="submit-row">
-          <button id="reflection-save" class="secondary">Save reflection</button>
+          <button id="reflection-save" class="secondary" data-i18n="reflection_btn">Save reflection</button>
           <span id="reflection-status" class="muted"></span>
         </div>
       </article>
@@ -168,14 +176,14 @@
 
     <!-- ─── Leaderboard ─── -->
     <section class="block">
-      <div class="block-label">Class leaderboard · this round</div>
+      <div class="block-label" data-i18n="leaderboard_label">Class leaderboard · this round</div>
       <div class="lb-table">
         <div class="lb-header">
-          <span>#</span>
-          <span>Student</span>
-          <span class="num">Mech</span>
-          <span class="num">Edit</span>
-          <span class="num">Total</span>
+          <span data-i18n="lb_rank">#</span>
+          <span data-i18n="lb_student">Student</span>
+          <span class="num" data-i18n="lb_mech">Mech</span>
+          <span class="num" data-i18n="lb_edit">Edit</span>
+          <span class="num" data-i18n="lb_total">Total</span>
         </div>
         <div id="lb-body"></div>
       </div>
@@ -184,8 +192,8 @@
   </main>
 
   <footer class="page-footer">
-    <span>Prompt Arena · QAME · BFH / HSG</span>
-    <span class="muted">No student data is collected.</span>
+    <span data-i18n="footer_brand">Prompt Arena · QAME · BFH / HSG</span>
+    <span class="muted" data-i18n="footer_data">No student data is collected.</span>
   </footer>
   </div><!-- /#app -->
 

@@ -222,6 +222,40 @@ html, body {
   background: var(--bg-card);
 }
 
+/* ─── Language toggle ─── */
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.lang-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 4px 9px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  color: var(--ink-3);
+}
+.lang-btn:hover:not(.active) { color: var(--ink); }
+.lang-btn.active {
+  background: var(--ink);
+  color: var(--bg-card);
+}
+.gate-langs {
+  display: inline-flex;
+  margin-top: 24px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.gate-langs .lang-btn { padding: 6px 14px; font-size: 12px; }
+
 /* ─── Block labels ─── */
 .block-label {
   font-size: 11px;

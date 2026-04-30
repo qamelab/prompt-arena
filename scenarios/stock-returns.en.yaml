@@ -38,7 +38,7 @@ task: |
   question — picking and showing only the 5 selected is the point.
 
 dataset:
-  filename: tech_stocks_daily.csv
+  filename: tech_stocks_daily.en.csv
   rows: 32600
   schema_preview: |
     date        ticker  name        sector              close    volume     market_cap_usd

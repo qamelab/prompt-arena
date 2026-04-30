@@ -35,7 +35,7 @@ task: |
   Q4 months before plotting.
 
 dataset:
-  filename: saas_product_lines.csv
+  filename: saas_product_lines.en.csv
   rows: 432
   schema_preview: |
     month     product   region     revenue_chf   new_customers  churned_customers  active_customers

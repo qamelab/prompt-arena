@@ -25,10 +25,173 @@ const state = {
   yourMech: null,
   yourHol: null,
   liveLeaderboard: [], // entries from worker KV (real submissions)
+  lang: "de",          // overwritten in initLang() before any render
 };
 
 const NAME_KEY = "prompt-arena:name";
 const PASSWORD_KEY = "prompt-arena:password";
+const LANG_KEY = "prompt-arena:lang";
+
+// ─── i18n string table ───
+const STRINGS = {
+  en: {
+    round: "Round",
+    single_shot: "Single shot · final submission",
+    scenario_label: "Scenario",
+    loading: "Loading…",
+    file_label: "File",
+    rows_label: "Rows",
+    iterate_callout: "Iterate freely in RStudio with Microsoft Copilot. When you're sure, paste your final prompt below — submission locks it in.",
+    name_label: "Display name",
+    name_placeholder: "Shown on the class leaderboard",
+    prompt_label: "Your final prompt",
+    prompt_placeholder: "Paste your final, polished prompt…",
+    submit_btn: "Lock in & submit",
+    final_score_label: "Final score",
+    out_of_100: "out of 100",
+    mech_checks_head: "Mechanical checks",
+    editor_verdict_label: "Editor's verdict",
+    holistic_sub: "/ 30 · holistic",
+    code_label: "R code your prompt produced",
+    output_label: "Result of running it",
+    reflection_label: "Reflection · optional",
+    reflection_prompt: "Looking at the editor's verdict, what would you change about your prompt next time?",
+    reflection_sub: "Not graded — for your own notes.",
+    reflection_placeholder: "One or two sentences…",
+    reflection_btn: "Save reflection",
+    leaderboard_label: "Class leaderboard · this round",
+    lb_rank: "#",
+    lb_student: "Student",
+    lb_mech: "Mech",
+    lb_edit: "Edit",
+    lb_total: "Total",
+    footer_brand: "Prompt Arena · QAME · BFH / HSG",
+    footer_data: "No student data is collected.",
+    could_not_load: "Could not load scenario",
+    failed_fetch: "Failed to fetch",
+    enter_name_first: "Enter a display name first.",
+    empty_prompt: "Empty prompt — type something first.",
+    evaluating_btn: "Evaluating…",
+    evaluating_status: "Generating code, simulating output, judging…",
+    submitted_btn: "Submitted",
+    submitted_status: "Submission locked.",
+    failed_status_prefix: "Failed: ",
+    failed_status_suffix: ". Submission was NOT locked — try again.",
+    access_expired: "Access expired — refresh and re-enter the password.",
+    saved_btn: "Saved",
+    saved_status: "Saved locally.",
+    tier_A: "Excellent",
+    tier_B: "Solid",
+    tier_C: "Needs work",
+    tier_F: "Failed",
+    gate_tag: "Score the prompt, not the student.",
+    gate_desc: "A classroom prompt-engineering exercise. You'll get one data-analytics scenario and one dataset; iterate on your prompt locally in RStudio with Microsoft Copilot, then submit your final, polished version here once. Two scores come back: seven binary mechanical checks and one editor's verdict in the voice of the scenario's audience. Both land on the class leaderboard.",
+    gate_password_placeholder: "Access password",
+    gate_submit: "Enter",
+    gate_checking: "Checking…",
+    gate_error: "That password isn't right — try again.",
+    gate_foot: "QAME · BFH / HSG",
+  },
+  de: {
+    round: "Runde",
+    single_shot: "Einzelversuch · finale Abgabe",
+    scenario_label: "Szenario",
+    loading: "Lädt…",
+    file_label: "Datei",
+    rows_label: "Zeilen",
+    iterate_callout: "Iterieren Sie frei in RStudio mit Microsoft Copilot. Wenn Sie sicher sind, fügen Sie Ihren finalen Prompt unten ein — die Abgabe wird damit fixiert.",
+    name_label: "Anzeigename",
+    name_placeholder: "Erscheint in der Klassen-Bestenliste",
+    prompt_label: "Ihr finaler Prompt",
+    prompt_placeholder: "Fügen Sie Ihren ausgefeilten Prompt ein…",
+    submit_btn: "Festlegen & abschicken",
+    final_score_label: "Endpunktzahl",
+    out_of_100: "von 100",
+    mech_checks_head: "Mechanische Prüfungen",
+    editor_verdict_label: "Urteil der Redaktion",
+    holistic_sub: "/ 30 · holistisch",
+    code_label: "Vom Prompt erzeugter R-Code",
+    output_label: "Ausführungsergebnis",
+    reflection_label: "Reflexion · optional",
+    reflection_prompt: "Was würden Sie bei Ihrem nächsten Prompt anders machen, wenn Sie das Urteil der Redaktion zugrunde legen?",
+    reflection_sub: "Wird nicht bewertet — für Ihre Notizen.",
+    reflection_placeholder: "Ein oder zwei Sätze…",
+    reflection_btn: "Reflexion speichern",
+    leaderboard_label: "Klassen-Bestenliste · diese Runde",
+    lb_rank: "#",
+    lb_student: "Studierende",
+    lb_mech: "Mech",
+    lb_edit: "Red.",
+    lb_total: "Total",
+    footer_brand: "Prompt Arena · QAME · BFH / HSG",
+    footer_data: "Es werden keine Studierendendaten erhoben.",
+    could_not_load: "Szenario konnte nicht geladen werden",
+    failed_fetch: "Fehler beim Laden von",
+    enter_name_first: "Geben Sie zuerst einen Anzeigenamen ein.",
+    empty_prompt: "Leerer Prompt — schreiben Sie zuerst etwas.",
+    evaluating_btn: "Wird bewertet…",
+    evaluating_status: "Code wird erzeugt, Ausgabe simuliert, bewertet…",
+    submitted_btn: "Abgegeben",
+    submitted_status: "Abgabe fixiert.",
+    failed_status_prefix: "Fehler: ",
+    failed_status_suffix: ". Die Abgabe wurde NICHT fixiert — bitte erneut versuchen.",
+    access_expired: "Zugang abgelaufen — Seite neu laden und Passwort erneut eingeben.",
+    saved_btn: "Gespeichert",
+    saved_status: "Lokal gespeichert.",
+    tier_A: "Sehr gut",
+    tier_B: "Solide",
+    tier_C: "Überarbeitung nötig",
+    tier_F: "Nicht bestanden",
+    gate_tag: "Bewertet wird der Prompt, nicht die Person.",
+    gate_desc: "Eine Übung zum Prompt-Engineering im Klassenraum. Sie erhalten ein Datenanalyse-Szenario und einen Datensatz; iterieren Sie Ihren Prompt lokal in RStudio mit Microsoft Copilot und reichen Sie hier einmalig die finale, ausgefeilte Version ein. Sie erhalten zwei Punktzahlen zurück: sieben binäre mechanische Prüfungen und ein Urteil der Redaktion im Stil der Zielgruppe des Szenarios. Beide erscheinen in der Klassen-Bestenliste.",
+    gate_password_placeholder: "Zugangspasswort",
+    gate_submit: "Eintreten",
+    gate_checking: "Wird geprüft…",
+    gate_error: "Das Passwort ist nicht korrekt — bitte erneut versuchen.",
+    gate_foot: "QAME · BFH / HSG",
+  },
+};
+
+const t = (key) => STRINGS[state.lang][key] ?? STRINGS.en[key] ?? key;
+
+function applyLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    el.textContent = t(el.dataset.i18n);
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    el.placeholder = t(el.dataset.i18nPlaceholder);
+  });
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+}
+
+function initLang() {
+  let lang = "de";
+  try { lang = localStorage.getItem(LANG_KEY) || lang; } catch {}
+  if (lang !== "de" && lang !== "en") lang = "de";
+  state.lang = lang;
+  applyLang(lang);
+}
+
+async function setLang(lang) {
+  if (lang !== "de" && lang !== "en") return;
+  if (lang === state.lang) return;
+  state.lang = lang;
+  try { localStorage.setItem(LANG_KEY, lang); } catch {}
+  applyLang(lang);
+  // Re-fetch the scenario in the new language and re-render.
+  state.locked = false;
+  state.yourMech = null;
+  state.yourHol = null;
+  $("results")?.classList.add("hidden");
+  $("submit-btn").disabled = false;
+  $("submit-btn").textContent = t("submit_btn");
+  $("submit-status").textContent = "";
+  $("prompt-input").disabled = false;
+  await loadScenario();
+}
 
 // ─── DOM helpers ───
 const $ = (id) => document.getElementById(id);
@@ -39,7 +202,7 @@ const escapeHtml = (s) =>
 async function loadScenario() {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("scenario") || CONFIG.defaultScenario;
-  const url = `${CONFIG.scenariosDir}/${slug}.yaml`;
+  const url = `${CONFIG.scenariosDir}/${slug}.${state.lang}.yaml`;
 
   try {
     const res = await fetch(url);
@@ -50,15 +213,15 @@ async function loadScenario() {
     renderLeaderboard();
     fetchLeaderboard();
   } catch (e) {
-    $("scenario-title").textContent = "Could not load scenario";
-    $("scenario-task").textContent = `Failed to fetch ${url} — ${e.message}`;
+    $("scenario-title").textContent = t("could_not_load");
+    $("scenario-task").textContent = `${t("failed_fetch")} ${url} — ${e.message}`;
   }
 }
 
 function renderScenario() {
   const s = state.scenario;
   document.title = `Prompt Arena · ${s.title}`;
-  $("round-pill").textContent = `Round ${s.round}`;
+  $("round-pill").textContent = `${t("round")} ${s.round}`;
   $("scenario-title").textContent = s.title;
   $("scenario-briefing").textContent = s.briefing.trim();
   $("scenario-task").textContent = s.task.trim();
@@ -89,21 +252,21 @@ async function submitPrompt() {
   if (state.locked) return;
   const name = $("name-input").value.trim();
   if (!name) {
-    $("submit-status").textContent = "Enter a display name first.";
+    $("submit-status").textContent = t("enter_name_first");
     $("name-input").focus();
     return;
   }
   const prompt = $("prompt-input").value.trim();
   if (!prompt) {
-    $("submit-status").textContent = "Empty prompt — type something first.";
+    $("submit-status").textContent = t("empty_prompt");
     return;
   }
   try { localStorage.setItem(NAME_KEY, name); } catch {}
 
   const btn = $("submit-btn");
   btn.disabled = true;
-  btn.textContent = "Evaluating…";
-  $("submit-status").textContent = "Generating code, simulating output, judging…";
+  btn.textContent = t("evaluating_btn");
+  $("submit-status").textContent = t("evaluating_status");
   $("prompt-input").disabled = true;
   $("results").classList.remove("hidden");
   resetResults();
@@ -128,9 +291,9 @@ async function submitPrompt() {
     // drop it and bounce the user back to the gate.
     if (res.status === 401) {
       try { localStorage.removeItem(PASSWORD_KEY); } catch {}
-      $("submit-status").textContent = "Access expired — refresh and re-enter the password.";
+      $("submit-status").textContent = t("access_expired");
       btn.disabled = false;
-      btn.textContent = "Lock in & submit";
+      btn.textContent = t("submit_btn");
       $("prompt-input").disabled = false;
       return;
     }
@@ -143,12 +306,12 @@ async function submitPrompt() {
     const result = await res.json();
     renderResult(result);
     state.locked = true;
-    btn.textContent = "Submitted";
-    $("submit-status").textContent = "Submission locked.";
+    btn.textContent = t("submitted_btn");
+    $("submit-status").textContent = t("submitted_status");
   } catch (e) {
-    $("submit-status").textContent = `Failed: ${e.message}. Submission was NOT locked — try again.`;
+    $("submit-status").textContent = `${t("failed_status_prefix")}${e.message}${t("failed_status_suffix")}`;
     btn.disabled = false;
-    btn.textContent = "Lock in & submit";
+    btn.textContent = t("submit_btn");
     $("prompt-input").disabled = false;
   }
 }
@@ -268,8 +431,8 @@ function saveReflection() {
   $("reflection-input").disabled = true;
   const btn = $("reflection-save");
   btn.disabled = true;
-  btn.textContent = "Saved";
-  $("reflection-status").textContent = "Saved locally.";
+  btn.textContent = t("saved_btn");
+  $("reflection-status").textContent = t("saved_status");
 }
 
 // ─── Helpers ───
@@ -279,8 +442,8 @@ function tier(score) {
   if (score >= 50) return "C";
   return "F";
 }
-function tierLabel(t) {
-  return { A: "Excellent", B: "Solid", C: "Needs work", F: "Failed" }[t];
+function tierLabel(tier) {
+  return t(`tier_${tier}`);
 }
 function clamp(n, lo, hi) {
   return Math.max(lo, Math.min(hi, n));
@@ -316,7 +479,7 @@ async function gateSubmit(e) {
   if (!pw) return;
   const btn = $("gate-submit");
   btn.disabled = true;
-  btn.textContent = "Checking…";
+  btn.textContent = t("gate_checking");
   $("gate-error").classList.add("hidden");
   const ok = await verifyPassword(pw);
   if (ok) {
@@ -327,7 +490,7 @@ async function gateSubmit(e) {
     $("gate-error").classList.remove("hidden");
     $("gate-password").value = "";
     btn.disabled = false;
-    btn.textContent = "Enter";
+    btn.textContent = t("gate_submit");
     $("gate-password").focus();
   }
 }
@@ -344,6 +507,10 @@ function initApp() {
 
 // ─── Bootstrap ───
 document.addEventListener("DOMContentLoaded", async () => {
+  initLang();
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => setLang(btn.dataset.lang));
+  });
   $("gate-form").addEventListener("submit", gateSubmit);
   const stored = (() => { try { return localStorage.getItem(PASSWORD_KEY); } catch { return null; } })();
   if (stored && await verifyPassword(stored)) {

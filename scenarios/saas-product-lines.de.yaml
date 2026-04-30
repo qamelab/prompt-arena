@@ -1,0 +1,104 @@
+id: saas-product-lines
+title: "Q4-Produktlinien-Grafik fürs Board"
+round: 5
+
+# ─── Öffentliche Inhalte ───
+briefing: |
+  Sie sind Analyst:in im Controlling-Team einer Schweizer B2B-Software-Firma.
+  Der CFO will EINE Grafik fürs Q4-Board-Pack — eine einzige Abbildung, mit
+  der das Board auf einen Blick sieht, welche der sechs Produktlinien im
+  Q4 2024 das Geschäft tragen und welche im Jahresvergleich nachlassen. Das
+  Board hat dreissig Sekunden für diese Folie; der Vorsitz wird das Ranking
+  aus der Grafik ablesen, nicht aus einer Fussnote, und die Frage "und wie
+  entwickelt sich jede Linie?" stellen, bevor der/die Analyst:in den Satz
+  ausgesprochen hat.
+
+task: |
+  Erstellen Sie eine einzige Grafik, die die sechs Produktlinien nach
+  Q4-2024-Umsatz rankt UND zugleich die Veränderung gegenüber Q4 2023
+  (year-over-year) je Linie kommuniziert.
+
+  Die Grafik muss der richtige *Typ* von Grafik für diesen Vergleich sein —
+  einer, den Führungskräfte in fünf Sekunden überblicken — und sie muss
+  ggplot2-Schichten klug einsetzen: Wählen Sie ein Geom, das zu einem
+  geordneten kategoriellen Vergleich passt; sortieren Sie die Kategorien
+  nach der Ranking-Kennzahl (lassen Sie sie nicht alphabetisch); beschriften
+  Sie Werte direkt auf den Geoms; formatieren Sie den Umsatz mit
+  Währungs- / abgekürzten Einheiten; wenden Sie ein klares minimalistisches
+  Theme an.
+
+  Worauf zu achten ist: "Geordneter kategorieller Vergleich" schliesst
+  einige Default-Wahlen aus, die ein generischer Copilot-Prompt produzieren
+  könnte — Tortendiagramme bekämpfen Ranking, Liniendiagramme über diskrete
+  ungeordnete Kategorien sind falsch, 3D-Balken verzerren die Proportionen.
+  Sortierte horizontale Balken (geom_col + coord_flip + fct_reorder) sind
+  ein starker Default; Dumbbell-Plots und Paired-Bar-Charts funktionieren
+  ebenfalls, wenn beide Jahre gezeigt werden. Zwei Kennzahlen in einer
+  Grafik (Umsatz + YoY) bedeutet, dass eine davon eine sekundäre Aesthetic
+  trägt — Farbskala auf den Balken, End-of-Bar-Text, Paired-Bar-Höhe oder
+  Dumbbell-Delta. Der Datensatz liegt im Long-Format vor (eine Zeile pro
+  product × region × month) — vor dem Plotten müssen Sie über Regionen und
+  Q4-Monate aggregieren.
+
+dataset:
+  filename: saas_product_lines.de.csv
+  rows: 432
+  schema_preview: |
+    month     product   region    revenue_chf   new_customers  churned_customers  active_customers
+    2023-01   Edge      Europa        1382000               48                 12               412
+    2023-01   Edge      Amerika       1195000               41                 11               356
+    2023-01   Edge      APAC           622000               23                  6               186
+    2023-01   Vault     Europa         985000               32                 18               498
+    ... (6 Produkte × 3 Regionen × 24 Monate, 2023-01 bis 2024-12; 432 Zeilen)
+  description: |
+    Synthetische Monatsperformance-Daten einer B2B-SaaS-Firma. Spalten:
+    month (chr "YYYY-MM"), product (chr — Edge / Vault / Atlas / Beacon /
+    Forge / Pulse), region (chr — Europa / Amerika / APAC), revenue_chf
+    (num — gebuchter Monatsumsatz), new_customers (int — Netto-Neuzugänge
+    im Monat), churned_customers (int — Verluste im Monat), active_customers
+    (int — Total Ende des Monats). 6 × 3 × 24 = 432 Zeilen. Das Quartal ist
+    in der Spalte month implizit.
+
+mechanical_checks:
+  - key: aggregates_q4_revenue_per_product
+    label: Q4-Umsatz pro Produkt aggregiert
+    description: revenue wird über die Q4-Monate (Okt / Nov / Dez) und über die Regionen summiert, beschränkt auf 2024, sodass eine Umsatzzahl pro Produkt entsteht
+  - key: computes_yoy_growth
+    label: YoY Q4 2024 vs Q4 2023 berechnet
+    description: Pro Produkt wird (Q4_2024_revenue / Q4_2023_revenue) − 1 berechnet — nicht nur die Roh-2024-Zahl, nicht Monat-über-Monat
+  - key: appropriate_geom_for_ranking
+    label: Geom passt zum geordneten Vergleich
+    description: Die Grafik verwendet geom_col / geom_bar mit coord_flip, einen Dumbbell, paired bars oder ein anderes Geom, das zu einem geordneten kategoriellen Vergleich passt — KEIN Liniendiagramm über ungeordnete Kategorien, KEIN Torten- / Donut-Chart, KEINE 3D-Balken
+  - key: products_ordered_by_metric
+    label: Produkte nach Kennzahl sortiert
+    description: Die Produkte werden umsortiert (z. B. forcats::fct_reorder, factor() mit geordneten Levels oder arrange()), sodass die Geoms nach Q4-2024-Umsatz oder YoY sortieren — NICHT alphabetisch, NICHT nach Eingabereihenfolge
+  - key: yoy_visualised_alongside_revenue
+    label: YoY zusammen mit Umsatz gezeigt
+    description: Die YoY-Veränderung ist sichtbar codiert — Farbskala auf den Balken, paired bars, Dumbbell-Delta, sekundäre Achse oder direktes Text-Label auf jedem Balken — nicht nur in der Konsole gedruckt
+  - key: direct_value_labels
+    label: Direkte Wert-Beschriftungen auf den Geoms
+    description: Umsatzwerte ODER YoY-Prozente erscheinen direkt auf den Balken (geom_text oder geom_label mit passendem nudge/hjust), im IBCS- / Tufte-Stil mit direkten Beschriftungen — nicht ausschliesslich in eine Legende oder auf Achsen-Ticks ausgelagert
+  - key: scales_format_currency_or_percent
+    label: Skalen formatieren Währung / Prozent
+    description: Mindestens eine Achse oder Beschriftung verwendet scales::label_currency, label_comma, label_number mit K/M-Suffix oder label_percent — rohe 7-stellige Zahlen oder ungerundete Dezimalwerte sind nicht akzeptabel
+
+holistic:
+  audience: CFO und Board, die ein einseitiges Q4-Deck lesen
+  voice: Stabsmitarbeiter:in mit dreissig Sekunden, um dem Board diese Folie zu briefen
+  evaluation_lens:
+    - Liest das Board das Ranking und die YoY-Geschichte ohne Konsultation einer anderen Folie?
+    - Ist das Geom ehrlich an die Daten angepasst — kategorielles Vergleichs-Geom für kategorielle Daten, kein dekorativer Überschuss (Tufte Data-Ink-Ratio, IBCS Farbe-als-Information)?
+    - Werden die ggplot2-Schichten gezielt eingesetzt — Aesthetic, Geom, Skala, Theme tragen jeweils ihr Gewicht, keine redundanten oder widersprüchlichen Layer?
+    - Ist der Prompt sinnvoll skopiert — leitet er die Studierenden zur richtigen Art von Grafik, ohne jedes Aesthetic überzuspezifizieren?
+  anchors:
+    "0-9": irreführend oder unleserlich, oder ein Charttyp, der gegen die Daten arbeitet (Torte, 3D, Linie über ungeordnete Kategorien)
+    "10-19": lesbar, aber das Board würde es nicht ohne Überarbeitung freigeben
+    "20-26": gut — würde mit kleineren Text-Korrekturen ins Deck aufgenommen
+    "27-30": ausgezeichnet — board-reif, jede Schicht verdient ihren Platz
+
+leaderboard_seed:
+  - {name: "Selina F.", mech: 70, hol: 26}
+  - {name: "Andrea B.", mech: 60, hol: 19}
+  - {name: "Niklas P.", mech: 50, hol: 23}
+  - {name: "Hanna E.",  mech: 40, hol: 21}
+  - {name: "Cyril W.",  mech: 30, hol: 18}

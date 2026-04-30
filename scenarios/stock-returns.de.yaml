@@ -1,0 +1,106 @@
+id: stock-returns
+title: "Risikobereinigte Gewinner — fünf Jahre Tech"
+round: 4
+
+# ─── Öffentliche Inhalte ───
+briefing: |
+  Sie sind Junior-Analyst:in im Markets-Desk einer Finanzzeitung. Die
+  Jahresend-Ausgabe braucht eine Grafik der "risikobereinigten Gewinner" für
+  das Tech-Aktien-Feature: nicht die offensichtlichen Roh-Gewinner, sondern
+  die Titel, die Rendite pro Risiko-Einheit geliefert haben. Das Argument
+  des Desks: Eine Aktie, die sich mit täglichen Schwankungen von ±5 %
+  verdoppelt hat, ist eine andere Geschichte als eine, die sich mit
+  Schwankungen von ±1 % verdoppelt hat — die Grafik soll diesen Unterschied
+  abbilden. Die Ressortleitung möchte keinen Namen nur deshalb sehen, weil
+  er einen einzelnen Explosionsmonat hatte — die Grafik soll zeigen, wie
+  haltbar die Performance über ein Fünfjahresfenster war.
+
+task: |
+  Berechnen Sie für jeden Ticker einfache tägliche Renditen: heutiger
+  Schlusskurs geteilt durch den Schlusskurs des vorigen Handelstags, minus 1
+  (in R: close / lag(close) - 1). Berechnen Sie für 2024 (nur 2024er
+  Handelstage) (a) die Gesamtrendite und (b) die annualisierte
+  Renditen-Standardabweichung (tägliche SD multipliziert mit sqrt(252)).
+
+  Wählen Sie die fünf Ticker mit der höchsten risikobereinigten Rendite,
+  definiert als 2024er Gesamtrendite geteilt durch 2024er annualisierte SD.
+  Plotten Sie für diese fünf den kumulierten Kursverlauf, indexiert auf 100
+  am ersten Handelstag 2020 bis Ende 2024. Färben Sie die Linien nach Sektor
+  (eine konsistente Farbe pro Sektor, IBCS-Stil) und platzieren Sie das
+  Ticker-Label direkt am Ende seiner Linie — nicht in einer seitlichen
+  Legende.
+
+  Worauf zu achten ist: "Risiko" ist hier einfach die Renditen-SD — es gibt
+  ausgefeiltere Masse (Sortino, Sharpe mit risikofreiem Zins, Drawdown),
+  aber das Desk will etwas, das ein Absatz Text erklären kann. Der
+  Annualisierungsfaktor sqrt(252) folgt aus der groben Konvention von 252
+  Handelstagen pro Jahr und der i.i.d.-Annahme für tägliche Renditen;
+  multiplizieren Sie nicht mit 252 (das würde die Varianz skalieren, nicht
+  die Standardabweichung). Der kumulierte Pfad braucht für alle fünf Linien
+  *dieselbe* Startbasis (erster Handelstag 2020), nicht jeweils einen
+  ticker-spezifischen ersten Tag, damit der visuelle Vergleich ehrlich ist.
+  Der Datensatz hat 25 Ticker und eine Spalte market_cap_usd, die Sie für
+  diese Frage nicht benötigen — gerade fünf auswählen und zeigen ist der
+  Witz.
+
+dataset:
+  filename: tech_stocks_daily.de.csv
+  rows: 32600
+  schema_preview: |
+    date        ticker  name        sector            close    volume     market_cap_usd
+    2020-01-02  NVDA    NVIDIA      Technologie       60.00    234500000        367000000000
+    2020-01-02  AAPL    Apple       Technologie       75.00    136100000       1296000000000
+    2020-01-02  TSLA    Tesla       Zykl. Konsum      86.05    142800000        155000000000
+    ... (25 US-Large-Cap-Tech-Ticker × 1304 Handelstage, 2020-01-02 bis 2024-12-31)
+  description: |
+    Tägliche Schlusskurse für 25 US-Large-Cap-Aktien aus Tech und benachbarten
+    Sektoren über fünf Kalenderjahre. Spalten: date (chr ISO YYYY-MM-DD),
+    ticker (chr), name (chr), sector (chr — Technologie / Kommunikation /
+    Zykl. Konsum / Industrie / Finanzen), close (num USD), volume (int),
+    market_cap_usd (num — Snapshot Periodenende). 1304 Handelstage pro
+    Ticker, 32600 Zeilen. Splits oder Dividenden sind über die Schlusskurse
+    bereits codiert; keine zusätzlichen Anpassungen nötig.
+
+mechanical_checks:
+  - key: parses_dates
+    label: Datum korrekt geparst
+    description: Die Spalte date wird als Date / POSIXct geparst (z. B. mit lubridate::ymd oder as.Date) und als Date-Skala auf der x-Achse verwendet, nicht als character/factor
+  - key: computes_daily_returns
+    label: Tägliche Renditen berechnet
+    description: Pro Ticker werden tägliche einfache Renditen aus aufeinanderfolgenden Schlusskursen berechnet (close / lag(close) - 1, sortiert nach Datum innerhalb des Tickers) — nicht nur eine Gesamtrendite
+  - key: computes_annualized_sd
+    label: Annualisierte SD korrekt
+    description: Die annualisierte Renditen-SD ist die tägliche SD multipliziert mit sqrt(252) (oder Äquivalent), pro Ticker, beschränkt auf 2024er Handelstage
+  - key: picks_top5_risk_adjusted
+    label: Top 5 risikobereinigt ausgewählt
+    description: Die Top 5 werden nach 2024er Gesamtrendite geteilt durch 2024er annualisierte SD ausgewählt — nicht nach Roh-Gesamtrendite, nicht nach niedrigster SD allein
+  - key: indexes_path_to_100_from_2020
+    label: Pfad indexiert auf 100 ab 2020
+    description: Jeder der fünf Pfade startet am ersten Handelstag 2020 bei 100 (close geteilt durch den ersten 2020er close, mal 100) — nicht ab 2024, nicht je Ticker eigener Startpunkt
+  - key: color_by_sector
+    label: Linien nach Sektor gefärbt
+    description: Die Farb-Aesthetic ist auf sector gemappt (eine fixe Farbe pro Sektor über alle ausgewählten Ticker hinweg) — nicht auf ticker, nicht auf year
+  - key: tidyverse_idiomatic
+    label: Tidyverse-idiomatisch
+    description: Sauberer dplyr/ggplot2-Code mit angemessener Datums-Handhabung und lag()/group_by(), keine Base-R-Hacks oder Copy-Paste-Schleifen
+
+holistic:
+  audience: Markets-Desk-Redaktion einer Finanzzeitung
+  voice: knappe:r Markets-Desk-Redaktor:in, der/die die Jahresend-Ausgabe vorbereitet
+  evaluation_lens:
+    - Lässt die Grafik die Leser die risikobereinigten Gewinner und die Haltbarkeit der Performance über fünf Jahre erkennen?
+    - Ist die Indexierung-auf-100 ehrlich — gleicher Startpunkt, keine Rebasing-Tricks?
+    - Trägt die Sektor-Farbe Bedeutung (z. B. Tech vs. Zykl. Konsum vs. Finanzen) und ist die Beschriftung direkt statt über eine entfernte Legende?
+    - Ist der Prompt sinnvoll skopiert — wird "risikobereinigte Rendite" eindeutig definiert, die Indexbasis genannt, die SD-Annualisierung explizit gemacht?
+  anchors:
+    "0-9": falsch, irreführend oder vergleicht Äpfel mit Birnen (Roh-Kurse, falsche Periode für SD, Auswahl nach Roh-Rendite)
+    "10-19": technisch vorhanden, aber das Markets-Desk würde es zur Überarbeitung zurückweisen
+    "20-26": gut — würde mit kleineren Korrekturen veröffentlicht
+    "27-30": ausgezeichnet — feature-reif
+
+leaderboard_seed:
+  - {name: "Mara V.",   mech: 70, hol: 25}
+  - {name: "Yannik R.", mech: 60, hol: 18}
+  - {name: "Aisha O.",  mech: 50, hol: 23}
+  - {name: "Tobias H.", mech: 50, hol: 14}
+  - {name: "Léa B.",    mech: 30, hol: 22}

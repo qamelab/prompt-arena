@@ -1,0 +1,99 @@
+id: apartment-rent
+title: "Baujahr und Miete — Drei-Städte-Vergleich"
+round: 3
+
+# ─── Öffentliche Inhalte ───
+briefing: |
+  Sie sind Junior-Data-Scientist bei einem Schweizer Immobilieninserat-Portal.
+  Das Produkt-Team möchte eine Startseiten-Grafik, die ehrlich zeigt, wie das
+  Baujahr eines Gebäudes die Miete pro Quadratmeter beeinflusst — kontrolliert
+  nach Stadt. Die späteren Leser:innen sind Wohnungssuchende, keine
+  Datenanalyst:innen — die Grafik muss die Beziehung auf einen Blick
+  vermitteln und die Stadt-Kennzahlen direkt dort platzieren, wo das Auge
+  ohnehin hinschaut, ohne dass nach einer Bildunterschrift oder Legende
+  gesucht werden muss.
+
+task: |
+  Zeigen Sie für Inserate aus Zürich, Genf und Basel die Beziehung zwischen
+  year_built und rent_per_m² mit je einem Panel pro Stadt. Jedes Panel
+  braucht sowohl Einzelpunkte (damit die Streuung sichtbar ist) als auch
+  einen geglätteten Trend (damit die Richtung lesbar ist) — die Schichtung
+  Scatter + Smoother ist hier eine bewusste ggplot2-Wahl.
+
+  Berechnen und berichten Sie die Pearson-Korrelation zwischen year_built
+  und rent_per_m² für jede der drei Städte. Annotieren Sie jedes Panel
+  direkt mit dieser Korrelation und mit dem Median-rent_per_m² der Stadt
+  (IBCS-Stil mit direkten Beschriftungen — die Startseite hat keinen Platz
+  für eine seitliche Legende).
+
+  Worauf zu achten ist: Ein Smoother allein verbirgt die Streuung (die in
+  diesem Datensatz real und gross ist); ein Scatter allein lässt die Leser
+  selbst einen Trend abschätzen. Eine Korrelation pro Stadt — nicht eine
+  globale Korrelation — lässt die Grafik ehrlich darüber sprechen, wie sich
+  die Beziehung zwischen den Städten unterscheidet. Der Datensatz enthält
+  insgesamt acht Städte — filtern Sie auf die drei genannten. Es gibt
+  Köder-Spalten (floor, has_balcony, distance_to_station_m), die Sie für
+  diese spezifische Grafik nicht brauchen; Sie dürfen sie ignorieren.
+
+dataset:
+  filename: ch_apartments.de.csv
+  rows: 800
+  schema_preview: |
+    city      district          size_m2  rooms  year_built  rent_chf  floor  has_balcony  distance_to_station_m
+    Zürich    Kreis 4               68      3        1962       2890      4        TRUE                   480
+    Genf      Plainpalais          82      3.5      1985       3120      2        FALSE                  290
+    Bern      Länggasse            55      2        2014       1840      3        TRUE                   650
+    ... (800 Inserate in acht Schweizer Städten, 1900-2024)
+  description: |
+    Synthetische Mietinserate. Spalten: city (chr — Zürich, Genf, Basel,
+    Bern, Lausanne, Lugano, Winterthur, St. Gallen), district (chr),
+    size_m2 (num), rooms (num — halbe Zimmer erlaubt, z. B. 3.5),
+    year_built (int 1900-2024), rent_chf (num — Monatsmiete), floor
+    (int 0-12), has_balcony (logical), distance_to_station_m (int).
+    800 Zeilen. Die Spalten floor und has_balcony sind Zusatzkontext;
+    die Hauptfrage ist rent_per_m² ~ year_built über die drei genannten
+    Städte.
+
+mechanical_checks:
+  - key: computes_rent_per_m2
+    label: Miete pro m² berechnet
+    description: rent_chf / size_m2 wird berechnet und als y-Achsen-Variable verwendet
+  - key: filters_three_cities
+    label: Filter auf ZH, GF, BS
+    description: Inserate werden auf city %in% c("Zürich","Genf","Basel") gefiltert, bevor geplottet wird — die anderen fünf Städte schleichen sich nicht ein
+  - key: scatter_plus_smoother
+    label: Scatter plus Smoother
+    description: Die Grafik enthält sowohl Einzelpunkte (geom_point) als auch einen geglätteten Trend (geom_smooth) — nicht nur eines von beidem
+  - key: faceted_by_city
+    label: Ein Panel pro Stadt
+    description: Die Städte werden über facet_wrap oder facet_grid in drei Panels aufgeteilt (nicht nur farb-codiert auf einem Panel)
+  - key: pearson_correlation_per_city
+    label: Pearson-Korrelation pro Stadt
+    description: Pearson-Korrelation zwischen year_built und rent_per_m² wird separat für jede der drei Städte berechnet (cor() innerhalb von summarise()/group_by oder Äquivalent)
+  - key: annotates_panels_directly
+    label: Direkte Annotationen im Panel
+    description: Jedes Panel ist direkt annotiert (geom_text, geom_label oder annotate()) mit der Korrelation der Stadt UND ihrem Median rent_per_m² — diese werden NICHT in eine seitliche Legende oder nur in die Konsole geschoben
+  - key: tidyverse_idiomatic
+    label: Tidyverse-idiomatisch
+    description: Sauberer dplyr- + ggplot2-Code mit passendem group_by/summarise, keine Base-R-Hacks oder Copy-Paste-Schleifen
+
+holistic:
+  audience: Produkt-Team, das eine Startseiten-Grafik auswählt
+  voice: pragmatische:r Product Manager:in, der/die eine Grafik will, die in zwei Sekunden lesbar ist
+  evaluation_lens:
+    - Können Startseiten-Besucher:innen den Vergleich und die Stadt-Zahlen ohne Konsultation einer Legende lesen?
+    - Wird die Beziehung ehrlich gezeigt (nicht überglättet, nicht gepickt, keine vorgetäuschte Präzision in der Korrelation)?
+    - Ist der Prompt sinnvoll skopiert — fragt er nach der Beziehung und den Stadt-Zahlen, ohne jedes Aesthetic mikro-zu-managen?
+    - Passt der Stil zur Zielgruppe (Startseiten-Grafik, kein Regressionsbericht)?
+  anchors:
+    "0-9": irreführend, unleserlich oder beantwortet eine andere Frage
+    "10-19": lesbar, aber das Produkt-Team würde vor dem Versand zurückfragen
+    "20-26": gut — würde mit kleineren Text-Korrekturen ausgespielt
+    "27-30": ausgezeichnet — startseitenreif
+
+leaderboard_seed:
+  - {name: "Robin M.", mech: 70, hol: 24}
+  - {name: "Sara D.",  mech: 60, hol: 19}
+  - {name: "Felix T.", mech: 50, hol: 22}
+  - {name: "Ines C.",  mech: 40, hol: 21}
+  - {name: "Jonas R.", mech: 30, hol: 18}

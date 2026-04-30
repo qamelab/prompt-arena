@@ -322,13 +322,17 @@ leaderboards in the wrangler emulator.
 
 ### Add a new scenario
 
-1. Drop `scenarios/new-scenario.yaml` and the matching dataset CSV
-   (filename must match `dataset.filename`) into `scenarios/`.
-2. (Optional) Smoke-test locally first by visiting
+1. Drop `scenarios/new-scenario.en.yaml` AND `scenarios/new-scenario.de.yaml`
+   into `scenarios/`. Both must declare the same `id` so they share
+   one KV leaderboard.
+2. Drop the dataset CSV(s) — one per language if any category column
+   has language-specific values, otherwise a single CSV that both
+   YAMLs reference. Filenames must match each YAML's `dataset.filename`.
+3. (Optional) Smoke-test locally by visiting
    `http://localhost:8000/?scenario=new-scenario` with both servers
-   running.
-3. `git add scenarios/new-scenario.yaml scenarios/<your_data>.csv`
-4. `git push`. The Pages workflow picks them up automatically; no
+   running, and toggling DE/EN in the masthead to verify both load.
+4. `git add scenarios/new-scenario.*.yaml scenarios/<your_data>*.csv`
+5. `git push`. The Pages workflow picks them up automatically; no
    worker change is required because the worker validates whatever
    scenario object the client posts.
 
@@ -442,9 +446,37 @@ Five rounds, each anchored to specific concepts from the BSAN courses
 
 Switch at runtime with `?scenario=<slug>` (default is `swiss-cantons`).
 
+## Internationalisation (DE / EN)
+
+The whole app is bilingual. German is the default for the BFH/HSG
+audience; English is one toggle click away (top-right of the masthead
+or on the landing page).
+
+What gets translated:
+
+- **Static UI** (masthead, callouts, button labels, status messages,
+  tier names, footer): from a `STRINGS` table in `app.js`. Toggling the
+  language re-renders every element marked `data-i18n` / `data-i18n-placeholder`.
+- **Scenarios**: each scenario ships as `<slug>.en.yaml` and
+  `<slug>.de.yaml`. Both languages target the same `id` so the
+  KV-backed leaderboard is shared regardless of which language a
+  student submitted in.
+- **Datasets**: only translated when a column has language-dependent
+  values. `swiss-cantons` uses one CSV (canton codes / numbers).
+  `sbb-delays`, `apartment-rent`, `stock-returns` and
+  `saas-product-lines` ship `<file>.en.csv` / `<file>.de.csv` pairs;
+  each YAML's `dataset.filename` points at its own language's CSV.
+
+Toggling the language refetches the scenario and resets any in-flight
+submission so the judge feedback never mixes languages with the UI.
+
+The default language on first load is German. The choice persists
+to `localStorage` (`prompt-arena:lang`).
+
 ## Authoring new scenarios
 
-Drop a new YAML in `scenarios/` and a matching CSV alongside it:
+A scenario is at minimum two YAML files (`.en.yaml` + `.de.yaml`) plus
+one or two CSVs. Drop them all in `scenarios/`:
 
 ```yaml
 id: my-scenario

@@ -32,7 +32,7 @@ task: |
   need for this specific chart; ignoring them is fine.
 
 dataset:
-  filename: ch_apartments.csv
+  filename: ch_apartments.en.csv
   rows: 800
   schema_preview: |
     city      district          size_m2  rooms  year_built  rent_chf  floor  has_balcony  distance_to_station_m

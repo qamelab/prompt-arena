@@ -1,0 +1,101 @@
+id: sbb-delays
+title: "SBB-Verspätungen — wann, wo, warum"
+round: 2
+
+# ─── Öffentliche Inhalte ───
+briefing: |
+  Sie sind Analyst:in beim Bundesamt für Verkehr. Das Kommunikationsteam
+  bereitet ein Pressebriefing zu den Intercity-Verspätungen (IC) im Jahr 2024
+  vor und möchte eine einzige Grafik, die für Journalist:innen sauber lesbar
+  ist — sie haben zwei Absätze Spaltenraum und wollen eine Abbildung, die den
+  Grossteil der Arbeit übernimmt. Die Pressestelle ist allergisch gegen
+  "Wetter ist unberechenbar, Infrastruktur ist die eigentliche Geschichte"
+  und ebenso gegen "Züge sind in der Stosszeit verspätet" — sie wollen beide
+  Beobachtungen in einem einzigen Bild kombiniert sehen.
+
+task: |
+  Identifizieren Sie die drei Verspätungsursachen, die im Jahr 2024 die
+  meisten Verspätungsminuten auf Intercity-Verbindungen (IC) verursacht
+  haben. Zeigen Sie für diese drei Ursachen, wie sich die Verspätungsminuten
+  über die Stunden des Tages verteilen, UND unterscheiden Sie in derselben
+  Grafik Werktag- von Wochenend-Vorfällen.
+
+  Verwenden Sie eine konsistente, semantische Farbe pro Ursache (eine fixe
+  Farbe je Ursache — keine Regenbogen-Palette, keine dekorative Umfärbung)
+  und vermeiden Sie Chart Junk: kein 3D, kein dichtes dekoratives Gitternetz,
+  keine Tortenscheiben.
+
+  Worauf zu achten ist: "die meisten Verspätungsminuten" ist eine Summe,
+  keine Anzahl — ein einzelner 60-minütiger Infrastrukturausfall überwiegt
+  zehn 5-minütige Einsteige-Verspätungen, und ein Count würde die Antwort
+  verändern. Die Grafik muss drei Codierungen unterbringen: Ursache
+  (kategoriell, drei Stufen), Stunde des Tages (kontinuierlich, 0-23) und
+  Werktag vs. Wochenende (binär). Wählen Sie Geom und Aesthetics so, dass
+  sich die Codierungen nicht in die Quere kommen — typischerweise heisst
+  das, dass die Ursache auf Facetten oder die Hauptfarbe geht und Werktag
+  vs. Wochenende eine sekundäre Aesthetic erhält (Linientyp, Füllung oder
+  geteilte Balken). Der Datensatz enthält Spalten für Bahnhof (station)
+  und Wetter (weather) als Zusatzkontext; Sie brauchen sie für diese Frage
+  nicht.
+
+dataset:
+  filename: sbb_delays.de.csv
+  rows: 1800
+  schema_preview: |
+    route             service_type  cause              start_time            station         delay_min  weather   year
+    Zürich-Bern               IC    Infrastruktur      2024-03-14 08:12:00   Bern               7        klar      2024
+    Genève-Lausanne           IR    Extern             2024-07-22 17:48:00   Lausanne          12        Regen     2024
+    Basel-Olten               IC    Rollmaterial       2024-11-05 07:31:00   Olten              4        klar      2024
+    ... (1800 Vorfälle 2022-2024, sechs Ursachenkategorien, Werktag/Wochenende implizit im Datum)
+  description: |
+    SBB-artige synthetische Verspätungsdaten. Spalten: route (chr),
+    service_type (chr, IC/IR/RE/S), cause (chr, eine von Infrastruktur /
+    Rollmaterial / Extern / Betrieb / Anschlusswarten / Einsteigen),
+    start_time (chr ISO-8601 Zeitstempel), station (chr — primär
+    betroffener Bahnhof), delay_min (int), weather (chr — klar / Regen /
+    Schnee / Nebel), year (int 2022-2024). Werktag vs. Wochenende lassen
+    sich aus start_time ableiten. 1800 Zeilen.
+
+mechanical_checks:
+  - key: filters_ic_2024
+    label: Filter auf IC und 2024
+    description: Zeilen werden vor jeder Aggregation auf service_type == "IC" UND year == 2024 gefiltert
+  - key: sums_delay_minutes
+    label: Aggregation per Summe von delay_min
+    description: Gruppiert nach cause und summiert delay_min — keine Anzahl der Vorfälle, kein Mittelwert
+  - key: picks_top3_causes
+    label: Top 3 Ursachen ausgewählt
+    description: Es werden nur die drei Ursachen mit den grössten 2024er-IC-Gesamtminuten gezeigt — nicht alle sechs
+  - key: extracts_hour_of_day
+    label: Stunde aus start_time extrahiert
+    description: Stunde wird aus start_time abgeleitet (lubridate::hour oder ähnlich) und als x-Achse verwendet
+  - key: weekday_vs_weekend
+    label: Werktag vs. Wochenende unterschieden
+    description: Werktag wird aus start_time abgeleitet und zur Unterscheidung Werktag/Wochenende verwendet (Farbe, Linientyp, Facette oder geteilte Balken) — nicht nur als ungenutzte Variable
+  - key: semantic_color_per_cause
+    label: Semantische Farbe pro Ursache
+    description: Jede Ursache wird auf eine einzige, konsistente Farbe in der ganzen Grafik abgebildet — keine Regenbogen-Palette, keine dekorative Umfärbung, Farbe trägt Information (IBCS-Stil)
+  - key: tidyverse_idiomatic
+    label: Tidyverse-idiomatisch
+    description: Sauberer dplyr/ggplot2-Code mit lubridate, keine Base-R-Hacks oder Copy-Paste-Schleifen
+
+holistic:
+  audience: Kommunikationsteam, das ein Pressebriefing vorbereitet
+  voice: erfahrene:r Datenanalyst:in der Bundesverwaltung, der/die einen einseitigen Absatz für Journalist:innen schreibt
+  evaluation_lens:
+    - Lässt sich die Kernaussage (welche 3 Ursachen, wann am Tag, Werktag oder Wochenende) auf einen Blick aus der Grafik ablesen?
+    - Passt die Geom-Wahl zu den Beziehungen (kategorielle Ursache × kontinuierliche Stunde × binärer Werktag-Status)?
+    - Trägt die Farbverwendung Information statt Dekoration (Tufte/IBCS)?
+    - Ist der Prompt sinnvoll skopiert — weder unter- noch überspezifiziert für eine einmalige Copilot-Generierung?
+  anchors:
+    "0-9": Output ist falsch, irreführend oder für das Briefing unbrauchbar
+    "10-19": technisch vorhanden, aber das Kommunikationsteam würde es zur Überarbeitung zurückweisen
+    "20-26": gut — würde mit kleineren Korrekturen ins Briefing-Pack aufgenommen
+    "27-30": ausgezeichnet — pressereif
+
+leaderboard_seed:
+  - {name: "Nina V.",    mech: 60, hol: 23}
+  - {name: "Patrick L.", mech: 70, hol: 14}
+  - {name: "Mia K.",     mech: 50, hol: 22}
+  - {name: "Joel B.",    mech: 40, hol: 18}
+  - {name: "Aylin S.",   mech: 30, hol: 20}
