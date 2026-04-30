@@ -297,30 +297,33 @@ protocol + host**, no path — `https://example.com`, not
 
 ### Wipe the leaderboard
 
-Per-scenario (e.g. fresh start of a semester for one round):
+KV is persistent: leaderboards never auto-clear. They stay until you
+delete the keys. Common reasons to wipe: starting a new class /
+semester, password rotation, or rubric changes that make old scores
+incomparable.
+
+Per-scenario:
 
 ```bash
 cd worker
 npx wrangler kv:key delete --binding=LEADERBOARD lb:swiss-cantons-tax
 npx wrangler kv:key delete --binding=LEADERBOARD lb:sbb-delays
-# ... etc.
-```
-
-To list everything in the namespace before deleting:
-
-```bash
-npx wrangler kv:key list --binding=LEADERBOARD
+npx wrangler kv:key delete --binding=LEADERBOARD lb:apartment-rent
+npx wrangler kv:key delete --binding=LEADERBOARD lb:stock-returns
+npx wrangler kv:key delete --binding=LEADERBOARD lb:saas-product-lines
 ```
 
 Wipe **all** leaderboards in one shot:
 
 ```bash
+cd worker
 npx wrangler kv:key list --binding=LEADERBOARD --output json \
   | jq -r '.[].name' \
   | while read k; do npx wrangler kv:key delete --binding=LEADERBOARD "$k"; done
 ```
 
-For local dev, `rm -rf worker/.wrangler/state/v3/kv/` resets all
+Effective immediately on next read (no caching on the GET path). For
+local dev, `rm -rf worker/.wrangler/state/v3/kv/` resets all
 leaderboards in the wrangler emulator.
 
 ### Add a new scenario
