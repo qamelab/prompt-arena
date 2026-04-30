@@ -60,11 +60,12 @@ Key seams when changing behavior:
 
 ## Scenarios
 
-Three are shipped, exercising different analytical skills:
+Four are shipped, each exercising different analytical skills:
 
 - `swiss-cantons` (round 1) — time-series tracking with normalization (per-capita) and same-cohort over time.
 - `sbb-delays` (round 2) — categorical aggregation, top-N by **sum** (not count), hour-of-day breakdown.
 - `apartment-rent` (round 3) — relationship between two continuous variables, faceted by category.
+- `stock-returns` (round 4) — date parsing, period-total return from prices, and cumulative indexing-to-100 path.
 
 Switch at runtime with `?scenario=<id>` (e.g. `?scenario=sbb-delays`). The default is `swiss-cantons` (`CONFIG.defaultScenario` in `app.js`).
 
