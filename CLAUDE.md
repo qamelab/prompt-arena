@@ -110,7 +110,7 @@ These are the production-only steps that local dev does not need. The deploy sec
 - [ ] **Worker has not been deployed.** `cd worker && npm run deploy`. Note the assigned URL.
 - [ ] **`PROD_JUDGE_ENDPOINT`** in `app.js` still points at `https://prompt-arena-judge.<your-subdomain>.workers.dev` (literal placeholder). Replace with the URL Wrangler returned.
 - [ ] **GitHub Pages origin** is not yet in `ALLOWED_ORIGINS` in `worker/src/index.js`. Add it and redeploy the worker.
-- [ ] **GitHub Pages** has not been enabled. Settings → Pages → Source: GitHub Actions. Note: Pages on a private repo requires a paid plan; flip the repo public if you're on free.
+- [ ] **GitHub Pages** has not been enabled. Settings → Pages → Source: GitHub Actions. Note: the repo lives at `qamelab/prompt-arena` and is private — Pages on a private org repo requires a Team-or-higher plan; flip the repo public if the org is on free.
 
 ## Design constraints (intentional)
 

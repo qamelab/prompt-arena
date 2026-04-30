@@ -189,9 +189,11 @@ Repo settings → **Pages** → Source: **GitHub Actions**. The
 `brand/` directories, then publishes it. The worker is not part of
 this build — it deploys separately via wrangler.
 
-> **Private repo note**: Pages on private repos requires a paid GitHub
-> plan. If the repo is private and you're on the free tier, flip it
-> public before enabling Pages.
+> **Private repo note**: Pages on a private repo requires a paid
+> GitHub plan (Pro for personal accounts, Team / Enterprise for
+> orgs). The repo currently lives at `qamelab/prompt-arena` and is
+> private — confirm the org is on a Team-or-higher plan before
+> enabling Pages, or flip the repo to public.
 
 ### 7. Push and smoke-test
 
