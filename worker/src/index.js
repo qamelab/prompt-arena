@@ -15,7 +15,7 @@ const ALLOWED_ORIGINS = [
   "http://localhost:8000",
   "http://localhost:5173",
   // Add your GitHub Pages origin here, e.g.:
-  // "https://umatter.github.io",
+  // "https://qamelab.github.io",
 ];
 
 const MAX_NAME_LEN = 30;
@@ -173,7 +173,7 @@ async function callJudge(judgePrompt, apiKey) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
       // Optional but recommended by OpenRouter for analytics/attribution.
-      "HTTP-Referer": "https://github.com/umatter/prompt-arena",
+      "HTTP-Referer": "https://github.com/qamelab/prompt-arena",
       "X-Title": "Prompt Arena",
     },
     body: JSON.stringify({

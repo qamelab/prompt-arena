@@ -172,7 +172,7 @@ path:
 const ALLOWED_ORIGINS = [
   "http://localhost:8000",          // local python http.server
   "http://localhost:5173",           // local vite, in case you ever switch
-  "https://umatter.github.io",       // <-- your Pages origin
+  "https://qamelab.github.io",       // <-- your Pages origin
 ];
 ```
 
