@@ -26,7 +26,7 @@ task: |
   die das Kapitel benennen möchte.
 
   Worauf zu achten ist: Es geht um Wohlstandsverteilung — Kennzahlen, die
-  *robust* gegenüber Extremwerten sind (Median, IQR), passen besser als
+  robust gegenüber Extremwerten sind (Median, IQR), passen besser als
   Mittelwert und Standardabweichung, denn die Letzteren würden gerade durch
   jene Ausreisser verzerrt, die wir benennen wollen. Die Wahl der
   Y-Achsen-Codierung (rohe CHF pro Kopf vs. Rangposition) ist eine echte

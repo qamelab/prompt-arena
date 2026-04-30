@@ -65,7 +65,7 @@ const STRINGS = {
     lb_mech: "Mech",
     lb_edit: "Edit",
     lb_total: "Total",
-    footer_brand: "Prompt Arena · QAME Lab, Institute of Applied Data Science & Finance BFH-W",
+    footer_brand: "Prompt Arena · QAME Lab · Institute of Applied Data Science & Finance · BFH-W",
     footer_data: "No student data is collected.",
     could_not_load: "Could not load scenario",
     failed_fetch: "Failed to fetch",
@@ -90,7 +90,7 @@ const STRINGS = {
     gate_submit: "Enter",
     gate_checking: "Checking…",
     gate_error: "That password isn't right — try again.",
-    gate_foot: "QAME Lab, Institute of Applied Data Science & Finance BFH-W",
+    gate_foot: "QAME Lab · Institute of Applied Data Science & Finance · BFH-W",
   },
   de: {
     round: "Runde",
@@ -123,7 +123,7 @@ const STRINGS = {
     lb_mech: "Mech",
     lb_edit: "Red.",
     lb_total: "Total",
-    footer_brand: "Prompt Arena · QAME Lab, Institute of Applied Data Science & Finance BFH-W",
+    footer_brand: "Prompt Arena · QAME Lab · Institute of Applied Data Science & Finance · BFH-W",
     footer_data: "Es werden keine Studierendendaten erhoben.",
     could_not_load: "Szenario konnte nicht geladen werden",
     failed_fetch: "Fehler beim Laden von",
@@ -148,7 +148,7 @@ const STRINGS = {
     gate_submit: "Eintreten",
     gate_checking: "Wird geprüft…",
     gate_error: "Das Passwort ist nicht korrekt — bitte erneut versuchen.",
-    gate_foot: "QAME Lab, Institute of Applied Data Science & Finance BFH-W",
+    gate_foot: "QAME Lab · Institute of Applied Data Science & Finance · BFH-W",
   },
 };
 

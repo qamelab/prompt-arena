@@ -37,7 +37,7 @@ task: |
   Handelstagen pro Jahr und der i.i.d.-Annahme für tägliche Renditen;
   multiplizieren Sie nicht mit 252 (das würde die Varianz skalieren, nicht
   die Standardabweichung). Der kumulierte Pfad braucht für alle fünf Linien
-  *dieselbe* Startbasis (erster Handelstag 2020), nicht jeweils einen
+  dieselbe Startbasis (erster Handelstag 2020), nicht jeweils einen
   ticker-spezifischen ersten Tag, damit der visuelle Vergleich ehrlich ist.
   Der Datensatz hat 25 Ticker und eine Spalte market_cap_usd, die Sie für
   diese Frage nicht benötigen — gerade fünf auswählen und zeigen ist der

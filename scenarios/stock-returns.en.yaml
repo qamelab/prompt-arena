@@ -32,7 +32,7 @@ task: |
   sqrt(252) comes from the rough convention of 252 trading days per year and
   the i.i.d. assumption on daily returns; do not multiply by 252 (that would
   scale variance, not standard deviation). The cumulative path needs the
-  *same* starting basis for all five lines (first trading day of 2020), not
+  same starting basis for all five lines (first trading day of 2020), not
   a per-ticker first day, so the visual comparison is honest. The dataset
   has 25 tickers and a market_cap_usd column you do not need for this
   question — picking and showing only the 5 selected is the point.

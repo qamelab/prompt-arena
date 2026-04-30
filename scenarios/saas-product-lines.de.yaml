@@ -18,7 +18,7 @@ task: |
   Q4-2024-Umsatz rankt UND zugleich die Veränderung gegenüber Q4 2023
   (year-over-year) je Linie kommuniziert.
 
-  Die Grafik muss der richtige *Typ* von Grafik für diesen Vergleich sein —
+  Die Grafik muss der richtige Typ von Grafik für diesen Vergleich sein —
   einer, den Führungskräfte in fünf Sekunden überblicken — und sie muss
   ggplot2-Schichten klug einsetzen: Wählen Sie ein Geom, das zu einem
   geordneten kategoriellen Vergleich passt; sortieren Sie die Kategorien

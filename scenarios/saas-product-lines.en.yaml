@@ -16,7 +16,7 @@ task: |
   Build a single chart that ranks the six product lines by Q4 2024 revenue and
   also communicates each line's year-over-year change versus Q4 2023.
 
-  The chart must be the right *kind* of chart for this comparison — one that an
+  The chart must be the right kind of chart for this comparison — one that an
   executive can scan in five seconds — and it must use ggplot2 layers smartly:
   pick a geom that fits a ranked categorical comparison, sort the categories by
   the ranking metric (do not leave them alphabetical), label values directly on

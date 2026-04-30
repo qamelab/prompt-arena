@@ -21,7 +21,7 @@ task: |
   "wealthy outliers" the chapter wants to name.
 
   Things to think about: the question is about wealth concentration, so summary
-  statistics that are *robust* to extreme values (median, IQR) make more sense than
+  statistics that are robust to extreme values (median, IQR) make more sense than
   the mean and standard deviation — the latter would be pulled by the very outliers
   we are trying to identify. Picking the y-axis encoding (raw CHF per capita vs.
   rank position) is a real design choice; both are defensible, but they tell
