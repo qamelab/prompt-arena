@@ -1,0 +1,9 @@
+name = "prompt-arena-judge"
+main = "src/index.js"
+compatibility_date = "2025-04-01"
+
+# After deploying, set the API key with:
+#   wrangler secret put ANTHROPIC_API_KEY
+#
+# To run locally:
+#   wrangler dev --local
